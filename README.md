@@ -1,97 +1,161 @@
-# uartf.org — wp-content repository
+# DDEV + EtchWP WordPress Boilerplate
 
-This repository contains the custom and configuration code for the uartf.org WordPress site. It maps directly to the `wp-content/` directory of a WordPress installation.
+A `wp-content`-only repository scaffold for WordPress sites built with EtchWP, AutomaticCSS Pro, and a curated premium plugin stack. Designed for local development with [DDEV](https://ddev.com) and [OrbStack](https://orbstack.dev).
 
 ## Stack
 
 | Layer | Tool |
 |-------|------|
-| Theme / Builder | EtchWP (plugin + theme) |
-| Custom fields | Advanced Custom Fields Pro |
-| CSS framework | AutomaticCSS Pro |
-| Forms | WS Form Pro |
-| Grid / Facets | WP Grid Builder Pro |
-| Code snippets | wPCodebox2 (preferred for custom PHP) |
-| Functionality plugin | uartf-functionality (CPT registration, ACF JSON, heavier code) |
-| Multilingual | WPML + String Translation + Media Translation |
+| Local environment | DDEV + OrbStack |
+| Theme / Builder | [EtchWP](https://etchwp.com) |
+| Custom fields | [Advanced Custom Fields Pro](https://www.advancedcustomfields.com) |
+| CSS framework | [AutomaticCSS Pro](https://automaticcss.com) |
+| Forms | [WS Form Pro](https://wsform.com) |
+| Grid / Facets | [WP Grid Builder Pro](https://wpgridbuilder.com) |
+| Code snippets | [wPCodebox2](https://wpcodebox.com) |
+| Multilingual | [WPML](https://wpml.org) + String Translation + Media Translation |
+| ACF JSON | Stored in `plugins/uartf-functionality/acf-json/` |
 
-> **Important:** EtchWP does not support child themes — they are incompatible with the plugin. All custom PHP goes into wPCodebox2 snippets (preferred for small additions) or the `uartf-functionality` plugin (preferred for CPT registration, hooks, and anything that needs version control).
+> **Note:** EtchWP does not support child themes — this is a hard architectural constraint, not a preference. All custom PHP goes into wPCodebox2 snippets or the included functionality plugin.
 
-## What's in this repo
+## Prerequisites
 
-- `plugins/uartf-functionality/` — functionality plugin with ACF JSON save path wired up
-- `plugins/uartf-functionality/acf-json/` — ACF field group JSON exports (auto-saved here)
-- `mu-plugins/` — must-use plugins
-- `config/wpml-config.xml` — WPML field and CPT translation rules
-- `config/grid-builder-export.json` — WP Grid Builder settings export
+- [OrbStack](https://orbstack.dev) (or Docker Desktop)
+- [DDEV](https://ddev.com/get-started/) `>= 1.23`
+- [WP-CLI](https://wp-cli.org) (`brew install wp-cli`)
+- [mkcert](https://github.com/FiloSottile/mkcert) (`brew install mkcert nss && mkcert -install`)
+- License keys for all premium plugins listed above
 
-## What's NOT in this repo
+## Repository Structure
 
-- `themes/` — EtchWP is installed manually; no child theme exists or should be created
-- All premium plugin directories — installed manually via zip upload
-- `uploads/`, `languages/`, `cache/` — runtime-generated
+This repo maps directly to `wp-content/`. Clone it into the `wp-content/` directory of a WordPress installation.
+
+```
+wp-content/
+├── plugins/
+│   └── uartf-functionality/        # Functionality plugin (ACF JSON save path wired up)
+│       ├── acf-json/               # ACF field group JSON exports — commit these
+│       └── includes/               # Custom PHP includes
+├── mu-plugins/                     # Must-use plugins
+└── config/
+    ├── wpml-config.xml             # WPML translation rules — update as CPTs are added
+    └── grid-builder-export.json    # WP Grid Builder settings export
+```
 
 ## Setup
 
-### 1. Install WordPress core
-
-Install WordPress one directory above this repo. This repo's root becomes your `wp-content/` directory.
-
-```
-wordpress-root/
-├── wp-admin/
-├── wp-includes/
-├── wp-config.php
-└── wp-content/          ← clone this repo here
-```
-
-### 2. Clone this repo into wp-content
+### 1. Create the DDEV project
 
 ```bash
-git clone git@github.com:uartf/uartf-org.git wp-content
+mkdir my-project && cd my-project
+ddev config --project-type=wordpress --project-name=my-project --docroot=.
+ddev start
+ddev auth ssh
 ```
 
-### 3. Copy .env.example and fill in values
+### 2. Download WordPress core
 
 ```bash
-cp wp-content/.env.example wp-content/.env
+ddev wp core download
 ```
 
-### 4. Install plugins in order
+### 3. Clone this repo as wp-content
 
-Upload each premium plugin zip via **WP Admin > Plugins > Add New > Upload Plugin**, then activate the theme via **Appearance > Themes**:
+```bash
+rm -rf wp-content
+git clone git@github.com:akaienso/ddev-etch-boilerplate.git wp-content
+```
 
-| Order | Item | Notes |
-|-------|------|-------|
-| 1 | **Advanced Custom Fields Pro** | Must be active before EtchWP and AutomaticCSS |
-| 2 | **AutomaticCSS Pro** | Configure your palette/tokens before building pages |
-| 3 | **EtchWP plugin** | Install and activate the plugin first |
-| 4 | **EtchWP theme** | Then activate the theme via Appearance > Themes |
-| 5 | **WP Grid Builder Pro** | Set up indexing before content accumulates |
-| 6 | **WS Form Pro** | No ordering constraint |
-| 7 | **wPCodebox2** | Activate after other plugins so snippets can reference their hooks |
-| 8 | **WPML** + String Translation + Media Translation | Always last — restructures URLs and content relationships |
+### 4. Install WordPress
 
-### 5. Activate the functionality plugin
+DDEV creates `wp-config.php` automatically. Run the install:
 
-Go to **Plugins** and activate **UARTF Functionality**. This wires up the ACF JSON save/load path.
+```bash
+ddev wp core install \
+  --url=https://my-project.ddev.site \
+  --title="My Project" \
+  --admin_user=admin \
+  --admin_email=you@example.com \
+  --prompt=admin_password
+```
 
-### 6. ACF JSON sync
+### 5. Fix wp-content permissions
 
-Field groups are stored as JSON in `plugins/uartf-functionality/acf-json/`. After cloning on a new environment, go to **ACF > Field Groups** and click **Sync** to import them into the database.
+DDEV needs write access to install themes and plugins:
 
-### 7. WP Grid Builder
+```bash
+ddev ssh
+chmod 755 /var/www/html/wp-content
+mkdir -p /var/www/html/wp-content/themes && chmod 755 /var/www/html/wp-content/themes
+mkdir -p /var/www/html/wp-content/plugins && chmod 755 /var/www/html/wp-content/plugins
+mkdir -p /var/www/html/wp-content/uploads && chmod 755 /var/www/html/wp-content/uploads
+exit
+```
 
-Import settings via **Grid Builder > Tools > Import** using `config/grid-builder-export.json`.
+### 6. Disable debug output
 
-### 8. WPML
+```bash
+ddev wp config set WP_DEBUG false --raw
+```
 
-Run the WPML setup wizard. After configuring languages and CPT translation rules, update `config/wpml-config.xml`.
+### 7. Install premium plugins in order
 
-## Development workflow
+Upload each zip via **WP Admin > Plugins > Add New > Upload Plugin**. Order matters.
 
-1. **ACF field groups** — create/edit in WP Admin; JSON auto-saves to `plugins/uartf-functionality/acf-json/`. Commit the JSONs.
-2. **Custom PHP (small)** — add as a wPCodebox2 snippet in WP Admin. Not version-controlled unless you export.
-3. **Custom PHP (substantial)** — add a file under `plugins/uartf-functionality/includes/` and commit.
-4. **Grid Builder changes** — export and overwrite `config/grid-builder-export.json`, then commit.
-5. **WPML config changes** — update `config/wpml-config.xml` and commit.
+| # | Item | Location |
+|---|------|----------|
+| 1 | **Advanced Custom Fields Pro** | Plugins > Upload |
+| 2 | **AutomaticCSS Pro** | Plugins > Upload |
+| 3 | **EtchWP plugin** | Plugins > Upload |
+| 4 | **EtchWP theme** | Appearance > Themes > Upload, then activate |
+| 5 | **WP Grid Builder Pro** | Plugins > Upload |
+| 6 | **WS Form Pro** | Plugins > Upload |
+| 7 | **wPCodebox2** | Plugins > Upload |
+| 8 | **WPML Multilingual CMS** | Plugins > Upload |
+| 9 | **WPML String Translation** | Plugins > Upload |
+| 10 | **WPML Media Translation** | Plugins > Upload, then run WPML setup wizard |
+
+> Install WPML last. It restructures URL patterns and content relationships — installing it mid-build causes rework.
+
+### 8. Activate the functionality plugin
+
+Go to **Plugins** and activate **UARTF Functionality**. This wires up the ACF JSON save/load path so field group exports land in version control automatically.
+
+## Development Workflow
+
+### ACF field groups
+Create and edit field groups in WP Admin. JSON files auto-save to `plugins/uartf-functionality/acf-json/`. Commit them.
+
+On a new environment, go to **ACF > Field Groups** and click **Sync** to import from JSON.
+
+### Custom PHP
+- **Small additions** — add as a wPCodebox2 snippet in WP Admin
+- **Substantial code** — add a file to `plugins/uartf-functionality/includes/` and commit
+
+### WP Grid Builder
+After configuring grids and facets, export via **Grid Builder > Tools > Export**. Overwrite `config/grid-builder-export.json` and commit.
+
+Import on a new environment via **Grid Builder > Tools > Import**.
+
+### WPML
+Update `config/wpml-config.xml` with field and CPT translation rules as you add custom post types and ACF fields. Commit after each update.
+
+## Snapshots
+
+Take a DDEV snapshot after reaching a stable state:
+
+```bash
+ddev snapshot --name=my-snapshot
+```
+
+Restore with:
+
+```bash
+ddev snapshot restore my-snapshot
+```
+
+Snapshots capture the database. Files are captured by git. Together they give you a complete restore point.
+
+## License
+
+This boilerplate scaffold is MIT licensed. The premium plugins it references are commercial products — you must hold valid licenses for each.
