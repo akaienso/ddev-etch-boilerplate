@@ -14,7 +14,7 @@ A `wp-content`-only repository scaffold for WordPress sites built with EtchWP, A
 | Grid / Facets | [WP Grid Builder Pro](https://wpgridbuilder.com) |
 | Code snippets | [wPCodebox2](https://wpcodebox.com) |
 | Multilingual | [WPML](https://wpml.org) + String Translation + Media Translation |
-| ACF JSON | Stored in `plugins/uartf-functionality/acf-json/` |
+| ACF JSON | Stored in `plugins/custom-site-functionality/acf-json/` |
 
 > **Note:** EtchWP does not support child themes — this is a hard architectural constraint, not a preference. All custom PHP goes into wPCodebox2 snippets or the included functionality plugin.
 
@@ -33,7 +33,7 @@ This repo maps directly to `wp-content/`. Clone it into the `wp-content/` direct
 ```
 wp-content/
 ├── plugins/
-│   └── uartf-functionality/        # Functionality plugin (ACF JSON save path wired up)
+│   └── custom-site-functionality/        # Functionality plugin (ACF JSON save path wired up)
 │       ├── acf-json/               # ACF field group JSON exports — commit these
 │       └── includes/               # Custom PHP includes
 ├── mu-plugins/                     # Must-use plugins
@@ -119,18 +119,18 @@ Upload each zip via **WP Admin > Plugins > Add New > Upload Plugin**. Order matt
 
 ### 8. Activate the functionality plugin
 
-Go to **Plugins** and activate **UARTF Functionality**. This wires up the ACF JSON save/load path so field group exports land in version control automatically.
+Go to **Plugins** and activate **Custom Site Functionality**. This wires up the ACF JSON save/load path so field group exports land in version control automatically.
 
 ## Development Workflow
 
 ### ACF field groups
-Create and edit field groups in WP Admin. JSON files auto-save to `plugins/uartf-functionality/acf-json/`. Commit them.
+Create and edit field groups in WP Admin. JSON files auto-save to `plugins/custom-site-functionality/acf-json/`. Commit them.
 
 On a new environment, go to **ACF > Field Groups** and click **Sync** to import from JSON.
 
 ### Custom PHP
 - **Small additions** — add as a wPCodebox2 snippet in WP Admin
-- **Substantial code** — add a file to `plugins/uartf-functionality/includes/` and commit
+- **Substantial code** — add a file to `plugins/custom-site-functionality/includes/` and commit
 
 ### WP Grid Builder
 After configuring grids and facets, export via **Grid Builder > Tools > Export**. Overwrite `config/grid-builder-export.json` and commit.
