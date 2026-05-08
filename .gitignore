@@ -1,0 +1,64 @@
+# ============================================================
+# WordPress core — install separately, never commit
+# ============================================================
+/wp/
+/wp-config.php
+/wp-config-sample.php
+
+# ============================================================
+# Premium plugins — installed manually via zip upload
+# ============================================================
+/plugins/advanced-custom-fields-pro/
+/plugins/automaticcss/
+/plugins/ws-form-pro/
+/plugins/wp-grid-builder/
+/plugins/wpcodebox2/
+/plugins/sitepress-multilingual-cms/
+/plugins/wpml-string-translation/
+/plugins/wpml-media-translation/
+/plugins/wpml-*/
+
+# ============================================================
+# Themes — EtchWP does not support child themes.
+# Install EtchWP manually; it is not committed.
+# ============================================================
+/themes/
+
+# ============================================================
+# WordPress-generated content
+# ============================================================
+/uploads/
+/cache/
+/upgrade/
+/languages/
+/wflogs/
+/backup*/
+
+# ============================================================
+# Environment files
+# ============================================================
+.env
+.env.local
+.env.staging
+.env.production
+
+# ============================================================
+# Composer / Node dependencies
+# ============================================================
+/vendor/
+/node_modules/
+
+# ============================================================
+# Zip files (plugin/theme downloads)
+# ============================================================
+*.zip
+
+# ============================================================
+# OS / IDE
+# ============================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  WPML configuration file.
+  Docs: https://wpml.org/documentation/support/wpml-config-xml/
+
+  Define which custom fields, post types, and taxonomies should be translatable.
+  This file is read by WPML on activation and after updates.
+-->
+<wpml-config>
+
+  <!-- Admin-side strings registered with icl_register_string() -->
+  <admin-texts>
+  </admin-texts>
+
+  <!-- ACF / custom meta fields -->
+  <custom-fields>
+    <!-- Example:
+    <custom-field action="translate">_my_field_key</custom-field>
+    <custom-field action="copy">_my_non-translatable_field</custom-field>
+    -->
+  </custom-fields>
+
+  <!-- Custom post types -->
+  <custom-types>
+    <!-- Example:
+    <custom-type translate="1">event</custom-type>
+    -->
+  </custom-types>
+
+  <!-- Custom taxonomies -->
+  <taxonomies>
+    <!-- Example:
+    <taxonomy translate="1">event_category</taxonomy>
+    -->
+  </taxonomies>
+
+</wpml-config>
