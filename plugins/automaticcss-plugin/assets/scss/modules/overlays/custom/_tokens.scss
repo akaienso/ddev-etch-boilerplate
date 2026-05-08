@@ -1,0 +1,15 @@
+:root {
+	@each $overlay, $set in $custom-overlays {
+		@each $prop, $value in $set {
+			$background: map-get($set, background);
+			$background-color: map-get($set, bg-color);
+			$background-type: map-get($set, background-type);
+			$background-image: map-get($set, background-image);
+			@if ($background-color != null or $background != null or $background-image != null) and $background-type != "none" {
+				@if $value != null {
+					--overlay-#{$overlay}-#{$prop}: #{$value};
+				}
+			}
+		}
+	}
+}

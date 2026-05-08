@@ -1,0 +1,91 @@
+@import "vars";
+
+// ==========================================================================
+// Hover Effect Mixins
+// ==========================================================================
+
+// Map of all hover effects and their CSS properties
+// Uses individual transform properties (scale, translate) for better composition
+// Effects are modular and independent - combine as needed
+$hover-effects-map: (
+	// Transform Effects
+	'grow': (
+		scale: var(--hover-grow-amount, 1.05)
+	),
+	'shrink': (
+		scale: var(--hover-shrink-amount, 0.95)
+	),
+	'float': (
+		translate: 0 var(--hover-float-amount, -8px)
+	),
+	'sink': (
+		translate: 0 var(--hover-sink-amount, 8px)
+	),
+	'slide-right': (
+		translate: var(--hover-slide-right-amount, 8px) 0
+	),
+	'slide-left': (
+		translate: var(--hover-slide-left-amount, -8px) 0
+	),
+	// Shadow Effects
+	'shadow': (
+		box-shadow: var(--hover-shadow, 0 8px 24px rgba(0, 0, 0, 0.15))
+	),
+	'glow': (
+		box-shadow: 0 0 var(--hover-glow-spread, 20px) color-mix(in srgb, var(--hover-glow-color, currentColor) calc(var(--hover-glow-opacity, 0.3) * 100%), transparent)
+	),
+	// Opacity Effects
+	'fade': (
+		opacity: 0.8
+	),
+	// Filter Effects
+	'brighten': (
+		filter: brightness(1.1)
+	)
+);
+
+// --------------------------------------------------------------------------
+// Mixin: apply-hover-effects
+// Applies hover effects based on a comma-separated string
+// Usage: @include apply-hover-effects("scale, lift");
+// Usage: @include apply-hover-effects("scale", $set-transition: false);
+// Set $set-transition to false for elements that already have transitions (like buttons)
+// --------------------------------------------------------------------------
+@mixin apply-hover-effects($effects-input, $set-transition: true) {
+	@if $effects-input and $effects-input != '' and $effects-input != null {
+		// Convert to string if it's a list (handles unquoted input from dashboard)
+		$effects-string: if(type-of($effects-input) == 'string', $effects-input, inspect($effects-input));
+		
+		// Track which CSS properties will be affected (for transition setup)
+		$transition-props: ();
+		
+		@each $effect-name, $props in $hover-effects-map {
+			@if str-index(to-lower-case($effects-string), $effect-name) {
+				@each $prop, $value in $props {
+					// Collect unique transition properties
+					@if not index($transition-props, $prop) {
+						$transition-props: append($transition-props, $prop, comma);
+					}
+				}
+			}
+		}
+		
+		// Only set transition if requested (skip for elements with existing transitions like buttons)
+		@if $set-transition and length($transition-props) > 0 {
+			transition-property: #{$transition-props};
+			transition-duration: var(--hover-duration, 0.3s);
+			transition-timing-function: var(--hover-timing, ease-in-out);
+		}
+		
+		// Apply hover states - individual properties don't conflict with each other
+		&:hover {
+			@each $effect-name, $props in $hover-effects-map {
+				@if str-index(to-lower-case($effects-string), $effect-name) {
+					@each $prop, $value in $props {
+						#{$prop}: #{$value};
+					}
+				}
+			}
+		}
+	}
+}

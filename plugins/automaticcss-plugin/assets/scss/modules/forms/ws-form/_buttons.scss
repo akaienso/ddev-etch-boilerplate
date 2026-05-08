@@ -1,0 +1,96 @@
+@if $option-forms == on {
+	@if $option-ws-form == on {
+
+		.wsf-form {
+			// Button - Submit/Primary
+			button.wsf-button.wsf-button-primary[type="submit"] {
+				@include btn(#{$f-submit-button-style});
+
+				&.wsf-button-full {
+					inline-size: 100%;
+				}
+			}
+
+
+
+			// Button - Next
+
+			button.wsf-button[data-action="wsf-tab_next"] {
+				@include btn(#{$f-next-button-style});
+
+			}
+
+			// Button - Previous
+
+			button.wsf-button[data-action="wsf-tab_previous"] {
+				@include btn(#{$f-prev-button-style});
+
+			}
+
+			// Button - Save
+
+			button.wsf-button[data-action="wsf-save"] {
+				@include btn(#{$f-save-button-style});
+
+			}
+
+			// Button - Reset
+
+			button.wsf-button[data-action="wsf-reset"] {
+				@include btn(#{$f-reset-button-style});
+
+			}
+
+			// Button - Clear
+
+			button.wsf-button[data-action="wsf-clear"] {
+				@include btn(#{$f-clear-button-style});
+
+			}
+
+			@media (hover: hover) and (pointer: fine) {
+				button.wsf-button.wsf-button-primary[type="submit"]:hover:enabled:not(:checked):not(:focus) {
+					background: var(--btn-background-hover);
+					color: var(--btn-text-color-hover);
+					border-color: var(--btn-border-color-hover);
+					text-decoration: var(--btn-text-decoration-hover);
+				}
+
+				button.wsf-button[data-action="wsf-tab_next"]:hover:enabled:not(:checked):not(:focus) {
+					background: var(--btn-background-hover);
+					color: var(--btn-text-color-hover);
+					border-color: var(--btn-border-color-hover);
+					text-decoration: var(--btn-text-decoration-hover);
+				}
+
+				button.wsf-button[data-action="wsf-tab_previous"]:hover:enabled:not(:checked):not(:focus) {
+					background: var(--btn-background-hover);
+					color: var(--btn-text-color-hover);
+					border-color: var(--btn-border-color-hover);
+					text-decoration: var(--btn-text-decoration-hover);
+				}
+
+				button.wsf-button[data-action="wsf-save"]:hover:enabled:not(:checked):not(:focus) {
+					background: var(--btn-background-hover);
+					color: var(--btn-text-color-hover);
+					border-color: var(--btn-border-color-hover);
+					text-decoration: var(--btn-text-decoration-hover);
+				}
+
+				button.wsf-button[data-action="wsf-reset"]:hover:enabled:not(:checked):not(:focus) {
+					background: var(--btn-background-hover);
+					color: var(--btn-text-color-hover);
+					border-color: var(--btn-border-color-hover);
+					text-decoration: var(--btn-text-decoration-hover);
+				}
+
+				button.wsf-button[data-action="wsf-clear"]:hover:enabled:not(:checked):not(:focus) {
+					background: var(--btn-background-hover);
+					color: var(--btn-text-color-hover);
+					border-color: var(--btn-border-color-hover);
+					text-decoration: var(--btn-text-decoration-hover);
+				}
+			}
+		}
+	}
+}

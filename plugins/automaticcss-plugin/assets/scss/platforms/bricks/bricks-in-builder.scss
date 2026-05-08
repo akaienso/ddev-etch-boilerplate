@@ -1,0 +1,10 @@
+@import "enhancements/template-gallery";
+@import "enhancements/pro-mode";
+@import "enhancements/stack-elements";
+@import "enhancements/replace-with-frames";
+@import "enhancements/css";
+@import "enhancements/structure-panel-margin";
+
+[data-balloon="transparent"].color-button {
+	border: 1px dashed black;
+}

@@ -1,0 +1,71 @@
+// warning Options
+$option-warning-clr: on !default;
+
+// OKLCH
+$warning-l-oklch: 0.66 !default;
+$warning-c-oklch: 0.15 !default;
+$warning-h-oklch: 21.57 !default;
+$warning-hover-l-oklch: 0.76 !default;
+$warning-hover-c-oklch: 0.15 !default;
+$warning-hover-h-oklch: 21.57 !default;
+$warning-ultra-light-l-oklch: 0.95 !default;
+$warning-ultra-light-c-oklch: 0.15 !default;
+$warning-ultra-light-h-oklch: 21.57 !default;
+$warning-light-l-oklch: 0.85 !default;
+$warning-light-c-oklch: 0.15 !default;
+$warning-light-h-oklch: 21.57 !default;
+$warning-dark-l-oklch: 0.25 !default;
+$warning-dark-c-oklch: 0.15 !default;
+$warning-dark-h-oklch: 21.57 !default;
+$warning-ultra-dark-l-oklch: 0.10 !default;
+$warning-ultra-dark-c-oklch: 0.15 !default;
+$warning-ultra-dark-h-oklch: 21.57 !default;
+$warning-semi-light-l-oklch: 0.60 !default;
+$warning-semi-light-c-oklch: 0.15 !default;
+$warning-semi-light-h-oklch: 21.57 !default;
+$warning-semi-dark-l-oklch: 0.40 !default;
+$warning-semi-dark-c-oklch: 0.15 !default;
+$warning-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-status-lightness == on {
+  $warning-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$warning-l-alt-oklch: null !default;
+$warning-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$warning-hover-l-alt-oklch: null !default;
+$warning-hover-c-alt-oklch: null !default;
+
+// Warning Color Map
+$color-warning:(); // Initialize Map
+@if $option-warning-clr == on {
+  $color-warning: (
+    "main": (
+      "warning": oklch($warning-l-oklch $warning-c-oklch $warning-h-oklch),
+      "warning-hover": oklch($warning-hover-l-oklch $warning-hover-c-oklch $warning-hover-h-oklch),
+      "warning-ultra-light": oklch($warning-ultra-light-l-oklch $warning-ultra-light-c-oklch $warning-ultra-light-h-oklch),
+      "warning-light": oklch($warning-light-l-oklch $warning-light-c-oklch $warning-light-h-oklch),
+      "warning-semi-light": oklch($warning-semi-light-l-oklch $warning-semi-light-c-oklch $warning-semi-light-h-oklch),
+      "warning-semi-dark": oklch($warning-semi-dark-l-oklch $warning-semi-dark-c-oklch $warning-semi-dark-h-oklch),
+      "warning-dark": oklch($warning-dark-l-oklch $warning-dark-c-oklch $warning-dark-h-oklch),
+      "warning-ultra-dark": oklch($warning-ultra-dark-l-oklch $warning-ultra-dark-c-oklch $warning-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "warning-alt": oklch(
+        if($warning-l-alt-oklch, $warning-l-alt-oklch, $warning-l-oklch)
+        if($warning-c-alt-oklch, $warning-c-alt-oklch, $warning-c-oklch)
+        $warning-h-oklch
+      ),
+      "warning-hover-alt": oklch(
+        if($warning-hover-l-alt-oklch, $warning-hover-l-alt-oklch, $warning-hover-l-oklch)
+        if($warning-hover-c-alt-oklch, $warning-hover-c-alt-oklch, $warning-hover-c-oklch)
+        $warning-hover-h-oklch
+      ),
+    ),
+  );
+
+}
+

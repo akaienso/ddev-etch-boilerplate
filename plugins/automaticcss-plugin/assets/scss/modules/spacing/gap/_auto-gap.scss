@@ -1,0 +1,40 @@
+// Add container gap between all elements in sections.
+@if $option-container-gap == on {
+	/* Feat: Auto Container Gap */
+	#{$section-selector} {
+		gap: var(--container-gap);
+	}
+}
+
+@if $option-content-gap == on {
+	/* Feat: Auto Content Gap */
+	#{$section-selector} > :where(div, ul, ol) {
+		gap: var(--content-gap);
+	}
+}
+
+// Add content gap inside blocks
+@if $option-content-gap == on {
+	/* Feat: Auto Container Gap */
+	// Etch
+	@if $option-etch == on {
+		:where([data-etch-element="flex-div"]:not(main)) {
+			gap: var(--content-gap);
+		}
+	}
+
+	// Bricks
+	@if $option-bricks == on {
+			@include auto-contextual-block-spacing(":where(.brxe-block)", var(--content-gap));
+			@include auto-contextual-block-spacing(":where(.brxe-div)", var(--content-gap));
+	}
+}
+
+  // Add grid gap to all grid classes automatically.
+  @if $option-grid-gap == on {
+		/* Feat: Auto Grid Gap */
+    section > div:where([class*="grid--"]),
+    :where([class*="grid--"]) {
+        gap: var(--grid-gap);
+    }
+  }

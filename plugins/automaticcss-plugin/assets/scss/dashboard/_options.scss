@@ -1,0 +1,72 @@
+// Smooth Scrolling
+$option-smooth-scrolling: on !default;
+
+// Framework Options
+$option-classless: off !default;
+$option-text-color: off !default; // 168 Lines
+$option-basic-text-classes: off !default;
+$option-link-color: off !default; // 334 Lines
+$option-inline-tokens: off !default;
+
+// Platform Support
+$option-load-stylesheets-last: off !default;
+$option-etch: off !default;
+$option-gutenberg-load-styling-backend: on !default;
+
+// Forms Support
+$option-forms: on !default;
+$option-ws-form: off !default;
+$option-fluent-form: off !default;
+
+// Layer Controls
+$option-layer-defaults: on !default;
+$option-layer-anchors: on !default;
+$option-layer-cards: on !default;
+$option-layer-icons: on !default;
+$option-layer-utilities: off !default;
+
+@mixin if-layer-defaults {
+	@if $option-layer-defaults == on {
+		@layer acss-defaults {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+@mixin if-layer-anchors {
+	@if $option-layer-anchors == on {
+		@layer acss-layer-anchors {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+@mixin if-layer-cards {
+	@if $option-layer-cards == on {
+		@layer acss-layer-cards {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+@mixin if-layer-icons {
+	@if $option-layer-icons == on {
+		@layer acss-layer-icons {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+@mixin if-layer-utilities {
+	@if $option-layer-utilities == on {
+		@layer acss-layer-utilities {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}

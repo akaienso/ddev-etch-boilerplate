@@ -1,0 +1,17 @@
+@mixin auto-grid($column-count: 1, $min: calc((var(--content-width) - ((var(--column-count) - 1) * var(--grid-gap))) / var(--column-count)), $flow: if($auto-grid-flow-option == auto-fill, auto-fill, auto-fit), $internal-use: false) {
+    --min: #{$min} * #{$auto-grid-aggressiveness};
+    --column-count: #{$column-count};
+    --grid-template-columns: repeat(#{$flow}, minmax(var(--min-formula), 1fr));
+	@if $internal-use == false {
+		display: grid !important;
+		grid-template-columns: var(--grid-template-columns);
+		gap: var(--grid-gap);
+		inline-size: 100%;
+		--min-formula: min(100%, max(var(--min), (100% - (var(--column-count) - 1) * var(--grid-gap)) / var(--column-count)));
+			> * {
+				min-width: 0;
+				max-width: 100%;
+				overflow-wrap: break-word;
+			}
+	}
+}

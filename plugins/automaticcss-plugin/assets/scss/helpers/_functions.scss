@@ -1,0 +1,170 @@
+// TURN RAW UNITS INTO REM UNITS
+
+@function to-rem($val) {
+  @return $val * 1rem;
+}
+
+// Exponent Math
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+// Internal function for creating clamps
+@function fluidClamp($min, $max) {
+  $slope: ($max - $min) / ($vp-max - $vp-min);
+  $intercept: ($min - $slope * $vp-min) * 1rem;
+  $slope-vw: $slope * 100;
+  $min-rem: $min * 1rem;
+  $max-rem: $max * 1rem;
+  @return clamp(#{$min-rem}, calc(#{$slope-vw}vw + #{$intercept}), #{$max-rem});
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function fluid($min, $max) {
+  // Convert root font size from percentage to pixels (100% = 16px)
+  $root-px: (strip-unit($root-font-size) / 100) * 16;
+
+  // Convert to unitless values
+  $min-unitless: strip-unit($min);
+  $max-unitless: strip-unit($max);
+  $vp-min-unitless: strip-unit($vp-min);
+  $vp-max-unitless: strip-unit($vp-max);
+
+  $min-rem: $min-unitless / $root-px;
+  $max-rem: $max-unitless / $root-px;
+
+  $slope: ($max-rem - $min-rem) / ($vp-max-unitless - $vp-min-unitless);
+  $intercept: $min-rem - ($slope * $vp-min-unitless);
+  $slope-vw: $slope * 100;
+
+  @return clamp(#{$min-rem}rem, calc(#{$slope-vw}vw + #{$intercept}rem), #{$max-rem}rem);
+}
+
+// Pixel to Rem Auto Converter
+@function ctr($pixel-value) {
+  $raw-root: $root-font-size / 1%;
+  $root: $raw-root / 100 * 16;
+  @return $pixel-value / $root * 1rem;
+}
+
+// NEED TO CREATE A MIXIN TO HANDLE THE LOOP
+
+@function parse-css-string($string) {
+  $map: ();
+  $length: str-length($string);
+  $start: 1;
+  $parsing: true;
+
+  @while $parsing {
+    // Find the next colon
+    $colon: str-index(str-slice($string, $start), ':');
+    @if $colon == null {
+      $parsing: false;
+    } @else {
+      $colon: $colon + $start - 1;
+
+      // Find the next semicolon
+      $semicolon: str-index(str-slice($string, $colon), ';');
+      @if $semicolon == null {
+        $semicolon: $length + 1;
+        $parsing: false;
+      } @else {
+        $semicolon: $semicolon + $colon - 1;
+      }
+
+      // Extract and trim key and value
+      $key: str-slice($string, $start, $colon - 1);
+      $value: str-slice($string, $colon + 1, $semicolon - 1);
+      $key: if(str-slice($key, 1, 1) == ' ', str-slice($key, 2), $key);
+      $value: if(str-slice($value, 1, 1) == ' ', str-slice($value, 2), $value);
+
+      // Add to map
+      $map: map-merge($map, ($key: $value));
+
+      // Move start to next property
+      $start: $semicolon + 1;
+    }
+  }
+
+  @return $map;
+}
+
+// END CSS STRING PARSER
+
+// String trimming function
+@function str-trim($string) {
+  $start: 1;
+  $end: str-length($string);
+
+  // Find first non-space character
+  @while $start <= $end and str-slice($string, $start, $start) == " " {
+    $start: $start + 1;
+  }
+
+  // Find last non-space character
+  @while $end >= $start and str-slice($string, $end, $end) == " " {
+    $end: $end - 1;
+  }
+
+  @return str-slice($string, $start, $end);
+}
+
+// String splitting function
+@function str-split($string, $separator) {
+  $result: ();
+  $start: 1;
+  $length: str-length($string);
+
+  @for $i from 1 through $length {
+    $char: str-slice($string, $i, $i);
+    @if $char == $separator {
+      $part: str-slice($string, $start, $i - 1);
+      $result: append($result, $part);
+      $start: $i + 1;
+    }
+  }
+
+  // Add the last part
+  $last-part: str-slice($string, $start, $length);
+  $result: append($result, $last-part);
+
+  @return $result;
+}
+
+// Helper Function for getting nth values from a map
+@function get-nth-map-values($map, $index, $key: null) {
+	$result: (
+	);
+$target-map: map-get($map, $key);
+
+@if $target-map {
+	@each $key, $value in $target-map {
+		$result: map-merge($result, ($key: nth($value, $index)));
+	}
+}
+
+@else {
+	@each $key, $value in $map {
+		@if type-of($value)=='list' {
+			$result: map-merge($result, ($key: nth($value, $index)));
+		}
+	}
+}
+
+@return $result;
+}

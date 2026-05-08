@@ -1,0 +1,70 @@
+// base Options
+$option-base-clr: on !default;
+
+// OKLCH
+$base-l-oklch: 0.66 !default;
+$base-c-oklch: 0.15 !default;
+$base-h-oklch: 21.57 !default;
+$base-hover-l-oklch: 0.76 !default;
+$base-hover-c-oklch: 0.15 !default;
+$base-hover-h-oklch: 21.57 !default;
+$base-ultra-light-l-oklch: 0.95 !default;
+$base-ultra-light-c-oklch: 0.15 !default;
+$base-ultra-light-h-oklch: 21.57 !default;
+$base-light-l-oklch: 0.85 !default;
+$base-light-c-oklch: 0.15 !default;
+$base-light-h-oklch: 21.57 !default;
+$base-dark-l-oklch: 0.25 !default;
+$base-dark-c-oklch: 0.15 !default;
+$base-dark-h-oklch: 21.57 !default;
+$base-ultra-dark-l-oklch: 0.10 !default;
+$base-ultra-dark-c-oklch: 0.15 !default;
+$base-ultra-dark-h-oklch: 21.57 !default;
+$base-semi-light-l-oklch: 0.60 !default;
+$base-semi-light-c-oklch: 0.15 !default;
+$base-semi-light-h-oklch: 21.57 !default;
+$base-semi-dark-l-oklch: 0.40 !default;
+$base-semi-dark-c-oklch: 0.15 !default;
+$base-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-brand-lightness == on {
+  $base-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$base-l-alt-oklch: null !default;
+$base-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$base-hover-l-alt-oklch: null !default;
+$base-hover-c-alt-oklch: null !default;
+
+// Base Color Map
+$color-base:(); // Initialize Map
+@if $option-base-clr == on {
+  $color-base: (
+    "main": (
+      "base": oklch($base-l-oklch $base-c-oklch $base-h-oklch),
+      "base-hover": oklch($base-hover-l-oklch $base-hover-c-oklch $base-hover-h-oklch),
+      "base-ultra-light": oklch($base-ultra-light-l-oklch $base-ultra-light-c-oklch $base-ultra-light-h-oklch),
+      "base-light": oklch($base-light-l-oklch $base-light-c-oklch $base-light-h-oklch),
+      "base-semi-light": oklch($base-semi-light-l-oklch $base-semi-light-c-oklch $base-semi-light-h-oklch),
+      "base-semi-dark": oklch($base-semi-dark-l-oklch $base-semi-dark-c-oklch $base-semi-dark-h-oklch),
+      "base-dark": oklch($base-dark-l-oklch $base-dark-c-oklch $base-dark-h-oklch),
+      "base-ultra-dark": oklch($base-ultra-dark-l-oklch $base-ultra-dark-c-oklch $base-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "base-alt": oklch(
+        if($base-l-alt-oklch, $base-l-alt-oklch, $base-l-oklch)
+        if($base-c-alt-oklch, $base-c-alt-oklch, $base-c-oklch)
+        $base-h-oklch
+      ),
+      "base-hover-alt": oklch(
+        if($base-hover-l-alt-oklch, $base-hover-l-alt-oklch, $base-hover-l-oklch)
+        if($base-hover-c-alt-oklch, $base-hover-c-alt-oklch, $base-hover-c-oklch)
+        $base-hover-h-oklch
+      ),
+    )
+  );
+}
+

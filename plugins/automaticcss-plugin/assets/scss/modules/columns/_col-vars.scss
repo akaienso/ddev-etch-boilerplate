@@ -1,0 +1,10 @@
+$option-columns: off !default; // 479 Lines
+$option-column-variables: on !default;
+
+$col-width-s: to-rem($vp-max * .1) !default;
+$col-width-m: to-rem($vp-max * .2) !default;
+$col-width-l: to-rem($vp-max * .3) !default;
+
+$col-rule-width-s: .1em !default;
+$col-rule-width-m: .3em !default;
+$col-rule-width-l: .5em !default;

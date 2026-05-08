@@ -1,0 +1,32 @@
+@if $option-is-bg == on {
+	/* Feat: Is Background */
+	:has(> .is-bg) {
+		position: relative;
+		isolation: isolate;
+	}
+	:is(*, img, figure, picture).is-bg {
+		position: var(--bg-position, absolute) !important;
+		inset: var(--bg-inset, 0);
+		inline-size: var(--bg-width, 100%);
+		max-inline-size: 100%;
+		block-size: var(--bg-height, 100%);
+		border-radius: var(--bg-radius, 0);
+		object-fit: var(--bg-object-fit, cover);
+		object-position: var(--bg-object-position, center);
+		z-index: var(--bg-z-index, -2); // Compatibility with overlay classes that use -1
+		border-radius: var(--bg-radius, 0);
+		pointer-events: none;
+
+		> img {
+			object-fit: var(--bg-object-fit, cover);
+			object-position: var(--bg-object-position, center);
+			inline-size: 100%;
+   			 block-size: 100%;
+		}
+
+		// Support in content grid
+		@at-root .content-grid > & {
+			grid-column: full;
+		}
+	}
+}

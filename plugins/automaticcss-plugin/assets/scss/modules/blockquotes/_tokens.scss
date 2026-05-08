@@ -1,0 +1,28 @@
+@import "vars";
+
+@if $option-blockquote-styling == on {
+	/* Feat: Blockquote Variables */
+	:root {
+		@each $prop, $value in $blockquote-main-styles {
+			@if $value != null and $value != "" {
+				--blockquote-#{$prop}: #{$value};
+			}
+		}
+		@each $prop, $value in $blockquote-text-styles {
+			@if $value != null and $value != "" {
+				--blockquote-text-#{$prop}: #{$value};
+			}
+		}
+		@each $prop, $value in $blockquote-footer-styles {
+			@if $value != null and $value != "" {
+				--blockquote-footer-#{$prop}: #{$value};
+			}
+		}
+		@each $prop, $value in $blockquote-cite-styles {
+			@if $value != null and $value != "" {
+				--blockquote-cite-#{$prop}: #{$value};
+			}
+		}
+	}
+}
+

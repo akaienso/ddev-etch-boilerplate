@@ -1,0 +1,45 @@
+@if $option-load-reset == on {
+
+	/* Feat: Reset */
+	// Make keyword properties like auto available for animation.
+	:root {
+		interpolate-size: allow-keywords;
+	}
+
+	// BOX SIZING
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	// BODY
+	body {
+		min-block-size: 100vh;
+	}
+
+	//INHERIT FONTS FOR INPUTS AND BUTTONS
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	@if $option-buttons == on {
+		button:not(nav button, [class*="btn--"]) {
+			line-height: var(--btn-line-height);
+			letter-spacing: var(--btn-letter-spacing);
+			text-transform: var(--btn-text-transform);
+			text-decoration: var(--btn-text-decoration);
+			text-align: var(--btn-text-align);
+			font-weight: var(--btn-font-weight);
+			font-style: var(--btn-font-style);
+			font-family: var(--btn-font-family);
+		}
+	}
+
+	:where(dd) {
+		margin-inline-start: 0;
+	}
+}

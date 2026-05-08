@@ -1,0 +1,39 @@
+@mixin blockquote() {
+	display: flex;
+	flex-direction: column;
+	gap: var(--blockquote-gap);
+	inline-size: 100%;
+	@each $prop, $value in $blockquote-main-styles {
+		@if $value != null and $value != "" {
+			#{$prop}: var(--blockquote-#{$prop});
+		}
+	}
+
+	p {
+		@each $prop, $value in $blockquote-text-styles {
+			@if $value != null and $value != "" {
+				#{$prop}: var(--blockquote-text-#{$prop});
+			}
+		}
+	}
+
+	footer, figcaption {
+		display: var(--blockquote-footer-display, flex);
+		flex-direction: var(--blockquote-footer-flex-direction, row);
+		align-items: var(--blockquote-footer-align-items, center);
+		gap: var(--blockquote-footer-gap, calc(var(--content-gap) / 2));
+		@each $prop, $value in $blockquote-footer-styles {
+			@if $value != null and $value != "" {
+				#{$prop}: var(--blockquote-footer-#{$prop});
+			}
+		}
+	}
+
+	cite, figcaption cite {
+		@each $prop, $value in $blockquote-cite-styles {
+			@if $value != null and $value != "" {
+				#{$prop}: var(--blockquote-cite-#{$prop});
+			}
+		}
+	}
+}

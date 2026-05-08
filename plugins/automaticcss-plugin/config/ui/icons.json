@@ -1,0 +1,433 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "icons",
+	"title": "Icons",
+	"type": "screen-container",
+	"iconPaths": [
+		"M1 16.0625C1 16.5301 1.37617 16.9062 1.84375 16.9062H3.94258C4.30117 18.0488 5.36641 18.875 6.625 18.875C7.88359 18.875 8.94883 18.0488 9.30742 16.9062H18.1562C18.6238 16.9062 19 16.5301 19 16.0625C19 15.5949 18.6238 15.2188 18.1562 15.2188H9.30742C8.94883 14.0762 7.88359 13.25 6.625 13.25C5.36641 13.25 4.30117 14.0762 3.94258 15.2188H1.84375C1.37617 15.2188 1 15.5949 1 16.0625ZM5.5 16.0625C5.5 15.7641 5.61853 15.478 5.82951 15.267C6.04048 15.056 6.32663 14.9375 6.625 14.9375C6.92337 14.9375 7.20952 15.056 7.42049 15.267C7.63147 15.478 7.75 15.7641 7.75 16.0625C7.75 16.3609 7.63147 16.647 7.42049 16.858C7.20952 17.069 6.92337 17.1875 6.625 17.1875C6.32663 17.1875 6.04048 17.069 5.82951 16.858C5.61853 16.647 5.5 16.3609 5.5 16.0625ZM12.25 10.4375C12.25 10.1391 12.3685 9.85298 12.5795 9.64201C12.7905 9.43103 13.0766 9.3125 13.375 9.3125C13.6734 9.3125 13.9595 9.43103 14.1705 9.64201C14.3815 9.85298 14.5 10.1391 14.5 10.4375C14.5 10.7359 14.3815 11.022 14.1705 11.233C13.9595 11.444 13.6734 11.5625 13.375 11.5625C13.0766 11.5625 12.7905 11.444 12.5795 11.233C12.3685 11.022 12.25 10.7359 12.25 10.4375ZM13.375 7.625C12.1164 7.625 11.0512 8.45117 10.6926 9.59375H1.84375C1.37617 9.59375 1 9.96992 1 10.4375C1 10.9051 1.37617 11.2812 1.84375 11.2812H10.6926C11.0512 12.4238 12.1164 13.25 13.375 13.25C14.6336 13.25 15.6988 12.4238 16.0574 11.2812H18.1562C18.6238 11.2812 19 10.9051 19 10.4375C19 9.96992 18.6238 9.59375 18.1562 9.59375H16.0574C15.6988 8.45117 14.6336 7.625 13.375 7.625ZM7.75 5.9375C7.45163 5.9375 7.16548 5.81897 6.95451 5.608C6.74353 5.39702 6.625 5.11087 6.625 4.8125C6.625 4.51413 6.74353 4.22798 6.95451 4.017C7.16548 3.80603 7.45163 3.6875 7.75 3.6875C8.04837 3.6875 8.33452 3.80603 8.54549 4.017C8.75647 4.22798 8.875 4.51413 8.875 4.8125C8.875 5.11087 8.75647 5.39702 8.54549 5.608C8.33452 5.81897 8.04837 5.9375 7.75 5.9375ZM10.4324 3.96875C10.0738 2.82617 9.00859 2 7.75 2C6.49141 2 5.42617 2.82617 5.06758 3.96875H1.84375C1.37617 3.96875 1 4.34492 1 4.8125C1 5.28008 1.37617 5.65625 1.84375 5.65625H5.06758C5.42617 6.79883 6.49141 7.625 7.75 7.625C9.00859 7.625 10.0738 6.79883 10.4324 5.65625H18.1562C18.6238 5.65625 19 5.28008 19 4.8125C19 4.34492 18.6238 3.96875 18.1562 3.96875H10.4324Z"
+	],
+	"content": [
+		{
+			"id": "icons-message",
+			"type": "section-container",
+			"title": "Icon Framework",
+			"content": [
+				{
+					"id": "icons-intro-message",
+					"type": "message",
+					"text": "ACSS can handle your icon styling. Enable the icon framework and starting using '[data-icon]' and other icon utilities to easily style any icon on your site."
+				}
+			]
+		},
+		{
+			"id": "option-icons",
+			"title": "Icon Framework",
+			"type": "toggle",
+			"default": "on",
+			"style": "primary",
+			"tooltip": "Activate the Icon Framework for styling icons.",
+			"documentation": "https://automaticcss.com/docs/icon-framework/"
+		},
+		{
+			"id": "default-icon-scheme",
+			"type": "section-container",
+			"title": "Default Style Options",
+			"displayWhen": ["option-icons", "on"],
+			"content": [
+				{
+					"id": "icon-default-message",
+					"type": "message",
+					"text": "Set the default style for your site's icons. You can choose to inherit the color scheme (from the site or parent container), or force all cards to be light or dark."
+				},
+				{
+					"id": "icon-default-scheme",
+					"title": "Default Icon Scheme",
+					"type": "select",
+					"default": "inherit",
+					"options": ["inherit", "dark", "light"],
+					"tooltip": "Default icon theme. Light background typically calls for dark icon theme and vice versa.",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				},
+				{
+					"id": "icon-default-style",
+					"title": "Default Icon Style",
+					"type": "select",
+					"default": "plain",
+					"options": ["plain", "boxed"],
+					"tooltip": "Choose the default icon style.",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				}
+			]
+		},
+		{
+			"id": "icon-styling-options",
+			"title": "Icon Styling Options",
+			"type": "section-container",
+			"displayWhen": ["option-icons", "on"],
+			"content": [
+				{
+					"id": "icon-color",
+					"title": "Icon Color",
+					"type": "accordion-container",
+					"displayWhen": ["option-icons", "on"],
+					"content": [
+					{
+						"id": "icon-color-container",
+						"type": "hover-container",
+						"content": [
+							{
+								"id": "icon-color",
+								"title": "Icon Color",
+								"type": "text",
+								"default": "var(--text-dark-muted)",
+								"cssVariable": "--icon-color",
+								"tooltip": "Default icon color.",
+								"documentation": "https://automaticcss.com/docs/icon-framework/"
+							},
+							{
+								"id": "icon-color-hover",
+								"title": "Icon Color",
+								"type": "text",
+								"default": "var(--primary)",
+								"cssVariable": "--icon-color-hover",
+								"tooltip": "Icon color on hover.",
+								"documentation": "https://automaticcss.com/docs/icon-framework/"
+							}
+						]
+					}
+					]
+				},
+				{
+					"id": "icon-styling",
+					"title": "Boxed Icon Styling",
+					"type": "accordion-container",
+					"displayWhen": [
+						["option-icons", "on"]
+					],
+					"content": [
+						{
+							"id": "icon-styling-message",
+							"type": "message",
+							"text": "These settings only impact icons using the boxed style."
+						},
+						{
+							"id": "icon-padding",
+							"title": "Icon Padding",
+							"type": "text",
+							"default": ".15em",
+							"cssVariable": "--icon-padding",
+							"tooltip": "Default padding for boxed icon style.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-background-container",
+							"type": "hover-container",
+							"content": [
+								{
+									"id": "icon-background",
+									"title": "Icon Background",
+									"type": "text",
+									"default": "var(--neutral-ultra-light)",
+									"cssVariable": "--icon-background",
+									"tooltip": "Default background color for boxed icon style.",
+									"documentation": "https://automaticcss.com/docs/icon-framework/"
+								},
+								{
+									"id": "icon-background-hover",
+									"title": "Icon Background",
+									"type": "text",
+									"default": "--neutral-light",
+									"cssVariable": "--icon-background-hover",
+									"tooltip": "Background color for boxed icon style on hover.",
+									"documentation": "https://automaticcss.com/docs/icon-framework/"
+								}
+							]
+						},
+						{
+							"id": "icon-border-width",
+							"title": "Icon Border Width",
+							"type": "text",
+							"default": "var(--border-width)",
+							"tooltip": "Default border width for boxed icon style.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-border-style",
+							"title": "Icon Border Style",
+							"type": "text",
+							"default": "var(--border-style)",
+							"tooltip": "Default border style for boxed icon style.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-border-color-container",
+							"type": "hover-container",
+							"content": [
+								{
+									"id": "icon-border-color",
+									"title": "Icon Border Color",
+									"type": "text",
+									"default": "var(--border-color-dark)",
+									"cssVariable": "--icon-border-color",
+									"tooltip": "Default border color for boxed icon style.",
+									"documentation": "https://automaticcss.com/docs/icon-framework/"
+								},
+								{
+									"id": "icon-border-color-hover",
+									"title": "Icon Border Color",
+									"type": "text",
+									"default": "inherit",
+									"cssVariable": "--icon-border-color-hover",
+									"tooltip": "Border color for boxed icon style on hover.",
+									"documentation": "https://automaticcss.com/docs/icon-framework/"
+								}
+							]
+						},
+						{
+							"id": "icon-radius",
+							"title": "Icon Radius",
+							"type": "text",
+							"default": "var(--radius)",
+							"tooltip": "Default radius for boxed icon style.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "icon-sizes",
+			"title": "Icon Sizes",
+			"type": "accordion-container",
+			"displayWhen": ["option-icons", "on"],
+			"content": [
+				{
+					"id": "icon-sizes-message",
+					"type": "message",
+					"text": "Set the size and padding for your available icon sizes."
+				},
+				{
+					"id": "icon-size-xs-container",
+					"title": "Extra Small Icons",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "icon-size-xs",
+							"title": "Icon Size (XS)",
+							"type": "text",
+							"default": "12px",
+							"placeholder": "Small icon size.",
+							"cssVariable": "--icon-size-xs",
+							"tooltip": "Size of icons using XS utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-padding-xs",
+							"title": "Icon Padding (XS)",
+							"type": "text",
+							"default": "var(--icon-padding)",
+
+							"cssVariable": "--icon-padding-xs",
+							"tooltip": "Padding for icons using XS utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				},
+				{
+					"id": "icon-size-s-container",
+					"title": "Small Icons",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "icon-size-s",
+							"title": "Icon Size (S)",
+							"type": "text",
+							"default": "16px",
+							"cssVariable": "--icon-size-s",
+							"tooltip": "Size of icons using S utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-padding-s",
+							"title": "Icon Padding (S)",
+							"type": "text",
+							"default": "var(--icon-padding)",
+							"cssVariable": "--icon-padding-s",
+
+							"tooltip": "Padding for icons using S utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				},
+				{
+					"id": "icon-size-m-container",
+					"title": "Medium Icons",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "icon-size-m",
+							"title": "Icon Size (M)",
+							"type": "text",
+							"default": "32px",
+							"cssVariable": "--icon-size-m",
+							"tooltip": "Default icon size.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-padding-m",
+							"title": "Icon Padding (M)",
+							"type": "text",
+							"default": "var(--icon-padding)",
+							"cssVariable": "--icon-padding-m",
+
+							"tooltip": "Default icon padding.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				},
+				{
+					"id": "icon-size-l-container",
+					"title": "Large Icons",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "icon-size-l",
+							"title": "Icon Size (L)",
+							"type": "text",
+							"default": "64px",
+							"cssVariable": "--icon-size-l",
+							"tooltip": "Size of icons using L utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-padding-l",
+							"title": "Icon Padding (L)",
+							"type": "text",
+							"default": "var(--icon-padding)",
+							"cssVariable": "--icon-padding-l",
+
+							"tooltip": "Padding for icons using L utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				},
+				{
+					"id": "icon-size-xl-container",
+					"title": "Extra Large Icons",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "icon-size-xl",
+							"title": "Icon Size (XL)",
+							"type": "text",
+							"default": "128px",
+							"cssVariable": "--icon-size-xl",
+							"tooltip": "Size of icons using XL utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-padding-xl",
+							"title": "Icon Padding (XL)",
+							"type": "text",
+							"default": "var(--icon-padding)",
+							"cssVariable": "--icon-padding-xl",
+
+							"tooltip": "Padding for icons using XL utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				},
+				{
+					"id": "icon-size-2xl-container",
+					"title": "Extra-Extra Large Icons",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "icon-size-2xl",
+							"title": "Icon Size (2XL)",
+							"type": "text",
+							"default": "256px",
+							"cssVariable": "--icon-size-2xl",
+							"tooltip": "Size of icons using 2XL utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						},
+						{
+							"id": "icon-padding-2xl",
+							"title": "Icon Padding (2XL)",
+							"type": "text",
+							"default": "var(--icon-padding)",
+							"cssVariable": "--icon-padding-2xl",
+
+							"tooltip": "Padding for icons using 2XL utilities.",
+							"documentation": "https://automaticcss.com/docs/icon-framework/"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "icon-lists",
+			"title": "Icon Lists",
+			"type": "accordion-container",
+			"displayWhen": ["option-icons", "on"],
+			"content": [
+				{
+					"id": "option-boxed-list-icons",
+					"title": "Boxed List Icons",
+					"type": "toggle",
+					"default": "off",
+					"tooltip": "Use boxed styling for list icons?",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				},
+				{
+					"id": "icon-list-icon-size",
+					"title": "Icon Size",
+					"type": "text",
+					"default": "1em",
+					"tooltip": "What size should icons in lists be? This is output as var(--icon-list-icon-size).",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				},
+				{
+					"id": "icon-list-gap",
+					"title": "List Gap",
+					"type": "text",
+					"default": "1em",
+					"tooltip": "The gap between list items.",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				},
+				{
+					"id": "icon-inline-offset",
+					"title": "Inline Offset",
+					"type": "text",
+					"default": "",
+					"tooltip": "If your icons aren't perfectly aligned with your list item text, you can use this value to nudge it left or right.",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				},
+				{
+					"id": "icon-block-offset",
+					"title": "Block Offset",
+					"type": "text",
+					"default": "",
+					"tooltip": "If your icons aren't perfectly aligned with your list item text, you can use this value to nudge it up or down.",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				}
+			]
+		},
+		{
+			"id": "icon-options",
+			"title": "Icon Framework Options",
+			"type": "accordion-container",
+			"displayWhen": ["option-icons", "on"],
+			"content": [
+				{
+					"id": "icon-data-attribute",
+					"title": "Icon Data Attribute",
+					"type": "text",
+					"default": "data-icon",
+					"tooltip": "Define the data attribute ACSS will use to target your icons. 'Data' is a required prefix according to W3C spec.",
+					"documentation": "https://automaticcss.com/docs/icon-framework/"
+				}
+			]
+		}
+	]
+}

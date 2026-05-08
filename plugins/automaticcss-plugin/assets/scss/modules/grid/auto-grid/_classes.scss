@@ -1,0 +1,93 @@
+/// CLASSES ARE DEPRECATED IN 4.0 -- USE VARIABLES / RECIPES INSTEAD
+
+@if $option-auto-grid == on {
+    /* Feat: Auto Grid */
+    [class*="grid--auto"]:where(:not([class*="rows"])) {
+		display: grid !important;
+		grid-template-columns: var(--grid-template-columns);
+		gap: var(--grid-gap);
+		inline-size: 100%;
+		// Variables for utility classes
+		@if $auto-grid-flow-option == auto-fill {
+			--grid-template-columns-any: var(--grid-template-columns-fill);
+		} @else {
+			--grid-template-columns-any: var(--grid-template-columns-fit);
+		}
+		--min-formula: min(100%, max(var(--min), (100% - (var(--column-count) - 1) * var(--grid-gap)) / var(--column-count)));
+		--grid-template-columns-fit: repeat(auto-fit, minmax(var(--min-formula), 1fr));
+		--grid-template-columns-fill: repeat(auto-fill, minmax(var(--min-formula), 1fr));
+		> * {
+			min-width: 0;
+			max-width: 100%;
+			overflow-wrap: break-word;
+		}
+    }
+
+    // Support for auto grid with auto-grid-rows requires
+    // listing every auto-grid class specifically
+
+    $auto-grid-classes: null; // Initialize empty list
+    @each $grid, $col-count in $auto-grids {
+        $auto-grid-classes: append($auto-grid-classes, ".grid--#{$grid} ", comma);
+    }
+
+    :is(#{$auto-grid-classes}):where(.grid--auto-rows) {
+        @include auto-grid;
+    }
+
+    // Generate Auto Grid Classes
+    @each $grid, $col-count in $auto-grids {
+        .grid--#{$grid} {
+            @include auto-grid($col-count, $internal-use: true);
+        }
+    }
+
+    // Generate Staggered Auto Grids
+    @each $grid, $col-count in $auto-staggered-grids {
+        .grid--#{$grid} {
+			@include auto-grid;
+            grid-template-columns: #{$col-count};
+        }
+    }
+    // Stack auto grids at breakpoint
+    @media (max-width: $auto-staggered-grid-breakpoint) {
+        @each $grid, $col-count in $auto-staggered-grids {
+            .grid--#{$grid} {
+				@include auto-grid;
+                --column-count: 1;
+            }
+        }
+    }
+	// Classes for changing auto-flow type on the fly
+	.grid--auto-fill {
+		--grid-template-columns: var(--grid-template-columns-fill);
+	}
+	.grid--auto-fit {
+		--grid-template-columns: var(--grid-template-columns-fit);
+	}
+	.grid--stack-any {
+		--grid-template-columns: var(--grid-template-columns-any);
+
+		&.grid--auto-fill {
+			--grid-template-columns: var(--grid-template-columns-fill);
+		}
+		&.grid--auto-fit {
+			--grid-template-columns: var(--grid-template-columns-fit);
+		}
+	}
+
+	// Responsive stack-any classes
+	@each $breakpoint, $value in $breakpoints {
+		@include breakpoint($breakpoint) {
+			.grid--stack-any-#{$breakpoint} {
+				--grid-template-columns: var(--grid-template-columns-any);
+				&.grid--auto-fill {
+					--grid-template-columns: var(--grid-template-columns-any-fill);
+				}
+				&.grid--auto-fit {
+					--grid-template-columns: var(--grid-template-columns-any-fit);
+				}
+			}
+		}
+	}
+}

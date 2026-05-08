@@ -1,0 +1,53 @@
+$spacing: (
+  xs: fluidClamp($space-xs-min, $space-xs-max),
+  s: fluidClamp($space-s-min,  $space-s-max),
+  s-to-xs: fluidClamp($space-xs-min, $space-s-max),
+  m: fluidClamp($space-m-min,  $space-m-max),
+  m-to-s: fluidClamp($space-s-min,  $space-m-max),
+  m-to-xs: fluidClamp($space-xs-min, $space-m-max),
+  l: fluidClamp($space-l-min,  $space-l-max),
+  l-to-m: fluidClamp($space-m-min,  $space-l-max),
+  l-to-s: fluidClamp($space-s-min,  $space-l-max),
+  l-to-xs: fluidClamp($space-xs-min, $space-l-max),
+  xl: fluidClamp($space-xl-min, $space-xl-max),
+  xl-to-l: fluidClamp($space-l-min,  $space-xl-max),
+  xl-to-m: fluidClamp($space-m-min,  $space-xl-max),
+  xl-to-s: fluidClamp($space-s-min,  $space-xl-max),
+  xl-to-xs: fluidClamp($space-xs-min, $space-xl-max),
+  xxl: fluidClamp($space-xxl-min, $space-xxl-max),
+  xxl-to-xl: fluidClamp($space-xl-min, $space-xxl-max),
+  xxl-to-l: fluidClamp($space-l-min,  $space-xxl-max),
+  xxl-to-m: fluidClamp($space-m-min,  $space-xxl-max),
+  xxl-to-s: fluidClamp($space-s-min,  $space-xxl-max),
+  xxl-to-xs: fluidClamp($space-xs-min, $space-xxl-max)
+);
+
+$sectionSpacing: (
+  xs: fluidClamp($section-xs-min, $section-xs-max),
+  s: fluidClamp($section-s-min, $section-s-max),
+  s-to-xs: fluidClamp($section-xs-min, $section-s-max),
+  m: fluidClamp($section-m-min, $section-m-max),
+  m-to-s: fluidClamp($section-s-min, $section-m-max),
+  m-to-xs: fluidClamp($section-xs-min, $section-m-max),
+  l: fluidClamp($section-l-min, $section-l-max),
+  l-to-m: fluidClamp($section-m-min, $section-l-max),
+  l-to-s: fluidClamp($section-s-min, $section-l-max),
+  l-to-xs: fluidClamp($section-xs-min, $section-l-max),
+  xl: fluidClamp($section-xl-min, $section-xl-max),
+  xl-to-l: fluidClamp($section-l-min, $section-xl-max),
+  xl-to-m: fluidClamp($section-m-min, $section-xl-max),
+  xl-to-s: fluidClamp($section-s-min, $section-xl-max),
+  xl-to-xs: fluidClamp($section-xs-min, $section-xl-max),
+  xxl: fluidClamp($section-xxl-min, $section-xxl-max),
+  xxl-to-xl: fluidClamp($section-xl-min, $section-xxl-max),
+  xxl-to-l: fluidClamp($section-l-min, $section-xxl-max),
+  xxl-to-m: fluidClamp($section-m-min, $section-xxl-max),
+  xxl-to-s: fluidClamp($section-s-min, $section-xxl-max),
+  xxl-to-xs: fluidClamp($section-xs-min, $section-xxl-max)
+);
+
+$contextual-spacing: (
+  "content-gap": $contextual-content-gap,
+  "container-gap": $contextual-container-gap,
+  "grid-gap": $contextual-grid-gap,
+);

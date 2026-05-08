@@ -1,0 +1,41 @@
+// ==========================================================================
+// Hover Effect Variables
+// ==========================================================================
+
+// Transform Effects Options
+$option-hover-grow: off !default;
+$option-hover-shrink: off !default;
+$option-hover-float: off !default;
+$option-hover-sink: off !default;
+$option-hover-slide-right: off !default;
+$option-hover-slide-left: off !default;
+
+// Shadow Effects Options
+$option-hover-shadow: off !default;
+$option-hover-glow: off !default;
+
+// Filter Effects Options
+$option-hover-brighten: off !default;
+
+// Opacity Effects Options
+$option-hover-fade: off !default;
+
+// --------------------------------------------------------------------------
+// Hover Effect Settings
+// --------------------------------------------------------------------------
+$hover-duration: var(--transition-duration, 0.3s) !default;
+$hover-timing: var(--transition-timing, ease-in-out) !default;
+
+// Transform Effects
+$hover-grow-amount: 1.1 !default;
+$hover-shrink-amount: 0.9 !default;
+$hover-float-amount: -8px !default;
+$hover-sink-amount: 8px !default;
+$hover-slide-right-amount: 8px !default;
+$hover-slide-left-amount: -8px !default;
+
+// Shadow Effects
+$hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !default;
+$hover-glow-color: var(--primary) !default;
+$hover-glow-spread: 20px !default;
+$hover-glow-opacity: 0.3 !default;

@@ -1,0 +1,4 @@
+$section-selector: ":where(section:not(section section))" !default;
+$section-padding-block: var(--section-space-m) !default;
+$option-load-default-section-styles: on !default;
+$option-section-padding: on !default;

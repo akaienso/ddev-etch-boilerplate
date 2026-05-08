@@ -1,0 +1,22 @@
+// Marker Colors
+@if $option-lists-markers == on {
+	/* Feat: Lists & Markers */
+
+	[class*="marker--"] {
+		li::marker {
+			color: var(--marker-color, var(--primary));
+		}
+	}
+
+	ul.list--none,
+  ol.list--none,
+  .list--none > ul,
+  .list--none > ol {
+    list-style: none;
+    padding-inline-start: 0;
+    list-style-type: none;
+    -webkit-margin-before: 0em;
+    margin-block-start: 0em;
+    margin-block-end: 0;
+  }
+}

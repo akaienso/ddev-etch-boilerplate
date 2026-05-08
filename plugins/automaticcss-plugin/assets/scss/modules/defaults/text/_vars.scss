@@ -1,0 +1,58 @@
+$text-font-family: null !default;
+$accent-font-family: null !default;
+$body-color: var(--black) !default;
+$text-wrap: pretty !default;
+
+// Default Line Height
+$base-text-lh: 1.5 !default; // User configurable
+$text-xxl-line-height: null !default;
+$text-xl-line-height: null !default;
+$text-l-line-height: null !default;
+$text-m-line-height: $base-text-lh; // Not user configurable
+$text-s-line-height: null !default;
+$text-xs-line-height: null !default;
+
+// Default Line Max-width
+$text-max-width: null !default;
+$text-xxl-max-width: 20ch !default;
+$text-xl-max-width: null !default;
+$text-l-max-width: null !default;
+$text-m-max-width: 100px !default;
+$text-s-max-width: null !default;
+$text-xs-max-width: null !default;
+
+// Default Font-weight
+$text-font-weight: null !default;
+$text-xs-font-weight: null !default;
+$text-s-font-weight: null !default;
+$text-m-font-weight: null !default;
+$text-l-font-weight: null !default;
+$text-xl-font-weight: null !default;
+$text-xxl-font-weight: null !default;
+
+// Default Letter Spacing
+$text-letter-spacing: null !default;
+$text-xs-letter-spacing: null !default;
+$text-s-letter-spacing: null !default;
+$text-m-letter-spacing: null !default;
+$text-l-letter-spacing: null !default;
+$text-xl-letter-spacing: null !default;
+$text-xxl-letter-spacing: null !default;
+
+// Default Font Style
+$text-font-style: null !default;
+$text-xs-font-style: null !default;
+$text-s-font-style: null !default;
+$text-m-font-style: null !default;
+$text-l-font-style: null !default;
+$text-xl-font-style: null !default;
+$text-xxl-font-style: null !default;
+
+// Default Text-transform
+$text-transform: null !default;
+$text-xxl-text-transform: null !default;
+$text-xl-text-transform: null !default;
+$text-l-text-transform: null !default;
+$text-m-text-transform: null !default;
+$text-s-text-transform: null !default;
+$text-xs-text-transform: null !default;

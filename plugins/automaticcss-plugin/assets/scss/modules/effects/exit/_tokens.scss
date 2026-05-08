@@ -1,0 +1,21 @@
+@import "vars";
+
+// ==========================================================================
+// Exit Animation Tokens
+// ==========================================================================
+
+// Shared exit animation variables (output when any exit animation is enabled)
+@if $option-exit-fade == on or $option-exit-float == on or $option-exit-sink == on or $option-exit-slide == on or $option-exit-grow == on or $option-exit-shrink == on or $option-exit-blur == on {
+	:root {
+		--exit-range-start: #{$exit-range-start};
+		--exit-range-end: #{$exit-range-end};
+		--exit-opacity-target: #{$exit-opacity-target};
+		--exit-float-distance: #{$exit-float-distance};
+		--exit-sink-distance: #{$exit-sink-distance};
+		--exit-slide-distance: #{$exit-slide-distance};
+		--exit-scale-amount: #{$exit-scale-amount};
+		--exit-scale-grow: #{$exit-scale-grow};
+		--exit-blur-amount: #{$exit-blur-amount};
+		--exit-stagger-interval: #{$exit-stagger-interval};
+	}
+}

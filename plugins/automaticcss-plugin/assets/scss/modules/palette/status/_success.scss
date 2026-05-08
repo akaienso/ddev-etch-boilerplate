@@ -1,0 +1,71 @@
+// success Options
+$option-success-clr: on !default;
+
+// OKLCH
+$success-l-oklch: 0.66 !default;
+$success-c-oklch: 0.15 !default;
+$success-h-oklch: 21.57 !default;
+$success-hover-l-oklch: 0.76 !default;
+$success-hover-c-oklch: 0.15 !default;
+$success-hover-h-oklch: 21.57 !default;
+$success-ultra-light-l-oklch: 0.95 !default;
+$success-ultra-light-c-oklch: 0.15 !default;
+$success-ultra-light-h-oklch: 21.57 !default;
+$success-light-l-oklch: 0.85 !default;
+$success-light-c-oklch: 0.15 !default;
+$success-light-h-oklch: 21.57 !default;
+$success-dark-l-oklch: 0.25 !default;
+$success-dark-c-oklch: 0.15 !default;
+$success-dark-h-oklch: 21.57 !default;
+$success-ultra-dark-l-oklch: 0.10 !default;
+$success-ultra-dark-c-oklch: 0.15 !default;
+$success-ultra-dark-h-oklch: 21.57 !default;
+$success-semi-light-l-oklch: 0.60 !default;
+$success-semi-light-c-oklch: 0.15 !default;
+$success-semi-light-h-oklch: 21.57 !default;
+$success-semi-dark-l-oklch: 0.40 !default;
+$success-semi-dark-c-oklch: 0.15 !default;
+$success-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-status-lightness == on {
+  $success-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$success-l-alt-oklch: null !default;
+$success-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$success-hover-l-alt-oklch: null !default;
+$success-hover-c-alt-oklch: null !default;
+
+// Success Color Map
+$color-success:(); // Initialize Map
+@if $option-success-clr == on {
+  $color-success: (
+    "main": (
+      "success": oklch($success-l-oklch $success-c-oklch $success-h-oklch),
+      "success-hover": oklch($success-hover-l-oklch $success-hover-c-oklch $success-hover-h-oklch),
+      "success-ultra-light": oklch($success-ultra-light-l-oklch $success-ultra-light-c-oklch $success-ultra-light-h-oklch),
+      "success-light": oklch($success-light-l-oklch $success-light-c-oklch $success-light-h-oklch),
+      "success-semi-light": oklch($success-semi-light-l-oklch $success-semi-light-c-oklch $success-semi-light-h-oklch),
+      "success-semi-dark": oklch($success-semi-dark-l-oklch $success-semi-dark-c-oklch $success-semi-dark-h-oklch),
+      "success-dark": oklch($success-dark-l-oklch $success-dark-c-oklch $success-dark-h-oklch),
+      "success-ultra-dark": oklch($success-ultra-dark-l-oklch $success-ultra-dark-c-oklch $success-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "success-alt": oklch(
+        if($success-l-alt-oklch, $success-l-alt-oklch, $success-l-oklch)
+        if($success-c-alt-oklch, $success-c-alt-oklch, $success-c-oklch)
+        $success-h-oklch
+      ),
+      "success-hover-alt": oklch(
+        if($success-hover-l-alt-oklch, $success-hover-l-alt-oklch, $success-hover-l-oklch)
+        if($success-hover-c-alt-oklch, $success-hover-c-alt-oklch, $success-hover-c-oklch)
+        $success-hover-h-oklch
+      ),
+    ),
+  );
+
+}
+

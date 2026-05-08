@@ -1,0 +1,13 @@
+@if $option-text-size-classes == on {
+  @each $size, $style-list in $headingGlobalStyles {
+    // Generate heading classes
+    .#{$size}{
+      font-size: var(--#{$size});
+      @each $prop, $value in $style-list {
+        @if $value != null {
+          #{$prop}: var(--#{$size}-#{$prop});
+      }
+    }
+    }
+  }
+} // End option check

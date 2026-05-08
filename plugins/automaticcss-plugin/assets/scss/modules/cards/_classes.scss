@@ -1,0 +1,11 @@
+@if $option-cards == on and $card-selectors != null and $card-selectors != "" {
+	#{$card-selectors} {
+		@include card;
+		&:where([class*="--light"]) {
+			color-scheme: light;
+		}
+		&:where([class*="--dark"]) {
+			color-scheme: dark;
+		}
+	}
+}

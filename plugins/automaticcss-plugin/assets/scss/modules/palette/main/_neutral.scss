@@ -1,0 +1,66 @@
+// neutral Options
+$option-neutral-clr: on !default;
+
+// OKLCH
+$neutral-l-oklch: 66% !default;
+$neutral-c-oklch: 0.15 !default;
+$neutral-h-oklch: 21.57 !default;
+$neutral-hover-l-oklch: 76% !default;
+$neutral-hover-c-oklch: 0.15 !default;
+$neutral-hover-h-oklch: 21.57 !default;
+$neutral-ultra-light-l-oklch: 95% !default;
+$neutral-ultra-light-c-oklch: 0.15 !default;
+$neutral-ultra-light-h-oklch: 21.57 !default;
+$neutral-light-l-oklch: 85% !default;
+$neutral-light-c-oklch: 0.15 !default;
+$neutral-light-h-oklch: 21.57 !default;
+$neutral-dark-l-oklch: 25% !default;
+$neutral-dark-c-oklch: 0.15 !default;
+$neutral-dark-h-oklch: 21.57 !default;
+$neutral-ultra-dark-l-oklch: 10% !default;
+$neutral-ultra-dark-c-oklch: 0.15 !default;
+$neutral-ultra-dark-h-oklch: 21.57 !default;
+$neutral-semi-light-l-oklch: 60% !default;
+$neutral-semi-light-c-oklch: 0.15 !default;
+$neutral-semi-light-h-oklch: 21.57 !default;
+$neutral-semi-dark-l-oklch: 40% !default;
+$neutral-semi-dark-c-oklch: 0.15 !default;
+$neutral-semi-dark-h-oklch: 21.57 !default;
+
+// Custom Scheme Controls for Main Color
+$neutral-l-alt-oklch: null !default;
+$neutral-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$neutral-hover-l-alt-oklch: null !default;
+$neutral-hover-c-alt-oklch: null !default;
+
+// Neutral Color Map
+$color-neutral:(); // Initialize Map
+@if $option-neutral-clr == on {
+  $color-neutral: (
+    "main": (
+      "neutral": oklch($neutral-l-oklch $neutral-c-oklch $neutral-h-oklch),
+      "neutral-hover": oklch($neutral-hover-l-oklch $neutral-hover-c-oklch $neutral-hover-h-oklch),
+      "neutral-ultra-light": oklch($neutral-ultra-light-l-oklch $neutral-ultra-light-c-oklch $neutral-ultra-light-h-oklch),
+      "neutral-light": oklch($neutral-light-l-oklch $neutral-light-c-oklch $neutral-light-h-oklch),
+      "neutral-semi-light": oklch($neutral-semi-light-l-oklch $neutral-semi-light-c-oklch $neutral-semi-light-h-oklch),
+      "neutral-semi-dark": oklch($neutral-semi-dark-l-oklch $neutral-semi-dark-c-oklch $neutral-semi-dark-h-oklch),
+      "neutral-dark": oklch($neutral-dark-l-oklch $neutral-dark-c-oklch $neutral-dark-h-oklch),
+      "neutral-ultra-dark": oklch($neutral-ultra-dark-l-oklch $neutral-ultra-dark-c-oklch $neutral-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "neutral-alt": oklch(
+        if($neutral-l-alt-oklch, $neutral-l-alt-oklch, $neutral-l-oklch)
+        if($neutral-c-alt-oklch, $neutral-c-alt-oklch, $neutral-c-oklch)
+        $neutral-h-oklch
+      ),
+      "neutral-hover-alt": oklch(
+        if($neutral-hover-l-alt-oklch, $neutral-hover-l-alt-oklch, $neutral-hover-l-oklch)
+        if($neutral-hover-c-alt-oklch, $neutral-hover-c-alt-oklch, $neutral-hover-c-oklch)
+        $neutral-hover-h-oklch
+      ),
+    )
+  );
+}
+

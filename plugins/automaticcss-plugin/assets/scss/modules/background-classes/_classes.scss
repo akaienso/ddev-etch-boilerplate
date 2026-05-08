@@ -1,0 +1,16 @@
+// Background utilities
+@if $option-background-classes == on {
+  @each $utility, $value in $all-colors {
+    .bg--#{$utility} {
+      background-color: var(--#{$utility} );
+    }
+  }
+	// Status Background Utilities
+	@if $option-status-color-classes == on {
+		@each $utility, $value in $all-status-colors {
+			.bg--#{$utility} {
+				background-color: var(--#{$utility});
+			}
+		}
+	}
+} // End feature option check

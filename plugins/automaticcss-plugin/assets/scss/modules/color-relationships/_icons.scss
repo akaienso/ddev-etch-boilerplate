@@ -1,0 +1,9 @@
+@if $option-relate-bg-text == on {
+	@each $color, $value in $contextual-icon-relationships {
+		@if $value != null and $value != '' {
+			.bg--#{$color} {
+				--icon-scheme: var(--bg-#{$color}-icon);
+			}
+		}
+	}
+}

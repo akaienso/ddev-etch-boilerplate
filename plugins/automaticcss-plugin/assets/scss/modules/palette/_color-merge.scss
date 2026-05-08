@@ -1,0 +1,107 @@
+// Lightness Defaults
+$default-hover: 85%;
+$default-ultra-light: 97%;
+$default-light: 85%;
+$default-semi-light: 60%;
+$default-semi-dark: 40%;
+$default-dark: 25%;
+$default-ultra-dark: 5%;
+
+@import "vars";
+
+// Import Main Colors
+@import "main/primary";
+@import "main/secondary";
+@import "main/tertiary";
+@import "main/accent";
+@import "main/base";
+@import "main/neutral";
+@import "main/bw";
+
+// Import Status Colors
+@import "status/danger";
+@import "status/warning";
+@import "status/info";
+@import "status/success";
+
+
+/// Generate Main Colors List
+$color-maps: $color-primary, $color-secondary, $color-tertiary, $color-accent, $color-base, $color-neutral, $color-bw;
+
+/// Generate Status Colors List
+$status-color-maps: $color-danger, $color-warning, $color-info, $color-success;
+
+/// Generate a core colors map (main colors & shades, no transparencies or partials)
+/// For generating utilities that don't need partials or transparencies
+
+// Main Colors (No Shades)
+
+$main-colors:(); // Initialize map
+@each $map in $color-maps {
+  @if map-has-key($map, "main") { // Check to see if it has the main key
+    $main-map: map-get($map, "main");
+    $first-key: nth(map-keys($main-map), 1);
+    $first-value: map-get($main-map, $first-key);
+    $main-colors: map-merge($main-colors, ($first-key: $first-value)); // Get only the first color
+  }
+}
+
+// Alt Colors
+
+$alt-colors:(); // Initialize map
+@each $map in $color-maps {
+  @if map-has-key($map, "alt") { // Check to see if it has the alt key
+    $alt-colors: map-merge($alt-colors, map-get($map, "alt")); // Get the alt colors
+  }
+}
+
+// Core Colors & Shades
+
+$core-colors:(); // Initialize map
+@each $map in $color-maps {
+  @if map-has-key($map, "main") { // Check to see if it has the main key
+    $core-colors: map-merge($core-colors, map-get($map, "main")); // Get the main colors
+  }
+}
+
+// Status
+
+$core-status-colors:(); // Initialize map
+@each $map in $status-color-maps {
+  @if map-has-key($map, "main") { // Check to see if it has the main key
+    $core-status-colors: map-merge($core-status-colors, map-get($map, "main")); // Get the main colors
+  }
+}
+
+/// Create a map with everything except partials
+/// Needed for easily excluding partials from certain places
+
+$all-colors:(); // Initialize map
+@each $map in $color-maps {
+  @if map-has-key($map, "main") { // Check to see if it has the "main" key
+    $all-colors: map-merge($all-colors, map-get($map, "main")); // Get the main colors
+  }
+}
+
+$all-status-colors:(); // Initialize map
+@each $map in $status-color-maps {
+  @if map-has-key($map, "main") { // Check to see if it has the "main" key
+    $all-status-colors: map-merge($all-status-colors, map-get($map, "main")); // Get the main colors
+  }
+}
+
+
+// Check to see if any colors are on
+$any-color-on: false;
+@if $option-primary-clr == on
+or $option-secondary-clr == on
+or $option-tertiary-clr == on
+or $option-accent-clr == on
+or $option-base-clr == on
+or $option-neutral-clr == on
+or $option-warning-clr == on
+or $option-info-clr == on
+or $option-danger-clr == on
+or $option-success-clr == on {
+	$any-color-on: true;
+}

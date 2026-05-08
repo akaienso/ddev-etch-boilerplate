@@ -1,0 +1,25 @@
+@import "vars";
+
+// ==========================================================================
+// Entrance Animation Tokens
+// ==========================================================================
+
+// Shared entrance animation variables (output when any entrance animation is enabled)
+@if $option-enter-fade == on or $option-enter-float == on or $option-enter-sink == on or $option-enter-slide == on or $option-enter-grow == on or $option-enter-shrink == on or $option-enter-blur == on or $option-enter-parallax == on {
+	:root {
+		--scroll-animation-duration: #{$scroll-animation-duration};
+		--scroll-animation-timing: #{$scroll-animation-timing};
+		--scroll-animation-delay: #{$scroll-animation-delay};
+		--animate-range-start: #{$animate-range-start};
+		--animate-range-end: #{$animate-range-end};
+		--enter-opacity-start: #{$enter-opacity-start};
+		--enter-float-distance: #{$enter-float-distance};
+		--enter-sink-distance: #{$enter-sink-distance};
+		--enter-slide-distance: #{$enter-slide-distance};
+		--enter-scale-start: #{$enter-scale-start};
+		--enter-scale-shrink: #{$enter-scale-shrink};
+		--enter-blur-amount: #{$enter-blur-amount};
+		--enter-parallax-distance: #{$enter-parallax-distance};
+		--enter-stagger-interval: #{$enter-stagger-interval};
+	}
+}

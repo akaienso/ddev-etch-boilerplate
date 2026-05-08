@@ -1,0 +1,12 @@
+// Make sure the vars are available in button-vars
+$buttons: (); // Initialize map
+$buttons: map-merge($buttons, $btn-primary);
+$buttons: map-merge($buttons, $btn-secondary);
+$buttons: map-merge($buttons, $btn-tertiary);
+$buttons: map-merge($buttons, $btn-accent);
+$buttons: map-merge($buttons, $btn-base);
+$buttons: map-merge($buttons, $btn-neutral);
+$buttons: map-merge($buttons, $btn-warning);
+$buttons: map-merge($buttons, $btn-info);
+$buttons: map-merge($buttons, $btn-danger);
+$buttons: map-merge($buttons, $btn-success);

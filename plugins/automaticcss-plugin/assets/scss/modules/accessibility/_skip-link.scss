@@ -1,0 +1,7 @@
+@if $option-accessibility-classes == on {
+
+  .skip-link {
+      @include skip-link;
+	}
+
+}

@@ -1,0 +1,58 @@
+@import "vars";
+
+// Deprecated classes in 4.x
+@if $option-border-classes == on {
+	/* Feat: Borders */
+	.border {
+		@include border();
+	}
+	.border-light {
+		@include border("light");
+	}
+	.border-dark {
+		@include border("dark");
+	}
+	@each $position, $position-value in $border-positions {
+		.border-#{$position} {
+			@include border($position:#{$position-value}, $radius: no);
+		}
+		@each $color, $value in $border-colors {
+			.border-#{$position}--#{$color} {
+				@include border($position:#{$position-value}, $style: #{$color}, $radius: no);
+			}
+		}
+	}
+}
+
+// Radius Classes
+
+@if $option-rounded == on {
+	/* Feat: Radius Classes */
+  .radius {
+      border-radius: var(--radius);
+  }
+  @each $group, $set in $radius {
+    @each $option, $value in $set {
+      @if $group == "other" {
+        .radius--#{$option} {
+          border-radius: var(--radius-#{$option});
+        }
+      }
+    }
+  }
+}
+
+@if $option-rounded == on and $option-radius-sizes == on {
+  @each $group, $set in $radius {
+    @each $option, $value in $set {
+      @if $group == "sizes" {
+        .radius--#{$option} {
+          border-radius: var(--radius-#{$option});
+        }
+      }
+    }
+  }
+}
+
+// Auto Radius
+@import "auto-radius";

@@ -1,0 +1,7 @@
+:root {
+    // Generate offset variable if offset isn't 0.
+    @if $offset != 0 and $offset != "0rem" {
+		--scroll-margin: #{$scroll-margin};
+        --offset: #{$offset};
+    }
+}

@@ -1,0 +1,157 @@
+@import "vars";
+
+// ==========================================================================
+// Exit Animation Utility Classes (.on-exit--)
+// CSS-only with animation-timeline: view()
+// For hero sections and above-the-fold content that animates out on scroll
+// ==========================================================================
+
+// Exit keyframes - starts visible, animates to hidden state
+@if $option-exit-fade == on or $option-exit-float == on or $option-exit-sink == on or $option-exit-slide == on or $option-exit-grow == on or $option-exit-shrink == on or $option-exit-blur == on {
+	@keyframes exit-animate {
+		from {
+			opacity: 1;
+			transform: translateY(0) translateX(0) scale(1);
+			filter: blur(0);
+		}
+		to {
+			opacity: var(--exit-opacity, 1);
+			transform: 
+				translateY(var(--exit-block, 0))
+				translateX(var(--exit-inline, 0))
+				scale(var(--exit-scale, 1));
+			filter: blur(var(--exit-blur, 0));
+		}
+	}
+}
+
+@supports (animation-timeline: view()) {
+	// Base styles for all exit animations
+	@if $option-exit-fade == on or $option-exit-float == on or $option-exit-sink == on or $option-exit-slide == on or $option-exit-grow == on or $option-exit-shrink == on or $option-exit-blur == on {
+		[class*="on-exit--"]:not([class*="on-exit--delay"]):not([class*="on-exit-all"]) {
+			animation-name: exit-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: var(--exit-range-start, exit 0%) var(--exit-range-end, exit 80%);
+		}
+	}
+	
+	@if $option-exit-fade == on {
+		.on-exit--fade {
+			--exit-opacity: var(--exit-opacity-target, 0);
+		}
+	}
+	
+	@if $option-exit-float == on {
+		.on-exit--float {
+			--exit-block: calc(var(--exit-float-distance, 40px) * -1);
+		}
+	}
+	
+	@if $option-exit-sink == on {
+		.on-exit--sink {
+			--exit-block: var(--exit-sink-distance, 40px);
+		}
+	}
+	
+	@if $option-exit-slide == on {
+		.on-exit--slide-left {
+			--exit-inline: calc(var(--exit-slide-distance, 40px) * -1);
+		}
+		
+		.on-exit--slide-right {
+			--exit-inline: var(--exit-slide-distance, 40px);
+		}
+	}
+	
+	@if $option-exit-grow == on {
+		.on-exit--grow {
+			--exit-scale: var(--exit-scale-grow, 1.1);
+		}
+	}
+	
+	@if $option-exit-shrink == on {
+		.on-exit--shrink {
+			--exit-scale: var(--exit-scale-amount, 0.9);
+		}
+	}
+	
+	@if $option-exit-blur == on {
+		.on-exit--blur {
+			--exit-blur: var(--exit-blur-amount, 8px);
+		}
+	}
+	
+	// Exit all - applies animation to direct children
+	[class*="on-exit-all--"] {
+		> * {
+			animation-name: exit-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: var(--exit-range-start, exit 0%) var(--exit-range-end, exit 80%);
+		}
+	}
+	
+	@if $option-exit-fade == on {
+		.on-exit-all--fade > * {
+			--exit-opacity: var(--exit-opacity-target, 0);
+		}
+	}
+	
+	@if $option-exit-float == on {
+		.on-exit-all--float > * {
+			--exit-block: calc(var(--exit-float-distance, 40px) * -1);
+		}
+	}
+	
+	@if $option-exit-sink == on {
+		.on-exit-all--sink > * {
+			--exit-block: var(--exit-sink-distance, 40px);
+		}
+	}
+	
+	@if $option-exit-slide == on {
+		.on-exit-all--slide-left > * {
+			--exit-inline: calc(var(--exit-slide-distance, 40px) * -1);
+		}
+		
+		.on-exit-all--slide-right > * {
+			--exit-inline: var(--exit-slide-distance, 40px);
+		}
+	}
+	
+	@if $option-exit-grow == on {
+		.on-exit-all--grow > * {
+			--exit-scale: var(--exit-scale-grow, 1.1);
+		}
+	}
+	
+	@if $option-exit-shrink == on {
+		.on-exit-all--shrink > * {
+			--exit-scale: var(--exit-scale-amount, 0.9);
+		}
+	}
+	
+	@if $option-exit-blur == on {
+		.on-exit-all--blur > * {
+			--exit-blur: var(--exit-blur-amount, 8px);
+		}
+	}
+	
+	// Stagger: auto-delay children based on sibling position (limited browser support)
+	[class*="on-exit-all--"].on-exit--stagger > * {
+		animation-delay: calc(#{"sibling-index()"} * var(--exit-stagger-interval, 5%));
+	}
+}
+
+// Fallback for browsers that don't support animation-timeline
+@supports not (animation-timeline: view()) {
+	[class*="on-exit--"],
+	[class*="on-exit-all--"] > * {
+		opacity: 1;
+		transform: none;
+		filter: none;
+	}
+}

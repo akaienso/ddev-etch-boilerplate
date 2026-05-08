@@ -1,0 +1,70 @@
+// tertiary Options
+$option-tertiary-clr: on !default;
+
+// OKLCH
+$tertiary-l-oklch: 0.66 !default;
+$tertiary-c-oklch: 0.15 !default;
+$tertiary-h-oklch: 21.57 !default;
+$tertiary-hover-l-oklch: 0.76 !default;
+$tertiary-hover-c-oklch: 0.15 !default;
+$tertiary-hover-h-oklch: 21.57 !default;
+$tertiary-ultra-light-l-oklch: 0.95 !default;
+$tertiary-ultra-light-c-oklch: 0.15 !default;
+$tertiary-ultra-light-h-oklch: 21.57 !default;
+$tertiary-light-l-oklch: 0.85 !default;
+$tertiary-light-c-oklch: 0.15 !default;
+$tertiary-light-h-oklch: 21.57 !default;
+$tertiary-dark-l-oklch: 0.25 !default;
+$tertiary-dark-c-oklch: 0.15 !default;
+$tertiary-dark-h-oklch: 21.57 !default;
+$tertiary-ultra-dark-l-oklch: 0.10 !default;
+$tertiary-ultra-dark-c-oklch: 0.15 !default;
+$tertiary-ultra-dark-h-oklch: 21.57 !default;
+$tertiary-semi-light-l-oklch: 0.60 !default;
+$tertiary-semi-light-c-oklch: 0.15 !default;
+$tertiary-semi-light-h-oklch: 21.57 !default;
+$tertiary-semi-dark-l-oklch: 0.40 !default;
+$tertiary-semi-dark-c-oklch: 0.15 !default;
+$tertiary-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-brand-lightness == on {
+  $tertiary-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$tertiary-l-alt-oklch: null !default;
+$tertiary-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$tertiary-hover-l-alt-oklch: null !default;
+$tertiary-hover-c-alt-oklch: null !default;
+
+// Tertiary Color Map
+$color-tertiary:(); // Initialize Map
+@if $option-tertiary-clr == on {
+  $color-tertiary: (
+    "main": (
+      "tertiary": oklch($tertiary-l-oklch $tertiary-c-oklch $tertiary-h-oklch),
+      "tertiary-hover": oklch($tertiary-hover-l-oklch $tertiary-hover-c-oklch $tertiary-hover-h-oklch),
+      "tertiary-ultra-light": oklch($tertiary-ultra-light-l-oklch $tertiary-ultra-light-c-oklch $tertiary-ultra-light-h-oklch),
+      "tertiary-light": oklch($tertiary-light-l-oklch $tertiary-light-c-oklch $tertiary-light-h-oklch),
+      "tertiary-semi-light": oklch($tertiary-semi-light-l-oklch $tertiary-semi-light-c-oklch $tertiary-semi-light-h-oklch),
+      "tertiary-semi-dark": oklch($tertiary-semi-dark-l-oklch $tertiary-semi-dark-c-oklch $tertiary-semi-dark-h-oklch),
+      "tertiary-dark": oklch($tertiary-dark-l-oklch $tertiary-dark-c-oklch $tertiary-dark-h-oklch),
+      "tertiary-ultra-dark": oklch($tertiary-ultra-dark-l-oklch $tertiary-ultra-dark-c-oklch $tertiary-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "tertiary-alt": oklch(
+        if($tertiary-l-alt-oklch, $tertiary-l-alt-oklch, $tertiary-l-oklch)
+        if($tertiary-c-alt-oklch, $tertiary-c-alt-oklch, $tertiary-c-oklch)
+        $tertiary-h-oklch
+      ),
+      "tertiary-hover-alt": oklch(
+        if($tertiary-hover-l-alt-oklch, $tertiary-hover-l-alt-oklch, $tertiary-hover-l-oklch)
+        if($tertiary-hover-c-alt-oklch, $tertiary-hover-c-alt-oklch, $tertiary-hover-c-oklch)
+        $tertiary-hover-h-oklch
+      ),
+    )
+  );
+}
+

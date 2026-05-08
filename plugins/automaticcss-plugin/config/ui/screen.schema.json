@@ -1,0 +1,538 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://automaticcss.com/schemas/1.0.0/screen.json",
+	"title": "Dashboard UI",
+	"description": "The UI for the dashboard",
+	"type": "object",
+	"properties": {
+		"content": {
+			"$ref": "#/definitions/content"
+		},
+		"id": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string",
+			"const": "screen-container"
+		}
+	},
+	"required": ["content", "id", "type", "title"],
+	"definitions": {
+		"container": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"title": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string",
+					"enum": [
+						"section-container",
+						"accordion-container",
+						"tabs-container",
+						"tab",
+						"two-columns-container",
+						"select-container",
+						"hover-container",
+						"double-input",
+						"cheat-sheet-container"
+					]
+				},
+				"tooltip": {
+					"type": "string"
+				},
+				"content": {
+					"$ref": "#/definitions/content"
+				},
+				"label": {
+					"type": "object",
+					"description": "For double-input only: the label for the two options",
+					"properties": {
+						"primary": {
+							"type": "string"
+						},
+						"secondary": {
+							"type": "string"
+						}
+					}
+				},
+				"displayWhen": {
+					"$ref": "#/definitions/elements/displayWhen"
+				},
+				"displayWhenOr": {
+					"$ref": "#/definitions/elements/displayWhenOr"
+				},
+				"style": true,
+				"icon": true,
+				"documentation": {
+					"type": "string",
+					"description": "Documentation for the container."
+				},
+				"environment": {
+					"type": "object",
+					"properties": {
+						"include": {
+							"type": ["string", "array"],
+							"items": {
+								"type": "string"
+							},
+							"description": "List of environments where the item will be included. Takes a string or array of strings."
+						},
+						"exclude": {
+							"type": ["string", "array"],
+							"items": {
+								"type": "string"
+							},
+							"description": "List of environments where the item will be excluded. Takes a string or array of strings."
+						}
+					}
+				},
+				"searchTitle": {
+					"type": "string",
+					"description": "Title to use for search results. If omitted, the title will be used."
+				},
+				"dynamicTitle": {
+					"anyOf": [
+						{
+							"type": "string",
+							"description": "The ID of another input field whose value should be used as the dynamic title."
+						},
+						{
+							"type": "object",
+							"description": "Complex dynamic title configuration object."
+						}
+					],
+					"description": "Dynamic title that updates based on another field's value. Can be a string (field ID) or object (complex config)."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "tabs-container"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"style": {
+								"type": "string",
+								"enum": ["inline", "full-width"],
+								"description": "Optional styling for the tabs. 'inline' and 'full-width' styles are available."
+							},
+							"content": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string"
+										},
+										"title": {
+											"type": "string"
+										},
+										"type": {
+											"type": "string",
+											"const": "tab"
+										},
+										"content": {
+											"$ref": "#/definitions/content"
+										}
+									},
+									"required": ["id", "title", "type", "content"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "tab"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"icon": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "accordion-container"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"default": {
+								"$ref": "#/definitions/elements/onOff"
+							}
+						}
+					}
+				}
+			],
+			"required": ["id", "type"]
+		},
+		"input": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "Unique identifier for the input."
+				},
+				"title": {
+					"type": "string",
+					"description": "Label for the input."
+				},
+				"description": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string",
+					"enum": [
+						"text",
+						"textarea",
+						"px",
+						"percent",
+						"number",
+						"rem",
+						"color",
+						"select",
+						"toggle",
+						"clone",
+						"codebox"
+					],
+					"description": "Defines the input type, supporting text, textarea, px, percent, number, rem, select, toggle, and clone."
+				},
+				"default": {
+					"type": ["string", "boolean", "number"],
+					"description": "Default value for the input. If omitted, the input will be empty."
+				},
+				"placeholder": {
+					"type": "string",
+					"description": "Placeholder text for the input."
+				},
+				"tooltip": {
+					"type": "string",
+					"description": "Tooltip text for the input."
+				},
+				"cssVariable": {
+					"type": "string",
+					"description": "Optional custom CSS variable name to use instead of the id."
+				},
+				"target": {
+					"type": "string",
+					"default": "body",
+					"description": "CSS selector for the target element where the CSS variable (or CSS Classes if set) will be applied. Defaults to 'body'."
+				},
+				"displayWhen": {
+					"$ref": "#/definitions/elements/displayWhen"
+				},
+				"displayWhenOr": {
+					"$ref": "#/definitions/elements/displayWhenOr"
+				},
+				"validation": {
+					"type": "object",
+					"properties": {
+						"endsWith": {
+							"type": "string",
+							"description": "Specifies a string that the input value must end with."
+						},
+						"msg": {
+							"type": "string",
+							"description": "Custom message to display for validation failure."
+						}
+					},
+					"description": "Validation rules for the input value."
+				},
+				"unit": {
+					"type": "string",
+					"description": "Unit of measurement for the input value."
+				},
+				"skip-if-empty": {
+					"type": "boolean",
+					"description": "If true, the input will be skipped when the value is empty."
+				},
+				"percentage-convert": {
+					"type": "boolean",
+					"description": "If true, the input will be adjusted proportionally to the root-font-size."
+				},
+				"skip-css-var": {
+					"type": "boolean",
+					"description": "If true, the input will not create a CSS variable."
+				},
+				"skip-unit-conversion": {
+					"type": "boolean",
+					"description": "If true, the input will not convert PX to REM and won't adjust for root font size."
+				},
+				"skipMathValidation": {
+					"type": "boolean",
+					"description": "If true, the input will skip math operator validation (useful for aspect ratios and other inputs where '/' is not a math operator)."
+				},
+				"appendunit": {
+					"type": "string",
+					"description": "Appends the specified CSS unit to the input value."
+				},
+				"cssClasses": true,
+				"options": true,
+				"style": true,
+				"control": true,
+				"colors": true,
+				"musicScale": true,
+				"output": {
+					"enum": ["quotes"]
+				},
+				"documentation": {
+					"type": "string",
+					"description": "Documentation for the container."
+				}
+			},
+			"anyOf": [
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "color"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"colors": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string",
+											"description": "The name of the color."
+										},
+										"default": {
+											"type": "string",
+											"description": "The default value of the color."
+										}
+									}
+								}
+							}
+						},
+						"required": ["target"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "number"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"musicScale": {
+								"type": "boolean",
+								"default": false,
+								"description": "If true, the input will be able to got through music scales on up/down arrows."
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "select"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"options": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"minItems": 1
+							}
+						},
+						"required": ["default", "options", "title"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "toggle"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"cssClasses": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"description": "CSS classes that get toggled on target with this toggle."
+							},
+							"default": {
+								"$ref": "#/definitions/elements/onOff"
+							},
+							"style": {
+								"type": "string",
+								"enum": ["primary"],
+								"description": "Optional styling for the toggle. 'Primary' style is available."
+							},
+							"control": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"target": {
+											"type": "string",
+											"description": "The ID of another setting that this toggle controls."
+										},
+										"value": {
+											"$ref": "#/definitions/elements/onOff",
+											"description": "The value to set the controlled setting to when this toggle is activated."
+										}
+									},
+									"required": ["target", "value"],
+									"additionalProperties": false
+								},
+								"description": "List of other settings controlled by this toggle, specifying the target setting ID and the value to set."
+							}
+						},
+						"required": ["default", "title"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "clone"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"target": {
+								"type": "string",
+								"description": "The ID of the component that is to be cloned."
+							}
+						},
+						"required": ["target"]
+					}
+				}
+			],
+			"required": ["id", "type"]
+		},
+		"content": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"$ref": "#/definitions/input"
+					},
+					{
+						"$ref": "#/definitions/container"
+					},
+					{
+						"$ref": "#/definitions/text"
+					}
+				]
+			},
+			"minItems": 1
+		},
+		"elements": {
+			"onOff": {
+				"type": "string",
+				"enum": ["on", "off"]
+			},
+			"displayWhen": {
+				"anyOf": [
+					{
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"minItems": 2,
+						"maxItems": 2
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2
+						}
+					}
+				],
+				"description": "Conditionally displays the input based on another component's state. All conditions must be true (AND logic)."
+			},
+			"displayWhenOr": {
+				"anyOf": [
+					{
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"minItems": 2,
+						"maxItems": 2
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2
+						}
+					}
+				],
+				"description": "Conditionally displays the input based on another component's state. At least one condition must be true (OR logic)."
+			}
+		},
+		"text": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string",
+					"enum": ["message"]
+				},
+				"displayWhen": {
+					"$ref": "#/definitions/elements/displayWhen"
+				},
+				"displayWhenOr": {
+					"$ref": "#/definitions/elements/displayWhenOr"
+				},
+				"text": {
+					"type": "string",
+					"description": "The text for the message."
+				}
+			},
+			"required": ["id", "type", "text"]
+		}
+	}
+}

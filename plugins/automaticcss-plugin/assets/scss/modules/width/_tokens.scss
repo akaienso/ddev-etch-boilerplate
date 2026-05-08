@@ -1,0 +1,8 @@
+@if $option-width-variables == on {
+	/* Feat: Width Variables */
+	:root {
+		@each $width, $value in $widths {
+			--width-#{$width}: calc(var(--content-width) * #{$value});
+		}
+	}
+}

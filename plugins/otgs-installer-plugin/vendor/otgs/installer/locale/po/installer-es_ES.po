@@ -1,0 +1,820 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-22T11:52:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: installer\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. translators: %1$s and %2$s are opening and closing link tags.
+#: includes/admin-notices/notices/Account.php:107
+msgid "This site is registered on wpml.org as a development site. %1$sLearn more%2$s"
+msgstr "Este sitio está registrado en wpml.org como sitio de desarrollo. %1$sMás información%2$s"
+
+#: includes/admin-notices/notices/Account.php:111
+msgid "Development Site"
+msgstr "Sitio de desarrollo"
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:18
+msgid "You are using an unregistered version of %s and are not receiving compatibility and security updates"
+msgstr "Está utilizando una versión no registrada de %s y no está recibiendo actualizaciones de compatibilidad y seguridad"
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:20
+msgid "%s plugin must be registered in order to receive stability and security updates. Without these updates, the plugin may become incompatible with new versions of WordPress, which include security patches."
+msgstr "El plugin %s debe registrarse para recibir actualizaciones de estabilidad y seguridad. Sin estas actualizaciones, el plugin puede volverse incompatible con las nuevas versiones de WordPress, que incluyen parches de seguridad."
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:29
+#: includes/admin-notices/notices/Texts.php:40
+msgid "Your %s account has expired."
+msgstr "Su cuenta de %s ha caducado."
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:31
+msgid "Your site is vulnerable to breaking changes in future WordPress releases. Purchase a new account to protect your site with the latest %s releases."
+msgstr "Su sitio es vulnerable a cambios importantes en futuras versiones de WordPress. Adquiera una nueva cuenta para proteger su sitio con las últimas versiones de %s."
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:42
+msgid "Your site is vulnerable to breaking changes in future WordPress releases. Renew your account to protect your site with the latest %s releases."
+msgstr "Su sitio es vulnerable a cambios importantes en futuras versiones de WordPress. Renueve su cuenta para proteger su sitio con las últimas versiones de %s."
+
+#. translators: %s Product url
+#: includes/admin-notices/notices/Texts.php:52
+msgid "This site is registered on %s as a development site."
+msgstr "Este sitio está registrado en %s como sitio de desarrollo."
+
+#. translators: %1$s is the text "update the site key" inside a link and %2$s is the text "Learn more" inside a link
+#: includes/admin-notices/notices/Texts.php:54
+msgid "When this site goes live, remember to %1$s from \"development\" to \"production\" to remove this message. %2$s"
+msgstr "Cuando este sitio esté activo, recuerde %1$s de “desarrollo” a “producción” para eliminar este mensaje. %2$s"
+
+#: includes/admin-notices/notices/Texts.php:57
+msgid "update the site key"
+msgstr "actualizar la clave del sitio"
+
+#: includes/admin-notices/notices/Texts.php:58
+msgid "Learn more"
+msgstr "Más información"
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:66
+msgid "Remember to remove %s from this website"
+msgstr "Recuerde eliminar %s de este sitio web"
+
+#. translators: %s Product name
+#: includes/admin-notices/notices/Texts.php:68
+msgid "This site is using the %s plugin, which has not been paid for. After receiving a refund, you should remove this plugin from your sites. Using unregistered plugins means you are not receiving stability and security updates and will ultimately lead to problems running the site."
+msgstr "Este sitio está utilizando el plugin %s, que no ha sido pagado. Después de recibir un reembolso, debe eliminar este plugin de sus sitios. El uso de plugins no registrados significa que no está recibiendo actualizaciones de estabilidad y seguridad y, en última instancia, provocará problemas en el funcionamiento del sitio."
+
+#. translators: %1$s Product name %2$s host name (ex. wpml.org)
+#: includes/admin-notices/notices/Texts.php:76
+msgid "%1$s plugin cannot connect to %2$s"
+msgstr "El plugin %1$s no puede conectarse a %2$s"
+
+#. translators: %1$s Product name %2$s host name (ex. wpml.org)
+#: includes/admin-notices/notices/Texts.php:79
+msgid "%1$s needs to connect to its server to check for new releases and security updates. Something in the network or security settings is preventing this. Please allow outgoing communication to %2$s to remove this notice."
+msgstr "%1$s necesita conectarse a su servidor para buscar nuevas versiones y actualizaciones de seguridad. Algo en la red o en la configuración de seguridad lo está impidiendo. Permita la comunicación saliente a %2$s para eliminar este aviso."
+
+#: includes/admin-notices/notices/Texts.php:81
+msgid "Need help?"
+msgstr "¿Necesita ayuda?"
+
+#. translators: %1$s is `communication error details` %2$s is ex. wpml.org technical support
+#: includes/admin-notices/notices/Texts.php:83
+msgid "See the %1$s and let us know in %2$s."
+msgstr "Consulte los %1$s y háganoslo saber en %2$s."
+
+#. translators: %1$s is `communication error details` %2$s is ex. wpml.org technical support
+#: includes/admin-notices/notices/Texts.php:84
+msgid "communication error details"
+msgstr "detalles del error de comunicación"
+
+#. translators: %s is host name (ex. wpml.org)
+#: includes/admin-notices/notices/Texts.php:86
+msgid "%s technical support"
+msgstr "Soporte técnico de %s"
+
+#: includes/admin-notices/notices/Texts.php:96
+msgid "Please install %s to allow translating %s."
+msgstr "Instale %s para permitir la traducción de %s."
+
+#: includes/admin-notices/notices/Texts.php:135
+msgid "Install and activate"
+msgstr "Instalar y activar"
+
+#: includes/admin-notices/notices/Texts.php:136
+msgid "Ignore and don't ask me again"
+msgstr "Ignorar y no volver a preguntar"
+
+#: includes/admin-notices/notices/Texts.php:147
+#: includes/class-wp-installer.php:501
+#: includes/upgrade/AutoUpgrade.php:115
+#: templates/repository-register.php:49
+msgid "Register"
+msgstr "Registrar"
+
+#: includes/admin-notices/notices/Texts.php:148
+msgid "This is a development / staging site"
+msgstr "Este es un sitio de desarrollo / staging"
+
+#: includes/admin-notices/notices/Texts.php:159
+msgid "Purchase %s"
+msgstr "Comprar %s"
+
+#: includes/admin-notices/notices/Texts.php:160
+#: includes/admin-notices/notices/Texts.php:175
+#: includes/admin-notices/notices/Texts.php:189
+#: templates/repository-refunded.php:15
+msgid "Check my order status"
+msgstr "Comprobar el estado de mi pedido"
+
+#: includes/admin-notices/notices/Texts.php:161
+#: includes/admin-notices/notices/Texts.php:176
+msgid "Got renewal already?"
+msgstr "¿Ya ha renovado?"
+
+#: includes/admin-notices/notices/Texts.php:174
+msgid "Renew your account"
+msgstr "Renovar su cuenta"
+
+#: includes/admin-notices/notices/Texts.php:190
+#: templates/repository-refunded.php:14
+msgid "Bought again?"
+msgstr "¿Ha vuelto a comprar?"
+
+#: includes/admin-notices/notices/Texts.php:203
+msgid "Dismiss"
+msgstr "Descartar"
+
+#: includes/class-installer-dependencies.php:99
+msgid ""
+"Downloading is not possible. WordPress cannot create required folders because of the\n"
+"                                        256 characters limitation of the current Windows environment."
+msgstr "La descarga no es posible. WordPress no puede crear las carpetas necesarias debido a la\n limitación de 256 caracteres del entorno Windows actual."
+
+#: includes/class-installer-dependencies.php:264
+msgid "Return to the updates page"
+msgstr "Volver a la página de actualizaciones"
+
+#: includes/class-installer-dependencies.php:300
+msgid "OTGS Installer"
+msgstr "OTGS Installer"
+
+#: includes/class-installer-dependencies.php:305
+msgid "%s, responsible for receiving automated updates for WPML and Toolset, requires the following PHP component(s) in order to function:"
+msgstr "%s, responsable de recibir actualizaciones automáticas para WPML y Toolset, requiere los siguientes componentes PHP para funcionar:"
+
+#: includes/class-installer-dependencies.php:312
+msgid "Learn more: %s"
+msgstr "Más información: %s"
+
+#: includes/class-installer-theme.php:890
+msgid "To install and update %s, please %sregister%s %s for this site."
+msgstr "Para instalar y actualizar %s, por favor %sregistre%s %s para este sitio."
+
+#: includes/class-installer-upgrader-skins.php:47
+msgid "We were not able to copy some plugin files. This is usually due to issues with permissions for WordPress content or plugins folder."
+msgstr "No pudimos copiar algunos archivos del plugin. Esto suele deberse a problemas con los permisos de la carpeta de contenido o plugins de WordPress."
+
+#: includes/class-otgs-installer-plugins-page-notice.php:93
+msgid "Your %s account has expired. %sPurchase today%s to protect your site from breaking changes in future WordPress releases."
+msgstr "Su cuenta de %s ha caducado. %sCompre hoy%s para proteger su sitio de cambios importantes en futuras versiones de WordPress."
+
+#: includes/class-otgs-installer-plugins-page-notice.php:101
+msgid "Your %s account has expired. %sRenew today%s to protect your site from breaking changes in future WordPress releases."
+msgstr "Su cuenta de %s ha caducado. %sRenueve hoy%s para proteger su sitio de cambios importantes en futuras versiones de WordPress."
+
+#: includes/class-otgs-installer-plugins-page-notice.php:109
+msgid "Remember to remove %s from this website. %sCheck my order status%s"
+msgstr "Recuerde eliminar %s de este sitio web. %sComprobar el estado de mi pedido%s"
+
+#: includes/class-otgs-installer-plugins-page-notice.php:119
+msgid "You have an old, free subscription for Toolset Types which doesn't provide automatic updates. %sUpgrade your account%s"
+msgstr "Tiene una suscripción antigua y gratuita para Toolset Types que no proporciona actualizaciones automáticas. %sActualice su cuenta%s"
+
+#: includes/class-otgs-installer-plugins-page-notice.php:129
+msgid "You are using an unregistered version of %s and are not receiving compatibility and security updates. %sRegister now%s"
+msgstr "Está utilizando una versión no registrada de %s y no está recibiendo actualizaciones de compatibilidad y seguridad. %sRegístrese ahora%s"
+
+#: includes/class-otgs-installer-plugins-page-notice.php:156
+msgid "You are using the complementary %1$s. For the %2$s, %3$s."
+msgstr "Está utilizando el %1$s complementario. Para el %2$s, %3$s."
+
+#: includes/class-otgs-installer-plugins-page-notice.php:157
+msgid "complete set of features"
+msgstr "conjunto completo de características"
+
+#: includes/class-otgs-installer-plugins-page-notice.php:157
+msgid "upgrade to Toolset"
+msgstr "actualizar a Toolset"
+
+#: includes/class-otgs-installer-subscription-warning-message.php:65
+msgid "Renew today"
+msgstr "Renovar hoy"
+
+#: includes/class-otgs-installer-subscription-warning-message.php:65
+msgid "to protect your site from breaking changes in future WordPress releases."
+msgstr "para proteger su sitio de cambios importantes en futuras versiones de WordPress."
+
+#: includes/class-otgs-installer-subscription-warning-message.php:72
+msgid "Your %s account expires in %d day."
+msgid_plural "Your %s account expires in %d days."
+msgstr[0] "Su cuenta de %s caduca en %d día."
+msgstr[1] "Su cuenta de %s caduca en %d días."
+
+#: includes/class-otgs-installer-wp-share-local-components-setting-hooks.php:110
+msgid "Reporting to"
+msgstr "Informando a"
+
+#: includes/class-otgs-installer-wp-share-local-components-setting-hooks.php:111
+msgid "Report to"
+msgstr "Informar a"
+
+#: includes/class-otgs-installer-wp-share-local-components-setting-hooks.php:112
+msgid "Send theme and plugins information, in order to get faster support and compatibility alerts"
+msgstr "Enviar información del tema y los plugins para obtener soporte más rápido y alertas de compatibilidad"
+
+#: includes/class-otgs-installer-wp-share-local-components-setting-hooks.php:114
+msgid "Don't send this information and skip compatibility alerts"
+msgstr "No enviar esta información y omitir las alertas de compatibilidad"
+
+#: includes/class-otgs-installer-wp-share-local-components-setting-hooks.php:116
+msgid "which theme and plugins you are using."
+msgstr "qué tema y plugins está utilizando."
+
+#: includes/class-otgs-installer-wp-share-local-components-setting-hooks.php:160
+msgid "Privacy and data usage policy"
+msgstr "Política de privacidad y uso de datos"
+
+#: includes/class-wp-installer-channels.php:42
+msgid "Development"
+msgstr "Desarrollo"
+
+#: includes/class-wp-installer-channels.php:44
+msgid "Beta"
+msgstr "Beta"
+
+#: includes/class-wp-installer-channels.php:46
+msgid "Production"
+msgstr "Producción"
+
+#: includes/class-wp-installer.php:188
+msgid "Installing %s"
+msgstr "Instalando %s"
+
+#: includes/class-wp-installer.php:189
+msgid "Updating %s"
+msgstr "Actualizando %s"
+
+#: includes/class-wp-installer.php:190
+msgid "Activating %s"
+msgstr "Activando %s"
+
+#: includes/class-wp-installer.php:355
+#: includes/class-wp-installer.php:356
+#: includes/class-wp-installer.php:1046
+msgid "Installer"
+msgstr "Instalador"
+
+#: includes/class-wp-installer.php:489
+msgid "Upgrade"
+msgstr "Actualizar"
+
+#: includes/class-wp-installer.php:495
+msgid "Registered"
+msgstr "Registrado"
+
+#: includes/class-wp-installer.php:677
+msgid ""
+"You are using an invalid site key defined as the constant %s (most likely in wp-config.php).\n"
+"\t\t\t\t\t\t\t\t\t\t\tPlease remove it or use the correct value in order to be able to register correctly."
+msgstr "Está utilizando una clave de sitio no válida definida como la constante %s (muy probablemente en wp-config.php).\n\t\t\t\t\t\t\t\t\t\t\tPor favor, elimínela o utilice el valor correcto para poder registrarse correctamente."
+
+#: includes/class-wp-installer.php:748
+msgid "Commercial"
+msgstr "Comercial"
+
+#: includes/class-wp-installer.php:939
+msgid "Installer cannot display the products information because the automatic updating for %s was explicitly disabled with the configuration below (usually in wp-config.php):"
+msgstr "El instalador no puede mostrar la información de los productos porque la actualización automática de %s se deshabilitó explícitamente con la siguiente configuración (normalmente en wp-config.php):"
+
+#: includes/class-wp-installer.php:941
+msgid "In order to see the products information, please run the %smanual updates check%s to initialize the products list or (temporarily) remove the above code."
+msgstr "Para ver la información de los productos, ejecute la %scomprobación manual de actualizaciones%s para inicializar la lista de productos o elimine (temporalmente) el código anterior."
+
+#: includes/class-wp-installer.php:969
+msgid "Installer cannot contact our updates server to get information about the available products and check for new versions. If you are seeing this message for the first time, you can ignore it, as it may be a temporary communication problem. If the problem persists and your WordPress admin is slowing down, you can disable automated version checks. Add the following line to your wp-config.php file:"
+msgstr "El instalador no puede contactar con nuestro servidor de actualizaciones para obtener información sobre los productos disponibles y comprobar si hay nuevas versiones. Si ve este mensaje por primera vez, puede ignorarlo, ya que puede ser un problema de comunicación temporal. Si el problema persiste y su administración de WordPress se ralentiza, puede deshabilitar las comprobaciones automáticas de versión. Añada la siguiente línea a su archivo wp-config.php:"
+
+#: includes/class-wp-installer.php:994
+#: includes/class-wp-installer.php:998
+msgid "Information about new versions is invalid. It may be a temporary communication problem, please check for updates again."
+msgstr "La información sobre las nuevas versiones no es válida. Puede ser un problema de comunicación temporal, por favor, compruebe las actualizaciones de nuevo."
+
+#: includes/class-wp-installer.php:1037
+msgid "Sorry, you are not allowed to manage Installer for this site."
+msgstr "Lo sentimos, no tiene permiso para gestionar el instalador de este sitio."
+
+#: includes/class-wp-installer.php:1076
+msgid "No repositories defined."
+msgstr "No hay repositorios definidos."
+
+#: includes/class-wp-installer.php:1298
+msgid "We have preselected the plugins your site needs to be fully multilingual."
+msgstr "Hemos preseleccionado los plugins que su sitio necesita para ser totalmente multilingüe."
+
+#: includes/class-wp-installer.php:1538
+#: includes/site-key/class-otgs-installer-site-key-ajax.php:74
+msgid "Invalid site key for the current site."
+msgstr "Clave de sitio no válida para el sitio actual."
+
+#: includes/class-wp-installer.php:1539
+#: includes/site-key/class-otgs-installer-site-key-ajax.php:74
+msgid "Please note that the site key is case sensitive."
+msgstr "Tenga en cuenta que la clave del sitio distingue entre mayúsculas y minúsculas."
+
+#: includes/class-wp-installer.php:1544
+msgid "%s cannot access %s to register. Try again to see if it's a temporary problem. If the problem continues, make sure that this site has access to the Internet."
+msgstr "%s no puede acceder a %s para registrarse. Inténtelo de nuevo para ver si es un problema temporal. Si el problema continúa, asegúrese de que este sitio tiene acceso a Internet."
+
+#: includes/class-wp-installer.php:2195
+msgid "Connection failed! Please refresh the page and try again. (%s)"
+msgstr "¡Conexión fallida! Por favor, actualice la página e inténtelo de nuevo. (%s)"
+
+#: includes/class-wp-installer.php:2198
+msgid "Your subscription appears to no longer be valid. Please try to register again using a valid site key."
+msgstr "Su suscripción parece haber caducado. Por favor, intente registrarse de nuevo utilizando una clave de sitio válida."
+
+#: includes/class-wp-installer.php:2831
+#: includes/class-wp-installer.php:2893
+msgid "%s cannot update because your site's registration is not valid. Please %sregister %s%s again for this site first."
+msgstr "%s no puede actualizarse porque el registro de su sitio no es válido. Por favor, %sregistre %s%s de nuevo para este sitio primero."
+
+#: includes/class-wp-installer.php:2916
+msgid "Update Plugin"
+msgstr "Actualizar plugin"
+
+#: includes/class-wp-installer.php:2917
+msgid "Return to the plugins page"
+msgstr "Volver a la página de plugins"
+
+#: includes/products/commercial-tab/DownloadsList.php:28
+msgid "(embedded)"
+msgstr "(incrustado)"
+
+#: includes/products/commercial-tab/DownloadsList.php:42
+msgid "Release notes"
+msgstr "Notas de la versión"
+
+#: includes/products/OTGS_Installer_Products_Parser.php:101
+msgid "Information about versions of %s are invalid. It may be a temporary communication problem, please check for updates again."
+msgstr "La información sobre las versiones de %s no es válida. Puede ser un problema de comunicación temporal, por favor, compruebe las actualizaciones de nuevo."
+
+#: includes/site-key/class-otgs-installer-site-key-ajax.php:44
+msgid "Empty site key!"
+msgstr "¡Clave de sitio vacía!"
+
+#: includes/site-key/class-otgs-installer-site-key-ajax.php:48
+msgid "Invalid request!"
+msgstr "¡Solicitud no válida!"
+
+#: includes/site-key/class-otgs-installer-site-key-ajax.php:129
+msgid "Invalid site key for the current site. If the error persists, try to un-register first and then register again with the same site key."
+msgstr "Clave de sitio no válida para el sitio actual. Si el error persiste, intente anular el registro primero y luego regístrese de nuevo con la misma clave de sitio."
+
+#: includes/site-key/class-otgs-installer-site-key-ajax.php:183
+msgid "%s cannot access %s to register. Try again to see if it's a temporary problem. If the problem continues, make sure that this site has access to the Internet. You can still use the plugin without registration, but you will not receive automated updates."
+msgstr "%s no puede acceder a %s para registrarse. Inténtelo de nuevo para ver si es un problema temporal. Si el problema continúa, asegúrese de que este sitio tiene acceso a Internet. Aún puede utilizar el plugin sin registrarse, pero no recibirá actualizaciones automáticas."
+
+#: includes/support/class-otgs-installer-support-hooks.php:20
+#: includes/support/class-otgs-installer-support-template.php:39
+#: includes/support/class-otgs-installer-support-template.php:43
+#: includes/support/class-otgs-installer-support-template.php:56
+msgid "Installer Support"
+msgstr "Soporte del instalador"
+
+#: includes/support/class-otgs-installer-support-template.php:40
+msgid "For retrieving Installer debug information use the %s page."
+msgstr "Para recuperar la información de depuración del instalador, utilice la página %s."
+
+#: includes/support/class-otgs-installer-support-template.php:58
+msgid "Installer Log"
+msgstr "Registro del instalador"
+
+#: includes/support/class-otgs-installer-support-template.php:59
+msgid "Request URL"
+msgstr "URL de la solicitud"
+
+#: includes/support/class-otgs-installer-support-template.php:60
+msgid "Request Arguments"
+msgstr "Argumentos de la solicitud"
+
+#: includes/support/class-otgs-installer-support-template.php:61
+msgid "Response"
+msgstr "Respuesta"
+
+#: includes/support/class-otgs-installer-support-template.php:62
+msgid "Component"
+msgstr "Componente"
+
+#: includes/support/class-otgs-installer-support-template.php:63
+msgid "Time"
+msgstr "Hora"
+
+#: includes/support/class-otgs-installer-support-template.php:64
+msgid "Log is empty"
+msgstr "El registro está vacío"
+
+#: includes/support/class-otgs-installer-support-template.php:67
+msgid "Installer System Status"
+msgstr "Estado del sistema del instalador"
+
+#: includes/support/class-otgs-installer-support-template.php:68
+msgid "Check Now"
+msgstr "Comprobar ahora"
+
+#: includes/support/class-otgs-installer-support-template.php:71
+msgid "Required PHP Libraries"
+msgstr "Librerías PHP requeridas"
+
+#: includes/support/class-otgs-installer-support-template.php:74
+msgid "All Installer Instances"
+msgstr "Todas las instancias del instalador"
+
+#: includes/support/class-otgs-installer-support-template.php:75
+msgid "Path"
+msgstr "Ruta"
+
+#: includes/support/class-otgs-installer-support-template.php:76
+msgid "Version"
+msgstr "Versión"
+
+#: includes/support/class-otgs-installer-support-template.php:77
+msgid "High priority"
+msgstr "Alta prioridad"
+
+#: includes/support/class-otgs-installer-support-template.php:78
+msgid "Delegated"
+msgstr "Delegado"
+
+#: includes/support/class-otgs-installer-support-template.php:86
+msgid "WPML API server"
+msgstr "Servidor API de WPML"
+
+#: includes/support/class-otgs-installer-support-template.php:91
+msgid "Toolset API server"
+msgstr "Servidor API de Toolset"
+
+#: includes/upgrade/AutoUpgrade.php:116
+msgid " to use auto-updates"
+msgstr " para usar actualizaciones automáticas"
+
+#: loader.php:72
+msgid "This site is registered on %s as a development site. Switch to a production site key to %s."
+msgstr "Este sitio está registrado en %s como sitio de desarrollo. Cambie a una clave de sitio de producción para %s."
+
+#: loader.php:77
+msgid "This site is registered on Toolset.com as a development site."
+msgstr "Este sitio está registrado en Toolset.com como sitio de desarrollo."
+
+#: templates/channel-selector.php:3
+msgid "Updates channel:"
+msgstr "Canal de actualizaciones:"
+
+#: templates/channel-selector.php:12
+msgid "To select different update channels (beta, development) you must update your existing products to their most recent stable versions."
+msgstr "Para seleccionar diferentes canales de actualización (beta, desarrollo) debe actualizar sus productos existentes a sus versiones estables más recientes."
+
+#: templates/channel-selector.php:15
+msgid "Updating the plugins on your site. Please don't close this page or navigate away."
+msgstr "Actualizando los plugins de su sitio. Por favor, no cierre esta página ni navegue a otra."
+
+#: templates/channel-selector.php:25
+msgid "Something went wrong and we could not install all updates from the %s channel. Click here to %stry again%s. If the errors persist, please switch back to the Production channel and contact the %s%s support%s."
+msgstr "Algo salió mal y no pudimos instalar todas las actualizaciones del canal %s. Haga clic aquí para %sintentarlo de nuevo%s. Si los errores persisten, vuelva al canal de Producción y póngase en contacto con el %ssoporte de %s%s."
+
+#: templates/channel-selector.php:33
+msgid "There was a problem switching to the %s channel. You can %sretry%s. If the problem continues, please %sdownload %s%s and install again manually"
+msgstr "Hubo un problema al cambiar al canal %s. Puede %sreintentar%s. Si el problema continúa, por favor %sdescargue %s%s e instálelo de nuevo manualmente"
+
+#: templates/channel-selector.php:47
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/channel-selector.php:48
+msgid "Switch"
+msgstr "Cambiar"
+
+#: templates/channel-selector.php:51
+msgid "The plugins will update to the most recent version in the channel that you selected."
+msgstr "Los plugins se actualizarán a la versión más reciente del canal que haya seleccionado."
+
+#: templates/channel-selector.php:55
+msgid "Remember my preference."
+msgstr "Recordar mi preferencia."
+
+#: templates/channel-selector.php:62
+msgid "You are using a potentially less stable channel for %s. If you didn't enable this on purpose, you should switch to the 'Production' channel."
+msgstr "Está utilizando un canal potencialmente menos estable para %s. Si no lo habilitó a propósito, debería cambiar al canal “Producción”."
+
+#: templates/downloads-list-compact.php:8
+#: templates/downloads-list.php:29
+msgid "Plugin"
+msgstr "Plugin"
+
+#: templates/downloads-list-compact.php:9
+msgid "Available"
+msgstr "Disponible"
+
+#: templates/downloads-list-compact.php:10
+#: templates/downloads-list.php:30
+msgid "Installed"
+msgstr "Instalado"
+
+#: templates/downloads-list-compact.php:11
+msgid "Downloading"
+msgstr "Descargando"
+
+#: templates/downloads-list-compact.php:12
+msgid "Activate"
+msgstr "Activar"
+
+#: templates/downloads-list-compact.php:52
+msgid "downloading..."
+msgstr "descargando..."
+
+#: templates/downloads-list-compact.php:53
+msgid "failed!"
+msgstr "¡falló!"
+
+#: templates/downloads-list-compact.php:53
+msgid "downloaded"
+msgstr "descargado"
+
+#: templates/downloads-list-compact.php:56
+msgid "activating"
+msgstr "activando"
+
+#: templates/downloads-list-compact.php:57
+msgid "activated"
+msgstr "activado"
+
+#: templates/downloads-list-compact.php:65
+#: templates/downloads-list.php:55
+msgid "Downloading is not possible because WordPress cannot write into the plugins folder. %sHow to fix%s."
+msgstr "La descarga no es posible porque WordPress no puede escribir en la carpeta de plugins. %sCómo solucionarlo%s."
+
+#: templates/downloads-list-compact.php:72
+#: templates/downloads-list.php:62
+msgid "Download"
+msgstr "Descargar"
+
+#: templates/downloads-list-compact.php:74
+#: templates/downloads-list.php:66
+msgid "Activate after download"
+msgstr "Activar después de la descarga"
+
+#: templates/downloads-list-compact.php:77
+#: templates/downloads-list.php:70
+msgid "Operation complete!"
+msgstr "¡Operación completada!"
+
+#: templates/downloads-list-compact.php:79
+msgid ""
+"Download failed!\n"
+"\n"
+"Click OK to revalidate your subscription or CANCEL to try again."
+msgstr "¡Error de descarga!\n\nHaga clic en Aceptar para revalidar su suscripción o en CANCELAR para intentarlo de nuevo."
+
+#: templates/downloads-list.php:31
+msgid "Current"
+msgstr "Actual"
+
+#: templates/downloads-list.php:32
+msgid "Released"
+msgstr "Publicado"
+
+#: templates/downloads-list.php:72
+msgid ""
+"Download failed!\n"
+"\n"
+"Please refresh the page and try again."
+msgstr "¡Error de descarga!\n\nPor favor, actualice la página e inténtelo de nuevo."
+
+#: templates/products-compact.php:5
+msgid "Incorrect setup"
+msgstr "Configuración incorrecta"
+
+#: templates/products-compact.php:25
+msgid "Invalid product"
+msgstr "Producto no válido"
+
+#: templates/products-compact.php:36
+msgid "Unknown repository"
+msgstr "Repositorio desconocido"
+
+#: templates/products-compact.php:44
+msgid " Your current site key (%s) does not match the selected product (%s)."
+msgstr " Su clave de sitio actual (%s) no coincide con el producto seleccionado (%s)."
+
+#: templates/products-compact.php:65
+msgid "Buy %s"
+msgstr "Comprar %s"
+
+#: templates/products-compact.php:69
+msgid "Already bought %s?"
+msgstr "¿Ya ha comprado %s?"
+
+#: templates/products-compact.php:74
+#: templates/repository-register.php:20
+msgid "Site-key was set by %s, most likely in wp-config.php. Please remove the constant before attempting to register."
+msgstr "La clave del sitio fue establecida por %s, muy probablemente en wp-config.php. Por favor, elimine la constante antes de intentar registrarse."
+
+#: templates/products-compact.php:77
+msgid "Enter site key"
+msgstr "Introducir clave de sitio"
+
+#: templates/products-compact.php:85
+msgid "Add"
+msgstr "Añadir"
+
+#: templates/products-compact.php:94
+msgid "Subscription is expired."
+msgstr "La suscripción ha caducado."
+
+#: templates/products-compact.php:103
+msgid "Renew %s"
+msgstr "Renovar %s"
+
+#: templates/products-compact.php:114
+msgid "Are you sure you want to remove this site key?"
+msgstr "¿Está seguro de que desea eliminar esta clave de sitio?"
+
+#: templates/products-compact.php:119
+#: templates/repository-registered-buttons.php:12
+msgid "Site-key was set by %s, most likely in wp-config.php. Please remove the constant before attempting to unregister."
+msgstr "La clave del sitio fue establecida por %s, muy probablemente en wp-config.php. Por favor, elimine la constante antes de intentar anular el registro."
+
+#: templates/products-compact.php:122
+msgid "Remove current site key (%s)"
+msgstr "Eliminar la clave de sitio actual (%s)"
+
+#: templates/products-compact.php:138
+msgid "%s support on wpml.org"
+msgstr "Soporte de %s en wpml.org"
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:17
+msgid "Do you have an account on %s?"
+msgstr "¿Tiene una cuenta en %s?"
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:18
+msgid "Great! You just need to extend your subscription."
+msgstr "¡Genial! Solo necesita extender su suscripción."
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:20
+msgid "You have a %s account. You just need to extend your subscription."
+msgstr "Tiene una cuenta de %s. Solo necesita extender su suscripción."
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:21
+msgid "Extend Subscription"
+msgstr "Extender suscripción"
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:23
+msgid "OK. You need to set up renewal for %s."
+msgstr "De acuerdo. Necesita configurar la renovación para %s."
+
+#. translators: %1$s and %2$s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:25
+msgid "You do not have a %1$s account yet. You need to set up a renewal for %2$s."
+msgstr "Aún no tiene una cuenta de %1$s. Necesita configurar una renovación para %2$s."
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:27
+msgid "Set Up Renewal For %s"
+msgstr "Configurar renovación para %s"
+
+#. translators: %s replaced with wpml.org or toolset.com
+#: templates/repository-end-users.php:28
+msgid "No worries. We can check that for you."
+msgstr "No se preocupe. Podemos comprobarlo por usted."
+
+#: templates/repository-end-users.php:29
+msgid "Check"
+msgstr "Comprobar"
+
+#: templates/repository-end-users.php:30
+msgid "Your Email Address"
+msgstr "Su dirección de correo electrónico"
+
+#: templates/repository-end-users.php:37
+msgid "Yes"
+msgstr "Sí"
+
+#: templates/repository-end-users.php:41
+msgid "No"
+msgstr "No"
+
+#: templates/repository-end-users.php:45
+msgid "I do not remember"
+msgstr "No lo recuerdo"
+
+#: templates/repository-expired.php:12
+msgid "You are using an expired account of %s."
+msgstr "Está utilizando una cuenta caducada de %s."
+
+#: templates/repository-expired.php:13
+msgid "It means you will not receive updates. This can lead to stability and even security issues."
+msgstr "Esto significa que no recibirá actualizaciones. Esto puede provocar problemas de estabilidad e incluso de seguridad."
+
+#: templates/repository-expired.php:14
+msgid "Have you already renewed your license?"
+msgstr "¿Ya ha renovado su licencia?"
+
+#: templates/repository-expired.php:15
+msgid "Refresh account status"
+msgstr "Actualizar estado de la cuenta"
+
+#: templates/repository-legacy-free.php:9
+msgid "Upgrade your account"
+msgstr "Actualizar su cuenta"
+
+#: templates/repository-legacy-free.php:11
+msgid "You have an old, free subscription for Toolset Types which doesn't provide automatic updates. %s"
+msgstr "Tiene una suscripción antigua y gratuita para Toolset Types que no proporciona actualizaciones automáticas. %s"
+
+#: templates/repository-listing.php:105
+msgid "Click to see individual components options."
+msgstr "Haga clic para ver las opciones de componentes individuales."
+
+#: templates/repository-listing.php:105
+msgid "Individual components"
+msgstr "Componentes individuales"
+
+#: templates/repository-listing.php:147
+msgid "This page lets you install plugins and update existing plugins. To remove any of these plugins, go to the %splugins%s page and if you have the permission to remove plugins you should be able to do this."
+msgstr "Esta página le permite instalar plugins y actualizar plugins existentes. Para eliminar cualquiera de estos plugins, vaya a la página de %splugins%s y, si tiene permiso para eliminar plugins, debería poder hacerlo."
+
+#: templates/repository-refunded.php:12
+msgid "Remember to remove %s from this website."
+msgstr "Recuerde eliminar %s de este sitio web."
+
+#: templates/repository-refunded.php:13
+msgid "This site is using %s plugin, which is not paid for. After receiving a refund, you should remove this plugin from your sites. Using unregistered plugins means that you are not receiving stability and security updates and will ultimately lead to problems running the site."
+msgstr "Este sitio está utilizando el plugin %s, que no ha sido pagado. Después de recibir un reembolso, debe eliminar este plugin de sus sitios. El uso de plugins no registrados significa que no está recibiendo actualizaciones de estabilidad y seguridad y, en última instancia, provocará problemas en el funcionamiento del sitio."
+
+#: templates/repository-register.php:14
+msgid "Already purchased %s?"
+msgstr "¿Ya ha comprado %s?"
+
+#: templates/repository-register.php:23
+msgid "Register %s"
+msgstr "Registrar %s"
+
+#: templates/repository-register.php:35
+msgid "Enter the site key, from your %1$s account, to receive automatic updates for %2$s."
+msgstr "Introduzca la clave de sitio, de su cuenta %1$s, para recibir actualizaciones automáticas de %2$s."
+
+#: templates/repository-register.php:47
+msgid "Site key"
+msgstr "Clave de sitio"
+
+#: templates/repository-register.php:51
+msgid "Get a key for this site"
+msgstr "Obtener una clave para este sitio"
+
+#: templates/repository-registered-buttons.php:17
+msgid "Are you sure you want to unregister?"
+msgstr "¿Está seguro de que desea anular el registro?"
+
+#: templates/repository-registered-buttons.php:22
+msgid "Unregister %s from this site"
+msgstr "Anular el registro de %s de este sitio"
+
+#: templates/repository-registered-buttons.php:30
+msgid "Check for updates"
+msgstr "Comprobar actualizaciones"
+
+#: templates/repository-registered.php:13
+msgid "%s is registered on this site using the following sitekey: <strong>%s</strong>. You will receive automatic updates until %s"
+msgstr "%s está registrado en este sitio utilizando la siguiente clave de sitio: <strong>%s</strong>. Recibirá actualizaciones automáticas hasta %s"
+
+#: templates/repository-registered.php:19
+msgid "%s is registered on this site using the following sitekey: <strong>%s</strong>. Your Lifetime account gives you updates for life."
+msgstr "%s está registrado en este sitio utilizando la siguiente clave de sitio: <strong>%s</strong>. Su cuenta Lifetime le ofrece actualizaciones de por vida."

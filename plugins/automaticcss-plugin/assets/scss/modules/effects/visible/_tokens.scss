@@ -1,0 +1,23 @@
+@import "vars";
+
+// ==========================================================================
+// Visible Animation Tokens (Intersection Observer - plays once)
+// ==========================================================================
+
+// Shared visible animation variables (output when any visible animation is enabled)
+@if $option-visible-fade == on or $option-visible-float == on or $option-visible-sink == on or $option-visible-slide == on or $option-visible-grow == on or $option-visible-shrink == on or $option-visible-blur == on {
+	:root {
+		--visible-duration: #{$visible-duration};
+		--visible-timing: #{$visible-timing};
+		--visible-delay: #{$visible-delay};
+		--visible-threshold: #{$visible-threshold};
+		--visible-opacity-start: #{$visible-opacity-start};
+		--visible-float-distance: #{$visible-float-distance};
+		--visible-sink-distance: #{$visible-sink-distance};
+		--visible-slide-distance: #{$visible-slide-distance};
+		--visible-scale-start: #{$visible-scale-start};
+		--visible-scale-shrink: #{$visible-scale-shrink};
+		--visible-blur-amount: #{$visible-blur-amount};
+		--visible-stagger-interval: #{$visible-stagger-interval};
+	}
+}

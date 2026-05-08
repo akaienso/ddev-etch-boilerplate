@@ -1,0 +1,65 @@
+@import "vars";
+
+// ==========================================================================
+// Hover Effect Tokens
+// ==========================================================================
+
+// Shared hover timing variables (output when any hover effect is enabled)
+@if $option-hover-grow == on or $option-hover-shrink == on or $option-hover-float == on or $option-hover-sink == on or $option-hover-slide-right == on or $option-hover-slide-left == on or $option-hover-shadow == on or $option-hover-glow == on or $option-hover-fade == on or $option-hover-brighten == on {
+	:root {
+		--hover-duration: #{$hover-duration};
+		--hover-timing: #{$hover-timing};
+	}
+}
+
+// Transform Effect Variables
+@if $option-hover-grow == on {
+	:root {
+		--hover-grow-amount: #{$hover-grow-amount};
+	}
+}
+
+@if $option-hover-shrink == on {
+	:root {
+		--hover-shrink-amount: #{$hover-shrink-amount};
+	}
+}
+
+@if $option-hover-float == on {
+	:root {
+		--hover-float-amount: #{$hover-float-amount};
+	}
+}
+
+@if $option-hover-sink == on {
+	:root {
+		--hover-sink-amount: #{$hover-sink-amount};
+	}
+}
+
+@if $option-hover-slide-right == on {
+	:root {
+		--hover-slide-right-amount: #{$hover-slide-right-amount};
+	}
+}
+
+@if $option-hover-slide-left == on {
+	:root {
+		--hover-slide-left-amount: #{$hover-slide-left-amount};
+	}
+}
+
+// Shadow Effect Variables
+@if $option-hover-shadow == on {
+	:root {
+		--hover-shadow: #{$hover-shadow};
+	}
+}
+
+@if $option-hover-glow == on {
+	:root {
+		--hover-glow-color: #{$hover-glow-color};
+		--hover-glow-spread: #{$hover-glow-spread};
+		--hover-glow-opacity: #{$hover-glow-opacity};
+	}
+}

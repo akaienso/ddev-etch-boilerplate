@@ -1,0 +1,17 @@
+@mixin surface($name: "1") {
+	background-color: var(--surface-background-color, var(--surface-#{$name}-background-color));
+	background-image: var(--surface-asset, var(--surface-#{$name}-asset));
+	background-position: var(--surface-position, var(--surface-#{$name}-position, center center));
+	background-attachment: var(--surface-attachment, var(--surface-#{$name}-attachment));
+	background-repeat: var(--surface-repeat, var(--surface-#{$name}-repeat));
+	background-size: var(--surface-size, var(--surface-#{$name}-size));
+	animation: var(--surface-animation, var(--surface-#{$name}-animation, none));
+	border-image: fill 1 var(--surface-overlay, var(--surface-#{$name}-overlay));
+}
+
+
+@mixin keyframes($name) {
+	@keyframes #{$name} {
+		@content;
+	}
+}

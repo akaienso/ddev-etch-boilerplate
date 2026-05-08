@@ -1,0 +1,10 @@
+@if $option-cards == on {
+	/* Feat: Card Variables */
+	:root {
+		@each $prop, $value in $card-styles {
+			@if $value != null {
+				--#{$prop}: #{$value};
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+$option-form-style-light: on !default;
+$option-form-style-dark: on !default;
+$option-style-forms-automatically: on !default;
+$default-form-style: light !default;
+
+// Set a global accent color for the form as default
+// NOT ADDED TO DASHBOARD YET!
+$f-light-accent-color: var(--primary) !default;
+$f-dark-accent-color: var(--primary) !default;
+
+// Add all third party forms to this list
+$form-selector-exclusions: "[class*='srfm-form'],[class*='brxe-form'],[data-wsf-style-id]";
+// Use these selectors for styling clean forms so default styles don't interfere with third party forms
+// We output additional classes for each form platform within the platform folder itself
+$form-selector-light: ".form--light:not(:where(#{$form-selector-exclusions}))";
+$form-selector-dark: ".form--dark:not(:where(#{$form-selector-exclusions}))";
+$form-selectors: ":is(.form--dark, .form--light):not(:where(#{$form-selector-exclusions}))";
+
+
+
+$option-ws-form: on !default;
+
+// Vars Imports
+@import "elements/accessibility/vars";
+@import "elements/buttons/vars";
+@import "elements/checkbox/vars";
+@import "elements/datetime/vars";
+@import "elements/field/vars";
+@import "elements/fieldset/vars";
+@import "elements/file/vars";
+@import "elements/form/vars";
+@import "elements/help/vars";
+@import "elements/invalid-feedback/vars";
+@import "elements/label/vars";
+@import "elements/legend/vars";
+@import "elements/select/vars";
+@import "elements/prefix-suffix/vars";
+@import "elements/progress/vars";
+@import "elements/radio/vars";
+@import "elements/range/vars";
+@import "elements/tabs/vars";
+@import "elements/text-editor/vars";
+@import "elements/tooltip/vars";

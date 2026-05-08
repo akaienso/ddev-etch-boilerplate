@@ -1,0 +1,1812 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "animations",
+	"title": "Effects (Experimental)",
+	"type": "screen-container",
+	"iconPaths": [
+		"M1.24994 11.9998C1.24994 9.92878 2.92887 8.24985 4.99994 8.24985C7.07101 8.24985 8.74994 9.92878 8.74994 11.9998C8.74994 14.0709 7.07101 15.7498 4.99994 15.7498C2.92887 15.7498 1.24994 14.0709 1.24994 11.9998Z",
+		"M10.7666 10.9999L19.2781 10.9999L17.3527 8.79418L18.8775 7.50001L22.7501 11.9999L18.8775 16.4999L17.3527 15.2057L19.2782 12.9999L10.7666 12.9999L10.7666 10.9999Z"
+	],
+	"content": [
+		{
+			"id": "effects-intro",
+			"type": "message",
+			"text": "Configure effects and transitions to add subtle motion and visual feedback to your website. All effects respect the user's <code>prefers-reduced-motion</code> setting."
+		},
+		{
+			"id": "effects-tabs",
+			"title": "Effects",
+			"type": "tabs-container",
+			"style": "inline",
+			"content": [
+				{
+					"id": "effects-tab",
+					"title": "Effects",
+					"icon": "effects",
+					"type": "tab",
+					"content": [
+						{
+							"id": "scroll-effects-group",
+							"type": "section-container",
+							"title": "Scroll effects",
+							"content": [
+								{
+									"id": "entrance-effects-accordion",
+									"title": "On Enter",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "entrance-effects-intro",
+											"type": "message",
+											"text": "Elements animate into view as you scroll down. Uses CSS <code>animation-timeline: view()</code> for scroll-driven animations."
+										},
+										{
+											"id": "entrance-turn-on-message",
+											"type": "message",
+											"text": "Turn on one or more effects in the Options tab to configure them.",
+											"displayWhen": [
+												[
+													"option-enter-fade",
+													"off"
+												],
+												[
+													"option-enter-float",
+													"off"
+												],
+												[
+													"option-enter-sink",
+													"off"
+												],
+												[
+													"option-enter-slide",
+													"off"
+												],
+												[
+													"option-enter-grow",
+													"off"
+												],
+												[
+													"option-enter-shrink",
+													"off"
+												],
+												[
+													"option-enter-blur",
+													"off"
+												],
+												[
+													"option-enter-parallax",
+													"off"
+												]
+											]
+										},
+										{
+											"id": "enter-timing-section",
+											"type": "section-container",
+											"title": "Timing",
+											"displayWhenOr": [
+												[
+													"option-enter-fade",
+													"on"
+												],
+												[
+													"option-enter-float",
+													"on"
+												],
+												[
+													"option-enter-sink",
+													"on"
+												],
+												[
+													"option-enter-slide",
+													"on"
+												],
+												[
+													"option-enter-grow",
+													"on"
+												],
+												[
+													"option-enter-shrink",
+													"on"
+												],
+												[
+													"option-enter-blur",
+													"on"
+												],
+												[
+													"option-enter-parallax",
+													"on"
+												]
+											],
+											"content": [
+												{
+													"id": "animate-range-start",
+													"title": "Range Start",
+													"type": "text",
+													"default": "entry 20%",
+													"placeholder": "entry 20%",
+													"tooltip": "When the entrance animation begins."
+												},
+												{
+													"id": "animate-range-end",
+													"title": "Range End",
+													"type": "text",
+													"default": "entry 100%",
+													"placeholder": "entry 100%",
+													"tooltip": "When the entrance animation completes."
+												},
+												{
+													"id": "enter-stagger-interval",
+													"title": "Stagger Interval",
+													"type": "text",
+													"default": "5%",
+													"placeholder": "5%",
+													"tooltip": "Delay between each child element's animation when using the on-enter--stagger class. Uses CSS sibling-index() — limited browser support."
+												}
+											]
+										},
+										{
+											"id": "enter-fade-section",
+											"type": "section-container",
+											"title": "Fade (.on-enter--fade)",
+											"displayWhen": [
+												"option-enter-fade",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-opacity-start",
+													"title": "Starting Opacity",
+													"type": "text",
+													"default": "0",
+													"placeholder": "0",
+													"tooltip": "The initial opacity before fading in (0 = fully transparent)."
+												}
+											]
+										},
+										{
+											"id": "enter-grow-section",
+											"type": "section-container",
+											"title": "Grow (.on-enter--grow)",
+											"displayWhen": [
+												"option-enter-grow",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-scale-start",
+													"title": "Starting Scale",
+													"type": "text",
+													"default": "0.9",
+													"placeholder": "0.9",
+													"tooltip": "The initial scale before growing (0.9 = starts at 90%)."
+												}
+											]
+										},
+										{
+											"id": "enter-shrink-section",
+											"type": "section-container",
+											"title": "Shrink (.on-enter--shrink)",
+											"displayWhen": [
+												"option-enter-shrink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-scale-shrink",
+													"title": "Starting Scale",
+													"type": "text",
+													"default": "1.1",
+													"placeholder": "1.1",
+													"tooltip": "The initial scale before shrinking (1.1 = starts at 110%)."
+												}
+											]
+										},
+										{
+											"id": "enter-blur-section",
+											"type": "section-container",
+											"title": "Blur (.on-enter--blur)",
+											"displayWhen": [
+												"option-enter-blur",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-blur-amount",
+													"title": "Blur Amount",
+													"type": "text",
+													"default": "8px",
+													"placeholder": "8px",
+													"tooltip": "How blurred the element starts before sharpening."
+												}
+											]
+										},
+										{
+											"id": "enter-parallax-section",
+											"type": "section-container",
+											"title": "Parallax (.on-enter--parallax)",
+											"displayWhen": [
+												"option-enter-parallax",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-parallax-info",
+													"type": "message",
+													"text": "Mimics fixed background parallax. Parent container should have <code>overflow: hidden</code>."
+												},
+												{
+													"id": "enter-parallax-distance",
+													"title": "Parallax Distance",
+													"type": "text",
+													"default": "150px",
+													"placeholder": "150px",
+													"tooltip": "Total travel distance of the parallax effect. Element moves half this distance above and below its natural position."
+												}
+											]
+										},
+										{
+											"id": "enter-float-section",
+											"type": "section-container",
+											"title": "Float (.on-enter--float)",
+											"displayWhen": [
+												"option-enter-float",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-float-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element floats upward during the animation."
+												}
+											]
+										},
+										{
+											"id": "enter-sink-section",
+											"type": "section-container",
+											"title": "Sink (.on-enter--sink)",
+											"displayWhen": [
+												"option-enter-sink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-sink-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element sinks downward during the animation."
+												}
+											]
+										},
+										{
+											"id": "enter-slide-section",
+											"type": "section-container",
+											"title": "Slide (.on-enter--slide-left / --slide-right)",
+											"displayWhen": [
+												"option-enter-slide",
+												"on"
+											],
+											"content": [
+												{
+													"id": "enter-slide-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element slides in from the side."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "exit-effects-accordion",
+									"title": "On Exit",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "exit-effects-intro",
+											"type": "message",
+											"text": "Elements animate out as you scroll past them. Perfect for hero sections and above-the-fold content."
+										},
+										{
+											"id": "exit-turn-on-message",
+											"type": "message",
+											"text": "Turn on one or more effects in the Options tab to configure them.",
+											"displayWhen": [
+												[
+													"option-exit-fade",
+													"off"
+												],
+												[
+													"option-exit-float",
+													"off"
+												],
+												[
+													"option-exit-sink",
+													"off"
+												],
+												[
+													"option-exit-grow",
+													"off"
+												],
+												[
+													"option-exit-shrink",
+													"off"
+												],
+												[
+													"option-exit-slide",
+													"off"
+												],
+												[
+													"option-exit-blur",
+													"off"
+												]
+											]
+										},
+										{
+											"id": "exit-global-section",
+											"type": "section-container",
+											"title": "Timing",
+											"displayWhenOr": [
+												[
+													"option-exit-fade",
+													"on"
+												],
+												[
+													"option-exit-float",
+													"on"
+												],
+												[
+													"option-exit-sink",
+													"on"
+												],
+												[
+													"option-exit-grow",
+													"on"
+												],
+												[
+													"option-exit-shrink",
+													"on"
+												],
+												[
+													"option-exit-slide",
+													"on"
+												],
+												[
+													"option-exit-blur",
+													"on"
+												]
+											],
+											"content": [
+												{
+													"id": "exit-range-start",
+													"title": "Exit Range Start",
+													"type": "text",
+													"default": "cover 50%",
+													"placeholder": "cover 50%",
+													"tooltip": "When the exit animation begins. Use 'cover 50%' to start while element is still visible, or 'exit 0%' to start when element begins leaving viewport."
+												},
+												{
+													"id": "exit-range-end",
+													"title": "Exit Range End",
+													"type": "text",
+													"default": "cover 100%",
+													"placeholder": "cover 100%",
+													"tooltip": "When the exit animation completes."
+												},
+												{
+													"id": "exit-stagger-interval",
+													"title": "Stagger Interval",
+													"type": "text",
+													"default": "5%",
+													"placeholder": "5%",
+													"tooltip": "Delay between each child element's animation when using the on-exit--stagger class. Uses CSS sibling-index() — limited browser support."
+												}
+											]
+										},
+										{
+											"id": "exit-fade-section",
+											"type": "section-container",
+											"title": "Fade (.on-exit--fade)",
+											"displayWhen": [
+												"option-exit-fade",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-opacity-target",
+													"title": "Exit Opacity",
+													"type": "text",
+													"default": "0",
+													"placeholder": "0",
+													"tooltip": "The final opacity when exiting (0 = fully transparent)."
+												}
+											]
+										},
+										{
+											"id": "exit-float-section",
+											"type": "section-container",
+											"title": "Float (.on-exit--float)",
+											"displayWhen": [
+												"option-exit-float",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-float-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element floats upward during the exit animation."
+												}
+											]
+										},
+										{
+											"id": "exit-sink-section",
+											"type": "section-container",
+											"title": "Sink (.on-exit--sink)",
+											"displayWhen": [
+												"option-exit-sink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-sink-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element sinks downward during the exit animation."
+												}
+											]
+										},
+										{
+											"id": "exit-grow-section",
+											"type": "section-container",
+											"title": "Grow (.on-exit--grow)",
+											"displayWhen": [
+												"option-exit-grow",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-scale-grow",
+													"title": "Grow Scale",
+													"type": "text",
+													"default": "1.1",
+													"placeholder": "1.1",
+													"tooltip": "The final scale when exiting (1.1 = grow to 110%)."
+												}
+											]
+										},
+										{
+											"id": "exit-shrink-section",
+											"type": "section-container",
+											"title": "Shrink (.on-exit--shrink)",
+											"displayWhen": [
+												"option-exit-shrink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-scale-amount",
+													"title": "Shrink Scale",
+													"type": "text",
+													"default": "0.9",
+													"placeholder": "0.9",
+													"tooltip": "The final scale when exiting (0.9 = shrink to 90%)."
+												}
+											]
+										},
+										{
+											"id": "exit-slide-section",
+											"type": "section-container",
+											"title": "Slide (.on-exit--slide-left / --slide-right)",
+											"displayWhen": [
+												"option-exit-slide",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-slide-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element slides out to the side."
+												}
+											]
+										},
+										{
+											"id": "exit-blur-section",
+											"type": "section-container",
+											"title": "Blur (.on-exit--blur)",
+											"displayWhen": [
+												"option-exit-blur",
+												"on"
+											],
+											"content": [
+												{
+													"id": "exit-blur-amount",
+													"title": "Blur Amount",
+													"type": "text",
+													"default": "8px",
+													"placeholder": "8px",
+													"tooltip": "How blurred the element becomes when exiting."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "visible-effects-accordion",
+									"title": "On Visible",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "visible-effects-intro",
+											"type": "message",
+											"text": "Elements animate once when they become visible. Unlike scroll animations, On Visible plays once and doesn't reverse. Uses Intersection Observer for reliable triggering."
+										},
+										{
+											"id": "visible-turn-on-message",
+											"type": "message",
+											"text": "Turn on one or more effects in the Options tab to configure them.",
+											"displayWhen": [
+												[
+													"option-visible-fade",
+													"off"
+												],
+												[
+													"option-visible-float",
+													"off"
+												],
+												[
+													"option-visible-sink",
+													"off"
+												],
+												[
+													"option-visible-slide",
+													"off"
+												],
+												[
+													"option-visible-grow",
+													"off"
+												],
+												[
+													"option-visible-shrink",
+													"off"
+												],
+												[
+													"option-visible-blur",
+													"off"
+												]
+											]
+										},
+										{
+											"id": "visible-timing-section",
+											"type": "section-container",
+											"title": "Timing",
+											"displayWhenOr": [
+												[
+													"option-visible-fade",
+													"on"
+												],
+												[
+													"option-visible-float",
+													"on"
+												],
+												[
+													"option-visible-sink",
+													"on"
+												],
+												[
+													"option-visible-slide",
+													"on"
+												],
+												[
+													"option-visible-grow",
+													"on"
+												],
+												[
+													"option-visible-shrink",
+													"on"
+												],
+												[
+													"option-visible-blur",
+													"on"
+												]
+											],
+											"content": [
+												{
+													"id": "visible-duration",
+													"title": "Duration",
+													"type": "text",
+													"default": "0.6s",
+													"placeholder": "0.6s",
+													"tooltip": "How long On Visible animations take to complete."
+												},
+												{
+													"id": "visible-timing",
+													"title": "Timing Function",
+													"type": "text",
+													"default": "var(--ease-smooth)",
+													"placeholder": "var(--ease-smooth)",
+													"tooltip": "Easing function for On Visible animations."
+												},
+												{
+													"id": "visible-delay",
+													"title": "Default Delay",
+													"type": "text",
+													"default": "0s",
+													"placeholder": "0s",
+													"tooltip": "Default delay before On Visible animations begin."
+												},
+												{
+													"id": "visible-threshold",
+													"title": "Visibility Threshold",
+													"type": "text",
+													"default": "0.2",
+													"placeholder": "0.2",
+													"tooltip": "How much of the element must be visible to trigger (0-1). 0.2 = 20% visible."
+												},
+												{
+													"id": "visible-stagger-interval",
+													"title": "Stagger Interval",
+													"type": "text",
+													"default": "0.1s",
+													"placeholder": "0.1s",
+													"tooltip": "Delay between each child element's animation when using the on-visible--stagger class. Uses CSS sibling-index() — limited browser support."
+												}
+											]
+										},
+										{
+											"id": "visible-fade-section",
+											"type": "section-container",
+											"title": "Fade (.on-visible--fade)",
+											"displayWhen": [
+												"option-visible-fade",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-opacity-start",
+													"title": "Starting Opacity",
+													"type": "text",
+													"default": "0",
+													"placeholder": "0",
+													"tooltip": "The initial opacity before fading in (0 = fully transparent)."
+												}
+											]
+										},
+										{
+											"id": "visible-grow-section",
+											"type": "section-container",
+											"title": "Grow (.on-visible--grow)",
+											"displayWhen": [
+												"option-visible-grow",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-scale-start",
+													"title": "Starting Scale",
+													"type": "text",
+													"default": "0.9",
+													"placeholder": "0.9",
+													"tooltip": "The initial scale before growing (0.9 = starts at 90%)."
+												}
+											]
+										},
+										{
+											"id": "visible-shrink-section",
+											"type": "section-container",
+											"title": "Shrink (.on-visible--shrink)",
+											"displayWhen": [
+												"option-visible-shrink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-scale-shrink",
+													"title": "Starting Scale",
+													"type": "text",
+													"default": "1.1",
+													"placeholder": "1.1",
+													"tooltip": "The initial scale before shrinking (1.1 = starts at 110%)."
+												}
+											]
+										},
+										{
+											"id": "visible-blur-section",
+											"type": "section-container",
+											"title": "Blur (.on-visible--blur)",
+											"displayWhen": [
+												"option-visible-blur",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-blur-amount",
+													"title": "Blur Amount",
+													"type": "text",
+													"default": "8px",
+													"placeholder": "8px",
+													"tooltip": "How blurred the element starts before sharpening."
+												}
+											]
+										},
+										{
+											"id": "visible-float-section",
+											"type": "section-container",
+											"title": "Float (.on-visible--float)",
+											"displayWhen": [
+												"option-visible-float",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-float-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element floats upward during the animation."
+												}
+											]
+										},
+										{
+											"id": "visible-sink-section",
+											"type": "section-container",
+											"title": "Sink (.on-visible--sink)",
+											"displayWhen": [
+												"option-visible-sink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-sink-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element sinks downward during the animation."
+												}
+											]
+										},
+										{
+											"id": "visible-slide-section",
+											"type": "section-container",
+											"title": "Slide (.on-visible--slide-left / --slide-right)",
+											"displayWhen": [
+												"option-visible-slide",
+												"on"
+											],
+											"content": [
+												{
+													"id": "visible-slide-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "40px",
+													"placeholder": "40px",
+													"tooltip": "How far the element slides in from the side."
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "hover-effects-group",
+							"type": "section-container",
+							"title": "Hover effects",
+							"content": [
+								{
+									"id": "border-effects-styling-accordion",
+									"title": "Border",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "border-effects-intro",
+											"type": "message",
+											"text": "Animated border and underline effects that appear on hover. Great for buttons, links, and interactive elements."
+										},
+										{
+											"id": "border-turn-on-message",
+											"type": "message",
+											"text": "Turn on one or more effects in the Options tab to configure them.",
+											"displayWhen": [
+												[
+													"option-border-ripple",
+													"off"
+												],
+												[
+													"option-border-outline",
+													"off"
+												],
+												[
+													"option-border-underline",
+													"off"
+												]
+											]
+										},
+										{
+											"id": "border-ripple-section",
+											"type": "section-container",
+											"title": "Ripple (.on-hover--ripple-out / --ripple-in)",
+											"displayWhen": [
+												"option-border-ripple",
+												"on"
+											],
+											"content": [
+												{
+													"id": "border-ripple-color",
+													"title": "Color",
+													"type": "text",
+													"default": "currentColor",
+													"placeholder": "currentColor",
+													"tooltip": "Color of the ripple border."
+												},
+												{
+													"id": "border-ripple-width",
+													"title": "Width",
+													"type": "text",
+													"default": "4px",
+													"placeholder": "4px",
+													"tooltip": "Thickness of the ripple border."
+												},
+												{
+													"id": "border-ripple-duration",
+													"title": "Duration",
+													"type": "text",
+													"default": "1s",
+													"placeholder": "1s",
+													"tooltip": "Animation duration for the ripple effect."
+												},
+												{
+													"id": "border-ripple-distance",
+													"title": "Distance",
+													"type": "text",
+													"default": "12px",
+													"placeholder": "12px",
+													"tooltip": "How far the ripple expands outward."
+												}
+											]
+										},
+										{
+											"id": "border-outline-section",
+											"type": "section-container",
+											"title": "Outline (.on-hover--outline-out / --outline-in)",
+											"displayWhen": [
+												"option-border-outline",
+												"on"
+											],
+											"content": [
+												{
+													"id": "border-outline-color",
+													"title": "Color",
+													"type": "text",
+													"default": "currentColor",
+													"placeholder": "currentColor",
+													"tooltip": "Color of the outline border."
+												},
+												{
+													"id": "border-outline-width",
+													"title": "Width",
+													"type": "text",
+													"default": "4px",
+													"placeholder": "4px",
+													"tooltip": "Thickness of the outline border."
+												},
+												{
+													"id": "border-outline-duration",
+													"title": "Duration",
+													"type": "text",
+													"default": "0.3s",
+													"placeholder": "0.3s",
+													"tooltip": "Transition duration for the outline effect."
+												}
+											]
+										},
+										{
+											"id": "border-underline-section",
+											"type": "section-container",
+											"title": "Underline (.on-hover--underline-left / --center / --right)",
+											"displayWhen": [
+												"option-border-underline",
+												"on"
+											],
+											"content": [
+												{
+													"id": "border-underline-color",
+													"title": "Color",
+													"type": "text",
+													"default": "currentColor",
+													"placeholder": "currentColor",
+													"tooltip": "Color of the underline."
+												},
+												{
+													"id": "border-underline-width",
+													"title": "Width",
+													"type": "text",
+													"default": "3px",
+													"placeholder": "3px",
+													"tooltip": "Thickness of the underline."
+												},
+												{
+													"id": "border-underline-duration",
+													"title": "Duration",
+													"type": "text",
+													"default": "0.3s",
+													"placeholder": "0.3s",
+													"tooltip": "Transition duration for the underline effect."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "shadow-effects-accordion",
+									"title": "Shadow",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "shadow-effects-intro",
+											"type": "message",
+											"text": "Box-shadow and glow effects that appear on hover. Add depth and visual feedback to interactive elements."
+										},
+										{
+											"id": "shadow-turn-on-message",
+											"type": "message",
+											"text": "Turn on one or more effects in the Options tab to configure them.",
+											"displayWhen": [
+												[
+													"option-hover-shadow",
+													"off"
+												],
+												[
+													"option-hover-glow",
+													"off"
+												]
+											]
+										},
+										{
+											"id": "hover-shadow-section",
+											"type": "section-container",
+											"title": "Shadow (.on-hover--shadow)",
+											"displayWhen": [
+												"option-hover-shadow",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-shadow",
+													"title": "Shadow",
+													"type": "text",
+													"default": "0 8px 24px rgba(0, 0, 0, 0.15)",
+													"placeholder": "0 8px 24px rgba(0, 0, 0, 0.15)",
+													"tooltip": "The box-shadow applied on hover."
+												}
+											]
+										},
+										{
+											"id": "hover-glow-section",
+											"type": "section-container",
+											"title": "Glow (.on-hover--glow)",
+											"displayWhen": [
+												"option-hover-glow",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-glow-color",
+													"title": "Glow Color",
+													"type": "text",
+													"default": "var(--primary)",
+													"placeholder": "var(--primary)",
+													"tooltip": "The color of the glow effect."
+												},
+												{
+													"id": "hover-glow-spread",
+													"title": "Glow Spread",
+													"type": "text",
+													"default": "20px",
+													"placeholder": "20px",
+													"tooltip": "How far the glow spreads from the element."
+												},
+												{
+													"id": "hover-glow-opacity",
+													"title": "Glow Opacity",
+													"type": "text",
+													"default": "0.3",
+													"placeholder": "0.3",
+													"tooltip": "The opacity of the glow (0-1)."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "transform-effects-accordion",
+									"title": "Transform",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "transform-effects-intro",
+											"type": "message",
+											"text": "Scale and translate effects that trigger on hover. Uses modern individual transform properties for better composability."
+										},
+										{
+											"id": "transform-turn-on-message",
+											"type": "message",
+											"text": "Turn on one or more effects in the Options tab to configure them.",
+											"displayWhen": [
+												[
+													"option-hover-grow",
+													"off"
+												],
+												[
+													"option-hover-shrink",
+													"off"
+												],
+												[
+													"option-hover-float",
+													"off"
+												],
+												[
+													"option-hover-sink",
+													"off"
+												],
+												[
+													"option-hover-slide-right",
+													"off"
+												],
+												[
+													"option-hover-slide-left",
+													"off"
+												]
+											]
+										},
+										{
+											"id": "hover-grow-section",
+											"type": "section-container",
+											"title": "Grow (.on-hover--grow)",
+											"displayWhen": [
+												"option-hover-grow",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-grow-amount",
+													"title": "Grow Amount",
+													"type": "text",
+													"default": "1.05",
+													"placeholder": "1.05",
+													"tooltip": "The scale factor on hover (1 = no change, 1.05 = 5% larger)."
+												}
+											]
+										},
+										{
+											"id": "hover-shrink-section",
+											"type": "section-container",
+											"title": "Shrink (.on-hover--shrink)",
+											"displayWhen": [
+												"option-hover-shrink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-shrink-amount",
+													"title": "Shrink Amount",
+													"type": "text",
+													"default": "0.95",
+													"placeholder": "0.95",
+													"tooltip": "The scale factor on hover (1 = no change, 0.95 = 5% smaller)."
+												}
+											]
+										},
+										{
+											"id": "hover-float-section",
+											"type": "section-container",
+											"title": "Float (.on-hover--float)",
+											"displayWhen": [
+												"option-hover-float",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-float-amount",
+													"title": "Float Distance",
+													"type": "text",
+													"default": "-8px",
+													"placeholder": "-8px",
+													"tooltip": "How far the element floats up on hover (negative = up)."
+												}
+											]
+										},
+										{
+											"id": "hover-sink-section",
+											"type": "section-container",
+											"title": "Sink (.on-hover--sink)",
+											"displayWhen": [
+												"option-hover-sink",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-sink-amount",
+													"title": "Sink Distance",
+													"type": "text",
+													"default": "8px",
+													"placeholder": "8px",
+													"tooltip": "How far the element sinks down on hover (positive = down)."
+												}
+											]
+										},
+										{
+											"id": "hover-slide-right-section",
+											"type": "section-container",
+											"title": "Slide Right (.on-hover--slide-right)",
+											"displayWhen": [
+												"option-hover-slide-right",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-slide-right-amount",
+													"title": "Slide Right Distance",
+													"type": "text",
+													"default": "8px",
+													"placeholder": "8px",
+													"tooltip": "How far the element slides right on hover."
+												}
+											]
+										},
+										{
+											"id": "hover-slide-left-section",
+											"type": "section-container",
+											"title": "Slide Left (.on-hover--slide-left)",
+											"displayWhen": [
+												"option-hover-slide-left",
+												"on"
+											],
+											"content": [
+												{
+													"id": "hover-slide-left-amount",
+													"title": "Slide Left Distance",
+													"type": "text",
+													"default": "-8px",
+													"placeholder": "-8px",
+													"tooltip": "How far the element slides left on hover."
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "global-section",
+							"type": "section-container",
+							"title": "Global",
+							"content": [
+								{
+									"id": "transition-styling",
+									"title": "Transition",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "transition-message",
+											"type": "message",
+											"text": "<a target='_blank' href='https://automaticcss.com/docs/transition/'>Transitions</a> are micro animations that can enhance the user experience by providing visual feedback when elements change state. Define your default transition styles here."
+										},
+										{
+											"id": "option-transition-variables",
+											"title": "Transition Variables",
+											"type": "toggle",
+											"default": "on",
+											"style": "",
+											"tooltip": "Variables for transitions."
+										},
+										{
+											"id": "transition-timing",
+											"title": "Timing Function",
+											"type": "text",
+											"default": "ease-in-out",
+											"placeholder": "ease-in-out",
+											"tooltip": "The default timing function for transitions.",
+											"displayWhen": [
+												"option-transition-variables",
+												"on"
+											]
+										},
+										{
+											"id": "transition-duration",
+											"title": "Duration",
+											"type": "text",
+											"default": ".3s",
+											"placeholder": ".3s",
+											"tooltip": "The default duration/length of transitions.",
+											"displayWhen": [
+												"option-transition-variables",
+												"on"
+											]
+										},
+										{
+											"id": "transition-delay",
+											"title": "Delay",
+											"type": "text",
+											"default": "0s",
+											"placeholder": "0s",
+											"tooltip": "The default delay before transitions begin.",
+											"displayWhen": [
+												"option-transition-variables",
+												"on"
+											]
+										}
+									]
+								},
+								{
+									"id": "easing-presets-accordion",
+									"title": "Easing Presets",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-easing-presets",
+											"title": "Easing Preset Variables",
+											"type": "toggle",
+											"default": "on",
+											"tooltip": "Enable named easing curve CSS variables (--ease-[name])."
+										},
+										{
+											"id": "easing-presets-intro",
+											"type": "message",
+											"text": "Easing curves control the acceleration of animations. Use these tokens in your transition-timing-function or animation-timing-function properties.",
+											"displayWhen": [
+												"option-easing-presets",
+												"on"
+											]
+										},
+										{
+											"id": "easing-tabs",
+											"title": "Easing Presets",
+											"type": "tabs-container",
+											"style": "inline",
+											"displayWhen": [
+												"option-easing-presets",
+												"on"
+											],
+											"content": [
+												{
+													"id": "ease-1-tab",
+													"title": "1",
+													"dynamicTitle": "ease-1-name",
+													"type": "tab",
+													"content": [
+														{
+															"id": "ease-1-name",
+															"title": "Name",
+															"type": "text",
+															"default": "smooth",
+															"skip-if-empty": true,
+															"tooltip": "Name your easing preset. This determines the CSS variable name: --ease-[name]."
+														},
+														{
+															"id": "ease-1-value",
+															"title": "Value",
+															"type": "textarea",
+															"default": "cubic-bezier(0.4, 0, 0.2, 1)",
+															"placeholder": "cubic-bezier(0.4, 0, 0.2, 1)",
+															"skip-if-empty": true,
+															"tooltip": "Standard easing. Best for general UI transitions like hover effects, menus, and modals."
+														}
+													]
+												},
+												{
+													"id": "ease-2-tab",
+													"title": "2",
+													"dynamicTitle": "ease-2-name",
+													"type": "tab",
+													"content": [
+														{
+															"id": "ease-2-name",
+															"title": "Name",
+															"type": "text",
+															"default": "snappy",
+															"skip-if-empty": true,
+															"tooltip": "Name your easing preset. This determines the CSS variable name: --ease-[name]."
+														},
+														{
+															"id": "ease-2-value",
+															"title": "Value",
+															"type": "textarea",
+															"default": "cubic-bezier(0.16, 1, 0.3, 1)",
+															"placeholder": "cubic-bezier(0.16, 1, 0.3, 1)",
+															"skip-if-empty": true,
+															"tooltip": "Fast start, gentle stop. Ideal for scroll animations, dropdowns opening, and content revealing."
+														}
+													]
+												},
+												{
+													"id": "ease-3-tab",
+													"title": "3",
+													"dynamicTitle": "ease-3-name",
+													"type": "tab",
+													"content": [
+														{
+															"id": "ease-3-name",
+															"title": "Name",
+															"type": "text",
+															"default": "gentle",
+															"skip-if-empty": true,
+															"tooltip": "Name your easing preset. This determines the CSS variable name: --ease-[name]."
+														},
+														{
+															"id": "ease-3-value",
+															"title": "Value",
+															"type": "textarea",
+															"default": "cubic-bezier(0.65, 0, 0.35, 1)",
+															"placeholder": "cubic-bezier(0.65, 0, 0.35, 1)",
+															"skip-if-empty": true,
+															"tooltip": "Symmetrical acceleration and deceleration. Best for elements moving from point A to B, like sliders, carousels, and position changes."
+														}
+													]
+												},
+												{
+													"id": "ease-4-tab",
+													"title": "4",
+													"dynamicTitle": "ease-4-name",
+													"type": "tab",
+													"content": [
+														{
+															"id": "ease-4-name",
+															"title": "Name",
+															"type": "text",
+															"default": "bouncy",
+															"skip-if-empty": true,
+															"tooltip": "Name your easing preset. This determines the CSS variable name: --ease-[name]."
+														},
+														{
+															"id": "ease-4-value",
+															"title": "Value",
+															"type": "textarea",
+															"default": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+															"placeholder": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+															"skip-if-empty": true,
+															"tooltip": "Bouncy overshoot effect. Use sparingly for playful interactions like notification badges, fun buttons, or attention-grabbing micro-interactions."
+														}
+													]
+												},
+												{
+													"id": "ease-5-tab",
+													"title": "5",
+													"dynamicTitle": "ease-5-name",
+													"type": "tab",
+													"content": [
+														{
+															"id": "ease-5-name",
+															"title": "Name",
+															"type": "text",
+															"default": "elastic",
+															"skip-if-empty": true,
+															"tooltip": "Name your easing preset. This determines the CSS variable name: --ease-[name]."
+														},
+														{
+															"id": "ease-5-value",
+															"title": "Value",
+															"type": "textarea",
+															"default": "linear(0, 0.029 1.6%, 0.123 3.5%, 0.651 10.6%, 0.862 14.1%, 1.002 17.7%, 1.046 19.6%, 1.074 21.6%, 1.087 23.9%, 1.086 26.6%, 1.014 38.5%, 0.994 46.3%, 1)",
+															"placeholder": "cubic-bezier(...)",
+															"skip-if-empty": true,
+															"tooltip": "Elastic spring effect with slight overshoot and settle. Great for attention-grabbing entrances and playful interactions."
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "effects-options-tab",
+					"title": "Options",
+					"icon": "settings",
+					"type": "tab",
+					"content": [
+						{
+							"id": "effects-options-message",
+							"type": "message",
+							"text": "Enable or disable effects and configure global settings."
+						},
+						{
+							"id": "options-scroll-effects-group",
+							"type": "section-container",
+							"title": "Scroll effects",
+							"content": [
+								{
+									"id": "entrance-options-accordion",
+									"title": "On Enter",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-enter-fade",
+											"title": "Fade",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Simple fade with no movement."
+										},
+										{
+											"id": "option-enter-float",
+											"title": "Float",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Floats up into view."
+										},
+										{
+											"id": "option-enter-sink",
+											"title": "Sink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Sinks down into view."
+										},
+										{
+											"id": "option-enter-slide",
+											"title": "Slide Left / Right",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Slides in from the side."
+										},
+										{
+											"id": "option-enter-grow",
+											"title": "Grow",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Grows from a smaller size."
+										},
+										{
+											"id": "option-enter-shrink",
+											"title": "Shrink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Shrinks from a larger size."
+										},
+										{
+											"id": "option-enter-blur",
+											"title": "Blur",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Starts blurred and sharpens."
+										},
+										{
+											"id": "option-enter-parallax",
+											"title": "Parallax",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Creates a fixed-background-like parallax depth effect. Element moves slower than scroll."
+										},
+										{
+											"id": "entrance-global-section",
+											"type": "section-container",
+											"title": "Global Entrance Settings",
+											"content": [
+												{
+													"id": "scroll-animation-duration",
+													"title": "Animation Duration",
+													"type": "text",
+													"default": "0.6s",
+													"placeholder": "0.6s",
+													"tooltip": "How long entrance animations take to complete."
+												},
+												{
+													"id": "scroll-animation-timing",
+													"title": "Animation Timing",
+													"type": "text",
+													"default": "var(--ease-snappy)",
+													"placeholder": "var(--ease-snappy)",
+													"tooltip": "Easing function for entrance animations. Use an easing token like var(--ease-smooth) or a custom cubic-bezier."
+												},
+												{
+													"id": "scroll-animation-delay",
+													"title": "Default Delay",
+													"type": "text",
+													"default": "0s",
+													"placeholder": "0s",
+													"tooltip": "Default delay before entrance animations begin."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "exit-options-accordion",
+									"title": "On Exit",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-exit-fade",
+											"title": "Fade",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Fades as you scroll past."
+										},
+										{
+											"id": "option-exit-float",
+											"title": "Float",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Floats upward as you scroll past."
+										},
+										{
+											"id": "option-exit-sink",
+											"title": "Sink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Sinks downward as you scroll past."
+										},
+										{
+											"id": "option-exit-grow",
+											"title": "Grow",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Grows larger as you scroll past."
+										},
+										{
+											"id": "option-exit-shrink",
+											"title": "Shrink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Shrinks as you scroll past."
+										},
+										{
+											"id": "option-exit-slide",
+											"title": "Slide Left / Right",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Slides out to the side as you scroll past."
+										},
+										{
+											"id": "option-exit-blur",
+											"title": "Blur",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Blurs the element as you scroll past."
+										}
+									]
+								},
+								{
+									"id": "visible-options-accordion",
+									"title": "On Visible",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-visible-fade",
+											"title": "Fade",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Fades in when visible."
+										},
+										{
+											"id": "option-visible-float",
+											"title": "Float",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Floats up into view when visible."
+										},
+										{
+											"id": "option-visible-sink",
+											"title": "Sink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Sinks down into view when visible."
+										},
+										{
+											"id": "option-visible-slide",
+											"title": "Slide Left / Right",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Slides in from the side when visible."
+										},
+										{
+											"id": "option-visible-grow",
+											"title": "Grow",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Grows from a smaller size when visible."
+										},
+										{
+											"id": "option-visible-shrink",
+											"title": "Shrink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Shrinks from a larger size when visible."
+										},
+										{
+											"id": "option-visible-blur",
+											"title": "Blur",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Starts blurred and sharpens when visible."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "options-hover-effects-group",
+							"type": "section-container",
+							"title": "Hover effects",
+							"content": [
+								{
+									"id": "hover-global-accordion",
+									"title": "Global Hover Settings",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "hover-global-section",
+											"type": "section-container",
+											"title": "Timing",
+											"content": [
+												{
+													"id": "hover-duration",
+													"title": "Hover Transition Duration",
+													"type": "text",
+													"default": "var(--transition-duration, 0.3s)",
+													"placeholder": "var(--transition-duration, 0.3s)",
+													"tooltip": "Duration for hover effect transitions. Uses global transition duration by default."
+												},
+												{
+													"id": "hover-timing",
+													"title": "Hover Timing Function",
+													"type": "text",
+													"default": "var(--transition-timing, ease-in-out)",
+													"placeholder": "var(--transition-timing, ease-in-out)",
+													"tooltip": "Easing function for hover effect transitions. Uses global transition timing by default."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "border-effects-accordion",
+									"title": "Border Library",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-border-ripple",
+											"title": "Ripple In / Out",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Border ripples inward or outward on hover."
+										},
+										{
+											"id": "option-border-outline",
+											"title": "Outline In / Out",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Outline moves inward or outward on hover."
+										},
+										{
+											"id": "option-border-underline",
+											"title": "Underline (Left / Center / Right)",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Animated underline from different directions."
+										}
+									]
+								},
+								{
+									"id": "filter-options-accordion",
+									"title": "Filter Library",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-hover-brighten",
+											"title": "Brighten",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Increases brightness on hover. Great for images."
+										}
+									]
+								},
+								{
+									"id": "opacity-options-accordion",
+									"title": "Opacity Library",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-hover-fade",
+											"title": "Fade",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Reduces opacity on hover."
+										}
+									]
+								},
+								{
+									"id": "shadow-options-accordion",
+									"title": "Shadow Library",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-hover-shadow",
+											"title": "Shadow",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Adds a box-shadow on hover."
+										},
+										{
+											"id": "option-hover-glow",
+											"title": "Glow",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Adds a colored glow around the element on hover."
+										}
+									]
+								},
+								{
+									"id": "transform-options-accordion",
+									"title": "Transform Library",
+									"type": "accordion-container",
+									"content": [
+										{
+											"id": "option-hover-grow",
+											"title": "Grow",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Scales the element up on hover."
+										},
+										{
+											"id": "option-hover-shrink",
+											"title": "Shrink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Scales the element down on hover."
+										},
+										{
+											"id": "option-hover-float",
+											"title": "Float",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Floats the element upward on hover."
+										},
+										{
+											"id": "option-hover-sink",
+											"title": "Sink",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Sinks the element downward on hover."
+										},
+										{
+											"id": "option-hover-slide-right",
+											"title": "Slide Right",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Translates element to the right on hover."
+										},
+										{
+											"id": "option-hover-slide-left",
+											"title": "Slide Left",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Translates element to the left on hover."
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

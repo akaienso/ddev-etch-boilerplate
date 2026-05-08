@@ -1,0 +1,7 @@
+@if $option-header-height-variables == on {
+	/* Feat: Header Height Variables */
+	:root {
+		--header-height: #{$header-height};
+		--admin-bar-height: var(--wp-admin--admin-bar--height, 0px);
+	}
+}

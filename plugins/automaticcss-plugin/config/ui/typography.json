@@ -1,0 +1,2766 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "typography",
+	"title": "Typography",
+	"type": "screen-container",
+	"description": "Typography settings.",
+	"iconPaths": [
+		"M2.35 6.7V5.35H5.725V15.25H4.375C4.00094 15.25 3.7 15.5509 3.7 15.925C3.7 16.2991 4.00094 16.6 4.375 16.6H8.425C8.79906 16.6 9.1 16.2991 9.1 15.925C9.1 15.5509 8.79906 15.25 8.425 15.25H7.075V5.35H10.45V6.7C10.45 7.07406 10.7509 7.375 11.125 7.375C11.4991 7.375 11.8 7.07406 11.8 6.7V5.125C11.8 4.50344 11.2966 4 10.675 4H2.125C1.50344 4 1 4.50344 1 5.125V6.7C1 7.07406 1.30094 7.375 1.675 7.375C2.04906 7.375 2.35 7.07406 2.35 6.7ZM11.125 11.425V10.75H13.825V15.25H12.925C12.5509 15.25 12.25 15.5509 12.25 15.925C12.25 16.2991 12.5509 16.6 12.925 16.6H16.075C16.4491 16.6 16.75 16.2991 16.75 15.925C16.75 15.5509 16.4491 15.25 16.075 15.25H15.175V10.75H17.65V11.425C17.65 11.7991 17.9509 12.1 18.325 12.1C18.6991 12.1 19 11.7991 19 11.425V10.525C19 9.90344 18.4966 9.4 17.875 9.4H10.9C10.2784 9.4 9.775 9.90344 9.775 10.525V11.425C9.775 11.7991 10.0759 12.1 10.45 12.1C10.8241 12.1 11.125 11.7991 11.125 11.425Z"
+	],
+	"content": [
+		{
+			"id": "root-font-size",
+			"title": "Root Font Size",
+			"type": "percent",
+			"default": 100,
+			"tooltip": "The root font size for the document. Typically 62.5% or 100%.",
+			"documentation": "https://automaticcss.com/docs/fluid-text/"
+		},
+		{
+			"id": "typography-main-tabs",
+			"title": "Typography Tabs",
+			"type": "tabs-container",
+			"style": "full-width",
+			"content": [
+				{
+					"id": "headings-settings",
+					"title": "Headings",
+					"type": "tab",
+					"content": [
+						{
+							"id": "base-heading-desk",
+							"title": "Desktop Base Size",
+							"type": "px",
+							"default": 20,
+							"percentage-convert": true,
+							"unit": "px",
+							"tooltip": "The size of your H4 heading on desktop. All other heading sizes are calculated from this value.",
+							"documentation": "https://automaticcss.com/docs/fluid-headings/"
+						},
+						{
+							"id": "base-heading-mob",
+							"title": "Mobile Base Size",
+							"type": "px",
+							"default": 18,
+							"percentage-convert": true,
+							"unit": "px",
+							"tooltip": "The size of your H4 heading on mobile. All other heading sizes are calculated from this value.",
+							"documentation": "https://automaticcss.com/docs/fluid-headings/"
+						},
+						{
+							"id": "heading-scale",
+							"title": "Desktop Ratio",
+							"type": "number",
+							"musicScale": true,
+							"default": 1.333,
+							"tooltip": "The degree of difference between heading sizes on desktop (up/down keys cycle through music scales).",
+							"documentation": "https://automaticcss.com/docs/fluid-headings/"
+						},
+						{
+							"id": "mob-heading-scale",
+							"title": "Mobile Ratio",
+							"type": "number",
+							"musicScale": true,
+							"default": 1.2,
+							"tooltip": "The degree of difference between heading sizes on mobile (up/down keys cycle through music scales).",
+							"documentation": "https://automaticcss.com/docs/fluid-headings/"
+						},
+						{
+							"id": "typography-manual-heading-tabs",
+							"title": "Typography Sizing Tabs",
+							"type": "tabs-container",
+							"style": "inline",
+							"content": [
+								{
+									"id": "all-heading-settings",
+									"title": "All",
+									"type": "tab",
+									"content": [
+										{
+											"id": "heading-font-family",
+											"title": "Default Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your heading font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"target": "h1, h2, h3, h4, h5, h6",
+											"cssVariable": "font-family",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "heading-color",
+											"title": "Default Heading Color",
+											"type": "text",
+											"default": "var(--text-dark)",
+											"skip-if-empty": true,
+											"cssVariable": "--heading-color",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The default color of your headings.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "base-heading-lh",
+											"title": "Default Line Height",
+											"type": "text",
+											"default": "calc(4px + 2ex)",
+											"cssVariable": "line-height",
+											"target": "h1, h2, h3, h4, h5, h6",
+											"tooltip": "The space between heading lines.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "heading-weight",
+											"title": "Default Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600, inherit",
+											"cssVariable": "font-weight",
+											"target": "h1, h2, h3, h4, h5, h6",
+											"skip-if-empty": true,
+											"tooltip": "The weight (boldness) of your headings. Supports any valid font-weight value including variable font weights (e.g. 450, 550).",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "heading-letter-spacing",
+											"title": "Default Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": "h1, h2, h3, h4, h5, h6",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The space between characters in your headings.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "heading-max-width",
+											"title": "Default Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h1, h2, h3, h4, h5, h6",
+											"environment": {
+												"exclude": "bricks"
+											},
+											"tooltip": "The width at which line breaks will occur in your headings.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "heading-font-style",
+											"title": "Default Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-style",
+											"target": "h1, h2, h3, h4, h5, h6",
+											"tooltip": "The font style of your headings (italic, oblique, etc.).",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "heading-text-transform",
+											"title": "Default Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h1,h2,h3,h4,h5,h6",
+											"skip-if-empty": true,
+											"tooltip": "The case of your headings (uppercase, lowercase, etc.).",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "heading-text-wrap",
+											"title": "Default Text Wrap",
+											"type": "select",
+											"options": [
+												"wrap",
+												"pretty",
+												"balance",
+												"inherit"
+											],
+											"default": "balance",
+											"skip-if-empty": true,
+											"cssVariable": "text-wrap",
+											"target": "h1,h2,h3,h4,h5,h6",
+											"tooltip": "The wrapping behavior of your headings ('wrap' = normal)",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										}
+									]
+								},
+								{
+									"id": "h1-settings",
+									"title": "H1",
+									"type": "tab",
+									"content": [
+										{
+											"id": "h1-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your h1 font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"target": "h1, .h--1, .h1",
+											"cssVariable": "font-family",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-color",
+											"title": "Color",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "color",
+											"target": "h1, .h--1, .h1",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": "h1, .h--1, .h1",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"cssVariable": "font-weight",
+											"target": "h1, .h--1, .h1",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"cssVariable": "letter-spacing",
+											"target": "h1, .h--1, .h1",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h1",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h1, .h--1, .h1",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"cssVariable": "font-style",
+											"target": "h1, .h--1, .h1",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h1-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "h1-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for H1 headings. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "h1-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for H1 headings. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "h2-settings",
+									"title": "H2",
+									"type": "tab",
+									"content": [
+										{
+											"id": "h2-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your h2 font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"cssVariable": "font-family",
+											"target": "h2, .h--2, .h2",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-color",
+											"title": "Color",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "--h2-color",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": "h2, .h--2, .h2",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"cssVariable": "font-weight",
+											"target": "h2, .h--2, .h2",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"cssVariable": "letter-spacing",
+											"target": "h2, .h--2, .h2",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h2",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h2, .h--2, .h2",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"cssVariable": "font-style",
+											"target": "h2, .h--2, .h2",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h2-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "h2-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for H2 headings. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "h2-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for H2 headings. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "h3-settings",
+									"title": "H3",
+									"type": "tab",
+									"content": [
+										{
+											"id": "h3-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your h3 font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"target": "h3, .h--3, .h3",
+											"cssVariable": "font-family",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-color",
+											"title": "Color",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "color",
+											"target": "h3, .h--3, .h3",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": "h3, .h--3, .h3",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"cssVariable": "font-weight",
+											"target": "h3, .h--3, .h3",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"cssVariable": "letter-spacing",
+											"target": "h3, .h--3, .h3",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h3",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h3, .h--3, .h3",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"cssVariable": "font-style",
+											"target": "h3, .h--3, .h3",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h3-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "h3-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for H3 headings. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "h3-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for H3 headings. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "h4-settings",
+									"title": "H4",
+									"type": "tab",
+									"content": [
+										{
+											"id": "h4-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your h4 font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"target": "h4, .h--4, .h4",
+											"cssVariable": "font-family",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h4-color",
+											"title": "Color",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "color",
+											"target": "h4, .h--4, .h4",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "base-heading-lh-clone",
+											"type": "clone",
+											"target": "base-heading-lh"
+										},
+										{
+											"id": "h4-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"cssVariable": "font-weight",
+											"target": "h4, .h--4, .h4",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h4-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"cssVariable": "letter-spacing",
+											"target": "h4, .h--4, .h4",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h4-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h4",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h4-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h4, .h--4, .h4",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h4-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"cssVariable": "font-style",
+											"target": "h4, .h--4, .h4",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h4-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "h4-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for H4 headings. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "h4-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for H4 headings. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "h5-settings",
+									"title": "H5",
+									"type": "tab",
+									"content": [
+										{
+											"id": "h5-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your h5 font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"target": "h5, .h--5, .h5",
+											"cssVariable": "font-family",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-color",
+											"title": "Color",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "color",
+											"target": "h5, .h--5, .h5",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": "h5, .h--5, .h5",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"cssVariable": "font-weight",
+											"target": "h5, .h--5, .h5",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"cssVariable": "letter-spacing",
+											"target": "h5, .h--5, .h5",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h5",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h5, .h--5, .h5",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"cssVariable": "font-style",
+											"target": "h5, .h--5, .h5",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h5-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "h5-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "15",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for H5 headings. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "h5-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "14",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for H5 headings. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "h6-settings",
+									"title": "H6",
+									"type": "tab",
+									"content": [
+										{
+											"id": "h6-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"skip-if-empty": true,
+											"tooltip": "Set your h6 font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"target": "h6, .h--6, .h6",
+											"cssVariable": "font-family",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-color",
+											"title": "Color",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "color",
+											"target": "h6, .h--6, .h6",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": "h6, .h--6, .h6",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"cssVariable": "font-weight",
+											"target": "h6, .h--6, .h6",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"cssVariable": "letter-spacing",
+											"target": "h6, .h--6, .h6",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": "h6",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"cssVariable": "text-transform",
+											"target": "h6, .h--6, .h6",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"cssVariable": "font-style",
+											"target": "h6, .h--6, .h6",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "h6-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "h6-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "14",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for H6 headings. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "h6-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "13",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for H6 headings. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "text-settings",
+					"title": "Text",
+					"type": "tab",
+					"content": [
+						{
+							"id": "base-text-desk",
+							"title": "Desktop Base Size",
+							"type": "px",
+							"default": 18,
+							"percentage-convert": true,
+							"unit": "px",
+							"tooltip": "The size of your 'M' & default text. All other text sizes are calculated from this value.",
+							"documentation": "https://automaticcss.com/docs/fluid-text/"
+						},
+						{
+							"id": "base-text-mob",
+							"title": "Mobile Base Size",
+							"type": "px",
+							"default": 16,
+							"percentage-convert": true,
+							"unit": "px",
+							"tooltip": "The size of your 'M' & default text. All other text sizes are calculated from this value.",
+							"documentation": "https://automaticcss.com/docs/fluid-text/"
+						},
+						{
+							"id": "text-scale",
+							"title": "Desktop Ratio",
+							"type": "number",
+							"musicScale": true,
+							"default": 1.333,
+							"tooltip": "The degree of difference between text sizes (up/down keys cycle through music scales).",
+							"documentation": "https://automaticcss.com/docs/fluid-text/"
+						},
+						{
+							"id": "mob-text-scale",
+							"title": "Mobile Ratio",
+							"type": "number",
+							"musicScale": true,
+							"default": 1.2,
+							"tooltip": "The degree of difference between text sizes (up/down keys cycle through music scales).",
+							"documentation": "https://automaticcss.com/docs/fluid-text/"
+						},
+						{
+							"id": "typography-manual-text-tabs",
+							"title": "Typography Sizing Tabs",
+							"type": "tabs-container",
+							"style": "inline",
+							"content": [
+								{
+									"id": "all-text-settings",
+									"title": "All",
+									"type": "tab",
+									"content": [
+										{
+											"id": "text-font-family",
+											"title": "Font Family",
+											"type": "text",
+											"default": "",
+											"placeholder": "Chivo, sans-serif",
+											"cssVariable": "font-family",
+											"target": "body :is(p, li, blockquote)",
+											"skip-if-empty": true,
+											"tooltip": "Set your heading font-family output.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "body-color",
+											"title": "Default Text Color",
+											"type": "text",
+											"default": "var(--text-dark-muted)",
+											"skip-if-empty": true,
+											"tooltip": "The default color of your text.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "base-text-lh",
+											"title": "Default Line Height",
+											"type": "text",
+											"default": "calc(6px + 2ex)",
+											"validation": {
+												"required": true
+											},
+											"cssVariable": "line-height",
+											"target": ":is(body, p, li, blockquote, .text--m)",
+											"tooltip": "The space between lines of text.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "text-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600, inherit",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": "body :is(p, li)",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The weight (boldness) of your text. Supports any valid font-weight value including variable font weights (e.g. 450, 550).",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "text-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": "body :is(p, li)",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The space between characters in your text.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "text-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "max-width",
+											"target": ":is(body p, body li)",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The width at which line breaks will occur in your paragraphs.",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "text-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-style",
+											"target": "body :is(p, li)",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The font style of your text (italic, oblique, etc.).",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "text-transform",
+											"target": "body :is(p, li)",
+											"validation": {
+												"required": false
+											},
+											"tooltip": "The case of your text (uppercase, lowercase, etc.).",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										},
+										{
+											"id": "text-wrap",
+											"title": "Text Wrap",
+											"type": "select",
+											"options": [
+												"wrap",
+												"pretty",
+												"balance",
+												"inherit"
+											],
+											"default": "pretty",
+											"skip-if-empty": true,
+											"cssVariable": "text-wrap",
+											"target": "body :is(p, li, blockquote)",
+											"tooltip": "The wrapping behavior of your text ('wrap' = normal)",
+											"documentation": "https://automaticcss.com/docs/default-typography-styling/"
+										}
+									]
+								},
+								{
+									"id": "text-xxl-settings",
+									"title": "XXL",
+									"type": "tab",
+									"content": [
+										{
+											"id": "text-xxl-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": ".text--xxl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xxl-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--xxl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xxl-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": ".text--xxl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xxl-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xxl-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--xxl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xxl-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xxl-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "text-xxl-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for XXL text. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "text-xxl-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for XXL text. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "text-xl-settings",
+									"title": "XL",
+									"type": "tab",
+									"content": [
+										{
+											"id": "text-xl-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": ".text--xl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xl-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--xl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xl-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": ".text--xl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xl-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xl-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--xl",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xl-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xl-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "text-xl-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for XL text. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "text-xl-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for XL text. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "text-l-settings",
+									"title": "L",
+									"type": "tab",
+									"content": [
+										{
+											"id": "text-l-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": ".text--l",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-l-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--l",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-l-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": ".text--l",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-l-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-l-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--l",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-l-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-l-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "text-l-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for L text. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "text-l-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for L text. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "text-m-settings",
+									"title": "M",
+									"type": "tab",
+									"content": [
+										{
+											"id": "base-text-lh-clone",
+											"type": "clone",
+											"target": "base-text-lh"
+										},
+										{
+											"id": "text-m-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--m",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-m-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": ".text--m",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-m-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-m-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--m",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-m-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-m-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "text-m-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for M text. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "text-m-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for M text. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "text-s-settings",
+									"title": "S",
+									"type": "tab",
+									"content": [
+										{
+											"id": "text-s-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": ".text--s",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-s-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--s",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-s-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": ".text--s",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-s-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-s-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--s",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-s-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-s-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "text-s-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "15",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for S text. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "text-s-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "14",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for S text. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "text-xs-settings",
+									"title": "XS",
+									"type": "tab",
+									"content": [
+										{
+											"id": "text-xs-line-height",
+											"title": "Line Height",
+											"type": "text",
+											"default": "",
+											"cssVariable": "line-height",
+											"target": ".text--xs",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xs-font-weight",
+											"title": "Font Weight",
+											"type": "text",
+											"default": "",
+											"placeholder": "e.g. 400, 500, 600",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--xs",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xs-letter-spacing",
+											"title": "Letter Spacing",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "letter-spacing",
+											"target": ".text--xs",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xs-max-width",
+											"title": "Max-Width",
+											"type": "text",
+											"default": "100%",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xs-text-transform",
+											"title": "Text Transform",
+											"type": "select",
+											"options": [
+												"",
+												"none",
+												"capitalize",
+												"uppercase",
+												"lowercase",
+												"inherit"
+											],
+											"default": "",
+											"skip-if-empty": true,
+											"cssVariable": "font-weight",
+											"target": ".text--xs",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xs-font-style",
+											"title": "Font Style",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "text-xs-override-section",
+											"title": "Font Size Overrides",
+											"type": "section-container",
+											"content": [
+												{
+													"id": "text-xs-max",
+													"title": "Desktop Size Override",
+													"type": "px",
+													"default": "14",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default desktop font size for XS text. Leave blank to use the default size based on your chosen type scale."
+												},
+												{
+													"id": "text-xs-min",
+													"title": "Mobile Size Override",
+													"type": "px",
+													"default": "13",
+													"skip-if-empty": true,
+													"percentage-convert": true,
+													"validation": {
+														"required": false
+													},
+													"tooltip": "Override the default mobile font size for XS text. Leave blank to use the default size based on your chosen type scale."
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "fonts-settings",
+					"title": "Fonts",
+					"type": "tab",
+					"content": [
+						{
+							"id": "fonts-message",
+							"type": "message",
+							"text": "If you want to use custom font files, you can configure them here. This will output the @font-face rules and tokens for your custom fonts."
+						},
+						{
+							"id": "font-1-accordion",
+							"title": "Font 1",
+							"type": "accordion-container",
+							"dynamicTitle": {
+								"type": "font"
+							},
+							"content": [
+								{
+									"id": "font-1-type",
+									"title": "Font Type",
+									"type": "select",
+									"options": [
+										"static",
+										"variable"
+									],
+									"default": "static",
+									"tooltip": "Is this font a static font or variable font?"
+								},
+								{
+									"id": "font-1-family-name",
+									"title": "Font Family",
+									"type": "text",
+									"default": "",
+									"placeholder": "Chivo",
+									"tooltip": "The name of your font (can be anything you'd like)."
+								},
+								{
+									"id": "font-1-src",
+									"title": "Font File Path",
+									"type": "text",
+									"default": "",
+									"placeholder": "/wp-content/uploads/your-font.woff2",
+									"output": "quotes",
+									"skipMathValidation": true,
+									"tooltip": "The file path to your custom font. Use a relative path only."
+								},
+								{
+									"id": "font-1-format",
+									"title": "Font Format",
+									"type": "select",
+									"options": [
+										"",
+										"woff2",
+										"woff",
+										"truetype",
+										"opentype"
+									],
+									"default": "",
+									"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+									"validation": {
+										"required": true
+									}
+								},
+								{
+									"id": "font-1-style",
+									"title": "Font Style",
+									"type": "select",
+									"options": [
+										"",
+										"normal",
+										"italic",
+										"oblique"
+									],
+									"default": "",
+									"tooltip": "The font-style value for this font."
+								},
+								{
+									"id": "font-1-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"tooltip": "The font-weight value for this font. Make sure it matches the actual file you referenced.",
+									"displayWhen": [
+										"font-1-type",
+										"static"
+									]
+								},
+								{
+									"id": "font-1-display",
+									"title": "Font Display",
+									"type": "select",
+									"options": [
+										"",
+										"auto",
+										"block",
+										"swap",
+										"fallback",
+										"optional"
+									],
+									"default": "",
+									"tooltip": "The font-display value for this font."
+								},
+								{
+									"id": "font-1-stretch",
+									"title": "Font Stretch",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. normal, condensed, expanded",
+									"tooltip": "The font-stretch value for this font.",
+									"displayWhen": [
+										"font-1-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-1-variation-settings",
+									"title": "Font Variation Settings",
+									"type": "text",
+									"default": "",
+									"placeholder": "'wght' 700, 'slnt' 0",
+									"tooltip": "Font variation settings for this variable font.",
+									"displayWhen": [
+										"font-1-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-1-fallback-section",
+									"type": "section-container",
+									"title": "Fallbacks",
+									"content": [
+										{
+											"id": "font-1-fallback-message",
+											"type": "message",
+											"text": "It's good practice (but not required) to include a fallback font. This will ensure that your font is displayed if the custom font fails to load."
+										},
+										{
+											"id": "font-1-src-fallback",
+											"title": "Font File Path",
+											"type": "text",
+											"default": "",
+											"placeholder": "/wp-content/uploads/your-font.woff2",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The file path to your fallback font. Use a relative path only."
+										},
+										{
+											"id": "font-1-format-fallback",
+											"title": "Font Format",
+											"type": "select",
+											"options": [
+												"",
+												"woff2",
+												"woff",
+												"truetype",
+												"opentype"
+											],
+											"default": "",
+											"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+											"validation": {
+												"required": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "font-2-accordion",
+							"title": "Font 2",
+							"type": "accordion-container",
+							"dynamicTitle": {
+								"type": "font"
+							},
+							"content": [
+								{
+									"id": "font-2-type",
+									"title": "Font Type",
+									"type": "select",
+									"options": [
+										"static",
+										"variable"
+									],
+									"default": "static",
+									"tooltip": "Is this font a static font or variable font?"
+								},
+								{
+									"id": "font-2-family-name",
+									"title": "Font Family",
+									"type": "text",
+									"default": "",
+									"placeholder": "Chivo",
+									"tooltip": "The name of your font (can be anything you'd like)."
+								},
+{
+								"id": "font-2-src",
+								"title": "Font File Path",
+								"type": "text",
+								"default": "",
+								"placeholder": "/wp-content/uploads/your-font.woff2",
+								"output": "quotes",
+								"skipMathValidation": true,
+								"tooltip": "The file path to your custom font. Use a relative path only."
+							},
+								{
+									"id": "font-2-format",
+									"title": "Font Format",
+									"type": "select",
+									"options": [
+										"",
+										"woff2",
+										"woff",
+										"truetype",
+										"opentype"
+									],
+									"default": "",
+									"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+									"validation": {
+										"required": true
+									}
+								},
+								{
+									"id": "font-2-style",
+									"title": "Font Style",
+									"type": "select",
+									"options": [
+										"",
+										"normal",
+										"italic",
+										"oblique"
+									],
+									"default": "",
+									"tooltip": "The font-style value for this font."
+								},
+								{
+									"id": "font-2-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"tooltip": "The font-weight value for this font. Make sure it matches the actual file you referenced.",
+									"displayWhen": [
+										"font-2-type",
+										"static"
+									]
+								},
+								{
+									"id": "font-2-display",
+									"title": "Font Display",
+									"type": "select",
+									"options": [
+										"",
+										"auto",
+										"block",
+										"swap",
+										"fallback",
+										"optional"
+									],
+									"default": "",
+									"tooltip": "The font-display value for this font."
+								},
+								{
+									"id": "font-2-stretch",
+									"title": "Font Stretch",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. normal, condensed, expanded",
+									"tooltip": "The font-stretch value for this font.",
+									"displayWhen": [
+										"font-2-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-2-variation-settings",
+									"title": "Font Variation Settings",
+									"type": "text",
+									"default": "",
+									"placeholder": "'wght' 400, 'slnt' 0",
+									"tooltip": "Font variation settings for this variable font.",
+									"displayWhen": [
+										"font-2-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-2-fallback-section",
+									"type": "section-container",
+									"title": "Fallbacks",
+									"content": [
+										{
+											"id": "font-2-fallback-message",
+											"type": "message",
+											"text": "It's good practice (but not required) to include a fallback font. This will ensure that your font is displayed if the custom font fails to load."
+										},
+										{
+											"id": "font-2-src-fallback",
+											"title": "Font File Path",
+											"type": "text",
+											"default": "",
+											"placeholder": "/wp-content/uploads/your-font.woff",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The file path to your fallback font. Use a relative path only."
+										},
+										{
+											"id": "font-2-format-fallback",
+											"title": "Font Format",
+											"type": "select",
+											"options": [
+												"",
+												"woff2",
+												"woff",
+												"truetype",
+												"opentype"
+											],
+											"default": "",
+											"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+											"validation": {
+												"required": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "font-3-accordion",
+							"title": "Font 3",
+							"type": "accordion-container",
+							"dynamicTitle": {
+								"type": "font"
+							},
+							"content": [
+								{
+									"id": "font-3-type",
+									"title": "Font Type",
+									"type": "select",
+									"options": [
+										"static",
+										"variable"
+									],
+									"default": "static",
+									"tooltip": "Is this font a static font or variable font?"
+								},
+								{
+									"id": "font-3-family-name",
+									"title": "Font Family",
+									"type": "text",
+									"default": "",
+									"placeholder": "Chivo",
+									"tooltip": "The name of your font (can be anything you'd like)."
+								},
+{
+								"id": "font-3-src",
+								"title": "Font File Path",
+								"type": "text",
+								"default": "",
+								"placeholder": "/wp-content/uploads/your-font.woff2",
+								"output": "quotes",
+								"skipMathValidation": true,
+								"tooltip": "The file path to your custom font. Use a relative path only."
+							},
+								{
+									"id": "font-3-format",
+									"title": "Font Format",
+									"type": "select",
+									"options": [
+										"",
+										"woff2",
+										"woff",
+										"truetype",
+										"opentype"
+									],
+									"default": "",
+									"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+									"validation": {
+										"required": true
+									}
+								},
+								{
+									"id": "font-3-style",
+									"title": "Font Style",
+									"type": "select",
+									"options": [
+										"",
+										"normal",
+										"italic",
+										"oblique"
+									],
+									"default": "",
+									"tooltip": "The font-style value for this font."
+								},
+								{
+									"id": "font-3-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"tooltip": "The font-weight value for this font. Make sure it matches the actual file you referenced.",
+									"displayWhen": [
+										"font-3-type",
+										"static"
+									]
+								},
+								{
+									"id": "font-3-display",
+									"title": "Font Display",
+									"type": "select",
+									"options": [
+										"",
+										"auto",
+										"block",
+										"swap",
+										"fallback",
+										"optional"
+									],
+									"default": "",
+									"tooltip": "The font-display value for this font."
+								},
+								{
+									"id": "font-3-stretch",
+									"title": "Font Stretch",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. normal, condensed, expanded",
+									"tooltip": "The font-stretch value for this font.",
+									"displayWhen": [
+										"font-3-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-3-variation-settings",
+									"title": "Font Variation Settings",
+									"type": "text",
+									"default": "",
+									"placeholder": "'wght' 600, 'slnt' 0",
+									"tooltip": "Font variation settings for this variable font.",
+									"displayWhen": [
+										"font-3-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-3-fallback-section",
+									"type": "section-container",
+									"title": "Fallbacks",
+									"content": [
+										{
+											"id": "font-3-fallback-message",
+											"type": "message",
+											"text": "It's good practice (but not required) to include a fallback font. This will ensure that your font is displayed if the custom font fails to load."
+										},
+										{
+											"id": "font-3-src-fallback",
+											"title": "Font File Path",
+											"type": "text",
+											"default": "",
+											"placeholder": "/wp-content/uploads/your-font.woff",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The file path to your fallback font. Use a relative path only."
+										},
+										{
+											"id": "font-3-format-fallback",
+											"title": "Font Format",
+											"type": "select",
+											"options": [
+												"",
+												"woff2",
+												"woff",
+												"truetype",
+												"opentype"
+											],
+											"default": "",
+											"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+											"validation": {
+												"required": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "font-4-accordion",
+							"title": "Font 4",
+							"type": "accordion-container",
+							"dynamicTitle": {
+								"type": "font"
+							},
+							"content": [
+								{
+									"id": "font-4-type",
+									"title": "Font Type",
+									"type": "select",
+									"options": [
+										"static",
+										"variable"
+									],
+									"default": "static",
+									"tooltip": "Is this font a static font or variable font?"
+								},
+								{
+									"id": "font-4-family-name",
+									"title": "Font Family",
+									"type": "text",
+									"default": "",
+									"placeholder": "Chivo",
+									"tooltip": "The name of your font (can be anything you'd like)."
+								},
+{
+								"id": "font-4-src",
+								"title": "Font File Path",
+								"type": "text",
+								"default": "",
+								"placeholder": "/wp-content/uploads/your-font.woff2",
+								"output": "quotes",
+								"skipMathValidation": true,
+								"tooltip": "The file path to your custom font. Use a relative path only."
+							},
+								{
+									"id": "font-4-format",
+									"title": "Font Format",
+									"type": "select",
+									"options": [
+										"",
+										"woff2",
+										"woff",
+										"truetype",
+										"opentype"
+									],
+									"default": "",
+									"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+									"validation": {
+										"required": true
+									}
+								},
+								{
+									"id": "font-4-style",
+									"title": "Font Style",
+									"type": "select",
+									"options": [
+										"",
+										"normal",
+										"italic",
+										"oblique"
+									],
+									"default": "",
+									"tooltip": "The font-style value for this font."
+								},
+								{
+									"id": "font-4-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"tooltip": "The font-weight value for this font. Make sure it matches the actual file you referenced.",
+									"displayWhen": [
+										"font-4-type",
+										"static"
+									]
+								},
+								{
+									"id": "font-4-display",
+									"title": "Font Display",
+									"type": "select",
+									"options": [
+										"",
+										"auto",
+										"block",
+										"swap",
+										"fallback",
+										"optional"
+									],
+									"default": "",
+									"tooltip": "The font-display value for this font."
+								},
+								{
+									"id": "font-4-stretch",
+									"title": "Font Stretch",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. normal, condensed, expanded",
+									"tooltip": "The font-stretch value for this font.",
+									"displayWhen": [
+										"font-4-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-4-variation-settings",
+									"title": "Font Variation Settings",
+									"type": "text",
+									"default": "",
+									"placeholder": "'wght' 500, 'slnt' 0",
+									"tooltip": "Font variation settings for this variable font.",
+									"displayWhen": [
+										"font-4-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-4-fallback-section",
+									"type": "section-container",
+									"title": "Fallbacks",
+									"content": [
+										{
+											"id": "font-4-fallback-message",
+											"type": "message",
+											"text": "It's good practice (but not required) to include a fallback font. This will ensure that your font is displayed if the custom font fails to load."
+										},
+										{
+											"id": "font-4-src-fallback",
+											"title": "Font File Path",
+											"type": "text",
+											"default": "",
+											"placeholder": "/wp-content/uploads/your-font.woff",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The file path to your fallback font. Use a relative path only."
+										},
+										{
+											"id": "font-4-format-fallback",
+											"title": "Font Format",
+											"type": "select",
+											"options": [
+												"",
+												"woff2",
+												"woff",
+												"truetype",
+												"opentype"
+											],
+											"default": "",
+											"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+											"validation": {
+												"required": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "font-5-accordion",
+							"title": "Font 5",
+							"type": "accordion-container",
+							"dynamicTitle": {
+								"type": "font"
+							},
+							"content": [
+								{
+									"id": "font-5-type",
+									"title": "Font Type",
+									"type": "select",
+									"options": [
+										"static",
+										"variable"
+									],
+									"default": "static",
+									"tooltip": "Is this font a static font or variable font?"
+								},
+								{
+									"id": "font-5-family-name",
+									"title": "Font Family",
+									"type": "text",
+									"default": "",
+									"placeholder": "Chivo",
+									"tooltip": "The name of your font (can be anything you'd like)."
+								},
+{
+								"id": "font-5-src",
+								"title": "Font File Path",
+								"type": "text",
+								"default": "",
+								"placeholder": "/wp-content/uploads/your-font.woff2",
+								"output": "quotes",
+								"skipMathValidation": true,
+								"tooltip": "The file path to your custom font. Use a relative path only."
+							},
+								{
+									"id": "font-5-format",
+									"title": "Font Format",
+									"type": "select",
+									"options": [
+										"",
+										"woff2",
+										"woff",
+										"truetype",
+										"opentype"
+									],
+									"default": "",
+									"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+									"validation": {
+										"required": true
+									}
+								},
+								{
+									"id": "font-5-style",
+									"title": "Font Style",
+									"type": "select",
+									"options": [
+										"",
+										"normal",
+										"italic",
+										"oblique"
+									],
+									"default": "",
+									"tooltip": "The font-style value for this font."
+								},
+								{
+									"id": "font-5-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"tooltip": "The font-weight value for this font. Make sure it matches the actual file you referenced.",
+									"displayWhen": [
+										"font-5-type",
+										"static"
+									]
+								},
+								{
+									"id": "font-5-display",
+									"title": "Font Display",
+									"type": "select",
+									"options": [
+										"",
+										"auto",
+										"block",
+										"swap",
+										"fallback",
+										"optional"
+									],
+									"default": "",
+									"tooltip": "The font-display value for this font."
+								},
+								{
+									"id": "font-5-stretch",
+									"title": "Font Stretch",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. normal, condensed, expanded",
+									"tooltip": "The font-stretch value for this font.",
+									"displayWhen": [
+										"font-5-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-5-variation-settings",
+									"title": "Font Variation Settings",
+									"type": "text",
+									"default": "",
+									"placeholder": "'wght' 300, 'slnt' 0",
+									"tooltip": "Font variation settings for this variable font.",
+									"displayWhen": [
+										"font-5-type",
+										"variable"
+									]
+								},
+								{
+									"id": "font-5-fallback-section",
+									"type": "section-container",
+									"title": "Fallbacks",
+									"content": [
+										{
+											"id": "font-5-fallback-message",
+											"type": "message",
+											"text": "It's good practice (but not required) to include a fallback font. This will ensure that your font is displayed if the custom font fails to load."
+										},
+										{
+											"id": "font-5-src-fallback",
+											"title": "Font File Path",
+											"type": "text",
+											"default": "",
+											"placeholder": "/wp-content/uploads/your-font.woff",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The file path to your fallback font. Use a relative path only."
+										},
+										{
+											"id": "font-5-format-fallback",
+											"title": "Font Format",
+											"type": "select",
+											"options": [
+												"",
+												"woff2",
+												"woff",
+												"truetype",
+												"opentype"
+											],
+											"default": "",
+											"tooltip": "The font format (e.g. woff2, woff, ttf) for this font.",
+											"validation": {
+												"required": true
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

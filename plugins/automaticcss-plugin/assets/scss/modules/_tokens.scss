@@ -1,0 +1,108 @@
+@if $option-load-default-text-styles == on or $option-load-default-heading-styles == on or $option-space-variables == on {
+	/* Feat: Text, Headings, & Spacing */
+	:root {
+		--root-font-size: #{$root-font-size};
+	}
+}
+
+// MAIN COLOR SCHEME
+/* Feat: Palette */
+:root {
+  // Generate tokens for main colors and shades if light-dark isn't enabled
+  @if $auto-color-scheme == off {
+		@each $utility, $value in $core-colors {
+			--#{$utility}: #{$value};
+		}
+		@each $utility, $value in $core-status-colors {
+			--#{$utility}: #{$value};
+		}
+	} @else {
+			@include generate-light-dark-colors();
+	}
+  @if $heading-color != null {
+    --heading-color: #{$heading-color};
+  }
+  @if $h1-color != null {
+    --h1-color: #{$h1-color};
+  }
+  @if $h2-color != null {
+    --h2-color: #{$h2-color};
+  }
+  @if $h3-color != null {
+    --h3-color: #{$h3-color};
+  }
+  @if $h4-color != null {
+    --h4-color: #{$h4-color};
+  }
+  @if $h5-color != null {
+    --h5-color: #{$h5-color};
+  }
+  @if $h6-color != null {
+    --h6-color: #{$h6-color};
+  }
+}
+
+@if $auto-color-scheme == on and $option-ref-color-tokens == on {
+	/* Feat: Reference Palette for Color Scheme Flexibility */
+	:root {
+		@include generate-ref-color-tokens();
+	}
+}
+
+@import "../modules/sections/tokens";
+@import "../modules/accessibility/tokens";
+@import "../modules/focus/tokens";
+
+// Default Style Tokens
+@import "../modules/defaults/tokens";
+@import "text/tokens";
+// Spacing Tokens
+@import "spacing/tokens";
+// Width Tokens
+@import "width/tokens";
+// Traditional Grid
+@import "grid/traditional-grid/tokens";
+// Auto Grid
+@import "grid/auto-grid/tokens";
+// Header Height
+@import "header-height/tokens";
+// Scroll Offset
+@import "scrolling/tokens";
+// Smart Spacing
+@import "spacing/smart-spacing/tokens";
+// Button Tokens
+@import "buttons-links/button-tokens";
+// Link Tokens
+@import "buttons-links/links/tokens";
+// External Link Tokens
+@import "buttons-links/links/external-links/tokens";
+// Card Styles
+@import "cards/tokens";
+// Columns Tokens
+@import "columns/col-tokens";
+// Sticky Tokens
+@import "position/sticky/tokens";
+// Contextual Tokens
+@import "contextual-colors/contextual-tokens";
+// Color Relationships
+@import "color-relationships/tokens";
+// Borders
+@import "borders/tokens";
+// Dividers
+@import "dividers/tokens";
+// Transition
+@import "transition/tokens";
+// Boxed Layout
+@import "boxed-layout/tokens";
+// Surfaces
+@import "surfaces/tokens";
+// Custom Overlays
+@import "overlays/custom/tokens";
+// Icons
+@import "icons/tokens";
+// Shadows
+@import "shadows/box-shadow-tokens";
+@import "shadows/text-shadow-tokens";
+@import "shadows/drop-shadow-tokens";
+// Blockquotes
+@import "blockquotes/tokens";

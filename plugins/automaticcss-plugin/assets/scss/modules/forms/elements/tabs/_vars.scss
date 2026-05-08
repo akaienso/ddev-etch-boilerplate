@@ -1,0 +1,60 @@
+// Tabs
+$f-tab-border-radius: $btn-border-radius !default;
+$f-tab-group-border-size: 1px !default;
+$f-tab-group-border-style: solid !default;
+
+// Tabs > Tabs Active
+$f-tab-active-border-style: solid !default;
+$f-tab-active-border-size: 1px !default;
+
+// Tabs > Tabs Spacing
+$f-tab-group-gap: 0px !default;
+$f-tab-padding-y: 0.75em !default;
+$f-tab-padding-x: 1.5em !default;
+
+// Tabs > Tabs Typography
+$f-tab-font-size: var(--text-m) !default;
+$f-tab-font-weight: "" !default;
+$f-tab-font-style: "normal" !default;
+$f-tab-letter-spacing: 0 !default;
+$f-tab-line-height: 1 !default;
+$f-tab-text-decoration: none !default;
+$f-tab-text-transform: null !default;
+
+// Tabs > Styled - Steps
+$f-tab-styled-size: var(--space-l) !default;
+$f-tab-styled-font-size: var(--text-m) !default;
+$f-tab-styled-font-style: "normal" !default;
+$f-tab-styled-font-weight: "" !default;
+$f-tab-styled-letter-spacing: 0 !default;
+$f-tab-styled-text-decoration: none !default;
+$f-tab-styled-text-transform: null !default;
+
+
+
+
+// Colors
+$f-group-li-color-background: transparent !default;
+$f-group-li-color-background-active: var(--text-light) !default;
+$f-group-li-color-background-focus: var(--text-light) !default;
+$f-group-li-color-background-disabled: color-mix(in oklch, var(--neutral) 60%, transparent) !default;
+$f-tab-text-color: var(--neutral-dark) !default;
+$f-tab-border-color: var(--primary-light) !default;
+$f-tab-border-color-active: var(--primary) !default;
+$f-tab-border-color-focus: var(--primary) !default;
+$f-tab-border-color-disabled: color-mix(in oklch, var(--neutral) 60%, transparent) !default;
+$f-tab-ul-border-color: var(--neutral) !default;
+$f-tab-text-color: var(--f-form-color-base) !default;
+$f-tab-text-color-active: var(--f-form-color-base) !default;
+$f-tab-text-color-focus: var(--f-form-color-base) !default;
+$f-tab-text-color-disabled: color-mix(in oklch, var(--neutral) 60%, transparent) !default;
+
+$f-tab-styled-color-background: var(--white) !default;
+$f-tab-styled-background-active: var(--primary-light) !default;
+$f-tab-styled-background-complete: var(--primary) !default;
+$f-tab-styled-border-color: var(--primary-light) !default;
+$f-tab-styled-border-color-active: var(--primary) !default;
+$f-tab-styled-border-color-complete: var(--primary) !default;
+$f-tab-styled-color: var(--f-form-color-base) !default;
+$f-tab-styled-color-active: var(--f-form-color-base) !default;
+$f-tab-styled-color-complete: var(--text-light) !default;

@@ -1,0 +1,15 @@
+@if $option-sticky-variables == on {
+	/* Feat: Sticky Variables */
+	:root {
+		// Establish token for custom offset value if it's not null
+		@if $sticky-offset-custom != null {
+			--sticky-offset-custom: #{$sticky-offset-custom};
+		} @else {
+			--sticky-offset: 0;
+		}
+		// If automatic offset is on, define token for offset
+		@if $option-sticky-offset == on {
+			--sticky-offset: var(--header-height, var(--sticky-offset-custom, 0));
+		}
+	}
+}

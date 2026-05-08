@@ -1,0 +1,19 @@
+@import "vars";
+
+@if $option-transition-variables == on {
+	/* Feat: Transition Variables */
+	:root {
+		@if $transition-duration != null {
+			--transition-duration: #{$transition-duration};
+		}
+		@if $transition-timing != null {
+			--transition-timing: #{$transition-timing};
+		}
+		@if $transition-delay != null {
+			--transition-delay: #{$transition-delay};
+		}
+		@if $transition-duration != null or $transition-timing != null or $transition-delay != null {
+			--transition: #{$transition-duration} #{$transition-timing} #{$transition-delay};
+		}
+	}
+}

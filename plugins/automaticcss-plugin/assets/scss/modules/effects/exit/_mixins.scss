@@ -1,0 +1,61 @@
+@import "vars";
+
+// ==========================================================================
+// Exit Effect Mixins
+// ==========================================================================
+
+// Map of exit effects - modular and composable (combine as needed)
+$exit-effects-map: (
+	'fade': (
+		--exit-opacity: var(--exit-opacity-target, 0)
+	),
+	'float': (
+		--exit-block: calc(var(--exit-float-distance, 40px) * -1)
+	),
+	'sink': (
+		--exit-block: var(--exit-sink-distance, 40px)
+	),
+	'slide-left': (
+		--exit-inline: calc(var(--exit-slide-distance, 40px) * -1)
+	),
+	'slide-right': (
+		--exit-inline: var(--exit-slide-distance, 40px)
+	),
+	'grow': (
+		--exit-scale: var(--exit-scale-grow, 1.1)
+	),
+	'shrink': (
+		--exit-scale: var(--exit-scale-amount, 0.9)
+	),
+	'blur': (
+		--exit-blur: var(--exit-blur-amount, 8px)
+	)
+);
+
+// --------------------------------------------------------------------------
+// Mixin: apply-exit-effects
+// Applies exit animations based on a comma-separated string
+// Usage: @include apply-exit-effects("fade, up");
+// Note: Requires browsers that support animation-timeline: view()
+// --------------------------------------------------------------------------
+@mixin apply-exit-effects($effects-input) {
+	@if $effects-input and $effects-input != '' and $effects-input != null {
+		$effects-string: if(type-of($effects-input) == 'string', $effects-input, inspect($effects-input));
+		
+		@supports (animation-timeline: view()) {
+			animation-name: exit-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: var(--exit-range-start, exit 0%) var(--exit-range-end, exit 80%);
+			
+			@each $effect-name, $props in $exit-effects-map {
+				@if str-index(to-lower-case($effects-string), $effect-name) {
+					@each $prop, $value in $props {
+						#{$prop}: #{$value};
+					}
+				}
+			}
+		}
+	}
+}

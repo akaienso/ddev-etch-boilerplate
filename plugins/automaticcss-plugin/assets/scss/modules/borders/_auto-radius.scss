@@ -1,0 +1,5 @@
+@if $option-auto-radius == on and $auto-radius-selectors != null {
+    :where(#{$auto-radius-selectors}) {
+        border-radius: var(--radius);
+    }
+}

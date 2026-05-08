@@ -1,0 +1,30 @@
+// ==========================================================================
+// Border Effect Variables
+// ==========================================================================
+
+// Options
+$option-border-ripple: off !default;
+$option-border-outline: off !default;
+$option-border-underline: off !default;
+
+// --------------------------------------------------------------------------
+// Ripple Settings
+// --------------------------------------------------------------------------
+$border-ripple-color: currentColor !default;
+$border-ripple-width: 4px !default;
+$border-ripple-duration: 1s !default;
+$border-ripple-distance: 12px !default;
+
+// --------------------------------------------------------------------------
+// Outline Settings
+// --------------------------------------------------------------------------
+$border-outline-color: currentColor !default;
+$border-outline-width: 4px !default;
+$border-outline-duration: 0.3s !default;
+
+// --------------------------------------------------------------------------
+// Underline Settings
+// --------------------------------------------------------------------------
+$border-underline-color: currentColor !default;
+$border-underline-width: 3px !default;
+$border-underline-duration: 0.3s !default;

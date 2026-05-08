@@ -1,0 +1,46 @@
+// Focus style mixin used within framework
+@mixin default-focus-style($type: $focus-style) {
+    @if $type == outline {
+      outline-style: solid;
+      outline-color: var(--focus-color);
+      outline-width: var(--focus-width);
+      outline-offset: var(--focus-offset);
+    }
+    @if $type == shadow {
+      box-shadow: 0 0 0 var(--focus-width) var(--focus-color);
+      outline: none;
+    }
+  }
+
+// Focus style mixin for users
+@mixin focus-parent($style: shadow) {
+  &:focus-within {
+    @if $style == "shadow" {
+      box-shadow: 0 0 0 var(--focus-width) var(--focus-color);
+    }
+    @if $style == "outline" {
+      outline: var(--focus-width) solid var(--focus-color);
+      outline-offset: var(--focus-offset);
+    }
+  }
+  & :focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@mixin focus-styles {
+  :focus {
+    outline: none;
+    box-shadow: none;
+  }
+  :focus-visible {
+    @include default-focus-style;
+  }
+
+  @supports not selector(:focus-visible) {
+    :focus {
+      @include default-focus-style;
+    }
+  }
+}

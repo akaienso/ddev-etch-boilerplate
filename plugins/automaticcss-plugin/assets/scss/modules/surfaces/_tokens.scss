@@ -1,0 +1,20 @@
+:root {
+    @each $surface, $props in $surfaces {
+        $name: map-get($props, "name");
+        $asset: map-get($props, "asset");
+        $asset-is-url: map-get($props, "asset-is-url");
+        @each $prop, $value in $props {
+			@if $asset != null and $asset-is-url == on and $prop == "asset" {
+				--#{$surface}-#{$prop}: url(#{$value});
+			}
+			@else if $prop == "animation" {
+				@if $value != null and $value != "" {
+					--#{$surface}-#{$prop}: #{$value};
+				}
+			}
+			@else if $asset != null and $value != null and $value != "" and $prop != "name" {
+				--#{$surface}-#{$prop}: #{$value};
+			}
+		}
+    }
+}

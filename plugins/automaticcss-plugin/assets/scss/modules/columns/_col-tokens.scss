@@ -1,0 +1,11 @@
+@if $option-column-variables == on {
+	/* Feat: Column Variables */
+	:root {
+		@each $width, $value in $col-width {
+			--col-width-#{$width}: #{$value};
+		}
+		@each $width, $value in $col-rule-width {
+			--col-rule-width-#{$width}: #{$value};
+		}
+	}
+}

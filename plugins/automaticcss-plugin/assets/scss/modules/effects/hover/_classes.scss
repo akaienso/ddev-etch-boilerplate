@@ -1,0 +1,129 @@
+@import "vars";
+@import "mixins";
+
+// ==========================================================================
+// Hover Effect Utility Classes (.on-hover--)
+// ==========================================================================
+
+// Build transition-property list based on enabled effects
+@if $option-hover-grow == on or $option-hover-shrink == on or $option-hover-float == on or $option-hover-sink == on or $option-hover-slide-right == on or $option-hover-slide-left == on or $option-hover-shadow == on or $option-hover-glow == on or $option-hover-fade == on or $option-hover-brighten == on {
+	// Determine which properties need transitioning
+	$hover-transition-properties: ();
+	
+	// scale: grow, shrink
+	@if $option-hover-grow == on or $option-hover-shrink == on {
+		$hover-transition-properties: append($hover-transition-properties, scale, comma);
+	}
+	
+	// translate: float, sink, slide-right, slide-left
+	@if $option-hover-float == on or $option-hover-sink == on or $option-hover-slide-right == on or $option-hover-slide-left == on {
+		$hover-transition-properties: append($hover-transition-properties, translate, comma);
+	}
+	
+	// opacity: fade
+	@if $option-hover-fade == on {
+		$hover-transition-properties: append($hover-transition-properties, opacity, comma);
+	}
+	
+	// box-shadow: shadow, glow
+	@if $option-hover-shadow == on or $option-hover-glow == on {
+		$hover-transition-properties: append($hover-transition-properties, box-shadow, comma);
+	}
+	
+	// filter: brighten
+	@if $option-hover-brighten == on {
+		$hover-transition-properties: append($hover-transition-properties, filter, comma);
+	}
+	
+	[class*="on-hover--"] {
+		transition-property: #{$hover-transition-properties};
+		transition-duration: var(--hover-duration);
+		transition-timing-function: var(--hover-timing);
+	}
+}
+
+// Grow - scale up on hover
+@if $option-hover-grow == on {
+	.on-hover--grow:hover {
+		scale: var(--hover-grow-amount);
+	}
+}
+
+// Shrink - scale down on hover
+@if $option-hover-shrink == on {
+	.on-hover--shrink:hover {
+		scale: var(--hover-shrink-amount);
+	}
+}
+
+// Float - translate up on hover
+@if $option-hover-float == on {
+	.on-hover--float {
+		translate: 0 0;
+		
+		&:hover {
+			translate: 0 var(--hover-float-amount);
+		}
+	}
+}
+
+// Sink - translate down on hover
+@if $option-hover-sink == on {
+	.on-hover--sink {
+		translate: 0 0;
+		
+		&:hover {
+			translate: 0 var(--hover-sink-amount);
+		}
+	}
+}
+
+// Slide Right - translate right on hover
+@if $option-hover-slide-right == on {
+	.on-hover--slide-right {
+		translate: 0 0;
+		
+		&:hover {
+			translate: var(--hover-slide-right-amount) 0;
+		}
+	}
+}
+
+// Slide Left - translate left on hover
+@if $option-hover-slide-left == on {
+	.on-hover--slide-left {
+		translate: 0 0;
+		
+		&:hover {
+			translate: var(--hover-slide-left-amount) 0;
+		}
+	}
+}
+
+// Shadow - adds drop shadow on hover
+@if $option-hover-shadow == on {
+	.on-hover--shadow:hover {
+		box-shadow: var(--hover-shadow);
+	}
+}
+
+// Glow - adds colored glow on hover
+@if $option-hover-glow == on {
+	.on-hover--glow:hover {
+		box-shadow: 0 0 var(--hover-glow-spread) color-mix(in srgb, var(--hover-glow-color) calc(var(--hover-glow-opacity) * 100%), transparent);
+	}
+}
+
+// Fade - reduces opacity on hover
+@if $option-hover-fade == on {
+	.on-hover--fade:hover {
+		opacity: 0.8;
+	}
+}
+
+// Brighten - increases brightness on hover (for images)
+@if $option-hover-brighten == on {
+	.on-hover--brighten:hover {
+		filter: brightness(1.1);
+	}
+}

@@ -1,0 +1,339 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "layout",
+	"title": "Layout",
+	"type": "screen-container",
+	"description": "Layout settings.",
+	"content": [
+		{
+			"id": "dimensions-accordion",
+			"title": "Website Dimensions",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "dimensions-message",
+					"type": "message",
+					"text": "Set your websites default <a target='_blank' href='https://automaticcss.com/docs/website-width-breakpoints/'>content width</a>. This sets the website's 'container' width and optimizes your fluid responsive typography."
+				},
+				{
+					"id": "vp-max",
+					"title": "Content Width",
+					"type": "px",
+					"default": 1366,
+					"percentage-convert": true,
+					"cssVariable": "--content-width",
+					"tooltip": "Set the max-width of the website's content.",
+					"documentation": "https://automaticcss.com/docs/content-width/"
+				},
+				{
+					"id": "vp-min",
+					"title": "Minimum Width",
+					"type": "px",
+					"default": 360,
+					"percentage-convert": true,
+					"tooltip": "Set the max-width of the website's content.",
+					"documentation": "https://automaticcss.com/docs/content-width/"
+				}
+			]
+		},
+		{
+			"id": "header-styling",
+			"title": "Header",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "header-sizing-group",
+					"type": "section-container",
+					"title": "Header Sizing",
+					"content": [
+						{
+							"id": "header-height-message",
+							"type": "message",
+							"text": "Sticky and overlay headers can cause layout collisions. ACSS can help prevent this if you tell ACSS your header height. Check the docs for more information."
+						},
+						{
+							"id": "header-height-max",
+							"title": "Header Height (Desktop)",
+							"type": "px",
+							"percentage-convert": true,
+							"default": 0,
+							"tooltip": "The current height of your header on desktop devices.",
+							"documentation": "https://automaticcss.com/docs/header-height/"
+						},
+						{
+							"id": "header-height-min",
+							"title": "Header Height (Mobile)",
+							"type": "px",
+							"percentage-convert": true,
+							"default": 0,
+							"tooltip": "The current height of your header on mobile devices.",
+							"documentation": "https://automaticcss.com/docs/header-height/"
+						}
+					]
+				},
+				{
+					"id": "header-settings-group",
+					"type": "section-container",
+					"title": "Header Settings",
+					"content": [
+						{
+							"id": "header-settings-message",
+							"type": "message",
+							"text": "Do you want ACSS to manage your content and scroll margin offsets automatically?"
+						},
+						{
+							"id": "option-offset-page-content",
+							"title": "Offset Content Automatically",
+							"type": "toggle",
+							"default": "off",
+							"tooltip": "Fixes spacing issues with sticky and overlay headers. Will not work if a header height isn't set.",
+							"documentation": "https://automaticcss.com/docs/header-height/#offset-content",
+							"cssClasses": ["acss-offset-content"],
+							"target": "main"
+						},
+						{
+							"id": "option-use-header-height-for-scroll-offset",
+							"title": "Offset Scroll Margin Automatically",
+							"type": "toggle",
+							"default": "on",
+							"tooltip": "Use header height for scroll margins (scroll to hash).",
+							"documentation": "https://automaticcss.com/docs/scroll-offsets/"
+						}
+					]
+				},
+				{
+					"id": "header-exclusions-group",
+					"type": "section-container",
+					"title": "Header Exclusions",
+					"displayWhen": ["option-offset-page-content", "on"],
+					"content": [
+						{
+							"id": "header-exclusions-message",
+							"type": "message",
+							"text": "You can remove the offset by targeting specific pages or headers."
+						},
+						{
+							"id": "offset-content-header-exclusion",
+							"title": "Exclude Headers",
+							"type": "textarea",
+							"style": "small",
+							"placeholder": "[data-sticky-header='0'], .content-offset--off",
+							"default": "[data-sticky-header='0'], .content-offset--off",
+							"tooltip": "When these header selectors are present, we'll deactivate content offset.",
+							"documentation": "https://automaticcss.com/docs/header-height/",
+							"validation": {
+								"required": true
+							}
+						},
+						{
+							"id": "offset-content-page-exclusions",
+							"title": "Exclude Pages",
+							"type": "textarea",
+							"style": "small",
+							"placeholder": ".page-id-2, .post-type-services",
+							"default": "",
+							"output": "quotes",
+							"tooltip": "Turn off the offset on the following pages.",
+							"documentation": "https://automaticcss.com/docs/header-height/",
+							"validation": {
+								"required": false
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "content-grid",
+			"title": "Content Grid",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "content-grid-message",
+					"type": "message",
+					"text": "<a target='_blank' href='https://automaticcss.com/docs/content-grid/'>Content Grid</a> is an advanced layout system particularly useful for 'breakout' content and blog post layouts. Check the docs and videos to learn more."
+				},
+				{
+					"id": "option-content-grid",
+					"title": "Content Grid",
+					"type": "toggle",
+					"default": "on",
+					"tooltip": "Enable Content Grid utilities.",
+					"documentation": "https://automaticcss.com/docs/content-grid/"
+				},
+				{
+					"id": "option-content-grid-sections",
+					"title": "Default Sections to Content Grid",
+					"type": "toggle",
+					"default": "off",
+					"displayWhen": ["option-content-grid", "on"],
+					"tooltip": "Replace default section structure with content grid."
+				},
+				{
+					"id": "content-feature",
+					"title": "Feature Width",
+					"type": "text",
+					"default": "50px",
+					"skip-if-empty": true,
+					"displayWhen": ["option-content-grid", "on"],
+					"cssVariable": "--feature-width",
+					"target": ".content-grid",
+					"tooltip": "Sets the width of the 'feature' zone."
+				},
+				{
+					"id": "content-feature-max",
+					"title": "Feature Max Width",
+					"type": "text",
+					"default": "100px",
+					"skip-if-empty": true,
+					"displayWhen": ["option-content-grid", "on"],
+					"cssVariable": "--feature-max-width",
+					"target": ".content-grid",
+					"tooltip": "Sets the width of the 'feature-max' zone (value is added to the 'feature' zone value)."
+				},
+				{
+					"id": "content-grid-exclusions",
+					"title": "Exclude Sections",
+					"type": "textarea",
+					"default": "\".content-grid--off\", \".pswp__scroll-wrap\"",
+					"placeholder": "\".content-grid--off\", \".pswp__scroll-wrap\"",
+					"skip-if-empty": true,
+					"displayWhen": ["option-content-grid-sections", "on"],
+					"tooltip": "Exclude sections from defaulting to content grid."
+				}
+			]
+		},
+		{
+			"id": "auto-grid",
+			"title": "Auto Grid",
+			"type": "accordion-container",
+			"content": [
+{
+				"id": "auto-grid-message",
+				"type": "message",
+				"text": "<a target='_blank' href='https://automaticcss.com/docs/auto-grids/'>Auto Grids</a> are minimalistic, automatically responsive grids that don't require breakpoints. Use this panel to adjust some of the default settings."
+			},
+			{
+					"id": "auto-grid-flow-option",
+					"title": "Flow Option",
+					"type": "select",
+					"default": "auto-fit",
+					"options": ["auto-fit", "auto-fill"],
+					"skip-if-empty": true,
+					"tooltip": "How should grid items flow in auto grids by default? 'Fit' instructs items to grow to take available space (first row only) and 'fill' will behave like a traditional grid."
+				},
+				{
+					"id": "auto-grid-aggressiveness",
+					"title": "Aggressiveness",
+					"type": "text",
+					"default": ".7",
+					"validation": {
+						"required": true
+					},
+					"tooltip": "How soon should items stack (0 to 1 in decimal). Higher values stack items sooner.",
+					"documentation": "https://automaticcss.com/docs/auto-grid/"
+				},
+			{
+				"id": "auto-staggered-grid-breakpoint",
+				"title": "Ratio Breakpoint",
+				"type": "px",
+				"default": 992,
+				"appendunit": "rem",
+				"tooltip": "At what screen width (in pixels) should auto-ratio grids (2-3, 3-2, etc.) stack?"
+			}
+			]
+		},
+		{
+			"id": "boxed-layout",
+			"title": "Boxed Layout",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "boxed-layout-message",
+					"type": "message",
+					"text": "<a target='_blank' href='#'>Boxed Layouts</a> set a max-width along with additional visual styling on the 'body' element of your website. It's used to create a specific look and feel and helps ensure design consistency on larger screens."
+				},
+				{
+					"id": "option-boxed-layout",
+					"title": "Boxed Layout",
+					"type": "toggle",
+					"default": "off",
+					"cssClasses": ["boxed-layout"],
+					"target": "body",
+					"tooltip": "Enable boxed layout style for the website.",
+					"documentation": "https://automaticcss.com/docs/boxed-layout/"
+				},
+				{
+					"id": "device-bg-color",
+					"title": "Device Background",
+					"type": "text",
+					"default": "--white",
+					"displayWhen": ["option-boxed-layout", "on"],
+					"skip-if-empty": true,
+					"tooltip": "Sets HTML background color."
+				},
+				{
+					"id": "body-max-width",
+					"title": "Body Width",
+					"type": "text",
+					"default": "1920px",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"]
+				},
+				{
+					"id": "body-margin-top",
+					"title": "Top Margin",
+					"type": "text",
+					"default": "0",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"],
+					"tooltip": "Adds spacing above your boxed layout."
+				},
+				{
+					"id": "body-border-style",
+					"title": "Border Style",
+					"type": "text",
+					"default": "none",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"],
+					"tooltip": "Supports multi-axis values (top right bottom left)."
+				},
+				{
+					"id": "body-border-width",
+					"title": "Border Width",
+					"type": "text",
+					"default": "0",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"],
+					"tooltip": "Supports multi-axis values (top right bottom left)."
+				},
+				{
+					"id": "body-border-color",
+					"title": "Border Color",
+					"type": "text",
+					"default": "transparent",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"],
+					"tooltip": "Supports multi-axis values (top right bottom left)."
+				},
+				{
+					"id": "body-border-radius",
+					"title": "Border Radius",
+					"type": "text",
+					"default": "0",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"],
+					"tooltip": "Supports multi-axis values (top right bottom left)."
+				},
+				{
+					"id": "body-box-shadow",
+					"title": "Body Shadow",
+					"type": "textarea",
+					"default": "0 0 80px 0 color-mix(in oklch, var(--neutral) 20%, transparent)",
+					"skip-if-empty": true,
+					"displayWhen": ["option-boxed-layout", "on"]
+				}
+			]
+		}
+	]
+}

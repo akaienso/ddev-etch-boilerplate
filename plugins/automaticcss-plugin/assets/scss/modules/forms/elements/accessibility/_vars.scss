@@ -1,0 +1,8 @@
+// Focus
+$f-focus-box-shadow-width: 2 !default;
+
+// Colors
+$f-focus-color: var(--primary) !default;
+$f-focus-color-opacity: 0.25 !default;
+$f-focus-hsl: null !default; // gets filled by Core.php
+$f-required-color: var(--primary) !default;

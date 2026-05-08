@@ -1,0 +1,26 @@
+@if $option-gaps == on {
+	.gap--none {
+    --row-gap: 0;
+    --col-gap: 0;
+    gap: 0;
+  }
+}
+
+  // Contextual Gap Classes
+@if $option-gaps == on {
+  .container-gap {
+    --row-gap: var(--container-gap);
+    --col-gap: var(--container-gap);
+    gap: var(--container-gap);
+  }
+  .content-gap {
+    --row-gap: var(--content-gap);
+    --col-gap: var(--content-gap);
+      gap: var(--content-gap);
+  }
+  .grid-gap {
+    --row-gap: var(--grid-gap);
+    --col-gap: var(--grid-gap);
+      gap: var(--grid-gap);
+  }
+}

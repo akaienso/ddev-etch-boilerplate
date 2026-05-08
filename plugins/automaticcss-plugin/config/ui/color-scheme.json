@@ -1,0 +1,637 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "color-scheme",
+	"title": "Color Scheme (Light/Dark)",
+	"type": "screen-container",
+	"iconPaths": [
+		"M22 12C22 17.5228 17.5229 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5229 2 22 6.47715 22 12Z",
+		"M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z",
+		"M12 2V22"
+	],
+	"content": [
+		{
+			"id": "the-color-scheme",
+			"title": "Default",
+			"type": "section-container",
+			"tooltip": "",
+			"description": "What color scheme are you designing the site in?",
+			"content": [
+				{
+					"id": "color-scheme-message",
+					"type": "message",
+					"text": "Add support for dark/light mode. You can set the scheme and then choose to implement the inversion manually or automatically."
+				},
+{
+				"id": "auto-color-scheme",
+				"title": "Enable Color Scheme Support",
+				"type": "toggle",
+				"default": "off",
+				"tooltip": "Automatically convert all colors and shades to light-dark and enable the use of color scheme utilities."
+			},
+			{
+			"id": "option-ref-color-tokens",
+			"title": "Generate Reference Color Tokens",
+			"type": "toggle",
+			"default": "off",
+			"tooltip": "Generate reference color tokens (--primary-ref, --primary-light-ref, etc.) that don't use light-dark(). Use these to manually compose light-dark() values with different color combinations.",
+			"displayWhen": ["auto-color-scheme", "on"]
+			},
+			{
+				"id": "website-color-scheme",
+					"title": "Website Scheme",
+					"type": "select",
+					"default": "light only",
+					"options": ["normal", "light dark", "light only", "dark only"],
+					"tooltip": "Is your main scheme primarily light or dark?",
+					"documentation": "https://automaticcss.com/docs/color-scheme-dark-mode/"
+				}
+			]
+		},
+		{
+			"id": "color-scheme-individuals",
+			"title": "Color Settings",
+			"type": "section-container",
+			"tooltip": "",
+			"description": "What color scheme are you designing the site in?",
+			"displayWhen": ["auto-color-scheme", "on"],
+			"content": [
+				{
+					"id": "color-scheme-overrides-message",
+					"type": "message",
+					"text": "Shades are inverted automatically, but main colors and hover variants may need to be handled manually. You can do this below for each color."
+				},
+				{
+					"id": "primary-color-scheme",
+					"title": "Primary",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-primary-clr", "on"],
+					"content": [
+						{
+							"id": "primary-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "primary-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "primary-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "primary-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "primary-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "primary-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "secondary-color-scheme",
+					"title": "Secondary",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-secondary-clr", "on"],
+					"content": [
+						{
+							"id": "secondary-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "secondary-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "secondary-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "secondary-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "secondary-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "secondary-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "tertiary-color-scheme",
+					"title": "Tertiary",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-tertiary-clr", "on"],
+					"content": [
+						{
+							"id": "tertiary-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "tertiary-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "tertiary-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "tertiary-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "tertiary-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "tertiary-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "accent-color-scheme",
+					"title": "Accent",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-accent-clr", "on"],
+					"content": [
+						{
+							"id": "accent-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "accent-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "accent-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "accent-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "accent-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "accent-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "base-color-scheme",
+					"title": "Base",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-base-clr", "on"],
+					"content": [
+						{
+							"id": "base-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "base-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "base-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "base-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "base-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "base-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "neutral-color-scheme",
+					"title": "Neutral",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-neutral-clr", "on"],
+					"content": [
+						{
+							"id": "neutral-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "neutral-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "neutral-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "neutral-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "neutral-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "neutral-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "success-color-scheme",
+					"title": "Success",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-success-clr", "on"],
+					"content": [
+						{
+							"id": "success-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "success-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "success-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "success-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "success-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "success-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "warning-color-scheme",
+					"title": "Warning",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-warning-clr", "on"],
+					"content": [
+						{
+							"id": "warning-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "warning-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "warning-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "warning-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "warning-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "warning-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "info-color-scheme",
+					"title": "Info",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-info-clr", "on"],
+					"content": [
+						{
+							"id": "info-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "info-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "info-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "info-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "info-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "info-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "danger-color-scheme",
+					"title": "Danger",
+					"type": "accordion-container",
+					"tooltip": "",
+					"description": "",
+					"displayWhen": ["option-danger-clr", "on"],
+					"content": [
+						{
+							"id": "danger-override-main",
+							"title": "Main Color Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "danger-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "danger-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						},
+						{
+							"id": "danger-override-hover",
+							"title": "Hover Override",
+							"type": "section-container",
+							"tooltip": "",
+							"content": [
+								{
+									"id": "danger-hover-l-alt-oklch",
+									"title": "Lightness",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								},
+								{
+									"id": "danger-hover-c-alt-oklch",
+									"title": "Chroma",
+									"type": "text",
+									"default": "",
+									"tooltip": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "color-scheme-protections",
+			"title": "Force Scheme",
+			"type": "section-container",
+			"tooltip": "",
+			"description": "What color scheme are you designing the site in?",
+			"displayWhen": ["auto-color-scheme", "on"],
+			"content": [
+				{
+					"id": "color-scheme-protections-message",
+					"type": "message",
+					"text": "Some areas of your site may need to be protected from inversion. You can define selectors for these areas below."
+				},
+				{
+					"id": "color-scheme-force-dark-selectors",
+					"title": "Force Dark Scheme",
+					"type": "textarea",
+					"output": "quotes",
+					"default": "",
+					"tooltip": ""
+				},
+				{
+					"id": "color-scheme-force-light-selectors",
+					"title": "Force Light Scheme",
+					"type": "textarea",
+					"output": "quotes",
+					"default": "",
+					"tooltip": ""
+				}
+			]
+		}
+	]
+}

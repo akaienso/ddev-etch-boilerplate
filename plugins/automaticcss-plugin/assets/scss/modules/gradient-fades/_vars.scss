@@ -1,0 +1,11 @@
+$option-gradient-fades: off !default;
+$gradient-fade-amount: 25% !default;
+
+$gradient-fades: (
+	"block": block,
+	"inline": inline,
+	"top": top,
+	"right": right,
+	"bottom": bottom,
+	"left": left,
+);

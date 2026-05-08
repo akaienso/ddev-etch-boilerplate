@@ -1,0 +1,40 @@
+@if $option-load-default-text-styles == on {
+	/* Feat: Text Defaults */
+	:root {
+		// Generic
+		@each $size, $style-list in $textGlobalStyles {
+			@each $prop, $value in $style-list {
+			  @if $value != null {
+				--text-#{$size}-#{$prop}: #{$value};
+			  }
+			}
+		}
+		--base-text-lh: #{$base-text-lh}; // Deprecated
+		// Specific
+		@each $prop, $value in $textDefaultStyles {
+			@if $value != null {
+			  --text-#{$prop}: #{$value};
+			}
+		}
+	}
+}
+
+@if $option-load-default-heading-styles == on {
+	/* Feat: Heading Defaults */
+	:root {
+		@each $prop, $value in $headingDefaultStyles {
+			@if $value != null {
+			  --heading-#{$prop}: #{$value};
+			}
+		}
+		--base-heading-lh: #{$base-heading-lh}; // Deprecated
+		// Heading Global Style Vars (Specific)
+		@each $size, $style-list in $headingGlobalStyles {
+			@each $prop, $value in $style-list {
+				@if $value != null {
+				--#{$size}-#{$prop}: #{$value};
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+$f-field-border-placement: all !default;
+$f-field-border-radius: var(--radius) !default;
+$f-field-border-size: 1px !default;
+$f-field-border-style: solid !default;
+
+$f-field-box-shadow-width-focus: 0 !default;
+
+$f-field-inline-padding: 10px !default;
+$f-field-block-padding: 8.5px !default;
+
+$f-field-typography-font-size: var(--text-m) !default;
+$f-field-typography-font-style: normal !default;
+$f-field-typography-font-weight: 400 !default;
+$f-field-typography-letter-spacing: var(--text-letter-spacing) !default;
+$f-field-typography-line-height: var(--text-line-height) !default;
+$f-field-typography-text-decoration: none !default;
+$f-field-typography-text-transform: none !default;
+
+// Colors
+$f-field-color-background: var(--f-form-color-base-contrast) !default;
+$f-field-color-background-hover: var(--f-field-color-background) !default;
+$f-field-color-background-focus: var(--f-field-color-background) !default;
+$f-field-color-background-disabled: color-mix(in oklch, var(--neutral) 80%, transparent) !default;
+$f-field-color-background-invalid: var(--f-field-color-background) !default;
+$f-field-border-color: var(--neutral-light) !default;
+$f-field-border-color-hover: var(--neutral-light) !default;
+$f-field-border-color-focus: var(--primary) !default;
+$f-field-border-color-disabled: color-mix(in oklch, var(--neutral) 60%, transparent) !default;
+$f-field-border-color-invalid: var(--danger) !default;
+$f-field-box-shadow-color-focus: var(--primary) !default;
+$f-field-color: var(--f-form-color-base) !default;
+$f-field-color-hover: var(--f-field-color) !default;
+$f-field-color-focus: var(--f-field-color) !default;
+$f-field-color-disabled: color-mix(in oklch, var(--neutral) 80%, transparent) !default;
+$f-field-color-invalid: var(--danger) !default;
+$f-field-color-placeholder: var(--neutral-semi-light) !default;
+$f-field-invalid-feedback-color: var(--danger) !default;
+$f-field-invalid-feedback-color-background: "transparent" !default;
+$f-field-prefix-suffix-color: var(--f-form-color-base) !default;
+$f-field-prefix-suffix-color-background: var(--neutral-light) !default;

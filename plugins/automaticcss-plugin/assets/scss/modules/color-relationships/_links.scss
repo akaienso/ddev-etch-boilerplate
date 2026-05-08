@@ -1,0 +1,33 @@
+@if $option-relate-bg-text == on {
+	// Loop through each relationship and apply the color property with a locally scoped variable.
+	@each $color, $value in $contextual-link-relationships {
+		@if nth($value, 1) != null {
+			$selector_string: '.bg--#{$color}' + get_surface_selectors($color);
+
+			#{$selector_string} {
+				:is(a):where(
+					:not(#{$link-default-not-selectors},
+					:is(h1,h2,h3,h4,h5,h6) a
+					)) {
+					color: var(--relative-link-color);
+					@if nth($value, 2) != null {
+						&:hover {
+							color: var(--relative-link-color-hover);
+						}
+					}
+				}
+			}
+		}
+	}
+	// Loop through each relationship and set the value of the variable.
+	@each $color, $value in $contextual-link-relationships {
+		@if nth($value, 1) != null {
+			$selector_string: '.bg--#{$color}' + get_surface_selectors($color);
+
+			#{$selector_string} {
+				--relative-link-color: var(--bg-#{$color}-link);
+				--relative-link-color-hover: var(--bg-#{$color}-link-hover);
+			}
+		}
+	}
+}

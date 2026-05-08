@@ -1,0 +1,8 @@
+@if $option-position == on {
+	/* Feat: Position & Sticky */
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    inset-block-start: var(--sticky-offset, 0);
+	}
+}

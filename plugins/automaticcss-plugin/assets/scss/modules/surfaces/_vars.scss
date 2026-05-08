@@ -1,0 +1,142 @@
+@import "functions";
+
+$option-surfaces: on !default;
+
+// Surface 1
+$surface-1-name: "1" !default;
+$surface-1-bg-color: var(--body-bg-color, var(--white)) !default;
+$surface-1-asset: null !default;
+$surface-1-asset-is-url: on !default;
+$surface-1-size: 200px !default;
+$surface-1-position: 200px !default;
+$surface-1-attachment: static !default;
+$surface-1-repeat: repeat !default;
+$surface-1-color-relationship: "none" !default;
+$surface-1-animation: null !default;
+$surface-1-overlay: null !default;
+
+// Surface 2
+$surface-2-name: "2" !default;
+$surface-2-bg-color: var(--body-bg-color, var(--white)) !default;
+$surface-2-asset: null !default;
+$surface-2-asset-is-url: on !default;
+$surface-2-size: 200px !default;
+$surface-2-position: 200px !default;
+$surface-2-attachment: static !default;
+$surface-2-repeat: repeat !default;
+$surface-2-color-relationship: "none" !default;
+$surface-2-animation: null !default;
+$surface-2-overlay: null !default;
+
+// Surface 3
+$surface-3-name: "3" !default;
+$surface-3-bg-color: var(--body-bg-color, var(--white)) !default;
+$surface-3-asset: null !default;
+$surface-3-asset-is-url: on !default;
+$surface-3-size: 200px !default;
+$surface-3-position: 200px !default;
+$surface-3-attachment: static !default;
+$surface-3-repeat: repeat !default;
+$surface-3-color-relationship: "none" !default;
+$surface-3-animation: null !default;
+$surface-3-overlay: null !default;
+
+// Surface 4
+$surface-4-name: "4" !default;
+$surface-4-bg-color: var(--body-bg-color, var(--white)) !default;
+$surface-4-asset: null !default;
+$surface-4-asset-is-url: on !default;
+$surface-4-size: 200px !default;
+$surface-4-position: 200px !default;
+$surface-4-attachment: static !default;
+$surface-4-repeat: repeat !default;
+$surface-4-color-relationship: "none" !default;
+$surface-4-animation: null !default;
+$surface-4-overlay: null !default;
+
+// Surface 5
+$surface-5-name: "5" !default;
+$surface-5-bg-color: var(--body-bg-color, var(--white)) !default;
+$surface-5-asset: null !default;
+$surface-5-asset-is-url: on !default;
+$surface-5-size: 200px !default;
+$surface-5-position: 200px !default;
+$surface-5-attachment: static !default;
+$surface-5-repeat: repeat !default;
+$surface-5-color-relationship: "none" !default;
+$surface-5-animation: null !default;
+$surface-5-overlay: null !default;
+
+
+$surfaces: (
+	"surface-1": (
+		"name": $surface-1-name,
+		"background-color": $surface-1-bg-color,
+		"asset": $surface-1-asset,
+		"asset-is-url": $surface-1-asset-is-url,
+		"size": $surface-1-size,
+		"position": $surface-1-position,
+		"attachment": $surface-1-attachment,
+		"repeat": $surface-1-repeat,
+		"relationship": $surface-1-color-relationship,
+
+		"animation": $surface-1-animation,
+		"overlay": $surface-1-overlay,
+	),
+	"surface-2": (
+		"name": $surface-2-name,
+		"background-color": $surface-2-bg-color,
+		"asset": $surface-2-asset,
+		"asset-is-url": $surface-2-asset-is-url,
+		"size": $surface-2-size,
+		"position": $surface-2-position,
+		"attachment": $surface-2-attachment,
+		"repeat": $surface-2-repeat,
+		"relationship": $surface-2-color-relationship,
+
+		"animation": $surface-2-animation,
+		"overlay": $surface-2-overlay,
+	),
+	"surface-3": (
+		"name": $surface-3-name,
+		"background-color": $surface-3-bg-color,
+		"asset": $surface-3-asset,
+		"asset-is-url": $surface-3-asset-is-url,
+		"size": $surface-3-size,
+		"position": $surface-3-position,
+		"attachment": $surface-3-attachment,
+		"repeat": $surface-3-repeat,
+		"relationship": $surface-3-color-relationship,
+
+		"animation": $surface-3-animation,
+		"overlay": $surface-3-overlay,
+	),
+	"surface-4": (
+		"name": $surface-4-name,
+		"background-color": $surface-4-bg-color,
+		"asset": $surface-4-asset,
+		"asset-is-url": $surface-4-asset-is-url,
+		"size": $surface-4-size,
+		"position": $surface-4-position,
+		"attachment": $surface-4-attachment,
+		"repeat": $surface-4-repeat,
+		"relationship": $surface-4-color-relationship,
+
+		"animation": $surface-4-animation,
+		"overlay": $surface-4-overlay,
+	),
+	"surface-5": (
+		"name": $surface-5-name,
+		"background-color": $surface-5-bg-color,
+		"asset": $surface-5-asset,
+		"asset-is-url": $surface-5-asset-is-url,
+		"size": $surface-5-size,
+		"position": $surface-5-position,
+		"attachment": $surface-5-attachment,
+		"repeat": $surface-5-repeat,
+		"relationship": $surface-5-color-relationship,
+
+		"animation": $surface-5-animation,
+		"overlay": $surface-5-overlay,
+	),
+);

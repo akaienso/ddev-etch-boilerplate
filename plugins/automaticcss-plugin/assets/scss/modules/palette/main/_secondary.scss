@@ -1,0 +1,70 @@
+// secondary Options
+$option-secondary-clr: on !default;
+
+// OKLCH
+$secondary-l-oklch: 0.66 !default;
+$secondary-c-oklch: 0.15 !default;
+$secondary-h-oklch: 21.57 !default;
+$secondary-hover-l-oklch: 0.76 !default;
+$secondary-hover-c-oklch: 0.15 !default;
+$secondary-hover-h-oklch: 21.57 !default;
+$secondary-ultra-light-l-oklch: 0.95 !default;
+$secondary-ultra-light-c-oklch: 0.15 !default;
+$secondary-ultra-light-h-oklch: 21.57 !default;
+$secondary-light-l-oklch: 0.85 !default;
+$secondary-light-c-oklch: 0.15 !default;
+$secondary-light-h-oklch: 21.57 !default;
+$secondary-dark-l-oklch: 0.25 !default;
+$secondary-dark-c-oklch: 0.15 !default;
+$secondary-dark-h-oklch: 21.57 !default;
+$secondary-ultra-dark-l-oklch: 0.10 !default;
+$secondary-ultra-dark-c-oklch: 0.15 !default;
+$secondary-ultra-dark-h-oklch: 21.57 !default;
+$secondary-semi-light-l-oklch: 0.60 !default;
+$secondary-semi-light-c-oklch: 0.15 !default;
+$secondary-semi-light-h-oklch: 21.57 !default;
+$secondary-semi-dark-l-oklch: 0.40 !default;
+$secondary-semi-dark-c-oklch: 0.15 !default;
+$secondary-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-brand-lightness == on {
+  $secondary-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$secondary-l-alt-oklch: null !default;
+$secondary-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$secondary-hover-l-alt-oklch: null !default;
+$secondary-hover-c-alt-oklch: null !default;
+
+// Secondary Color Map
+$color-secondary:(); // Initialize Map
+@if $option-secondary-clr == on {
+  $color-secondary: (
+    "main": (
+      "secondary": oklch($secondary-l-oklch $secondary-c-oklch $secondary-h-oklch),
+      "secondary-hover": oklch($secondary-hover-l-oklch $secondary-hover-c-oklch $secondary-hover-h-oklch),
+      "secondary-ultra-light": oklch($secondary-ultra-light-l-oklch $secondary-ultra-light-c-oklch $secondary-ultra-light-h-oklch),
+      "secondary-light": oklch($secondary-light-l-oklch $secondary-light-c-oklch $secondary-light-h-oklch),
+      "secondary-semi-light": oklch($secondary-semi-light-l-oklch $secondary-semi-light-c-oklch $secondary-semi-light-h-oklch),
+      "secondary-semi-dark": oklch($secondary-semi-dark-l-oklch $secondary-semi-dark-c-oklch $secondary-semi-dark-h-oklch),
+      "secondary-dark": oklch($secondary-dark-l-oklch $secondary-dark-c-oklch $secondary-dark-h-oklch),
+      "secondary-ultra-dark": oklch($secondary-ultra-dark-l-oklch $secondary-ultra-dark-c-oklch $secondary-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "secondary-alt": oklch(
+        if($secondary-l-alt-oklch, $secondary-l-alt-oklch, $secondary-l-oklch)
+        if($secondary-c-alt-oklch, $secondary-c-alt-oklch, $secondary-c-oklch)
+        $secondary-h-oklch
+      ),
+      "secondary-hover-alt": oklch(
+        if($secondary-hover-l-alt-oklch, $secondary-hover-l-alt-oklch, $secondary-hover-l-oklch)
+        if($secondary-hover-c-alt-oklch, $secondary-hover-c-alt-oklch, $secondary-hover-c-oklch)
+        $secondary-hover-h-oklch
+      ),
+    )
+  );
+}
+

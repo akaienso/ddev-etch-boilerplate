@@ -1,0 +1,179 @@
+@import "vars";
+
+// ==========================================================================
+// Entrance Animation Utility Classes (.on-enter--)
+// CSS-only with animation-timeline: view()
+// Composable: combine multiple classes like "on-enter--fade on-enter--grow"
+// ==========================================================================
+
+// Shared keyframes that reads from CSS variables (enables composability)
+@if $option-enter-fade == on or $option-enter-float == on or $option-enter-sink == on or $option-enter-slide == on or $option-enter-grow == on or $option-enter-shrink == on or $option-enter-blur == on {
+	@keyframes enter-animate {
+		from {
+			opacity: var(--animate-opacity, 1);
+			transform:
+				translateY(var(--animate-block, 0))
+				translateX(var(--animate-inline, 0))
+				scale(var(--animate-scale, 1));
+			filter: blur(var(--animate-blur, 0));
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) translateX(0) scale(1);
+			filter: blur(0);
+		}
+	}
+}
+
+// CSS scroll-driven animations (browsers that support animation-timeline)
+@supports (animation-timeline: view()) {
+	// Base styles for all entrance animations
+	@if $option-enter-fade == on or $option-enter-float == on or $option-enter-sink == on or $option-enter-slide == on or $option-enter-grow == on or $option-enter-shrink == on or $option-enter-blur == on {
+		[class*="on-enter--"]:not([class*="on-enter--delay"]):not([class*="on-enter-all"]) {
+			animation-name: enter-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: var(--animate-range-start, entry 20%) var(--animate-range-end, entry 100%);
+		}
+	}
+
+	// Each class sets its specific CSS variable (modular - combine as needed)
+	@if $option-enter-fade == on {
+		.on-enter--fade {
+			--animate-opacity: var(--enter-opacity-start, 0);
+		}
+	}
+
+	@if $option-enter-float == on {
+		.on-enter--float {
+			--animate-block: var(--enter-float-distance, 40px);
+		}
+	}
+
+	@if $option-enter-sink == on {
+		.on-enter--sink {
+			--animate-block: calc(var(--enter-sink-distance, 40px) * -1);
+		}
+	}
+
+	@if $option-enter-slide == on {
+		.on-enter--slide-left {
+			--animate-inline: var(--enter-slide-distance, 40px);
+		}
+
+		.on-enter--slide-right {
+			--animate-inline: calc(var(--enter-slide-distance, 40px) * -1);
+		}
+	}
+
+	@if $option-enter-grow == on {
+		.on-enter--grow {
+			--animate-scale: var(--enter-scale-start, 0.9);
+		}
+	}
+
+	@if $option-enter-shrink == on {
+		.on-enter--shrink {
+			--animate-scale: var(--enter-scale-shrink, 1.1);
+		}
+	}
+
+	@if $option-enter-blur == on {
+		.on-enter--blur {
+			--animate-blur: var(--enter-blur-amount, 8px);
+		}
+	}
+
+	// Parallax effect - mimics fixed background behavior
+	@if $option-enter-parallax == on {
+		@keyframes parallax-animate {
+			from {
+				translate: 0 calc(var(--enter-parallax-distance, 150px) / 2);
+			}
+			to {
+				translate: 0 calc(var(--enter-parallax-distance, 150px) / -2);
+			}
+		}
+
+		.on-enter--parallax {
+			animation-name: parallax-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: cover 0% cover 100%;
+		}
+	}
+
+	// Enter all - applies animation to direct children only
+	[class*="on-enter-all--"] {
+		> * {
+			animation-name: enter-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: var(--animate-range-start, entry 20%) var(--animate-range-end, entry 100%);
+		}
+	}
+
+	@if $option-enter-fade == on {
+		.on-enter-all--fade > * {
+			--animate-opacity: var(--enter-opacity-start, 0);
+		}
+	}
+
+	@if $option-enter-float == on {
+		.on-enter-all--float > * {
+			--animate-block: var(--enter-float-distance, 40px);
+		}
+	}
+
+	@if $option-enter-sink == on {
+		.on-enter-all--sink > * {
+			--animate-block: calc(var(--enter-sink-distance, 40px) * -1);
+		}
+	}
+
+	@if $option-enter-slide == on {
+		.on-enter-all--slide-left > * {
+			--animate-inline: var(--enter-slide-distance, 40px);
+		}
+
+		.on-enter-all--slide-right > * {
+			--animate-inline: calc(var(--enter-slide-distance, 40px) * -1);
+		}
+	}
+
+	@if $option-enter-grow == on {
+		.on-enter-all--grow > * {
+			--animate-scale: var(--enter-scale-start, 0.9);
+		}
+	}
+
+	@if $option-enter-shrink == on {
+		.on-enter-all--shrink > * {
+			--animate-scale: var(--enter-scale-shrink, 1.1);
+		}
+	}
+
+	@if $option-enter-blur == on {
+		.on-enter-all--blur > * {
+			--animate-blur: var(--enter-blur-amount, 8px);
+		}
+	}
+
+	// Stagger: auto-delay children based on sibling position (limited browser support)
+	[class*="on-enter-all--"].on-enter--stagger > * {
+		animation-delay: calc(#{"sibling-index()"} * var(--enter-stagger-interval, 5%));
+	}
+}
+
+// Fallback for browsers that don't support animation-timeline
+@supports not (animation-timeline: view()) {
+	[class*="on-enter--"],
+	[class*="on-enter-all--"] > * {
+		opacity: 1;
+		transform: none;
+		filter: none;
+	}
+}

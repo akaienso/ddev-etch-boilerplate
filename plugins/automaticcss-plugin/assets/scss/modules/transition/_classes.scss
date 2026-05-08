@@ -1,0 +1,5 @@
+@if $option-transition-classes == on {
+	.transition {
+		transition: var(--transition);
+	}
+}

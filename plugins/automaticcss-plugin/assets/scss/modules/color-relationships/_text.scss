@@ -1,0 +1,12 @@
+@if $option-relate-bg-text == on {
+	@each $color, $value in $contextual-text-relationships {
+		@if $value != null and $value != '' {
+			$selector_string: '.bg--#{$color}' + get_surface_selectors($color);
+
+			:where(#{$selector_string}) {
+				--relative-text-color: var(--bg-#{$color}-text);
+				color: var(--relative-text-color, inherit);
+			}
+		}
+	}
+}

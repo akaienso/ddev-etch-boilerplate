@@ -1,0 +1,69 @@
+// primary Options
+$option-primary-clr: on !default;
+
+// OKLCH
+$primary-l-oklch: 0.66 !default;
+$primary-c-oklch: 0.15 !default;
+$primary-h-oklch: 21.57 !default;
+$primary-hover-l-oklch: 0.76 !default;
+$primary-hover-c-oklch: 0.15 !default;
+$primary-hover-h-oklch: 21.57 !default;
+$primary-ultra-light-l-oklch: 0.95 !default;
+$primary-ultra-light-c-oklch: 0.15 !default;
+$primary-ultra-light-h-oklch: 21.57 !default;
+$primary-light-l-oklch: 0.85 !default;
+$primary-light-c-oklch: 0.15 !default;
+$primary-light-h-oklch: 21.57 !default;
+$primary-dark-l-oklch: 0.25 !default;
+$primary-dark-c-oklch: 0.15 !default;
+$primary-dark-h-oklch: 21.57 !default;
+$primary-ultra-dark-l-oklch: 0.10 !default;
+$primary-ultra-dark-c-oklch: 0.15 !default;
+$primary-ultra-dark-h-oklch: 21.57 !default;
+$primary-semi-light-l-oklch: 0.60 !default;
+$primary-semi-light-c-oklch: 0.15 !default;
+$primary-semi-light-h-oklch: 21.57 !default;
+$primary-semi-dark-l-oklch: 0.40 !default;
+$primary-semi-dark-c-oklch: 0.15 !default;
+$primary-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-brand-lightness == on {
+  $primary-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$primary-l-alt-oklch: null !default;
+$primary-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$primary-hover-l-alt-oklch: null !default;
+$primary-hover-c-alt-oklch: null !default;
+
+// Primary Color Map
+$color-primary:(); // Initialize Map
+@if $option-primary-clr == on {
+  $color-primary: (
+    "main": (
+      "primary": oklch($primary-l-oklch $primary-c-oklch $primary-h-oklch),
+      "primary-hover": oklch($primary-hover-l-oklch $primary-hover-c-oklch $primary-hover-h-oklch),
+      "primary-ultra-light": oklch($primary-ultra-light-l-oklch $primary-ultra-light-c-oklch $primary-ultra-light-h-oklch),
+      "primary-light": oklch($primary-light-l-oklch $primary-light-c-oklch $primary-light-h-oklch),
+      "primary-semi-light": oklch($primary-semi-light-l-oklch $primary-semi-light-c-oklch $primary-semi-light-h-oklch),
+      "primary-semi-dark": oklch($primary-semi-dark-l-oklch $primary-semi-dark-c-oklch $primary-semi-dark-h-oklch),
+      "primary-dark": oklch($primary-dark-l-oklch $primary-dark-c-oklch $primary-dark-h-oklch),
+      "primary-ultra-dark": oklch($primary-ultra-dark-l-oklch $primary-ultra-dark-c-oklch $primary-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "primary-alt": oklch(
+        if($primary-l-alt-oklch, $primary-l-alt-oklch, $primary-l-oklch)
+        if($primary-c-alt-oklch, $primary-c-alt-oklch, $primary-c-oklch)
+        $primary-h-oklch
+      ),
+      "primary-hover-alt": oklch(
+        if($primary-hover-l-alt-oklch, $primary-hover-l-alt-oklch, $primary-hover-l-oklch)
+        if($primary-hover-c-alt-oklch, $primary-hover-c-alt-oklch, $primary-hover-c-oklch)
+        $primary-hover-h-oklch
+      ),
+    ),
+  );
+}

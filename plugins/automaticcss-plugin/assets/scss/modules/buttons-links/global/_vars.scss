@@ -1,0 +1,38 @@
+// Options
+$btn-exclusion-selectors-user: null !default;
+$btn-exclusion-selectors: if($btn-exclusion-selectors-user, "#{$btn-exclusion-selectors-user}, .btn--none", ".btn--none");
+
+@if $option-etch == on {
+	$btn-exclusion-selectors: if($btn-exclusion-selectors-user, "#{$btn-exclusion-selectors-user}, .btn--none", ".btn--none");
+}
+
+$option-btn-full-width-on-mobile: on !default;
+$option-btn-full-width-mobile-breakpoint: 480px !default;
+
+
+// Global
+$btn-border-width: 1.5px !default;
+$btn-border-style: solid !default;
+$btn-border-radius: 0.5em !default;
+$btn-padding-block: 1em !default;
+$btn-padding-inline: 1.5em !default;
+$btn-text-transform: none !default;
+$btn-font-family: inherit !default;
+$btn-font-style: normal !default;
+$btn-font-size: var(--text-m) !default;
+$btn-letter-spacing: 0 !default;
+$btn-line-height: 1.2 !default;
+$btn-text-decoration: none !default;
+$btn-text-decoration-hover: none !default;
+$btn-font-weight: 400 !default;
+$btn-width: max-content !default;
+$btn-min-width: 140px !default;
+$btn-transition-duration: .3s !default;
+$btn-use-global-transition-option: on !default;
+$btn-transition: var(--transition) !default;
+$btn-hover-effects: null !default; // Comma-separated: scale, lift, glow, grow, shrink, fade, brighten
+$btn-enter-effects: null !default; // Comma-separated: fade, slide-up, slide-down, slide-left, slide-right, scale, blur
+$btn-border-effects: null !default; // One of: ripple-out, ripple-in, outline-out, outline-in, underline-left, underline-center, underline-right
+$btn-justify-content: center !default;
+$btn-align-items: center !default;
+$btn-text-align: center !default;

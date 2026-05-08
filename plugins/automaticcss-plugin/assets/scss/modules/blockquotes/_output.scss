@@ -1,0 +1,6 @@
+@if $option-blockquote-styling == on {
+	/* Feat: Blockquote Styling */
+	#{$blockquote-selector} {
+		@include blockquote();
+	}
+}

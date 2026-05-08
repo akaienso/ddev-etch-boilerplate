@@ -1,0 +1,41 @@
+@import "vars";
+@import "maps";
+
+@if $option-radius-variables == on {
+	/* Feat: Radius Variables */
+	:root {
+		--radius: #{$base-radius};
+		@each $group, $set in $radius {
+			@each $option, $value in $set {
+				@if $group == "other" {
+					--radius-#{$option}: #{$value};
+				}
+			}
+		}
+		// Additional Sizes (If On)
+		@if $option-radius-sizes == on {
+			@each $group, $set in $radius {
+				@each $option, $value in $set {
+					@if $group == "sizes" {
+					--radius-#{$option}: #{$value};
+					}
+				}
+			}
+		} @else {
+			--radius-m: var(--radius);
+		}
+	}
+}
+@if $option-border-variables == on {
+	/* Feat: Border Variables */
+	:root {
+		--border-size: #{$border-width}; // Deprecated - Retain for backward compatibility
+		--border-width: #{$border-width};
+		--border-style: #{$border-style};
+		--border-color-dark: #{$border-color-dark};
+		--border-color-light: #{$border-color-light};
+		--border: #{$border-main};
+		--border-light: #{$border-light};
+		--border-dark: #{$border-dark};
+	}
+}

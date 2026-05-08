@@ -1,0 +1,17 @@
+$contextual-colors: (
+    "background-colors": (
+        "ultra-light": $bg-ultra-light,
+        "light": $bg-light,
+        "dark": $bg-dark,
+        "ultra-dark": $bg-ultra-dark,
+    ),
+    "text-colors": (
+        "light": $text-light,
+        "light-muted": $text-light-muted,
+        "dark": $text-dark,
+        "dark-muted": $text-dark-muted,
+    ),
+);
+
+$contextual-background-colors: map-get($contextual-colors, "background-colors");
+$contextual-text-colors: map-get($contextual-colors, "text-colors");

@@ -1,0 +1,35 @@
+$option-bricks-stack-elements: off !default;
+
+@if $option-bricks-stack-elements == on {
+    #bricks-panel-elements .sortable-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+
+        .bricks-add-element .element-data {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-inline: 10px;
+            padding-block: 5px;
+            text-align: left;
+
+            .element-label {
+                box-shadow: none;
+            }
+            .element-icon {
+				font-size: 16px;
+                line-height: 1;
+            }
+            .bricks-panel-actions-icon {
+				height: 20px;
+				width: 20px;
+				&.layout-inserter {
+					inset: auto 0 0 auto;
+				}
+				.bricks-svg-wrapper .bricks-svg {
+					height: .9em;
+					width: .9em;
+				}
+            }
+        }
+    }
+}

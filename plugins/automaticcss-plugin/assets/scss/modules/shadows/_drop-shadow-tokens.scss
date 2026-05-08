@@ -1,0 +1,14 @@
+@if $option-drop-shadow-variables == on {
+	/* Feat: Drop Shadow Variables */
+	:root {
+		--drop-shadow-#{$drop-shadow-1-name}: drop-shadow(#{$drop-shadow-1-value});
+		--drop-shadow-#{$drop-shadow-2-name}: drop-shadow(#{$drop-shadow-2-value});
+		--drop-shadow-#{$drop-shadow-3-name}: drop-shadow(#{$drop-shadow-3-value});
+		@if $drop-shadow-4-value != null {
+			--drop-shadow-#{$drop-shadow-4-name}: drop-shadow(#{$drop-shadow-4-value});
+		}
+		@if $drop-shadow-5-value != null {
+			--drop-shadow-#{$drop-shadow-5-name}: drop-shadow(#{$drop-shadow-5-value});
+		}
+	}
+}

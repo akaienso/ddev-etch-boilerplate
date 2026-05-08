@@ -1,0 +1,71 @@
+// info Options
+$option-info-clr: on !default;
+
+// OKLCH
+$info-l-oklch: 0.66 !default;
+$info-c-oklch: 0.15 !default;
+$info-h-oklch: 21.57 !default;
+$info-hover-l-oklch: 0.76 !default;
+$info-hover-c-oklch: 0.15 !default;
+$info-hover-h-oklch: 21.57 !default;
+$info-ultra-light-l-oklch: 0.95 !default;
+$info-ultra-light-c-oklch: 0.15 !default;
+$info-ultra-light-h-oklch: 21.57 !default;
+$info-light-l-oklch: 0.85 !default;
+$info-light-c-oklch: 0.15 !default;
+$info-light-h-oklch: 21.57 !default;
+$info-dark-l-oklch: 0.25 !default;
+$info-dark-c-oklch: 0.15 !default;
+$info-dark-h-oklch: 21.57 !default;
+$info-ultra-dark-l-oklch: 0.10 !default;
+$info-ultra-dark-c-oklch: 0.15 !default;
+$info-ultra-dark-h-oklch: 21.57 !default;
+$info-semi-light-l-oklch: 0.60 !default;
+$info-semi-light-c-oklch: 0.15 !default;
+$info-semi-light-h-oklch: 21.57 !default;
+$info-semi-dark-l-oklch: 0.40 !default;
+$info-semi-dark-c-oklch: 0.15 !default;
+$info-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-status-lightness == on {
+  $info-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$info-l-alt-oklch: null !default;
+$info-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$info-hover-l-alt-oklch: null !default;
+$info-hover-c-alt-oklch: null !default;
+
+// Info Color Map
+$color-info:(); // Initialize Map
+@if $option-info-clr == on {
+  $color-info: (
+    "main": (
+      "info": oklch($info-l-oklch $info-c-oklch $info-h-oklch),
+      "info-hover": oklch($info-hover-l-oklch $info-hover-c-oklch $info-hover-h-oklch),
+      "info-ultra-light": oklch($info-ultra-light-l-oklch $info-ultra-light-c-oklch $info-ultra-light-h-oklch),
+      "info-light": oklch($info-light-l-oklch $info-light-c-oklch $info-light-h-oklch),
+      "info-semi-light": oklch($info-semi-light-l-oklch $info-semi-light-c-oklch $info-semi-light-h-oklch),
+      "info-semi-dark": oklch($info-semi-dark-l-oklch $info-semi-dark-c-oklch $info-semi-dark-h-oklch),
+      "info-dark": oklch($info-dark-l-oklch $info-dark-c-oklch $info-dark-h-oklch),
+      "info-ultra-dark": oklch($info-ultra-dark-l-oklch $info-ultra-dark-c-oklch $info-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "info-alt": oklch(
+        if($info-l-alt-oklch, $info-l-alt-oklch, $info-l-oklch)
+        if($info-c-alt-oklch, $info-c-alt-oklch, $info-c-oklch)
+        $info-h-oklch
+      ),
+      "info-hover-alt": oklch(
+        if($info-hover-l-alt-oklch, $info-hover-l-alt-oklch, $info-hover-l-oklch)
+        if($info-hover-c-alt-oklch, $info-hover-c-alt-oklch, $info-hover-c-oklch)
+        $info-hover-h-oklch
+      ),
+    ),
+  );
+
+}
+

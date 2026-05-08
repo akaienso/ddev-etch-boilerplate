@@ -1,0 +1,204 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "palette",
+	"title": "Colors (Palette)",
+	"type": "screen-container",
+	"content": [
+		{
+			"id": "color-main-pallette",
+			"title": "Main Colors",
+			"type": "section-container",
+			"content": [
+				{
+					"id": "primary",
+					"title": "Primary",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#32a2c1"
+						},
+						{
+							"name": "alt",
+							"default": "#32a2c1"
+						}
+					]
+				},
+				{
+					"id": "secondary",
+					"title": "Secondary",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#1c1930"
+						},
+						{
+							"name": "alt",
+							"default": "#1c1930"
+						}
+					]
+				},
+				{
+					"id": "tertiary",
+					"title": "Tertiary",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#867A5B"
+						},
+						{
+							"name": "alt",
+							"default": "#3D3829"
+						}
+					]
+				},
+				{
+					"id": "accent",
+					"title": "Accent",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#bcc8a2"
+						},
+						{
+							"name": "alt",
+							"default": "#bcc8a2"
+						}
+					]
+				},
+				{
+					"id": "base",
+					"title": "Base",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#0a2434"
+						},
+						{
+							"name": "alt",
+							"default": "#0a2434"
+						}
+					]
+				},
+				{
+					"id": "neutral",
+					"title": "Neutral",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#000000"
+						},
+						{
+							"name": "alt",
+							"default": "#ffffff"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "color-status-palette",
+			"title": "Semantic Colors",
+			"type": "section-container",
+			"content": [
+				{
+					"id": "success",
+					"title": "Success",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#29A745"
+						},
+						{
+							"name": "alt",
+							"default": "#29A745"
+						}
+					]
+				},
+				{
+					"id": "warning",
+					"title": "Warning",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#FFC10A"
+						},
+						{
+							"name": "alt",
+							"default": "#FFC10A"
+						}
+					]
+				},
+				{
+					"id": "info",
+					"title": "Info",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#18A2B8"
+						},
+						{
+							"name": "alt",
+							"default": "#18A2B8"
+						}
+					]
+				},
+				{
+					"id": "danger",
+					"title": "Danger",
+					"type": "color",
+					"colors": [
+						{
+							"name": "default",
+							"default": "#DC3545"
+						},
+						{
+							"name": "alt",
+							"default": "#DC3545"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "palette-options",
+			"title": "Palette Options",
+			"type": "section-container",
+			"content": [
+				{
+					"id": "option-palette-unify-brand-lightness",
+					"title": "Unify Brand Lightness",
+					"type": "toggle",
+					"default": "on",
+					"tooltip": "Use a shared OKLCH lightness for brand colors."
+				},
+				{
+					"id": "option-palette-unify-status-lightness",
+					"title": "Unify Semantic Lightness",
+					"type": "toggle",
+					"default": "on",
+					"tooltip": "Use a shared OKLCH lightness for semantic colors."
+				},
+			{
+				"id": "unified-lightness-value",
+				"title": "Unified Lightness",
+				"type": "number",
+				"default": 0.65,
+				"tooltip": "Shared OKLCH lightness for brand and/or semantic colors (0-1).",
+				"displayWhenOr": [
+					["option-palette-unify-brand-lightness", "on"],
+					["option-palette-unify-status-lightness", "on"]
+				]
+			}
+			]
+		}
+	]
+}

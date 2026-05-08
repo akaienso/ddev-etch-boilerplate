@@ -1,0 +1,20 @@
+// Exclusions
+$offset-content-header-exclusion: "[data-sticky-header='0']" !default;
+$offset-content-page-exclusions: ".content-offset--off" !default;
+
+// Offset Page Content Automatically
+@if $option-offset-page-content == on {
+    @if $option-bricks == off {
+      body:not(#{$offset-content-page-exclusions}):not(:has(header:is(#{$offset-content-header-exclusion}))) main > *:first-child > *:first-child {
+        margin-block-start: var(--header-height);
+      }
+    }
+
+    @if $option-bricks == on {
+      #bricks-blank-canvas > .actions,
+      body:not(#{$offset-content-page-exclusions}):not(:has(header:is(#{$offset-content-header-exclusion}))) main:not(.panel-content) > *:first-child > *:first-child:not(:is(.bricks-shape-divider, .bricks-background-video-wrapper)),
+      main > *:first-child > .bricks-shape-divider ~ .brxe-container {
+        margin-block-start: var(--header-height);
+      }
+    }
+  }

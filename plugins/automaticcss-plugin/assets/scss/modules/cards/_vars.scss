@@ -1,0 +1,99 @@
+// Feature Switch
+$option-cards: on !default;
+// Create an initial card targeting list
+$card-selectors: null !default;
+$card-selectors: ".card, #{$card-selectors}";
+// Option for using grid for card layouts
+$option-cards-use-grid: off !default;
+
+/// Card Framework Variables
+$primary-card-style: light !default;
+$card-display: if($option-cards-use-grid == on, grid, flex);
+
+// Card Colors
+$card-background: var(--neutral-ultra-light) !default;
+$card-heading-color: null !default;
+$card-text-color: var(--text-dark-muted) !default;
+$card-link-color: null !default;
+$card-link-hover-color: null !default;
+$card-button-style: null !default;
+$card-avatar-border-color: null !default;
+$card-border-color: null !default;
+$card-shadow: null !default;
+
+// Spacing
+$card-padding: var(--space-m) !default;
+$card-gap: calc(var(--content-gap) / 2) !default;
+// Border
+$option-card-concentric-radius: off !default; // off | standard | reverse
+$card-border-width: var(--border-width) !default;
+$card-border-style: var(--border-style) !default;
+$card-radius: 1rem !default;
+$card-min-radius: 4px !default;
+// Typography
+$card-heading-size: var(--h3) !default;
+$card-text-size: 1em !default;
+$card-button-font-size: var(--text-s) !default;
+// Icons
+$card-icon-size: 48px !default;
+$card-line-height: 1.4 !default;
+$card-icon-radius: null !default;
+$option-card-boxed-icons: off !default;
+$card-icon-padding: var(--icon-padding, 12px) !default;
+$card-icon-border-width: var(--icon-border-width, 0) !default;
+$card-icon-border-style: var(--icon-border-style, solid) !default;
+$card-icon-radius: var(--icon-radius, var(--radius)) !default;
+$card-icon-background: var(--icon-background, var(--neutral-ultra-light)) !default;
+$card-icon-color: var(--icon-color, var(--text-dark)) !default;
+$card-icon-border-color: var(--icon-border-color, transparent) !default;
+
+// Avatars
+$card-avatar-radius: 50vw !default;
+$card-avatar-border-width: null !default;
+$card-avatar-border-style: null !default;
+$card-avatar-size: 98px !default;
+$card-avatar-aspect-ratio: "1" !default;
+// Media
+$card-media-radius: var(--radius) !default;
+$card-media-aspect-ratio: null !default;
+$card-media-object-fit: null !default;
+
+// Card Styles Map
+$card-styles: (
+    'card-padding': $card-padding,
+    'card-gap': $card-gap,
+    'card-border-width': $card-border-width,
+    'card-border-style': $card-border-style,
+		'card-display': $card-display,
+    'card-radius': $card-radius,
+    'card-min-radius': $card-min-radius,
+    'card-heading-size': $card-heading-size,
+    'card-text-size': $card-text-size,
+    'card-button-font-size': $card-button-font-size,
+    'card-icon-size': $card-icon-size,
+		'card-icon-padding': $card-icon-padding,
+		'card-icon-border-width': $card-icon-border-width,
+		'card-icon-border-style': $card-icon-border-style,
+		'card-icon-radius': $card-icon-radius,
+		'card-icon-background': $card-icon-background,
+		'card-icon-color': $card-icon-color,
+		'card-icon-border-color': $card-icon-border-color,
+    'card-line-height': $card-line-height,
+    'card-avatar-radius': $card-avatar-radius,
+		'card-avatar-border-width': $card-avatar-border-width,
+		'card-avatar-border-style': $card-avatar-border-style,
+    'card-avatar-size': $card-avatar-size,
+    'card-avatar-aspect-ratio': $card-avatar-aspect-ratio,
+    'card-media-radius': $card-media-radius,
+		'card-media-aspect-ratio': $card-media-aspect-ratio,
+		'card-media-object-fit': $card-media-object-fit,
+		'card-background': $card-background,
+    'card-heading-color': $card-heading-color,
+    'card-text-color': $card-text-color,
+    'card-link-color': $card-link-color,
+    'card-link-color-hover': $card-link-hover-color,
+    'card-button-style': $card-button-style,
+		'card-avatar-border-color': $card-avatar-border-color,
+		'card-border-color': $card-border-color,
+		'card-shadow': $card-shadow
+);

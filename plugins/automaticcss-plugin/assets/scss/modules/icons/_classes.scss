@@ -1,0 +1,52 @@
+@if $option-icons == on {
+	[#{$icon-data-attribute}] {
+		@include icon(default, $icon-default-style);
+	}
+
+	// Size Classes & Attributes
+	@each $size, $value in $icon-sizes {
+		.icon--#{$size}, [data-icon-size="#{$size}"] {
+			--icon-size: var(--icon-size-#{$size});
+			--icon-padding: var(--icon-padding-#{$size});
+		}
+	}
+
+	// Style Classes & Attributes
+	// Theme Classes & Attributes
+	.icon--boxed, [data-icon-style="boxed"] {
+		@include icon-boxed-styles;
+	}
+	.icon--plain, [data-icon-style="plain"] {
+		--icon-background: transparent;
+		--icon-border-width: 0;
+		--icon-padding: 0;
+	}
+
+	// List Handling
+	:is([#{$icon-data-attribute}-list], .icon-list) {
+		display: flex;
+		flex-direction: column;
+		gap: var(--icon-list-gap, 1em);
+	}
+	:is([#{$icon-data-attribute}-list], .icon-list) :where(svg, i) {
+		--icon-size: var(--icon-list-icon-size, 1em);
+		@if $option-boxed-list-icons == on {
+			@include icon(default, box);
+		} @else {
+			@include icon(default, default);
+		}
+		position: relative;
+		translate: var(--icon-inline-offset, 0) var(--icon-block-offset, 0);
+		flex-shrink: 0;
+	}
+	:is([#{$icon-data-attribute}-list], .icon-list) a:hover {
+		--icon-color: var(--icon-color-hover, var(--primary));
+		--icon-background: var(--icon-background-hover, var(--primary-hover));
+	}
+
+	// Handling for when icons are wrapped in a link
+	:where(a:has(> svg, > i)):hover {
+		--icon-color: var(--icon-color-hover, var(--primary));
+		--icon-background: var(--icon-background-hover, var(--primary-hover));
+	}
+}

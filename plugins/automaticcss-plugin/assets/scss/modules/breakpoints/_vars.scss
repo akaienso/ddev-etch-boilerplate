@@ -1,0 +1,5 @@
+$vp-min: 36 !default;
+$vp-max: 128 !default;
+$content-width-max: $vp-max;
+$content-width-min: $vp-min;
+$content-width: $vp-max * 1rem;

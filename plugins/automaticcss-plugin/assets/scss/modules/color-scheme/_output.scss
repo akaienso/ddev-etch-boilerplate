@@ -1,0 +1,25 @@
+/* Color Scheme */
+
+:root {
+	color-scheme: $website-color-scheme;
+}
+
+@if $color-scheme-force-dark-selectors {
+	#{$color-scheme-force-dark-selectors} {
+		color-scheme: dark;
+	}
+}
+
+@if $color-scheme-force-light-selectors {
+	#{$color-scheme-force-light-selectors} {
+		color-scheme: light;
+	}
+}
+
+.scheme--light {
+	color-scheme: light;
+}
+
+.scheme--dark {
+	color-scheme: dark;
+}

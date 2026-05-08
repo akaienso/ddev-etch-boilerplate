@@ -1,0 +1,22 @@
+@import "../bricks/vars";
+@import "functions";
+
+$wp-traditional-theme: off !default;
+$wp-page-block-width: 100% !default;
+$wp-post-block-width: 767px !default;
+$wp-blog-post-type: null !default;
+$wp-blog-post-type-list: parse-post-types($wp-blog-post-type); // Creates .post-type-x from each type
+$wp-blog-types-gb-selector: create-gb-selectors($wp-blog-post-type-list);
+$wp-blog-post-force-white-bg: off !default;
+$option-use-gutenberg-for-page-building: false !default;
+$wp-post-background: null !default;
+$wp-post-foreground: null !default;
+
+
+
+
+
+// Identify traditional themes for Gutenberg support.
+@if $option-bricks == on {
+	  $wp-traditional-theme: on;
+}

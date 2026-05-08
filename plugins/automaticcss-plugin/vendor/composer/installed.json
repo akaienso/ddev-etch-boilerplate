@@ -1,0 +1,62 @@
+{
+    "packages": [
+        {
+            "name": "digital-gravy/feature-flag",
+            "version": "v1.0.10",
+            "version_normalized": "1.0.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Digital-Gravy/feature-flag.git",
+                "reference": "f12abc11ee475654e89c7effc18cc361260576b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Digital-Gravy/feature-flag/zipball/f12abc11ee475654e89c7effc18cc361260576b7",
+                "reference": "f12abc11ee475654e89c7effc18cc361260576b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.6",
+                "phpstan/phpstan": "^2.0",
+                "phpunit/phpunit": "^9.0",
+                "wp-coding-standards/wpcs": "^3.1"
+            },
+            "time": "2025-04-23T06:58:08+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "DigitalGravy\\FeatureFlag\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Matteo Greco",
+                    "email": "matteo@digitalgravy.com"
+                }
+            ],
+            "description": "Feature Flag for WordPress",
+            "homepage": "https://github.com/Digital-Gravy/feature-flag",
+            "keywords": [
+                "feature-flag",
+                "feature-toggle",
+                "php",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/Digital-Gravy/feature-flag/issues",
+                "source": "https://github.com/Digital-Gravy/feature-flag"
+            },
+            "install-path": "../digital-gravy/feature-flag"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

@@ -1,0 +1,78 @@
+{
+	"$schema": "expansions.schema.json",
+	"label": "Grid",
+	"expansions": {
+		"auto-grid-deprecated": {
+    		"expandTo": "/* START AUTO GRID - Deprecated in 3.2.10 */\n%root% {\n  /* Number of columns */\n  --column-count: 3;\n  /* Minimum item width */\n  --min: calc((var(--content-width) - ((var(--column-count) - 1) * var(--grid-gap))) / var(--column-count));\n  /* No touchey */\n  display: grid !important;\n  gap: var(--grid-gap);\n  --min-formula: min(100%, max(var(--min), (100% - (var(--column-count) - 1) * var(--grid-gap)) / var(--column-count)));\n  --grid-template-columns: repeat(auto-fit, minmax(var(--min-formula), 1fr));\n  grid-template-columns: var(--grid-template-columns);\n  \n}\n%root% > * {\n  min-width: 0;\n  max-width: 100%;\n  overflow-wrap: break-word;\n}\n/* END AUTO GRID */"
+		},
+		"auto-grid": {
+			"expandTo": "/* Begin Auto Grid */\n%root% {\ndisplay: grid !important;\ngrid-template-columns: var(--grid-template-columns);\n/* Set or change column count */\n--column-count: 4;\n/* Set or change stacking aggressiveness */\n--auto-grid-aggressiveness: .7;\n/* Don't touch the stuff below unless you have a PhD in CSS */\n--min: calc(((var(--content-width) - ((var(--column-count) - 1) * var(--grid-gap))) / var(--column-count)) * var(--auto-grid-aggressiveness));\n--grid-template-columns: repeat(auto-fit, minmax(var(--min-formula), 1fr));\n--grid-template-columns-even: repeat(auto-fit, minmax(var(--min-formula), 1fr) minmax(var(--min-formula), 1fr));\n--min-formula: min(100%, max(var(--min), (100% - (var(--column-count) - 1) * var(--grid-gap)) / var(--column-count)));\n/* Special handling for children */\n> * {\nmin-width: 0;\nmax-width: 100%;\noverflow-wrap: break-word;\n}\ngap: var(--grid-gap); /* No touchey - redefine this variable if you want to change the gap, but don't replace the variable or your grid will break */\n}\n\n/* Uncomment to Force Even Columns\n\n%root% {\n@media (min-width: 480px) {\n--grid-template-columns: var(--grid-template-columns-even) !important;\n}\n}\n\n*/\n/* End Auto Grid */"
+		},
+		"variable-grid": {
+			"expandTo": "/* Variable Grid */\n%root% {\n\t--min: calc(var(--content-width) / 2 - var(--space-xxl));\n\tdisplay: grid !important;\n\tgrid-template-columns: repeat(auto-fit, minmax(min(var(--min, calc(var(--content-width) / 2 - var(--space-xxl))), 100%), 1fr));\n\tgrid-template-rows: var(--grid-1);\n\tgap: var(--gap, var(--grid-gap));\n}\n/* End Variable Grid */"
+		},
+		"grid-1": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-1);\n  grid-template-rows: 1fr;"
+		},
+		"grid-2": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-2);\n  grid-template-rows: 1fr;"
+		},
+		"grid-3": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-3);\n  grid-template-rows: 1fr;"
+		},
+		"grid-4": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-4);\n  grid-template-rows: 1fr;"
+		},
+		"grid-5": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-5);\n  grid-template-rows: 1fr;"
+		},
+		"grid-6": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-6);\n  grid-template-rows: 1fr;"
+		},
+		"grid-7": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-7);\n  grid-template-rows: 1fr;"
+		},
+		"grid-8": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-8);\n  grid-template-rows: 1fr;"
+		},
+		"grid-9": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-9);\n  grid-template-rows: 1fr;"
+		},
+		"grid-10": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-10);\n  grid-template-rows: 1fr;"
+		},
+		"grid-11": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-11);\n  grid-template-rows: 1fr;"
+		},
+		"grid-12": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-12);\n  grid-template-rows: 1fr;"
+		},
+		"grid-1-2": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-1-2);\n  grid-template-rows: 1fr;"
+		},
+		"grid-1-3": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-1-3);\n  grid-template-rows: 1fr;"
+		},
+		"grid-2-1": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-2-1);\n  grid-template-rows: 1fr;"
+		},
+		"grid-2-3": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-2-3);\n  grid-template-rows: 1fr;"
+		},
+		"grid-3-1": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-3-1);\n  grid-template-rows: 1fr;"
+		},
+		"grid-3-2": {
+			"expandTo": "display: grid;\n  grid-template-columns: var(--grid-3-2);\n  grid-template-rows: 1fr;"
+		},
+		"flex-row": {
+			"expandTo": "display: flex;\n  flex-direction: row;"
+		},
+		"flex-column": {
+			"expandTo": "display: flex;\n  flex-direction: column;"
+		},
+		"content-grid": {
+        	"expandTo": "/* Begin Content Grid */\n%root% {\n  --feature-width: 50px;\n  --feature-max-width: 100px;\n  --full: minmax(var(--gutter), 1fr);\n  padding-inline: 0;\n  column-gap: 0 !important;\n  display: grid !important;\n  grid-template-columns:\n    [full-start]\n    var(--full)\n    [feature-max-start]\n    minmax(0, var(--feature-max-width, var(--feature-max-width)))\n    [feature-start]\n    minmax(0, var(--feature-width, var(--feature-width)))\n    [content-start]\n    min(var(--content-width), 100% - var(--gutter) * 2)\n    [content-end]\n    minmax(0, var(--feature-width, var(--feature-width)))\n    [feature-end]\n    minmax(0, var(--feature-max-width, var(--feature-max-width)))\n    [feature-max-end]\n    var(--full)\n    [full-end];\n\n  > :not(\n    .content--feature,\n    .content--feature-max,\n    .content--full,\n    .content--full-safe) {\n    width: 100%;\n  }\n\n  > :where(:not(\n    .content--feature,\n    .content--feature-max,\n    .content--full,\n    .content--full-safe)) {\n    grid-column: content;\n  }\n\n  > .is-bg {\n    grid-column: full;\n  }\n\n  &:is(\n    [class*=\"padding--\"],\n    [class*=\"section--\"],\n    [class*=\"header--\"]\n  ) {\n    padding-inline: 0;\n  }\n}\n/* End Content Grid */"
+    	}
+	}
+}

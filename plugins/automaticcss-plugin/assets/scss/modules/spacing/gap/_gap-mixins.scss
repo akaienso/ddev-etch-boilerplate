@@ -1,0 +1,16 @@
+// Mixins for Auto Gap Spacing
+
+@mixin auto-contextual-spacing($selector:null, $gap:null, $alignment:null) {
+    #{$selector}:where(:not(.bricks-shape-divider)) {
+        display: flex;
+        flex-direction: column;
+        align-items: #{$alignment};
+        gap: #{$gap};
+    }
+}
+
+@mixin auto-contextual-block-spacing($selector:null, $gap:null) {
+    :where(#{$selector}) {
+        gap: #{$gap};
+    }
+}

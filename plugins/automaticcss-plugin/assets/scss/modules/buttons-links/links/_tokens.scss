@@ -1,0 +1,10 @@
+@if $option-link-variables == on {
+	/* Feat: Link Variables */
+	:root {
+	  @each $link-style, $value in $link-default-styles {
+			@if $value != null {
+				--#{$link-style}: #{$value};
+			}
+		}
+	}
+}

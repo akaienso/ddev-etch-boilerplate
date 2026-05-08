@@ -1,0 +1,8 @@
+@if $offset != 0 and $offset != "0rem" {
+	/* Scroll offset */
+	[id] {
+		scroll-margin-top: var(--offset, 0);
+	}
+}
+
+@import "smooth";

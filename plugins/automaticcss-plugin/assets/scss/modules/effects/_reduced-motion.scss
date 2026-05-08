@@ -1,0 +1,35 @@
+// ==========================================================================
+// Reduced Motion Support
+// ==========================================================================
+@media (prefers-reduced-motion: reduce) {
+	[class*="on-enter--"],
+	[class*="on-enter-all--"] > *,
+	[class*="on-exit--"],
+	[class*="on-exit-all--"] > * {
+		animation: none !important;
+		opacity: 1;
+		transform: none;
+		filter: none;
+	}
+	
+	[class*="on-visible--"],
+	[class*="on-visible-all--"] > * {
+		transition: none !important;
+		opacity: 1;
+		translate: none;
+		scale: none;
+		filter: none;
+	}
+	
+	[class*="on-hover--"] {
+		transition: none;
+		
+		&:hover {
+			transform: none;
+			translate: none;
+			scale: none;
+			box-shadow: initial;
+			filter: none;
+		}
+	}
+}

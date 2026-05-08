@@ -1,0 +1,8 @@
+@if $option-gradient-fades == on {
+	/* Feat: Gradient Fades */
+	@each $direction, $value in $gradient-fades {
+		.fade--#{$direction} {
+			@include fade($direction);
+		}
+	}
+}

@@ -1,0 +1,16 @@
+@if $option-relate-bg-text == on {
+	@each $color, $value in $contextual-button-relationships {
+		@if $value != null and $value != '' {
+			$selector_string: '.bg--#{$color}' + get_surface_selectors($color);
+
+			#{$selector_string} {
+			[class*="btn--"]:not(.unrelate) {
+				@include btn($value, no);
+				&.btn--outline {
+					@include btn("#{$value}.btn--outline", no);
+				}
+			}
+			}
+		}
+	}
+}

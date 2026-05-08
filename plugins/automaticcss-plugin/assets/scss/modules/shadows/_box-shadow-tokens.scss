@@ -1,0 +1,14 @@
+@if $option-box-shadow-variables == on {
+	/* Feat: Box Shadow Variables */
+	:root {
+		--box-shadow-#{$box-shadow-1-name}: #{$box-shadow-1-value};
+		--box-shadow-#{$box-shadow-2-name}: #{$box-shadow-2-value};
+		--box-shadow-#{$box-shadow-3-name}: #{$box-shadow-3-value};
+		@if $box-shadow-4-value != null {
+			--box-shadow-#{$box-shadow-4-name}: #{$box-shadow-4-value};
+		}
+		@if $box-shadow-5-value != null {
+			--box-shadow-#{$box-shadow-5-name}: #{$box-shadow-5-value};
+		}
+	}
+}

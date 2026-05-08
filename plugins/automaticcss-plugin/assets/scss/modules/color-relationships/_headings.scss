@@ -1,0 +1,18 @@
+@if $option-relate-bg-text == on {
+	// Loop through each relationship and apply the color property with a locally scoped variable.
+	@each $color, $value in $contextual-background-colors {
+		$selector: '.bg--#{$color}' + get_surface_selectors($color);
+		#{$selector} :where(h1,h2,h3,h4,h5,h6){
+			color: var(--relative-heading-color, inherit);
+		}
+	}
+	// Loop through each relationship and set the value of the variable.
+	@each $color, $value in $contextual-heading-relationships {
+		@if $value != null and $value != '' {
+			$selector: '.bg--#{$color}' + get_surface_selectors($color);
+			#{$selector} {
+				--relative-heading-color: var(--bg-#{$color}-heading);
+			}
+		}
+	}
+}

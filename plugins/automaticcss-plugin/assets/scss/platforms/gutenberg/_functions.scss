@@ -1,0 +1,87 @@
+// Parse post types list
+@function parse-post-types($types) {
+	@if $types == null or $types == "" {
+	  @return ".post-type-post";
+	}
+
+	// Handle single post type
+	@if str-index($types, ",") == null {
+	  @return ".post-type-#{$types}";
+	}
+
+	// Handle multiple post types by manually parsing and joining
+	$result: ();
+	$length: str-length($types);
+	$start: 1;
+
+	@for $i from 1 through $length {
+	  $char: str-slice($types, $i, $i);
+	  @if $char == "," {
+		$part: str-slice($types, $start, $i - 1);
+		$trimmed: str-trim($part);
+		$result: append($result, $trimmed);
+		$start: $i + 1;
+	  }
+	}
+
+	// Add the last part
+	$last-part: str-slice($types, $start, $length);
+	$trimmed: str-trim($last-part);
+	$result: append($result, $trimmed);
+
+	// Join with commas
+	$joined: "";
+	@for $i from 1 through length($result) {
+	  $item: nth($result, $i);
+	  @if $i == 1 {
+		$joined: ".post-type-#{$item}";
+	  } @else {
+		$joined: $joined + ", .post-type-#{$item}";
+	  }
+	}
+
+	@return $joined;
+  }
+
+// @function parse-post-types($types) {
+// 	@return (".post-type-post", ".post-type-legal");
+//   }
+
+// Create the GB Selector
+
+@function create-gb-selectors($post-types-string) {
+	// Split the comma-separated string into individual post types
+	$result: ();
+	$length: str-length($post-types-string);
+	$start: 1;
+
+	@for $i from 1 through $length {
+	  $char: str-slice($post-types-string, $i, $i);
+	  @if $char == "," {
+		$part: str-slice($post-types-string, $start, $i - 1);
+		$trimmed: str-trim($part);
+		$selector: ".wp-block-post-content:is(#{$trimmed} .wp-block-post-content)";
+		$result: append($result, $selector);
+		$start: $i + 1;
+	  }
+	}
+
+	// Add the last part
+	$last-part: str-slice($post-types-string, $start, $length);
+	$trimmed: str-trim($last-part);
+	$selector: ".wp-block-post-content:is(#{$trimmed} .wp-block-post-content)";
+	$result: append($result, $selector);
+
+	// Join with commas
+	$joined: "";
+	@for $i from 1 through length($result) {
+	  $selector: nth($result, $i);
+	  @if $i == 1 {
+		$joined: $selector;
+	  } @else {
+		$joined: $joined + ", " + $selector;
+	  }
+	}
+
+	@return $joined;
+  }

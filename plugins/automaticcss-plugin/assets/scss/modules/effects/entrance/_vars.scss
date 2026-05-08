@@ -1,0 +1,31 @@
+// ==========================================================================
+// Entrance Animation Variables
+// ==========================================================================
+
+// Individual Entrance Animation Options
+$option-enter-fade: off !default;
+$option-enter-float: off !default;
+$option-enter-sink: off !default;
+$option-enter-slide: off !default;
+$option-enter-grow: off !default;
+$option-enter-shrink: off !default;
+$option-enter-blur: off !default;
+$option-enter-parallax: off !default;
+
+// --------------------------------------------------------------------------
+// Entrance Animation Settings
+// --------------------------------------------------------------------------
+$scroll-animation-duration: 0.6s !default;
+$scroll-animation-timing: cubic-bezier(0.16, 1, 0.3, 1) !default;
+$scroll-animation-delay: 0s !default;
+$animate-range-start: entry 20% !default;
+$animate-range-end: entry 100% !default;
+$enter-opacity-start: 0 !default;
+$enter-float-distance: 40px !default;
+$enter-sink-distance: 40px !default;
+$enter-slide-distance: 40px !default;
+$enter-scale-start: 0.9 !default;
+$enter-scale-shrink: 1.1 !default;
+$enter-blur-amount: 8px !default;
+$enter-parallax-distance: 150px !default;
+$enter-stagger-interval: 5% !default;

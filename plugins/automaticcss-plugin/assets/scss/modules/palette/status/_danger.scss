@@ -1,0 +1,71 @@
+// danger Options
+$option-danger-clr: on !default;
+
+// OKLCH
+$danger-l-oklch: 0.66 !default;
+$danger-c-oklch: 0.15 !default;
+$danger-h-oklch: 21.57 !default;
+$danger-hover-l-oklch: 0.76 !default;
+$danger-hover-c-oklch: 0.15 !default;
+$danger-hover-h-oklch: 21.57 !default;
+$danger-ultra-light-l-oklch: 0.95 !default;
+$danger-ultra-light-c-oklch: 0.15 !default;
+$danger-ultra-light-h-oklch: 21.57 !default;
+$danger-light-l-oklch: 0.85 !default;
+$danger-light-c-oklch: 0.15 !default;
+$danger-light-h-oklch: 21.57 !default;
+$danger-dark-l-oklch: 0.25 !default;
+$danger-dark-c-oklch: 0.15 !default;
+$danger-dark-h-oklch: 21.57 !default;
+$danger-ultra-dark-l-oklch: 0.10 !default;
+$danger-ultra-dark-c-oklch: 0.15 !default;
+$danger-ultra-dark-h-oklch: 21.57 !default;
+$danger-semi-light-l-oklch: 0.60 !default;
+$danger-semi-light-c-oklch: 0.15 !default;
+$danger-semi-light-h-oklch: 21.57 !default;
+$danger-semi-dark-l-oklch: 0.40 !default;
+$danger-semi-dark-c-oklch: 0.15 !default;
+$danger-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-status-lightness == on {
+  $danger-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$danger-l-alt-oklch: null !default;
+$danger-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$danger-hover-l-alt-oklch: null !default;
+$danger-hover-c-alt-oklch: null !default;
+
+// Danger Color Map
+$color-danger:(); // Initialize Map
+@if $option-danger-clr == on {
+  $color-danger: (
+    "main": (
+      "danger": oklch($danger-l-oklch $danger-c-oklch $danger-h-oklch),
+      "danger-hover": oklch($danger-hover-l-oklch $danger-hover-c-oklch $danger-hover-h-oklch),
+      "danger-ultra-light": oklch($danger-ultra-light-l-oklch $danger-ultra-light-c-oklch $danger-ultra-light-h-oklch),
+      "danger-light": oklch($danger-light-l-oklch $danger-light-c-oklch $danger-light-h-oklch),
+      "danger-semi-light": oklch($danger-semi-light-l-oklch $danger-semi-light-c-oklch $danger-semi-light-h-oklch),
+      "danger-semi-dark": oklch($danger-semi-dark-l-oklch $danger-semi-dark-c-oklch $danger-semi-dark-h-oklch),
+      "danger-dark": oklch($danger-dark-l-oklch $danger-dark-c-oklch $danger-dark-h-oklch),
+      "danger-ultra-dark": oklch($danger-ultra-dark-l-oklch $danger-ultra-dark-c-oklch $danger-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "danger-alt": oklch(
+        if($danger-l-alt-oklch, $danger-l-alt-oklch, $danger-l-oklch)
+        if($danger-c-alt-oklch, $danger-c-alt-oklch, $danger-c-oklch)
+        $danger-h-oklch
+      ),
+      "danger-hover-alt": oklch(
+        if($danger-hover-l-alt-oklch, $danger-hover-l-alt-oklch, $danger-hover-l-oklch)
+        if($danger-hover-c-alt-oklch, $danger-hover-c-alt-oklch, $danger-hover-c-oklch)
+        $danger-hover-h-oklch
+      ),
+    ),
+  );
+
+}
+

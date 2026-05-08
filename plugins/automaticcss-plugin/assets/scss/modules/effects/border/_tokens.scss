@@ -1,0 +1,30 @@
+@import "vars";
+
+// ==========================================================================
+// Border Effect Tokens
+// ==========================================================================
+
+@if $option-border-ripple == on {
+	:root {
+		--border-ripple-color: #{$border-ripple-color};
+		--border-ripple-width: #{$border-ripple-width};
+		--border-ripple-duration: #{$border-ripple-duration};
+		--border-ripple-distance: #{$border-ripple-distance};
+	}
+}
+
+@if $option-border-outline == on {
+	:root {
+		--border-outline-color: #{$border-outline-color};
+		--border-outline-width: #{$border-outline-width};
+		--border-outline-duration: #{$border-outline-duration};
+	}
+}
+
+@if $option-border-underline == on {
+	:root {
+		--border-underline-color: #{$border-underline-color};
+		--border-underline-width: #{$border-underline-width};
+		--border-underline-duration: #{$border-underline-duration};
+	}
+}

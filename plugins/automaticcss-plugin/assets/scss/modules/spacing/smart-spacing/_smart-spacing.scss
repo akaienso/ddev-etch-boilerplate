@@ -1,0 +1,30 @@
+@import "vars";
+@import "mixins";
+
+// Smart Spacing
+@if $option-smart-spacing == on {
+	/* Feat: Smart Spacing */
+    body {
+		@include smart-spacing-normalize;
+	}
+}
+@if $option-smart-spacing == on {
+    .smart-spacing-normalize {
+        @include smart-spacing-normalize;
+    }
+	.smart-spacing {
+		@include smart-spacing;
+	}
+}
+@if $smart-spacing-selectors != null {
+    :is(#{$smart-spacing-selectors}) {
+        @include smart-spacing;
+    }
+}
+@if $option-smart-spacing == on {
+    .smart-spacing--off {
+        @include smart-spacing-normalize;
+    }
+}
+
+@import "bricks";

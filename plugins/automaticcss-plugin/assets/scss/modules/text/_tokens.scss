@@ -1,0 +1,17 @@
+@if $option-text-size-variables == on {
+	/* Feat: Text Size Variables */
+	:root {
+		@each $variable, $value in $textSizes {
+			--text-#{$variable}: #{$value};
+		}
+	}
+}
+// HEADING SIZE VARIABLES
+@if $option-heading-size-variables == on {
+	/* Feat: Heading Size Variables */
+	:root {
+		@each $variable, $value in $headingSizes {
+			--#{$variable}: #{$value};
+		}
+	}
+}

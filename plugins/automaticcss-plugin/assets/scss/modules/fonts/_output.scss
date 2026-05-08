@@ -1,0 +1,156 @@
+@import "vars";
+
+@if $font-1-src and $font-1-family-name {
+	/* Custom Fonts: Font 1 */
+	@font-face {
+		font-family: '#{$font-1-family-name}';
+		@if $font-1-src-fallback and $font-1-format-fallback {
+			src: url('#{$font-1-src}') format('#{$font-1-format}'),
+				 url('#{$font-1-src-fallback}') format('#{$font-1-format-fallback}');
+		} @else {
+			src: url('#{$font-1-src}') format('#{$font-1-format}');
+		}
+		@if $font-1-style {
+			font-style: $font-1-style;
+		}
+		@if $font-1-weight {
+			font-weight: $font-1-weight;
+		}
+		@if $font-1-display {
+			font-display: $font-1-display;
+		}
+		@if $font-1-type == "variable" {
+			@if $font-1-stretch {
+				font-stretch: $font-1-stretch;
+			}
+			@if $font-1-variation-settings {
+				font-variation-settings: $font-1-variation-settings;
+			}
+		}
+	}
+}
+
+@if $font-2-src and $font-2-family-name {
+	/* Custom Fonts: Font 2 */
+	@font-face {
+		font-family: '#{$font-2-family-name}';
+		@if $font-2-src-fallback and $font-2-format-fallback {
+			src: url('#{$font-2-src}') format('#{$font-2-format}'),
+				 url('#{$font-2-src-fallback}') format('#{$font-2-format-fallback}');
+		} @else {
+			src: url('#{$font-2-src}') format('#{$font-2-format}');
+		}
+		@if $font-2-style {
+			font-style: $font-2-style;
+		}
+		@if $font-2-weight {
+			font-weight: $font-2-weight;
+		}
+		@if $font-2-display {
+			font-display: $font-2-display;
+		}
+		@if $font-2-type == "variable" {
+			@if $font-2-stretch {
+				font-stretch: $font-2-stretch;
+			}
+			@if $font-2-variation-settings {
+				font-variation-settings: $font-2-variation-settings;
+			}
+		}
+	}
+}
+
+@if $font-3-src and $font-3-family-name {
+	/* Custom Fonts: Font 3 */
+	@font-face {
+		font-family: '#{$font-3-family-name}';
+		@if $font-3-src-fallback and $font-3-format-fallback {
+			src: url('#{$font-3-src}') format('#{$font-3-format}'),
+				 url('#{$font-3-src-fallback}') format('#{$font-3-format-fallback}');
+		} @else {
+			src: url('#{$font-3-src}') format('#{$font-3-format}');
+		}
+		@if $font-3-style {
+			font-style: $font-3-style;
+		}
+		@if $font-3-weight {
+			font-weight: $font-3-weight;
+		}
+		@if $font-3-display {
+			font-display: $font-3-display;
+		}
+		@if $font-3-type == "variable" {
+			@if $font-3-stretch {
+				font-stretch: $font-3-stretch;
+			}
+			@if $font-3-variation-settings {
+				font-variation-settings: $font-3-variation-settings;
+			}
+		}
+	}
+
+	:root {
+		--accent-font: #{$font-3-family-name};
+	}
+}
+
+@if $font-4-src and $font-4-family-name {
+	/* Custom Fonts: Font 4 */
+	@font-face {
+		font-family: '#{$font-4-family-name}';
+		@if $font-4-src-fallback and $font-4-format-fallback {
+			src: url('#{$font-4-src}') format('#{$font-4-format}'),
+				 url('#{$font-4-src-fallback}') format('#{$font-4-format-fallback}');
+		} @else {
+			src: url('#{$font-4-src}') format('#{$font-4-format}');
+		}
+		@if $font-4-style {
+			font-style: $font-4-style;
+		}
+		@if $font-4-weight {
+			font-weight: $font-4-weight;
+		}
+		@if $font-4-display {
+			font-display: $font-4-display;
+		}
+		@if $font-4-type == "variable" {
+			@if $font-4-stretch {
+				font-stretch: $font-4-stretch;
+			}
+			@if $font-4-variation-settings {
+				font-variation-settings: $font-4-variation-settings;
+			}
+		}
+	}
+}
+
+@if $font-5-src and $font-5-family-name {
+	/* Custom Fonts: Font 5 */
+	@font-face {
+		font-family: '#{$font-5-family-name}';
+		@if $font-5-src-fallback and $font-5-format-fallback {
+			src: url('#{$font-5-src}') format('#{$font-5-format}'),
+				 url('#{$font-5-src-fallback}') format('#{$font-5-format-fallback}');
+		} @else {
+			src: url('#{$font-5-src}') format('#{$font-5-format}');
+		}
+		@if $font-5-style {
+			font-style: $font-5-style;
+		}
+		@if $font-5-weight {
+			font-weight: $font-5-weight;
+		}
+		@if $font-5-display {
+			font-display: $font-5-display;
+		}
+		@if $font-5-type == "variable" {
+			@if $font-5-stretch {
+				font-stretch: $font-5-stretch;
+			}
+			@if $font-5-variation-settings {
+				font-variation-settings: $font-5-variation-settings;
+			}
+		}
+	}
+}
+

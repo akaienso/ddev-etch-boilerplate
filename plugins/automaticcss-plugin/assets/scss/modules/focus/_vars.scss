@@ -1,0 +1,7 @@
+$option-focus-styles: on !default; // Load focus styles.
+
+// Focus Styles
+$focus-style: outline !default;
+$focus-color: var(--primary) !default;
+$focus-offset: 0.25em !default;
+$focus-width: .2rem !default;

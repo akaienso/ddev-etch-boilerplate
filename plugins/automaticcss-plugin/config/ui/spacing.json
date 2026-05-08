@@ -1,0 +1,480 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "spacing",
+	"title": "Spacing",
+	"type": "screen-container",
+	"iconPaths": [
+		"M6.28571 5C6.28571 4.44772 6.73342 4 7.28571 4H17V6H7.2857C6.73342 6 6.28571 5.55228 6.28571 5V5Z",
+		"M6.28571 15C6.28571 14.4477 6.73342 14 7.28571 14H17V16H7.2857C6.73342 16 6.28571 15.5523 6.28571 15V15Z",
+		"M2 10C2 9.44772 2.44772 9 3 9H17V11H3C2.44772 11 2 10.5523 2 10V10Z"
+	],
+	"description": "Spacing settings.",
+	"content": [
+		{
+			"id": "standard-spacing",
+			"title": "Standard Spacing",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "base-spacing-group",
+					"type": "section-container",
+					"title": "Base Spacing",
+					"content": [
+						{
+							"id": "standard-spacing-message",
+							"type": "message",
+							"text": "Set a default spacing value for all the medium 'M' spacing on your site (margins, padding, gaps, etc.)."
+						},
+						{
+							"id": "base-space",
+							"title": "Base Value (Desktop)",
+							"type": "px",
+							"default": 30,
+							"percentage-convert": true,
+							"tooltip": "The default spacing for the site that all other spacing is based on.",
+							"documentation": "https://automaticcss.com/docs/spacing/",
+							"searchTitle": "Base Spacing"
+						},
+						{
+							"id": "base-space-min",
+							"title": "Base Value (Mobile)",
+							"type": "px",
+							"default": 24,
+							"percentage-convert": true,
+							"tooltip": "The default spacing for the site that all other spacing is based on.",
+							"documentation": "https://automaticcss.com/docs/spacing/",
+							"searchTitle": "Base Spacing"
+						}
+					]
+				},
+				{
+					"id": "base-ratio-group",
+					"type": "section-container",
+					"title": "Base Scale",
+					"tooltip": "The degree of change between spacing sizes (up/down keys cycle through music scales).",
+					"documentation": "https://automaticcss.com/docs/spacing/",
+					"content": [
+						{
+							"id": "spacing-scale-message",
+							"type": "message",
+							"text": "Define the ratio between spacing sizes. The ratio is used to calculate the options from XS to XXL."
+						},
+						{
+							"id": "space-scale",
+							"title": "Desktop Ratio",
+							"type": "number",
+							"musicScale": "true",
+							"default": 1.5
+						},
+						{
+							"id": "mob-space-scale",
+							"title": "Mobile Ratio",
+							"type": "number",
+							"musicScale": "true",
+							"default": 1.333
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "section-spacing",
+			"title": "Section Spacing",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "base-spacing-group-1",
+					"type": "section-container",
+					"title": "Padding Multiplier for Sections",
+					"tooltip": "Default block padding value for sections (expressed as a multiple of your site's base spacing).",
+					"documentation": "https://automaticcss.com/docs/spacing/",
+					"content": [
+						{
+							"id": "base-spacing-message",
+							"type": "message",
+							"text": "Sections have more block padding by default than other elements. ACSS controls this using a multiplier of your base value (base * multiplier). Set your preferred value below."
+						},
+						{
+							"id": "space-adjust-section",
+							"title": "Desktop Multiplier",
+							"type": "number",
+							"default": 3
+						},
+						{
+							"id": "mob-space-adjust-section",
+							"title": "Mobile Multiplier",
+							"type": "number",
+							"default": 2
+						}
+					]
+				},
+				{
+					"id": "gutter",
+					"type": "section-container",
+					"title": "Gutter Spacing",
+					"tooltip": "The default inline padding for all top-level sections on your site.",
+					"documentation": "https://automaticcss.com/docs/spacing/",
+					"content": [
+						{
+							"id": "gutter-message",
+							"type": "message",
+							"text": "Gutters are the left and right padding on top level section elements that determines the space between your content and the edge of smaller devices. Set your preferred gutter value below."
+						},
+						{
+							"id": "gutter-max",
+							"title": "Desktop Gutter",
+							"type": "px",
+							"default": 80,
+							"percentage-convert": true
+						},
+						{
+							"id": "gutter-min",
+							"title": "Mobile Gutter",
+							"type": "px",
+							"default": 16,
+							"percentage-convert": true
+						}
+					]
+				},
+				{
+					"id": "section-padding-block-section",
+					"type": "section-container",
+					"title": "Default Top & Bottom Padding",
+					"tooltip": "The default block padding for all top-level sections on your site.",
+					"documentation": "https://automaticcss.com/docs/spacing/",
+					"content": [
+						{
+							"id": "block-padding-message",
+							"type": "message",
+							"text": "Section block padding is 'medium' by default. Change that if you'd like, but it's usually not necessary."
+						},
+						{
+							"id": "section-padding-block",
+							"title": "Block Padding",
+							"type": "text",
+							"default": "var(--section-space-m)",
+							"tooltip": "The default block padding for all top-level sections on your site.",
+							"documentation": "https://automaticcss.com/docs/spacing/"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "contextual-spacing",
+			"title": "Contextual Spacing",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "contextual-spacing-message",
+					"type": "message",
+					"text": "<a target='_blank' href='https://automaticcss.com/docs/contextual-spacing/'>Contextual Spacing</a> gives intelligent context to the use of spacing tokens throughout your website. This makes your website more scalable and maintainable. Set your preferred values below."
+				},
+				{
+					"id": "contextual-container-gap",
+					"title": "Container Gap",
+					"type": "text",
+					"cssVariable": "--container-gap",
+					"default": "var(--space-xl)",
+					"tooltip": "The space between groups of content in your sections.",
+					"documentation": "https://automaticcss.com/docs/contextual-spacing/"
+				},
+				{
+					"id": "contextual-content-gap",
+					"title": "Content Gap",
+					"type": "text",
+					"cssVariable": "--content-gap",
+					"default": "var(--space-m)",
+					"tooltip": "The space between all content elements.",
+					"documentation": "https://automaticcss.com/docs/contextual-spacing/"
+				},
+				{
+					"id": "contextual-grid-gap",
+					"title": "Grid Gap",
+					"type": "text",
+					"cssVariable": "--grid-gap",
+					"default": "var(--space-m)",
+					"tooltip": "The space between elements in grids.",
+					"documentation": "https://automaticcss.com/docs/contextual-spacing/"
+				}
+			]
+		},
+		{
+			"id": "automatic-spacing",
+			"title": "Automatic Spacing",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "automatic-spacing-message",
+					"type": "message",
+					"text": "ACSS can automatically apply contextual spacing to your site by default. This is done with zero specificity, making it easy to override at any time. This feature is highly recommended as it saves a lot of time without any cost."
+				},
+				{
+					"id": "option-container-gap",
+					"title": "Auto Container Gap",
+					"type": "toggle",
+					"default": "on",
+					"tooltip": "Automatically add container-gap between groups of content in your sections.",
+					"documentation": "https://automaticcss.com/docs/contextual-spacing/"
+				},
+				{
+					"id": "option-content-gap",
+					"title": "Auto Content Gap",
+					"type": "toggle",
+					"default": "on",
+					"tooltip": "Automatically add content-gap between all content elements.",
+					"documentation": "https://automaticcss.com/docs/contextual-spacing/"
+				},
+				{
+					"id": "option-grid-gap",
+					"title": "Auto Grid Gap",
+					"type": "toggle",
+					"default": "on",
+					"tooltip": "Automatically add grid-gap between elements in grids.",
+					"documentation": "https://automaticcss.com/docs/contextual-spacing/"
+				}
+			]
+		},
+		{
+			"id": "smart-spacing",
+			"title": "Smart Spacing",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "smart-spacing-message",
+					"type": "message",
+					"text": "<a target='_blank' href='https://automaticcss.com/docs/smart-spacing/'>Smart Spacing</a> is a critical feature that normalizes gap spacing, removes problematic spacing, and intelligently spaces rich content using delightful rhythmic spacing. It's a highly recommended feature."
+				},
+				{
+					"id": "option-smart-spacing",
+					"title": "Smart Spacing",
+					"type": "toggle",
+					"style": "",
+					"default": "on",
+					"tooltip": "Normalize all spacing and add intelligent spacing to rich content areas.",
+					"documentation": "https://automaticcss.com/docs/smart-spacing/"
+				},
+				{
+					"id": "smart-spacing-tabs",
+					"type": "tabs-container",
+					"displayWhen": ["option-smart-spacing", "on"],
+					"content": [
+						{
+							"id": "smart-spacing-headings",
+							"title": "Headings",
+							"type": "tab",
+							"content": [
+								{
+									"id": "heading-spacing",
+									"title": "All (H2-H6)",
+									"type": "text",
+									"default": "1.2em"
+								},
+								{
+									"id": "h2-spacing",
+									"title": "H2",
+									"type": "text",
+									"default": "",
+									"placeholder": "1.5em",
+									"validation": {
+										"required": false
+									}
+								},
+								{
+									"id": "h3-spacing",
+									"title": "H3",
+									"type": "text",
+									"default": "",
+									"placeholder": "1.5em",
+									"validation": {
+										"required": false
+									}
+								},
+								{
+									"id": "h4-spacing",
+									"title": "H4",
+									"type": "text",
+									"default": "",
+									"placeholder": "1.5em",
+									"validation": {
+										"required": false
+									}
+								},
+								{
+									"id": "h5-spacing",
+									"title": "H5",
+									"type": "text",
+									"default": "",
+									"placeholder": "1.5em",
+									"validation": {
+										"required": false
+									}
+								},
+								{
+									"id": "h6-spacing",
+									"title": "H6",
+									"type": "text",
+									"default": "",
+									"placeholder": "1.5em",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "smart-spacing-lists",
+							"title": "Text & Lists",
+							"type": "tab",
+							"content": [
+								{
+									"id": "smart-spacing-text",
+									"title": "Text",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "paragraph-spacing",
+											"title": "Paragraphs",
+											"type": "text",
+											"default": "1em"
+										}
+									]
+								},
+								{
+									"id": "smart-spacing-lists-1",
+									"type": "section-container",
+									"title": "Lists",
+									"content": [
+										{
+											"id": "list-spacing",
+											"title": "List (Block)",
+											"type": "text",
+											"default": "var(--paragraph-spacing)",
+											"placeholder": "1em"
+										},
+										{
+											"id": "list-indent-spacing",
+											"title": "List (Indent)",
+											"type": "text",
+											"default": "2em",
+											"placeholder": "2em"
+										},
+										{
+											"id": "list-item-spacing",
+											"title": "List Items",
+											"type": "text",
+											"default": ".5em",
+											"placeholder": ".5em"
+										}
+									]
+								},
+								{
+									"id": "smart-spacing-nested-lists",
+									"type": "section-container",
+									"title": "Nested Lists",
+									"content": [
+										{
+											"id": "nested-list-spacing",
+											"title": "Nested List (Block)",
+											"type": "text",
+											"default": "",
+											"placeholder": "1em",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "nested-list-indent-spacing",
+											"title": "Nested List (Indent)",
+											"type": "text",
+											"default": "1em",
+											"placeholder": "1em",
+											"validation": {
+												"required": false
+											}
+										},
+										{
+											"id": "nested-list-item-spacing",
+											"title": "Nested List Items",
+											"type": "text",
+											"default": "",
+											"placeholder": ".5em",
+											"validation": {
+												"required": false
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "smart-spacing-other",
+							"title": "Other",
+							"type": "tab",
+							"content": [
+								{
+									"id": "flow-spacing",
+									"title": "Flow Spacing",
+									"type": "text",
+									"default": "var(--paragraph-spacing)",
+									"tooltip": "Catch-all spacing for non-specific rich content elements (e.g. 'div').",
+									"documentation": "https://automaticcss.com/docs/smart-spacing/"
+								},
+								{
+									"id": "figure-spacing",
+									"title": "Figures",
+									"type": "text",
+									"default": "var(--paragraph-spacing)",
+									"tooltip": "Spacing for figure elements.",
+									"documentation": "https://automaticcss.com/docs/smart-spacing/"
+								},
+								{
+									"id": "figcaption-spacing",
+									"title": "Figcaptions",
+									"type": "text",
+									"default": ".5em",
+									"tooltip": "Spacing for figure elements.",
+									"documentation": "https://automaticcss.com/docs/smart-spacing/"
+								},
+								{
+									"id": "blockquote-spacing",
+									"title": "Blockquotes",
+									"type": "text",
+									"default": "var(--paragraph-spacing)",
+									"tooltip": "Spacing for blockquote elements.",
+									"documentation": "https://automaticcss.com/docs/smart-spacing/"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "smart-spacing-selectors",
+					"title": "Target Additional Selectors",
+					"type": "textarea",
+					"default": "",
+					"placeholder": ".custom-selector",
+					"tooltip": "Target specific elements with smart spacing.",
+					"documentation": "https://automaticcss.com/docs/smart-spacing/",
+					"output": "quotes",
+					"validation": {
+						"required": false
+					}
+				},
+				{
+					"id": "smart-spacing-duplicate-margin-elements",
+					"title": "Avoid Duplicate Margins",
+					"type": "textarea",
+					"default": ":is(figure, blockquote, ul, ol):where(:not(:first-child))",
+					"placeholder": ":is(figure, blockquote, ul, ol):where(:not(:first-child))",
+					"tooltip": "Remove paragraph and flow spacing from adjacent siblings of the following elements:",
+					"documentation": "https://automaticcss.com/docs/smart-spacing/",
+					"output": "quotes",
+					"validation": {
+						"required": false
+					}
+				}
+			]
+		}
+	]
+}

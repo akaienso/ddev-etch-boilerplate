@@ -1,0 +1,242 @@
+@mixin generate-light-dark-colors() {
+	// Process main colors
+	@each $color-map in $color-maps {
+		@if map-has-key($color-map, "main") {
+			$main-colors: map-get($color-map, "main");
+			$alt-colors: if(map-has-key($color-map, "alt"), map-get($color-map, "alt"), ());
+			$families: ();
+
+			@each $token, $value in $main-colors {
+				$first-dash: str-index($token, "-");
+				$family: if($first-dash, str-slice($token, 1, $first-dash - 1), $token);
+				@if index($families, $family) == null {
+					$families: append($families, $family);
+				}
+			}
+
+			@each $color-family in $families {
+				// Handle base color
+				$base-color: map-get($main-colors, $color-family);
+				$base-alt-color: map-get($alt-colors, "#{$color-family}-alt");
+				@if $base-color {
+					@if $base-alt-color == null {
+						$base-alt-color: $base-color;
+					}
+					--#{$color-family}: light-dark(#{$base-color}, #{$base-alt-color});
+				}
+
+				// Handle hover shade
+				$hover-color: map-get($main-colors, "#{$color-family}-hover");
+				$hover-alt-color: map-get($alt-colors, "#{$color-family}-hover-alt");
+				@if $hover-color {
+					@if $hover-alt-color == null {
+						$hover-alt-color: $hover-color;
+					}
+					--#{$color-family}-hover: light-dark(#{$hover-color}, #{$hover-alt-color});
+				}
+
+				// Handle shades
+				$ultra-light: map-get($main-colors, "#{$color-family}-ultra-light");
+				$ultra-dark: map-get($main-colors, "#{$color-family}-ultra-dark");
+				$light: map-get($main-colors, "#{$color-family}-light");
+				$dark: map-get($main-colors, "#{$color-family}-dark");
+				$semi-light: map-get($main-colors, "#{$color-family}-semi-light");
+				$semi-dark: map-get($main-colors, "#{$color-family}-semi-dark");
+
+				@if $ultra-light and $ultra-dark {
+					--#{$color-family}-ultra-light: light-dark(#{$ultra-light}, #{$ultra-dark});
+					--#{$color-family}-ultra-dark: light-dark(#{$ultra-dark}, #{$ultra-light});
+				}
+				@if $light and $dark {
+					--#{$color-family}-light: light-dark(#{$light}, #{$dark});
+					--#{$color-family}-dark: light-dark(#{$dark}, #{$light});
+				}
+				@if $semi-light and $semi-dark {
+					--#{$color-family}-semi-light: light-dark(#{$semi-light}, #{$semi-dark});
+					--#{$color-family}-semi-dark: light-dark(#{$semi-dark}, #{$semi-light});
+				}
+			}
+		}
+	}
+
+	// Process status colors
+	@each $color-map in $status-color-maps {
+		@if map-has-key($color-map, "main") {
+			$main-colors: map-get($color-map, "main");
+			$alt-colors: if(map-has-key($color-map, "alt"), map-get($color-map, "alt"), ());
+			$families: ();
+
+			@each $token, $value in $main-colors {
+				$first-dash: str-index($token, "-");
+				$family: if($first-dash, str-slice($token, 1, $first-dash - 1), $token);
+				@if index($families, $family) == null {
+					$families: append($families, $family);
+				}
+			}
+
+			@each $color-family in $families {
+				// Handle base color
+				$base-color: map-get($main-colors, $color-family);
+				$base-alt-color: map-get($alt-colors, "#{$color-family}-alt");
+				@if $base-color {
+					@if $base-alt-color == null {
+						$base-alt-color: $base-color;
+					}
+					--#{$color-family}: light-dark(#{$base-color}, #{$base-alt-color});
+				}
+
+				// Handle hover shade
+				$hover-color: map-get($main-colors, "#{$color-family}-hover");
+				$hover-alt-color: map-get($alt-colors, "#{$color-family}-hover-alt");
+				@if $hover-color {
+					@if $hover-alt-color == null {
+						$hover-alt-color: $hover-color;
+					}
+					--#{$color-family}-hover: light-dark(#{$hover-color}, #{$hover-alt-color});
+				}
+
+				// Handle shades
+				$ultra-light: map-get($main-colors, "#{$color-family}-ultra-light");
+				$ultra-dark: map-get($main-colors, "#{$color-family}-ultra-dark");
+				$light: map-get($main-colors, "#{$color-family}-light");
+				$dark: map-get($main-colors, "#{$color-family}-dark");
+				$semi-light: map-get($main-colors, "#{$color-family}-semi-light");
+				$semi-dark: map-get($main-colors, "#{$color-family}-semi-dark");
+
+				@if $ultra-light and $ultra-dark {
+					--#{$color-family}-ultra-light: light-dark(#{$ultra-light}, #{$ultra-dark});
+					--#{$color-family}-ultra-dark: light-dark(#{$ultra-dark}, #{$ultra-light});
+				}
+				@if $light and $dark {
+					--#{$color-family}-light: light-dark(#{$light}, #{$dark});
+					--#{$color-family}-dark: light-dark(#{$dark}, #{$light});
+				}
+				@if $semi-light and $semi-dark {
+					--#{$color-family}-semi-light: light-dark(#{$semi-light}, #{$semi-dark});
+					--#{$color-family}-semi-dark: light-dark(#{$semi-dark}, #{$semi-light});
+				}
+			}
+		}
+	}
+}
+
+// Generate reference color tokens (non light-dark versions) for manual composition
+// These allow users to build custom light-dark() combinations
+@mixin generate-ref-color-tokens() {
+	// Process main colors
+	@each $color-map in $color-maps {
+		@if map-has-key($color-map, "main") {
+			$main-colors: map-get($color-map, "main");
+			$families: ();
+
+			@each $token, $value in $main-colors {
+				$first-dash: str-index($token, "-");
+				$family: if($first-dash, str-slice($token, 1, $first-dash - 1), $token);
+				@if index($families, $family) == null {
+					$families: append($families, $family);
+				}
+			}
+
+			@each $color-family in $families {
+			// Skip black and white — they don't need reference tokens
+			@if $color-family != 'black' and $color-family != 'white' {
+				// Handle base color
+				$base-color: map-get($main-colors, $color-family);
+				@if $base-color {
+					--#{$color-family}-ref: #{$base-color};
+				}
+
+				// Handle hover shade
+				$hover-color: map-get($main-colors, "#{$color-family}-hover");
+				@if $hover-color {
+					--#{$color-family}-hover-ref: #{$hover-color};
+				}
+
+				// Handle shades
+				$ultra-light: map-get($main-colors, "#{$color-family}-ultra-light");
+				$ultra-dark: map-get($main-colors, "#{$color-family}-ultra-dark");
+				$light: map-get($main-colors, "#{$color-family}-light");
+				$dark: map-get($main-colors, "#{$color-family}-dark");
+				$semi-light: map-get($main-colors, "#{$color-family}-semi-light");
+				$semi-dark: map-get($main-colors, "#{$color-family}-semi-dark");
+
+				@if $ultra-light {
+					--#{$color-family}-ultra-light-ref: #{$ultra-light};
+				}
+				@if $ultra-dark {
+					--#{$color-family}-ultra-dark-ref: #{$ultra-dark};
+				}
+				@if $light {
+					--#{$color-family}-light-ref: #{$light};
+				}
+				@if $dark {
+					--#{$color-family}-dark-ref: #{$dark};
+				}
+				@if $semi-light {
+					--#{$color-family}-semi-light-ref: #{$semi-light};
+				}
+				@if $semi-dark {
+					--#{$color-family}-semi-dark-ref: #{$semi-dark};
+				}
+			}
+		}
+	}
+}
+
+// Process status colors
+@each $color-map in $status-color-maps {
+	@if map-has-key($color-map, "main") {
+		$main-colors: map-get($color-map, "main");
+		$families: ();
+
+		@each $token, $value in $main-colors {
+			$first-dash: str-index($token, "-");
+			$family: if($first-dash, str-slice($token, 1, $first-dash - 1), $token);
+			@if index($families, $family) == null {
+				$families: append($families, $family);
+			}
+		}
+
+		@each $color-family in $families {
+			// Handle base color
+			$base-color: map-get($main-colors, $color-family);
+			@if $base-color {
+				--#{$color-family}-ref: #{$base-color};
+			}
+
+			// Handle hover shade
+			$hover-color: map-get($main-colors, "#{$color-family}-hover");
+			@if $hover-color {
+				--#{$color-family}-hover-ref: #{$hover-color};
+			}
+
+			// Handle shades
+			$ultra-light: map-get($main-colors, "#{$color-family}-ultra-light");
+			$ultra-dark: map-get($main-colors, "#{$color-family}-ultra-dark");
+			$light: map-get($main-colors, "#{$color-family}-light");
+			$dark: map-get($main-colors, "#{$color-family}-dark");
+			$semi-light: map-get($main-colors, "#{$color-family}-semi-light");
+			$semi-dark: map-get($main-colors, "#{$color-family}-semi-dark");
+
+			@if $ultra-light {
+				--#{$color-family}-ultra-light-ref: #{$ultra-light};
+			}
+			@if $ultra-dark {
+				--#{$color-family}-ultra-dark-ref: #{$ultra-dark};
+			}
+			@if $light {
+				--#{$color-family}-light-ref: #{$light};
+			}
+			@if $dark {
+				--#{$color-family}-dark-ref: #{$dark};
+			}
+			@if $semi-light {
+				--#{$color-family}-semi-light-ref: #{$semi-light};
+			}
+			@if $semi-dark {
+				--#{$color-family}-semi-dark-ref: #{$semi-dark};
+			}
+			}
+		}
+	}
+}

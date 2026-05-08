@@ -1,0 +1,7 @@
+@if $option-load-default-section-styles == on {
+	/* Feat: Default Section Styles */
+	:root {
+		--content-width: #{$content-width};
+		--content-width-safe: min(var(--content-width), calc(100% - var(--gutter) * 2));
+	}
+}

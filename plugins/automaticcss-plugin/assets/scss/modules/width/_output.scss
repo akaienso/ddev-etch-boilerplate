@@ -1,0 +1,56 @@
+@if $option-width == on {
+	/* Feat: Width */
+  @each $widthName, $widthValue in $widths {
+
+    @if $widthName != "full" {
+
+      .width--#{$widthName} {
+				inline-size: 100%;
+				max-inline-size: calc(var(--content-width) * #{$widthValue});
+      }
+    }
+  }
+
+  // Full width needs to be handled separately
+
+  .width--full {
+		inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  // When we change the width of a figure element, we want to make sure
+  // the image inside the figure grows with the figure.
+  figure[class*="width--"] img {
+    inline-size: 100%;
+  }
+
+  .width--auto {
+    inline-size: auto !important;
+    max-inline-size: 100%;
+  }
+  .content-width {
+    inline-size: 100%;
+    max-inline-size: var(--content-width);
+    margin-inline: auto;
+  }
+  .content-width--safe {
+    inline-size: 100%;
+    max-inline-size: var(--content-width-safe);
+    margin-inline: auto;
+  }
+
+	// More special widths
+	.width--max-content {
+		inline-size: max-content;
+		max-inline-size: 100%;
+	}
+	.width--min-content {
+		inline-size: min-content;
+		max-inline-size: 100%;
+	}
+	.width--fit-content {
+		inline-size: fit-content;
+		max-inline-size: 100%;
+	}
+
+} // End option check

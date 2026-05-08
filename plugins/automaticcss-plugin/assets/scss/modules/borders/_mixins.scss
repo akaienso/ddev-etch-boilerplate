@@ -1,0 +1,18 @@
+@mixin border($style: #{$border-main}, $position: null, $radius: var(--radius)) {
+	$border: var(--border);
+	@if $style == "light" {
+		$border: var(--border-light);
+	}
+	@if $style == "dark" {
+		$border: var(--border-dark);
+	}
+	$position: if($position != null, "-#{$position}", null);
+	&:where(:not(:is(figure, picture))), &:where(figure, picture) > img {
+		border#{$position}: #{$border};
+		border-radius: if($radius == "no" or $radius == "none", null, var(--radius));
+	}
+	// @at-root #{selector-append(":where(figure, picture)", &)} > img {
+	// 	border#{$position}: #{$border};
+	// 	border-radius: if($radius == "no" or $radius == "none", null, var(--radius));
+	// }
+}

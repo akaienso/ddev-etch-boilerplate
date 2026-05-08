@@ -1,0 +1,23 @@
+@if $option-link-color == on {
+
+  a[class*="link--"],
+  [class*="link--"] a,
+  button[class*="link--"],
+  [class*="link--"] button {
+    color: var(--link-color);
+    @if $option-link-classes-use-decoration-color == off {
+      text-decoration-color: var(--link-color);
+    }
+    &:hover {
+      color: var(--link-color-hover);
+      @if $option-link-classes-use-decoration-color == off {
+        text-decoration-color: var(--link-color-hover);
+      }
+    }
+  }
+
+  button[class*="link--"],
+  [class*="link--"] button {
+    background: transparent;
+  }
+}

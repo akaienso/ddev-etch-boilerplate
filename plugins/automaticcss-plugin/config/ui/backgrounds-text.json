@@ -1,0 +1,508 @@
+{
+  "$schema": "screen.schema.json",
+  "id": "backgrounds-text",
+  "title": "Color Assignments",
+  "type": "screen-container",
+  "iconPaths": [
+    "M17.3125 10.0773C17.3125 10.1723 17.2773 10.2602 17.1648 10.3586C17.0312 10.4676 16.8098 10.5625 16.5391 10.5625H13.0938C11.2305 10.5625 9.71875 12.0742 9.71875 13.9375C9.71875 14.1766 9.74336 14.4086 9.79258 14.6336C9.90859 15.1855 10.1512 15.727 10.2988 16.0609C10.3234 16.1172 10.348 16.1664 10.3656 16.2121C10.5414 16.6164 10.5625 16.7535 10.5625 16.8133C10.5625 16.9996 10.4957 17.1473 10.4289 17.2281C10.3973 17.2668 10.3727 17.2844 10.3586 17.2914C10.348 17.2984 10.3305 17.302 10.3023 17.3055C10.2004 17.309 10.102 17.3125 10 17.3125C5.96055 17.3125 2.6875 14.0395 2.6875 10C2.6875 5.96055 5.96055 2.6875 10 2.6875C14.0395 2.6875 17.3125 5.96055 17.3125 10C17.3125 10.0246 17.3125 10.0492 17.3125 10.0773ZM19 10.0949C19 10.0633 19 10.0316 19 10C19 5.02891 14.9711 1 10 1C5.02891 1 1 5.02891 1 10C1 14.9711 5.02891 19 10 19C10.123 19 10.2496 18.9965 10.3727 18.993C11.4906 18.9473 12.25 17.9348 12.25 16.8133C12.25 16.3035 12.0355 15.8184 11.8246 15.3367C11.6734 14.9922 11.5188 14.6441 11.4449 14.2855C11.4203 14.173 11.4098 14.057 11.4098 13.9375C11.4098 13.0059 12.1656 12.25 13.0973 12.25H16.5391C17.8223 12.25 18.9895 11.3781 19.0035 10.0949H19ZM6.625 10C6.625 9.70163 6.50647 9.41548 6.29549 9.20451C6.08452 8.99353 5.79837 8.875 5.5 8.875C5.20163 8.875 4.91548 8.99353 4.7045 9.20451C4.49353 9.41548 4.375 9.70163 4.375 10C4.375 10.2984 4.49353 10.5845 4.7045 10.7955C4.91548 11.0065 5.20163 11.125 5.5 11.125C5.79837 11.125 6.08452 11.0065 6.29549 10.7955C6.50647 10.5845 6.625 10.2984 6.625 10ZM6.625 7.75C6.92337 7.75 7.20952 7.63147 7.42049 7.42049C7.63147 7.20952 7.75 6.92337 7.75 6.625C7.75 6.32663 7.63147 6.04048 7.42049 5.82951C7.20952 5.61853 6.92337 5.5 6.625 5.5C6.32663 5.5 6.04048 5.61853 5.82951 5.82951C5.61853 6.04048 5.5 6.32663 5.5 6.625C5.5 6.92337 5.61853 7.20952 5.82951 7.42049C6.04048 7.63147 6.32663 7.75 6.625 7.75ZM11.125 5.5C11.125 5.20163 11.0065 4.91548 10.7955 4.7045C10.5845 4.49353 10.2984 4.375 10 4.375C9.70163 4.375 9.41548 4.49353 9.20451 4.7045C8.99353 4.91548 8.875 5.20163 8.875 5.5C8.875 5.79837 8.99353 6.08452 9.20451 6.29549C9.41548 6.50647 9.70163 6.625 10 6.625C10.2984 6.625 10.5845 6.50647 10.7955 6.29549C11.0065 6.08452 11.125 5.79837 11.125 5.5ZM13.375 7.75C13.6734 7.75 13.9595 7.63147 14.1705 7.42049C14.3815 7.20952 14.5 6.92337 14.5 6.625C14.5 6.32663 14.3815 6.04048 14.1705 5.82951C13.9595 5.61853 13.6734 5.5 13.375 5.5C13.0766 5.5 12.7905 5.61853 12.5795 5.82951C12.3685 6.04048 12.25 6.32663 12.25 6.625C12.25 6.92337 12.3685 7.20952 12.5795 7.42049C12.7905 7.63147 13.0766 7.75 13.375 7.75Z"
+  ],
+  "content": [
+    {
+      "id": "contextual-background-assignments",
+      "title": "Backgrounds",
+      "type": "accordion-container",
+      "tooltip": "",
+      "description": "",
+      "content": [
+        {
+          "id": "backgrounds-message",
+          "type": "message",
+          "text": "Set the main background styles for your website."
+        },
+        {
+          "id": "body-bg-color",
+          "title": "Website (Body)",
+          "type": "text",
+          "default": "var(--white)",
+          "skip-if-empty": true,
+          "tooltip": "Set the default light and dark background colors for your website."
+        },
+        {
+          "id": "bg-dark",
+          "title": "Dark",
+          "type": "text",
+          "default": "var(--neutral-dark)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.bg--dark' backgrounds.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        },
+        {
+          "id": "bg-ultra-dark",
+          "title": "Ultra Dark",
+          "type": "text",
+          "default": "var(--neutral-ultra-dark)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.bg--ultra-dark' backgrounds.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        },
+        {
+          "id": "bg-light",
+          "title": "Light",
+          "type": "text",
+          "default": "var(--neutral-light)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.bg--light' backgrounds.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        },
+        {
+          "id": "bg-ultra-light",
+          "title": "Ultra Light",
+          "type": "text",
+          "default": "var(--neutral-ultra-light)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.bg--ultra-light' backgrounds.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        }
+      ]
+    },
+    {
+      "id": "contextual-text-assignments",
+      "title": "Text",
+      "type": "accordion-container",
+      "tooltip": "",
+      "description": "",
+      "content": [
+        {
+          "id": "text-assignments-message",
+          "type": "message",
+          "text": "Set the default light and dark text styles for your website."
+        },
+        {
+          "id": "body-color-clone",
+          "type": "clone",
+          "target": "body-color"
+        },
+        {
+          "id": "text-dark",
+          "title": "Dark",
+          "type": "text",
+          "default": "var(--black)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.text--dark' text.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        },
+        {
+          "id": "text-dark-muted",
+          "title": "Dark Muted",
+          "type": "text",
+          "default": "color-mix(in srgb, var(--text-dark) 80%, transparent)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.text--dark-muted' text.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        },
+        {
+          "id": "text-light",
+          "title": "Light",
+          "type": "text",
+          "default": "var(--white)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.text--light' text.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        },
+        {
+          "id": "text-light-muted",
+          "title": "Light Muted",
+          "type": "text",
+          "default": "color-mix(in srgb, var(--text-light) 80%, transparent)",
+          "skip-if-empty": true,
+          "tooltip": "The default color of '.text--light-muted' text.",
+          "documentation": "https://automaticcss.com/docs/background-text-assignments/"
+        }
+      ]
+    },
+    {
+      "id": "contextual-color-relationships-light",
+      "title": "Light Relationships",
+      "type": "accordion-container",
+      "tooltip": "",
+      "description": "",
+      "displayWhen": [
+        "option-relate-bg-text",
+        "on"
+      ],
+      "content": [
+        {
+          "id": "light-relationships-tabs",
+          "title": "Dark Relationships Tabs",
+          "type": "tabs-container",
+          "style": "full-width",
+          "content": [
+            {
+              "id": "ultra-light-relationships-settings",
+              "title": "Ultra Light",
+              "type": "tab",
+              "content": [
+                {
+                  "id": "ultra-light-relationships-intro",
+                  "type": "message",
+                  "text": "When using '.bg--ultra-light,' ACSS will automatically change foreground elements to the colors below."
+                },
+                {
+                  "id": "bg-ultra-light-text",
+                  "title": "Text Color",
+                  "type": "text",
+                  "default": "var(--text-dark)",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-ultra-light-heading",
+                  "title": "Heading Color",
+                  "type": "text",
+                  "default": "var(--text-dark)",
+                  "skip-if-empty": true,
+                  "cssVariable": "color",
+                  "target": ":is(.bg--ultra-light, [class*=surface-]) :is(h1, h2, h3, h4, h5, h6)"
+                },
+                {
+                  "id": "bg-ultra-light-link-hover-container",
+                  "type": "hover-container",
+                  "content": [
+                    {
+                      "id": "bg-ultra-light-link",
+                      "title": "Link Color",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--ultra-light, [class*=surface-]) :is(a):not([class*='btn--'])"
+                    },
+                    {
+                      "id": "bg-ultra-light-link-hover",
+                      "title": "Link Color (Hover)",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--ultra-light, [class*=surface-]) :is(a):not([class*='btn--']):hover"
+                    }
+                  ]
+                },
+                {
+                  "id": "bg-ultra-light-button",
+                  "title": "Button Style",
+                  "type": "text",
+                  "default": "primary",
+                  "skip-if-empty": true,
+                  "tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+                  "output": "quotes"
+                },
+                {
+                  "id": "bg-ultra-light-focus-color",
+                  "title": "Focus Color",
+                  "type": "text",
+                  "default": "",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-ultra-light-icon",
+                  "title": "Icon Scheme",
+                  "type": "select",
+                  "default": "light",
+                  "skip-if-empty": true,
+                  "options": [
+										"dark",
+										"light",
+										"inherit"
+									],
+                  "tooltip": "Set a custom icon color for elements on Ultra Light backgrounds."
+                }
+              ]
+            },
+            {
+              "id": "light-relationships-settings",
+              "title": "Light",
+              "type": "tab",
+              "content": [
+                {
+                  "id": "light-relationships-intro",
+                  "type": "message",
+                  "text": "When using '.bg--light,' ACSS will automatically change foreground elements to the colors below."
+                },
+                {
+                  "id": "bg-light-text",
+                  "title": "Text Color",
+                  "type": "text",
+                  "default": "var(--text-dark)",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-light-heading",
+                  "title": "Heading Color",
+                  "type": "text",
+                  "default": "var(--text-dark)",
+                  "skip-if-empty": true,
+                  "cssVariable": "color",
+                  "target": ":is(.bg--light, [class*=surface-]) :is(h1, h2, h3, h4, h5, h6)"
+                },
+                {
+                  "id": "bg-light-link-hover-container",
+                  "type": "hover-container",
+                  "content": [
+                    {
+                      "id": "bg-light-link",
+                      "title": "Link Color",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--light, [class*=surface-]) :is(a):not([class*='btn--'])"
+                    },
+                    {
+                      "id": "bg-light-link-hover",
+                      "title": "Link Color (Hover)",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--light, [class*=surface-]) :is(a):not([class*='btn--']):hover"
+                    }
+                  ]
+                },
+                {
+                  "id": "bg-light-button",
+                  "title": "Button Style",
+                  "type": "text",
+                  "default": "primary",
+                  "skip-if-empty": true,
+                  "tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+                  "output": "quotes"
+                },
+                {
+                  "id": "bg-light-focus-color",
+                  "title": "Focus Color",
+                  "type": "text",
+                  "default": "",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-light-icon",
+                  "title": "Icon Scheme",
+                  "type": "select",
+                  "default": "light",
+                  "skip-if-empty": true,
+                  "options": [
+										"dark",
+										"light",
+										"inherit"
+									],
+                  "tooltip": "Set a custom icon color for elements on Light backgrounds."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contextual-color-relationships-dark",
+      "title": "Dark Relationships",
+      "type": "accordion-container",
+      "tooltip": "",
+      "description": "",
+      "displayWhen": [
+        "option-relate-bg-text",
+        "on"
+      ],
+      "content": [
+        {
+          "id": "dark-relationships-tabs",
+          "title": "Dark Relationships Tabs",
+          "type": "tabs-container",
+          "style": "full-width",
+          "content": [
+            {
+              "id": "ultra-dark-relationships-settings",
+              "title": "Ultra Dark",
+              "type": "tab",
+              "content": [
+                {
+                  "id": "ultra-dark-relationships-intro",
+                  "type": "message",
+                  "text": "When using '.bg--ultra-dark,' ACSS will automatically change foreground elements to the colors below."
+                },
+                {
+                  "id": "bg-ultra-dark-text",
+                  "title": "Text Color",
+                  "type": "text",
+                  "default": "var(--text-light)",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-ultra-dark-heading",
+                  "title": "Heading Color",
+                  "type": "text",
+                  "default": "var(--text-light)",
+                  "skip-if-empty": true,
+                  "cssVariable": "color",
+                  "target": ":is(.bg--ultra-dark, [class*=surface-]) :is(h1, h2, h3, h4, h5, h6)"
+                },
+                {
+                  "id": "bg-ultra-dark-link-hover-container",
+                  "type": "hover-container",
+                  "content": [
+                    {
+                      "id": "bg-ultra-dark-link",
+                      "title": "Link Color",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--ultra-dark, [class*=surface-]) :is(a):not([class*='btn--'])"
+                    },
+                    {
+                      "id": "bg-ultra-dark-link-hover",
+                      "title": "Link Color (Hover)",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--ultra-dark, [class*=surface-]) :is(a):not([class*='btn--']):hover"
+                    }
+                  ]
+                },
+                {
+                  "id": "bg-ultra-dark-button",
+                  "title": "Button Style",
+                  "type": "text",
+                  "default": "primary",
+                  "skip-if-empty": true,
+                  "tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+                  "output": "quotes"
+                },
+                {
+                  "id": "bg-ultra-dark-focus-color",
+                  "title": "Focus Color",
+                  "type": "text",
+                  "default": "",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-ultra-dark-icon",
+                  "title": "Icon Scheme",
+                  "type": "select",
+                  "default": "dark",
+                  "skip-if-empty": true,
+                  "options": [
+										"dark",
+										"light",
+										"inherit"
+									],
+                  "tooltip": "Set a custom icon color for elements on Ultra Dark backgrounds."
+                }
+              ]
+            },
+            {
+              "id": "dark-relationships-settings",
+              "title": "Dark",
+              "type": "tab",
+              "content": [
+                {
+                  "id": "dark-relationships-intro",
+                  "type": "message",
+                  "text": "When using '.bg--dark,' ACSS will automatically change foreground elements to the colors below."
+                },
+                {
+                  "id": "bg-dark-text",
+                  "title": "Text Color",
+                  "type": "text",
+                  "default": "var(--text-light)",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-dark-heading",
+                  "title": "Heading Color",
+                  "type": "text",
+                  "default": "var(--text-light)",
+                  "skip-if-empty": true,
+                  "cssVariable": "color",
+                  "target": ":is(.bg--dark, [class*=surface-]) :is(h1, h2, h3, h4, h5, h6)"
+                },
+                {
+                  "id": "bg-dark-link-hover-container",
+                  "type": "hover-container",
+                  "content": [
+                    {
+                      "id": "bg-dark-link",
+                      "title": "Link Color",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--dark, [class*=surface-]) :is(a):not([class*='btn--'])"
+                    },
+                    {
+                      "id": "bg-dark-link-hover",
+                      "title": "Link Color (Hover)",
+                      "type": "text",
+                      "default": "",
+                      "skip-if-empty": true,
+                      "cssVariable": "color",
+                      "target": ":is(.bg--dark, [class*=surface-]) :is(a):not([class*='btn--']):hover"
+                    }
+                  ]
+                },
+                {
+                  "id": "bg-dark-button",
+                  "title": "Button Style",
+                  "type": "text",
+                  "default": "primary",
+                  "skip-if-empty": true,
+                  "tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+                  "output": "quotes"
+                },
+                {
+                  "id": "bg-dark-focus-color",
+                  "title": "Focus Color",
+                  "type": "text",
+                  "default": "",
+                  "skip-if-empty": true
+                },
+                {
+                  "id": "bg-dark-icon",
+                  "title": "Icon Scheme",
+                  "type": "select",
+                  "default": "dark",
+                  "skip-if-empty": true,
+                  "options": [
+										"dark",
+										"light",
+										"inherit"
+									],
+                  "tooltip": "Set a custom icon color for elements on Dark backgrounds."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contextual-color-options",
+      "title": "Options",
+      "type": "accordion-container",
+      "tooltip": "",
+      "description": "",
+      "content": [
+        {
+          "id": "option-relate-bg-text",
+          "title": "Automatic Color Relationships",
+          "type": "toggle",
+          "style": "",
+          "default": "on",
+          "tooltip": "Automatically relate background and foreground color.",
+          "documentation": "https://automaticcss.com/docs/automatic-color-relationships/"
+        }
+      ]
+    }
+  ]
+}

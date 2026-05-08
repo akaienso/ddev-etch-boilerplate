@@ -1,0 +1,51 @@
+// Options
+$option-rounded: off !default; // Main option for radius classes
+$option-radius-sizes: off !default; // Option to generate extra radius sizes
+$option-border-classes: off !default;
+$option-border-variables: on !default;
+$option-radius-variables: on !default;
+
+// Border Variables
+$border-size: 1px !default;
+$border-width: $border-size;
+$border-style: solid !default;
+$border-color-light: var(--white-trans-20) !default;
+$border-color-dark: var(--black-trans-20) !default;
+$border-scheme-default: "Dark" !default;
+$border-dark: var(--border-size) var(--border-style) var(--border-color-dark) !default;
+$border-light: var(--border-size) var(--border-style) var(--border-color-light) !default;
+$border-main: null;
+@if $border-scheme-default == "Dark" {
+	$border-main: $border-dark;
+  } @else if $border-scheme-default == "Light" {
+	$border-main: $border-light;
+  } @else {
+	$border-main: $border-dark; // fallback to dark
+  }
+
+// Radius Variables
+$base-radius: 1rem !default;
+$radius-scale: 1.5 !default;
+
+// Internal Radius Variables for scale
+$radius-s-math: $base-radius / $radius-scale;
+$radius-xs-math: $radius-s-math / $radius-scale;
+$radius-m-math: $base-radius;
+$radius-l-math: $base-radius * $radius-scale;
+$radius-xl-math: $radius-l-math * $radius-scale;
+$radius-xxl-math: $radius-xl-math * $radius-scale;
+
+// Auto Radius
+$option-auto-radius: on !default;
+$auto-radius-selectors: null !default;
+
+$border-colors: (
+	light: var(--border-color-light),
+	dark: var(--border-color-dark)
+);
+
+$border-positions: (
+	top: block-start,
+	bottom: block-end,
+	block: block,
+);

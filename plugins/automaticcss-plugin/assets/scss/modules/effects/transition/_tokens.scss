@@ -1,0 +1,35 @@
+@import "vars";
+
+// ==========================================================================
+// Transition Tokens
+// ==========================================================================
+
+@if $option-transition-variables == on {
+	:root {
+		@if $transition-duration != null {
+			--transition-duration: #{$transition-duration};
+		}
+		@if $transition-timing != null {
+			--transition-timing: #{$transition-timing};
+		}
+		@if $transition-delay != null {
+			--transition-delay: #{$transition-delay};
+		}
+		@if $transition-duration != null or $transition-timing != null or $transition-delay != null {
+			--transition: #{$transition-duration} #{$transition-timing} #{$transition-delay};
+		}
+	}
+}
+
+// --------------------------------------------------------------------------
+// Easing Presets
+// --------------------------------------------------------------------------
+@if $option-easing-presets == on {
+	:root {
+		--ease-#{$ease-1-name}: #{$ease-1-value};
+		--ease-#{$ease-2-name}: #{$ease-2-value};
+		--ease-#{$ease-3-name}: #{$ease-3-value};
+		--ease-#{$ease-4-name}: #{$ease-4-value};
+		--ease-#{$ease-5-name}: #{$ease-5-value};
+	}
+}

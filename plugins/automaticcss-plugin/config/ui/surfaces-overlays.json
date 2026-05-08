@@ -1,0 +1,1964 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "surfaces-overlays",
+	"title": "Surfaces & Overlays",
+	"type": "screen-container",
+	"iconPaths": [
+		"M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9ZM19 21H5V3H13V9H19V21Z"
+	],
+	"content": [
+		{
+			"id": "surfaces",
+			"title": "Custom Surfaces",
+			"type": "accordion-container",
+			"tooltip": "",
+			"description": "",
+			"content": [
+				{
+					"id": "surfaces-message",
+					"type": "message",
+					"text": "Surfaces in ACSS are custom background images, textures, patterns, or gradients that you want to be able to easily reuse throughout your project."
+				},
+				{
+					"id": "surface-tabs",
+					"title": "Surface Tabs",
+					"type": "tabs-container",
+					"style": "inline",
+					"content": [
+						{
+							"id": "surface-1-tab",
+							"title": "1",
+							"dynamicTitle": "surface-1-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "surface-1-main-section",
+									"title": "Surface Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-1-name",
+											"title": "Name",
+											"type": "text",
+											"default": "1",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your surface. This will also create a custom utility class .surface-[name]."
+										},
+										{
+											"id": "surface-1-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "var(--body-bg-color)",
+											"skip-if-empty": true,
+											"tooltip": "Background color will only display if your asset has transparency or if your asset fails to load (fallback)."
+										},
+										{
+											"id": "surface-1-asset",
+											"title": "Surface Asset",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The asset of your surface can be a url(), gradient, or CSS pattern. Input accepts any valid background-image value."
+										},
+										{
+											"id": "surface-1-asset-is-url",
+											"title": "Asset is URL",
+											"type": "toggle",
+											"default": "on",
+											"style": "",
+											"tooltip": "If your asset is a url, turn this on."
+										},
+										{
+											"id": "surface-1-size",
+											"title": "Surface Size",
+											"type": "text",
+											"default": "200px",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-1-position",
+											"title": "Surface Position",
+											"type": "text",
+											"default": "center center",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-1-attachment",
+											"title": "Attachment",
+											"type": "select",
+											"default": "scroll",
+											"options": [
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-1-repeat",
+											"title": "Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-1-color-relationship",
+											"title": "Color Relationship",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"ultra-light",
+												"light",
+												"ultra-dark",
+												"dark",
+												"none"
+											],
+											"tooltip": "Automatically control foreground color using Automatic Color Relationships. Choose the style that describes your surface."
+										}
+									]
+								},
+								{
+									"id": "surface-1-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-1-animation-message",
+											"type": "message",
+											"text": "If your surface supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "surface-1-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the surface as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "surface-1-overlay-section",
+									"title": "Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-1-overlay-message",
+											"type": "message",
+											"text": "You can add an overlay to your surface that won't affect foreground elements. This can be used to darken or lighten your surface or apply a cool effect."
+										},
+										{
+											"id": "surface-1-overlay",
+											"title": "Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to retain the surface's original effect."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "surface-2-tab",
+							"title": "2",
+							"dynamicTitle": "surface-2-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "surface-2-main-section",
+									"title": "Surface Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-2-name",
+											"title": "Name",
+											"type": "text",
+											"default": "2",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your surface. This will also create a custom utility class .surface-[name]."
+										},
+										{
+											"id": "surface-2-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "var(--body-bg-color)",
+											"skip-if-empty": true,
+											"tooltip": "Background color will only display if your asset has transparency or if your asset fails to load (fallback)."
+										},
+										{
+											"id": "surface-2-asset",
+											"title": "Surface Asset",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The asset of your surface can be a url(), gradient, or CSS pattern. Input accepts any valid background-image value."
+										},
+										{
+											"id": "surface-2-asset-is-url",
+											"title": "Asset is URL",
+											"type": "toggle",
+											"default": "on",
+											"style": "",
+											"tooltip": "If your asset is a url, turn this on."
+										},
+										{
+											"id": "surface-2-size",
+											"title": "Surface Size",
+											"type": "text",
+											"default": "200px",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-2-position",
+											"title": "Surface Position",
+											"type": "text",
+											"default": "center center",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-2-attachment",
+											"title": "Attachment",
+											"type": "select",
+											"default": "scroll",
+											"options": [
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-2-repeat",
+											"title": "Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-2-color-relationship",
+											"title": "Color Relationship",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"ultra-light",
+												"light",
+												"ultra-dark",
+												"dark",
+												"none"
+											],
+											"tooltip": "Automatically control foreground color using Automatic Color Relationships. Choose the style that describes your surface."
+										}
+									]
+								},
+								{
+									"id": "surface-2-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-2-animation-message",
+											"type": "message",
+											"text": "If your surface supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "surface-2-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the surface as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "surface-2-overlay-section",
+									"title": "Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-2-overlay-message",
+											"type": "message",
+											"text": "You can add an overlay to your surface that won't affect foreground elements. This can be used to darken or lighten your surface or apply a cool effect."
+										},
+										{
+											"id": "surface-2-overlay",
+											"title": "Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to retain the surface's original effect."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "surface-3-tab",
+							"title": "3",
+							"dynamicTitle": "surface-3-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "surface-3-main-section",
+									"title": "Surface Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-3-name",
+											"title": "Name",
+											"type": "text",
+											"default": "3",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your surface. This will also create a custom utility class .surface-[name]."
+										},
+										{
+											"id": "surface-3-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "var(--body-bg-color)",
+											"skip-if-empty": true,
+											"tooltip": "Background color will only display if your asset has transparency or if your asset fails to load (fallback)."
+										},
+										{
+											"id": "surface-3-asset",
+											"title": "Surface Asset",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The asset of your surface can be a url(), gradient, or CSS pattern. Input accepts any valid background-image value."
+										},
+										{
+											"id": "surface-3-asset-is-url",
+											"title": "Asset is URL",
+											"type": "toggle",
+											"default": "on",
+											"style": "",
+											"tooltip": "If your asset is a url, turn this on."
+										},
+										{
+											"id": "surface-3-size",
+											"title": "Surface Size",
+											"type": "text",
+											"default": "200px",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-3-position",
+											"title": "Surface Position",
+											"type": "text",
+											"default": "center center",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-3-attachment",
+											"title": "Attachment",
+											"type": "select",
+											"default": "scroll",
+											"options": [
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-3-repeat",
+											"title": "Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-3-color-relationship",
+											"title": "Color Relationship",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"ultra-light",
+												"light",
+												"ultra-dark",
+												"dark",
+												"none"
+											],
+											"tooltip": "Automatically control foreground color using Automatic Color Relationships. Choose the style that describes your surface."
+										}
+									]
+								},
+								{
+									"id": "surface-3-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-3-animation-message",
+											"type": "message",
+											"text": "If your surface supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "surface-3-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the surface as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "surface-3-overlay-section",
+									"title": "Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-3-overlay-message",
+											"type": "message",
+											"text": "You can add an overlay to your surface that won't affect foreground elements. This can be used to darken or lighten your surface or apply a cool effect."
+										},
+										{
+											"id": "surface-3-overlay",
+											"title": "Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to retain the surface's original effect."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "surface-4-tab",
+							"title": "4",
+							"dynamicTitle": "surface-4-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "surface-4-main-section",
+									"title": "Surface Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-4-name",
+											"title": "Name",
+											"type": "text",
+											"default": "4",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your surface. This will also create a custom utility class .surface-[name]."
+										},
+										{
+											"id": "surface-4-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "var(--body-bg-color)",
+											"skip-if-empty": true,
+											"tooltip": "Background color will only display if your asset has transparency or if your asset fails to load (fallback)."
+										},
+										{
+											"id": "surface-4-asset",
+											"title": "Surface Asset",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The asset of your surface can be a url(), gradient, or CSS pattern. Input accepts any valid background-image value."
+										},
+										{
+											"id": "surface-4-asset-is-url",
+											"title": "Asset is URL",
+											"type": "toggle",
+											"default": "on",
+											"style": "",
+											"tooltip": "If your asset is a url, turn this on."
+										},
+										{
+											"id": "surface-4-size",
+											"title": "Surface Size",
+											"type": "text",
+											"default": "200px",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-4-position",
+											"title": "Surface Position",
+											"type": "text",
+											"default": "center center",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-4-attachment",
+											"title": "Attachment",
+											"type": "select",
+											"default": "scroll",
+											"options": [
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-4-repeat",
+											"title": "Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-4-color-relationship",
+											"title": "Color Relationship",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"ultra-light",
+												"light",
+												"ultra-dark",
+												"dark",
+												"none"
+											],
+											"tooltip": "Automatically control foreground color using Automatic Color Relationships. Choose the style that describes your surface."
+										}
+									]
+								},
+								{
+									"id": "surface-4-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-4-animation-message",
+											"type": "message",
+											"text": "If your surface supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "surface-4-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the surface as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "surface-4-overlay-section",
+									"title": "Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-4-overlay-message",
+											"type": "message",
+											"text": "You can add an overlay to your surface that won't affect foreground elements. This can be used to darken or lighten your surface or apply a cool effect."
+										},
+										{
+											"id": "surface-4-overlay",
+											"title": "Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to retain the surface's original effect."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "surface-5-tab",
+							"title": "5",
+							"dynamicTitle": "surface-5-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "surface-5-main-section",
+									"title": "Surface Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-5-name",
+											"title": "Name",
+											"type": "text",
+											"default": "5",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your surface. This will also create a custom utility class .surface-[name]."
+										},
+										{
+											"id": "surface-5-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "var(--body-bg-color)",
+											"skip-if-empty": true,
+											"tooltip": "Background color will only display if your asset has transparency or if your asset fails to load (fallback)."
+										},
+										{
+											"id": "surface-5-asset",
+											"title": "Surface Asset",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "The asset of your surface can be a url(), gradient, or CSS pattern. Input accepts any valid background-image value."
+										},
+										{
+											"id": "surface-5-asset-is-url",
+											"title": "Asset is URL",
+											"type": "toggle",
+											"default": "on",
+											"style": "",
+											"tooltip": "If your asset is a url, turn this on."
+										},
+										{
+											"id": "surface-5-size",
+											"title": "Surface Size",
+											"type": "text",
+											"default": "200px",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-5-position",
+											"title": "Surface Position",
+											"type": "text",
+											"default": "center center",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-5-attachment",
+											"title": "Attachment",
+											"type": "select",
+											"default": "scroll",
+											"options": [
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-5-repeat",
+											"title": "Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true
+										},
+										{
+											"id": "surface-5-color-relationship",
+											"title": "Color Relationship",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"ultra-light",
+												"light",
+												"ultra-dark",
+												"dark",
+												"none"
+											],
+											"tooltip": "Automatically control foreground color using Automatic Color Relationships. Choose the style that describes your surface."
+										}
+									]
+								},
+								{
+									"id": "surface-5-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-5-animation-message",
+											"type": "message",
+											"text": "If your surface supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "surface-5-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the surface as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "surface-5-overlay-section",
+									"title": "Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "surface-5-overlay-message",
+											"type": "message",
+											"text": "You can add an overlay to your surface that won't affect foreground elements. This can be used to darken or lighten your surface or apply a cool effect."
+										},
+										{
+											"id": "surface-5-overlay",
+											"title": "Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to retain the surface's original effect."
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "basic-overlays",
+			"title": "Basic Overlays",
+			"type": "accordion-container",
+			"tooltip": "",
+			"description": "",
+			"content": [
+				{
+					"id": "basic-overlays-message",
+					"type": "message",
+					"text": "Basic overlays are simple single-color overlays that can be applied to any element using the .overlay or .overlay--[color] classes."
+				},
+				{
+					"id": "option-basic-overlays",
+					"title": "Enable Basic Overlays",
+					"type": "toggle",
+					"default": "on",
+					"style": "",
+					"tooltip": "Enable basic overlay functionality."
+				},
+				{
+					"id": "basic-overlays-pseudo-message",
+					"type": "message",
+					"text": "If there are conflicts with other utilities or styling, you can choose which pseudo-element to use for the overlay."
+				},
+				{
+					"id": "basic-overlay-pseudo-element",
+					"title": "Pseudo Element",
+					"type": "select",
+					"default": "before",
+					"options": [
+						"before",
+						"after"
+					],
+					"tooltip": "Choose which pseudo-element to use for the overlay.",
+					"displayWhen": [
+						["option-basic-overlays", "on"]
+					]
+				}
+			]
+		},
+		{
+			"id": "custom-overlays",
+			"title": "Custom Overlays",
+			"type": "accordion-container",
+			"tooltip": "",
+			"description": "",
+			"content": [
+				{
+					"id": "custom-overlays-message",
+					"type": "message",
+					"text": "Custom overlays are more complex, reusable overlay effects that use images, gradients, or CSS patterns. You can define up to five of them here."
+				},
+				{
+					"id": "overlay-tabs",
+					"title": "Overlay Tabs",
+					"type": "tabs-container",
+					"style": "inline",
+					"content": [
+						{
+							"id": "overlay-1-tab",
+							"title": "1",
+							"dynamicTitle": "overlay-1-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "overlay-1-main-section",
+									"title": "Overlay Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-1-name",
+											"title": "Name",
+											"type": "text",
+											"default": "1",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your overlay. This will create a custom utility class .overlay-[name]."
+										},
+										{
+											"id": "overlay-1-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "",
+											"placeholder": "var(--black)",
+											"skip-if-empty": true,
+											"tooltip": "The background color of the overlay – mostly used as a fallback, but can also be used to blend with your advanced overlay background (see below)."
+										},
+										{
+											"id": "overlay-1-background-type",
+											"title": "Background Type",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"none",
+												"image",
+												"gradient"
+											],
+											"tooltip": "Choose whether your background is an image or a gradient/pattern."
+										},
+										{
+											"id": "overlay-1-background",
+											"title": "Gradient",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"tooltip": "Accepts any valid CSS gradient function.",
+											"displayWhen": [
+												["overlay-1-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-1-background-image",
+											"title": "Background Image",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "Insert the relative path to your image file.",
+											"displayWhen": [
+												["overlay-1-background-type", "image"]
+											]
+										},
+										{
+											"id": "overlay-1-background-size",
+											"title": "Background Size",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The size of the background (e.g., 'cover', 'contain', '200px').",
+											"displayWhenOr": [
+												["overlay-1-background-type", "image"],
+												["overlay-1-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-1-background-position",
+											"title": "Background Position",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The position of the background (e.g., 'center center', 'top left').",
+											"displayWhenOr": [
+												["overlay-1-background-type", "image"],
+												["overlay-1-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-1-background-attachment",
+											"title": "Background Attachment",
+											"type": "select",
+											"default": "static",
+											"options": [
+												"static",
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true,
+											"tooltip": "The background attachment of the overlay.",
+											"displayWhenOr": [
+												["overlay-1-background-type", "image"],
+												["overlay-1-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-1-background-repeat",
+											"title": "Background Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true,
+											"tooltip": "The background repeat of the overlay.",
+											"displayWhenOr": [
+												["overlay-1-background-type", "image"],
+												["overlay-1-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-1-background-blur",
+											"title": "Background Blur",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The backdrop blur effect for the overlay (e.g., '10px', '20px')."
+										},
+										{
+											"id": "overlay-1-opacity",
+											"title": "Overlay Opacity",
+											"type": "text",
+											"default": "0.7",
+											"skip-if-empty": true,
+											"tooltip": "The opacity of the entire overlay element (0-1)."
+										},
+										{
+											"id": "overlay-1-blend-mode",
+											"title": "Blend Mode",
+											"type": "select",
+											"default": "",
+											"options": [
+												"",
+												"normal",
+												"multiply",
+												"screen",
+												"overlay",
+												"darken",
+												"lighten",
+												"color-dodge",
+												"color-burn",
+												"hard-light",
+												"soft-light",
+												"difference",
+												"exclusion",
+												"hue",
+												"saturation",
+												"color",
+												"luminosity"
+											],
+											"tooltip": "The CSS blend mode for the overlay."
+										},
+										{
+											"id": "overlay-1-border-radius",
+											"title": "Border Radius",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The border radius of the overlay (e.g., '10px', '50%', '10px 20px')."
+										},
+										{
+											"id": "overlay-1-inset",
+											"title": "Inset",
+											"type": "text",
+											"default": "0",
+											"skip-if-empty": true,
+											"tooltip": "The inset of the overlay (e.g., '0', '10px', '10px 20px'). The default of '0' will make the overlay cover the entire element."
+										}
+									]
+								},
+								{
+									"id": "overlay-1-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-1-animation-message",
+											"type": "message",
+											"text": "If your overlay supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "overlay-1-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the overlay as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "overlay-1-overlay-section",
+									"title": "Nested Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-1-overlay-message",
+											"type": "message",
+											"text": "You can add a nested overlay to your overlay that won't affect foreground elements. This can be used to create complex overlay effects."
+										},
+										{
+											"id": "overlay-1-overlay",
+											"title": "Nested Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to make sure the nested overlay blends with your original overlay."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "overlay-2-tab",
+							"title": "2",
+							"dynamicTitle": "overlay-2-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "overlay-2-main-section",
+									"title": "Overlay Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-2-name",
+											"title": "Name",
+											"type": "text",
+											"default": "2",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your overlay. This will create a custom utility class .overlay-[name]."
+										},
+										{
+											"id": "overlay-2-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "",
+											"placeholder": "var(--black)",
+											"skip-if-empty": true,
+											"tooltip": "The background color of the overlay – mostly used as a fallback, but can also be used to blend with your advanced overlay background (see below)."
+										},
+										{
+											"id": "overlay-2-background-type",
+											"title": "Background Type",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"none",
+												"image",
+												"gradient"
+											],
+											"tooltip": "Choose whether your background is an image or a gradient/pattern."
+										},
+										{
+											"id": "overlay-2-background",
+											"title": "Gradient",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"tooltip": "Accepts any valid CSS gradient function.",
+											"displayWhen": [
+												["overlay-2-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-2-background-image",
+											"title": "Background Image",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "Insert the relative path to your image file.",
+											"displayWhen": [
+												["overlay-2-background-type", "image"]
+											]
+										},
+										{
+											"id": "overlay-2-background-size",
+											"title": "Background Size",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The size of the background (e.g., 'cover', 'contain', '200px').",
+											"displayWhen": [
+												["overlay-2-background-type", "image"],
+												["overlay-2-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-2-background-position",
+											"title": "Background Position",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The position of the background (e.g., 'center center', 'top left').",
+											"displayWhen": [
+												["overlay-2-background-type", "image"],
+												["overlay-2-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-2-background-attachment",
+											"title": "Background Attachment",
+											"type": "select",
+											"default": "static",
+											"options": [
+												"static",
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true,
+											"tooltip": "The background attachment of the overlay.",
+											"displayWhen": [
+												["overlay-2-background-type", "image"],
+												["overlay-2-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-2-background-repeat",
+											"title": "Background Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true,
+											"tooltip": "The background repeat of the overlay.",
+											"displayWhen": [
+												["overlay-2-background-type", "image"],
+												["overlay-2-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-2-background-blur",
+											"title": "Background Blur",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The backdrop blur effect for the overlay (e.g., '10px', '20px')."
+										},
+										{
+											"id": "overlay-2-opacity",
+											"title": "Overlay Opacity",
+											"type": "text",
+											"default": "0.7",
+											"skip-if-empty": true,
+											"tooltip": "The opacity of the entire overlay element (0-1)."
+										},
+										{
+											"id": "overlay-2-blend-mode",
+											"title": "Blend Mode",
+											"type": "select",
+											"default": "",
+											"options": [
+												"",
+												"normal",
+												"multiply",
+												"screen",
+												"overlay",
+												"darken",
+												"lighten",
+												"color-dodge",
+												"color-burn",
+												"hard-light",
+												"soft-light",
+												"difference",
+												"exclusion",
+												"hue",
+												"saturation",
+												"color",
+												"luminosity"
+											],
+											"tooltip": "The CSS blend mode for the overlay."
+										},
+										{
+											"id": "overlay-2-border-radius",
+											"title": "Border Radius",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The border radius of the overlay (e.g., '10px', '50%', '10px 20px')."
+										},
+										{
+											"id": "overlay-2-inset",
+											"title": "Inset",
+											"type": "text",
+											"default": "0",
+											"skip-if-empty": true,
+											"tooltip": "The inset of the overlay (e.g., '0', '10px', '10px 20px'). The default of '0' will make the overlay cover the entire element."
+										}
+									]
+								},
+								{
+									"id": "overlay-2-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-2-animation-message",
+											"type": "message",
+											"text": "If your overlay supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "overlay-2-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the overlay as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "overlay-2-overlay-section",
+									"title": "Nested Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-2-overlay-message",
+											"type": "message",
+											"text": "You can add a nested overlay to your overlay that won't affect foreground elements. This can be used to create complex overlay effects."
+										},
+										{
+											"id": "overlay-2-overlay",
+											"title": "Nested Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to make sure the nested overlay blends with your original overlay."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "overlay-3-tab",
+							"title": "3",
+							"dynamicTitle": "overlay-3-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "overlay-3-main-section",
+									"title": "Overlay Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-3-name",
+											"title": "Name",
+											"type": "text",
+											"default": "3",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your overlay. This will create a custom utility class .overlay-[name]."
+										},
+										{
+											"id": "overlay-3-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "",
+											"placeholder": "var(--black)",
+											"skip-if-empty": true,
+											"tooltip": "The background color of the overlay – mostly used as a fallback, but can also be used to blend with your advanced overlay background (see below)."
+										},
+										{
+											"id": "overlay-3-background-type",
+											"title": "Background Type",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"none",
+												"image",
+												"gradient"
+											],
+											"tooltip": "Choose whether your background is an image or a gradient/pattern."
+										},
+										{
+											"id": "overlay-3-background",
+											"title": "Gradient",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"tooltip": "Accepts any valid CSS gradient function.",
+											"displayWhen": [
+												["overlay-3-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-3-background-image",
+											"title": "Background Image",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "Insert the relative path to your image file.",
+											"displayWhen": [
+												["overlay-3-background-type", "image"]
+											]
+										},
+										{
+											"id": "overlay-3-background-size",
+											"title": "Background Size",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The size of the background (e.g., 'cover', 'contain', '200px').",
+											"displayWhen": [
+												["overlay-3-background-type", "image"],
+												["overlay-3-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-3-background-position",
+											"title": "Background Position",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The position of the background (e.g., 'center center', 'top left').",
+											"displayWhen": [
+												["overlay-3-background-type", "image"],
+												["overlay-3-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-3-background-attachment",
+											"title": "Background Attachment",
+											"type": "select",
+											"default": "static",
+											"options": [
+												"static",
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true,
+											"tooltip": "The background attachment of the overlay.",
+											"displayWhen": [
+												["overlay-3-background-type", "image"],
+												["overlay-3-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-3-background-repeat",
+											"title": "Background Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true,
+											"tooltip": "The background repeat of the overlay.",
+											"displayWhen": [
+												["overlay-3-background-type", "image"],
+												["overlay-3-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-3-background-blur",
+											"title": "Background Blur",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The backdrop blur effect for the overlay (e.g., '10px', '20px')."
+										},
+										{
+											"id": "overlay-3-opacity",
+											"title": "Overlay Opacity",
+											"type": "text",
+											"default": "0.7",
+											"skip-if-empty": true,
+											"tooltip": "The opacity of the entire overlay element (0-1)."
+										},
+										{
+											"id": "overlay-3-blend-mode",
+											"title": "Blend Mode",
+											"type": "select",
+											"default": "",
+											"options": [
+												"",
+												"normal",
+												"multiply",
+												"screen",
+												"overlay",
+												"darken",
+												"lighten",
+												"color-dodge",
+												"color-burn",
+												"hard-light",
+												"soft-light",
+												"difference",
+												"exclusion",
+												"hue",
+												"saturation",
+												"color",
+												"luminosity"
+											],
+											"tooltip": "The CSS blend mode for the overlay."
+										},
+										{
+											"id": "overlay-3-border-radius",
+											"title": "Border Radius",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The border radius of the overlay (e.g., '10px', '50%', '10px 20px')."
+										},
+										{
+											"id": "overlay-3-inset",
+											"title": "Inset",
+											"type": "text",
+											"default": "0",
+											"skip-if-empty": true,
+											"tooltip": "The inset of the overlay (e.g., '0', '10px', '10px 20px'). The default of '0' will make the overlay cover the entire element."
+										}
+									]
+								},
+								{
+									"id": "overlay-3-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-3-animation-message",
+											"type": "message",
+											"text": "If your overlay supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "overlay-3-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the overlay as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "overlay-3-overlay-section",
+									"title": "Nested Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-3-overlay-message",
+											"type": "message",
+											"text": "You can add a nested overlay to your overlay that won't affect foreground elements. This can be used to create complex overlay effects."
+										},
+										{
+											"id": "overlay-3-overlay",
+											"title": "Nested Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to make sure the nested overlay blends with your original overlay."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "overlay-4-tab",
+							"title": "4",
+							"dynamicTitle": "overlay-4-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "overlay-4-main-section",
+									"title": "Overlay Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-4-name",
+											"title": "Name",
+											"type": "text",
+											"default": "4",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your overlay. This will create a custom utility class .overlay-[name]."
+										},
+										{
+											"id": "overlay-4-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "",
+											"placeholder": "var(--black)",
+											"skip-if-empty": true,
+											"tooltip": "The background color of the overlay – mostly used as a fallback, but can also be used to blend with your advanced overlay background (see below)."
+										},
+										{
+											"id": "overlay-4-background-type",
+											"title": "Background Type",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"none",
+												"image",
+												"gradient"
+											],
+											"tooltip": "Choose whether your background is an image or a gradient/pattern."
+										},
+										{
+											"id": "overlay-4-background",
+											"title": "Gradient",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"tooltip": "Accepts any valid CSS gradient function.",
+											"displayWhen": [
+												["overlay-4-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-4-background-image",
+											"title": "Background Image",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "Insert the relative path to your image file.",
+											"displayWhen": [
+												["overlay-4-background-type", "image"]
+											]
+										},
+										{
+											"id": "overlay-4-background-size",
+											"title": "Background Size",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The size of the background (e.g., 'cover', 'contain', '200px').",
+											"displayWhen": [
+												["overlay-4-background-type", "image"],
+												["overlay-4-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-4-background-position",
+											"title": "Background Position",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The position of the background (e.g., 'center center', 'top left').",
+											"displayWhen": [
+												["overlay-4-background-type", "image"],
+												["overlay-4-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-4-background-attachment",
+											"title": "Background Attachment",
+											"type": "select",
+											"default": "static",
+											"options": [
+												"static",
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true,
+											"tooltip": "The background attachment of the overlay.",
+											"displayWhen": [
+												["overlay-4-background-type", "image"],
+												["overlay-4-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-4-background-repeat",
+											"title": "Background Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true,
+											"tooltip": "The background repeat of the overlay.",
+											"displayWhen": [
+												["overlay-4-background-type", "image"],
+												["overlay-4-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-4-background-blur",
+											"title": "Background Blur",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The backdrop blur effect for the overlay (e.g., '10px', '20px')."
+										},
+										{
+											"id": "overlay-4-opacity",
+											"title": "Overlay Opacity",
+											"type": "text",
+											"default": "0.7",
+											"skip-if-empty": true,
+											"tooltip": "The opacity of the entire overlay element (0-1)."
+										},
+										{
+											"id": "overlay-4-blend-mode",
+											"title": "Blend Mode",
+											"type": "select",
+											"default": "",
+											"options": [
+												"",
+												"normal",
+												"multiply",
+												"screen",
+												"overlay",
+												"darken",
+												"lighten",
+												"color-dodge",
+												"color-burn",
+												"hard-light",
+												"soft-light",
+												"difference",
+												"exclusion",
+												"hue",
+												"saturation",
+												"color",
+												"luminosity"
+											],
+											"tooltip": "The CSS blend mode for the overlay."
+										},
+										{
+											"id": "overlay-4-border-radius",
+											"title": "Border Radius",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The border radius of the overlay (e.g., '10px', '50%', '10px 20px')."
+										},
+										{
+											"id": "overlay-4-inset",
+											"title": "Inset",
+											"type": "text",
+											"default": "0",
+											"skip-if-empty": true,
+											"tooltip": "The inset of the overlay (e.g., '0', '10px', '10px 20px'). The default of '0' will make the overlay cover the entire element."
+										}
+									]
+								},
+								{
+									"id": "overlay-4-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-4-animation-message",
+											"type": "message",
+											"text": "If your overlay supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "overlay-4-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the overlay as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "overlay-4-overlay-section",
+									"title": "Nested Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-4-overlay-message",
+											"type": "message",
+											"text": "You can add a nested overlay to your overlay that won't affect foreground elements. This can be used to create complex overlay effects."
+										},
+										{
+											"id": "overlay-4-overlay",
+											"title": "Nested Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to make sure the nested overlay blends with your original overlay."
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "overlay-5-tab",
+							"title": "5",
+							"dynamicTitle": "overlay-5-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "overlay-5-main-section",
+									"title": "Overlay Settings",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-5-name",
+											"title": "Name",
+											"type": "text",
+											"default": "5",
+											"skip-if-empty": true,
+											"tooltip": "Optional: Name your overlay. This will create a custom utility class .overlay-[name]."
+										},
+										{
+											"id": "overlay-5-bg-color",
+											"title": "Background Color",
+											"type": "text",
+											"default": "",
+											"placeholder": "var(--black)",
+											"skip-if-empty": true,
+											"tooltip": "The background color of the overlay – mostly used as a fallback, but can also be used to blend with your advanced overlay background (see below)."
+										},
+										{
+											"id": "overlay-5-background-type",
+											"title": "Background Type",
+											"type": "select",
+											"default": "none",
+											"options": [
+												"none",
+												"image",
+												"gradient"
+											],
+											"tooltip": "Choose whether your background is an image or a gradient/pattern."
+										},
+										{
+											"id": "overlay-5-background",
+											"title": "Gradient",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"tooltip": "Accepts any valid CSS gradient function.",
+											"displayWhen": [
+												["overlay-5-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-5-background-image",
+											"title": "Background Image",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "/path-to-image.png",
+											"skip-if-empty": true,
+											"cssVariable": "none",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "Insert the relative path to your image file.",
+											"displayWhen": [
+												["overlay-5-background-type", "image"]
+											]
+										},
+										{
+											"id": "overlay-5-background-size",
+											"title": "Background Size",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The size of the background (e.g., 'cover', 'contain', '200px').",
+											"displayWhen": [
+												["overlay-5-background-type", "image"],
+												["overlay-5-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-5-background-position",
+											"title": "Background Position",
+											"type": "text",
+											"default": "",
+											"skip-if-empty": true,
+											"tooltip": "The position of the background (e.g., 'center center', 'top left').",
+											"displayWhen": [
+												["overlay-5-background-type", "image"],
+												["overlay-5-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-5-background-attachment",
+											"title": "Background Attachment",
+											"type": "select",
+											"default": "static",
+											"options": [
+												"static",
+												"scroll",
+												"fixed",
+												"local",
+												"inherit"
+											],
+											"skip-if-empty": true,
+											"tooltip": "The background attachment of the overlay.",
+											"displayWhen": [
+												["overlay-5-background-type", "image"],
+												["overlay-5-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-5-background-repeat",
+											"title": "Background Repeat",
+											"type": "text",
+											"default": "repeat",
+											"skip-if-empty": true,
+											"tooltip": "The background repeat of the overlay.",
+											"displayWhen": [
+												["overlay-5-background-type", "image"],
+												["overlay-5-background-type", "gradient"]
+											]
+										},
+										{
+											"id": "overlay-5-background-blur",
+											"title": "Background Blur",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The backdrop blur effect for the overlay (e.g., '10px', '20px')."
+										},
+										{
+											"id": "overlay-5-opacity",
+											"title": "Overlay Opacity",
+											"type": "text",
+											"default": "0.7",
+											"skip-if-empty": true,
+											"tooltip": "The opacity of the entire overlay element (0-1)."
+										},
+										{
+											"id": "overlay-5-blend-mode",
+											"title": "Blend Mode",
+											"type": "select",
+											"default": "",
+											"options": [
+												"",
+												"normal",
+												"multiply",
+												"screen",
+												"overlay",
+												"darken",
+												"lighten",
+												"color-dodge",
+												"color-burn",
+												"hard-light",
+												"soft-light",
+												"difference",
+												"exclusion",
+												"hue",
+												"saturation",
+												"color",
+												"luminosity"
+											],
+											"tooltip": "The CSS blend mode for the overlay."
+										},
+										{
+											"id": "overlay-5-border-radius",
+											"title": "Border Radius",
+											"type": "text",
+											"default": "",
+											"placeholder": "10px",
+											"skip-if-empty": true,
+											"tooltip": "The border radius of the overlay (e.g., '10px', '50%', '10px 20px')."
+										},
+										{
+											"id": "overlay-5-inset",
+											"title": "Inset",
+											"type": "text",
+											"default": "0",
+											"skip-if-empty": true,
+											"tooltip": "The inset of the overlay (e.g., '0', '10px', '10px 20px'). The default of '0' will make the overlay cover the entire element."
+										}
+									]
+								},
+								{
+									"id": "overlay-5-animation-section",
+									"title": "Animation Options",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-5-animation-message",
+											"type": "message",
+											"text": "If your overlay supports animation, you can animate it here. Your keyframes for the animation must be defined in custom CSS."
+										},
+										{
+											"id": "overlay-5-animation",
+											"title": "Animation",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "animationName 1s infinite",
+											"skip-if-empty": true,
+											"tooltip": "Any valid CSS animation property. This will animate the overlay as long as you've defined your animation keyframes in custom CSS."
+										}
+									]
+								},
+								{
+									"id": "overlay-5-overlay-section",
+									"title": "Nested Overlay",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "overlay-5-overlay-message",
+											"type": "message",
+											"text": "You can add a nested overlay to your overlay that won't affect foreground elements. This can be used to create complex overlay effects."
+										},
+										{
+											"id": "overlay-5-overlay",
+											"title": "Nested Overlay",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "linear-gradient(to top, red, blue)",
+											"skip-if-empty": true,
+											"tooltip": "Must be a linear gradient function! Use transparency values to make sure the nested overlay blends with your original overlay."
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "overlay-pseudo-element-section",
+					"title": "Additional Options",
+					"type": "section-container",
+					"content": [
+						{
+							"id": "custom-overlay-pseudo-element",
+							"title": "Pseudo Element",
+							"type": "select",
+							"default": "before",
+							"options": [
+								"before",
+								"after"
+							],
+							"tooltip": "Choose which pseudo-element to use for your custom overlays. Applies to all of them."
+						}
+					]
+				}
+			]
+		}
+	]
+}

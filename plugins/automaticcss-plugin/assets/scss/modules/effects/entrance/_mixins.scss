@@ -1,0 +1,65 @@
+@import "vars";
+
+// ==========================================================================
+// Entrance Effect Mixins
+// ==========================================================================
+
+// Map of entrance effects and their CSS variable settings
+// These variables are read by the shared enter-animate keyframe
+$enter-effects-map: (
+	'fade': (
+		--animate-opacity: var(--enter-opacity-start, 0)
+	),
+	'float': (
+		--animate-block: var(--enter-float-distance, 40px)
+	),
+	'sink': (
+		--animate-block: calc(var(--enter-sink-distance, 40px) * -1)
+	),
+	'slide-left': (
+		--animate-inline: var(--enter-slide-distance, 40px)
+	),
+	'slide-right': (
+		--animate-inline: calc(var(--enter-slide-distance, 40px) * -1)
+	),
+	'grow': (
+		--animate-scale: var(--enter-scale-start, 0.9)
+	),
+	'shrink': (
+		--animate-scale: var(--enter-scale-shrink, 1.1)
+	),
+	'blur': (
+		--animate-blur: var(--enter-blur-amount, 8px)
+	)
+);
+
+// --------------------------------------------------------------------------
+// Mixin: apply-enter-effects
+// Applies entrance animations based on a comma-separated string
+// Usage: @include apply-enter-effects("fade, slide-up");
+// Note: Requires browsers that support animation-timeline: view()
+// --------------------------------------------------------------------------
+@mixin apply-enter-effects($effects-input) {
+	@if $effects-input and $effects-input != '' and $effects-input != null {
+		// Convert to string if it's a list (handles unquoted input from dashboard)
+		$effects-string: if(type-of($effects-input) == 'string', $effects-input, inspect($effects-input));
+		
+		@supports (animation-timeline: view()) {
+			// Apply base animation properties
+			animation-name: enter-animate;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: view();
+			animation-range: var(--animate-range-start, entry 20%) var(--animate-range-end, entry 100%);
+			
+			// Set the CSS variables for each requested effect
+			@each $effect-name, $props in $enter-effects-map {
+				@if str-index(to-lower-case($effects-string), $effect-name) {
+					@each $prop, $value in $props {
+						#{$prop}: #{$value};
+					}
+				}
+			}
+		}
+	}
+}

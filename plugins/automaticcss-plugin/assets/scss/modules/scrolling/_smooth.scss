@@ -1,0 +1,9 @@
+@if $option-smooth-scrolling == on {
+	/* Feat: Smooth Scrolling */
+	html {
+		scroll-behavior: smooth;
+		&:focus-within {
+			scroll-behavior: auto;
+		}
+	}
+}

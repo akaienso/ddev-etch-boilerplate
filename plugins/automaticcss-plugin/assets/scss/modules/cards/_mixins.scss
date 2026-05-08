@@ -1,0 +1,111 @@
+@mixin card($style: $primary-card-style, $output: all) {
+	// Setup concentric radius variables
+	@if $option-card-concentric-radius == standard {
+		--concentric-radius: calc(var(--radius) + var(--card-padding));
+	} @else if $option-card-concentric-radius == reverse {
+		--reverse-concentric-radius: max(var(--card-min-radius, 4px), calc(var(--radius) - var(--card-padding)));
+	}
+	// This allows user to specify non-all output to avoid duplicating properties
+	@if $style == "dark" or $style == "Dark" {
+		color-scheme: dark;
+	}
+	@if $style == "light" or $style == "Light" {
+		color-scheme: light;
+	}
+	@if $style == "inherit" or $style == "Inherit" {
+		color-scheme: inherit;
+	}
+	@if $output == all {
+		// Main Styles
+		display: var(--card-display, flex) !important;
+		flex-direction: var(--card-flex-direction, column);
+		position: relative;
+		overflow: var(--card-overflow, clip);
+		background-clip: padding-box;
+		transition: var(--card-transition, var(--transition));
+		font-size: var(--card-text-size, var(--text-s));
+		// Border Styles
+		@if $option-card-concentric-radius == standard {
+			--card-radius: var(--concentric-radius);
+		}
+		border-width: var(--card-border-width, var(--border-width));
+		border-style: var(--card-border-style, var(--border-style));
+		border-color: var(--card-border-color, transparent);
+		border-radius: var(--card-radius, var(--radius, 0));
+		// Spacing
+		padding: var(--card-padding, var(--space-m));
+		gap: var(--card-gap, var(--content-gap));
+		// Colors
+		background: var(--card-background, var(--white));
+		color: var(--card-text-color, var(--text-dark));
+		// Typography
+		line-height: var(--card-line-height, inherit);
+		// Media Styles
+		& :where([class*="__media"]:not([class*="wrapper"])) {
+			@if $option-card-concentric-radius == reverse {
+				--card-media-radius: var(--reverse-concentric-radius);
+			}
+			border-radius: var(--card-media-radius, var(--radius, 0));
+			aspect-ratio: var(--card-media-aspect-ratio, 16/9);
+			object-fit: var(--card-media-object-fit, fill);
+			overflow: clip;
+			inline-size: 100%;
+			& img {
+				object-fit: var(--card-media-object-fit, fill);
+			}
+		}
+		// Avatar Styles
+		& :where(img[class*="__avatar"]:not([class*="wrapper"])), :where([class*="__avatar"] img) {
+			border-radius: var(--card-avatar-radius, 50vw);
+			border-width: var(--card-avatar-border-width, 0);
+			border-style: var(--card-avatar-border-style, solid);
+			border-color: var(--card-avatar-border-color, transparent);
+			inline-size: var(--card-avatar-size, 48px);
+			@if $card-avatar-aspect-ratio == 1 or $card-avatar-aspect-ratio == "1" {
+				block-size: var(--card-avatar-size, 48px);
+			}
+			align-self: center;
+			aspect-ratio: var(--card-avatar-aspect-ratio, 1);
+			object-fit: cover;
+			overflow: clip;
+			img {
+				object-fit: cover;
+			}
+		}
+		// Text Styles
+		:is(h1,h2,h3,h4,h5,h6) {
+			font-size: var(--card-heading-size, var(--h3));
+			color: var(--card-heading-color, var(--text-dark));
+		}
+		// Link Styles
+		// Must exclude headings, icons, and buttons
+		a:where(:not(h1 a,h2 a,h3 a,h4 a,h5 a,h6 a, [class*="btn--"], [data-icon])) {
+			--link-color: var(--card-link-color, var(--primary));
+			--link-color-hover: var(--card-link-color-hover, var(--primary-hover));
+		}
+		// Shadow Styles
+		@if $card-shadow != null or $card-shadow != "" {
+			box-shadow: var(--card-shadow, none);
+		}
+	}
+	// Main Icon Style
+	& :where([data-icon]) {
+		--icon-radius: var(--card-icon-radius, var(--radius, 0));
+		--icon-size: var(--card-icon-size, 48px);
+		--icon-color: var(--card-icon-color, var(--icon-color, var(--text-dark)));
+		@if $option-card-boxed-icons == on {
+			@include icon-boxed-styles;
+			--icon-padding: var(--card-icon-padding, var(--icon-padding, 12px));
+			--icon-border-width: var(--card-icon-border-width, var(--icon-border-width, 0));
+			--icon-border-style: var(--card-icon-border-style, var(--icon-border-style, solid));
+			--icon-radius: var(--card-icon-radius, var(--icon-radius, var(--radius)));
+			--icon-background: var(--card-icon-background, var(--icon-background, var(--neutral-ultra-light)));
+			--icon-border-color: var(--card-icon-border-color, var(--icon-border-color, transparent));
+		}
+	}
+	// Button Adjustments
+	[class*="btn--"] {
+		--btn-font-size: var(--card-button-font-size, var(--text-s));
+		@include btn($card-button-style, no);
+	}
+}

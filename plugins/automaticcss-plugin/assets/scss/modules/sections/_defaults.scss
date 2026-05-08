@@ -1,0 +1,19 @@
+@if $option-load-default-section-styles == on {
+	/* Feat: Default Section Styles */
+	#{$section-selector} {
+		display: flex;
+		flex-direction: column;
+		padding-block: var(--section-padding-block);
+		padding-inline: var(--gutter);
+	}
+	@if $option-bricks == off {
+		:where(body>header) {
+			padding-block: var(--space-xs);
+			padding-inline: var(--gutter);
+		}
+		:where(body>footer) {
+			padding-block: var(--section-padding-block);
+			padding-inline: var(--gutter);
+		}
+	}
+}

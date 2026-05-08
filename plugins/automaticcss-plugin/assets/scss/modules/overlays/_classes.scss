@@ -1,0 +1,19 @@
+@if $option-basic-overlays == on {
+	/* Feat: Overlays */
+  [class*="overlay--"], .overlay {
+		position: relative;
+    z-index: 0;
+		isolation: isolate;
+
+    &::#{$basic-overlay-pseudo-element} {
+      content: "";
+      background: var(--overlay-color, rgba(0, 0, 0, 0.7));
+      position: absolute;
+      inset: 0;
+      z-index: var(--overlay-z-index, -1);
+    }
+	}
+	figure:where(:has(>img, >picture, >svg, >video, >iframe)):where(.overlay), figure:where(:has(>img, >picture, >svg, >video, >iframe)):where([class*="overlay--"]) {
+		--overlay-z-index: 0;
+	}
+}

@@ -1,0 +1,7 @@
+// Generate full buttons output.
+// Gutenberg support requires us to load button styling within
+// the Gutenberg overrides stylesheet.
+
+@if $option-buttons == on {
+	@include load-buttons;
+}

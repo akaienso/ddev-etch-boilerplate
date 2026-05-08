@@ -1,0 +1,18 @@
+$index: 1;
+@each $surface, $props in $surfaces {
+	$name: map-get($props, "name");
+	$asset: map-get($props, "asset");
+	$animation: map-get($props, "animation");
+
+	@if $animation != null {
+		.surface-#{$name},  .surface-#{$index} {
+			animation: $animation;
+		}
+	}
+	@if $asset != null {
+		.surface-#{$name},  .surface-#{$index} {
+			@include surface($index);
+		}
+	}
+	$index: $index + 1;
+}

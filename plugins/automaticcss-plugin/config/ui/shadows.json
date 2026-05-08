@@ -1,0 +1,462 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "shadows",
+	"title": "Shadows",
+	"type": "screen-container",
+	"iconPaths": [
+		"M9.43531 4.06585C10.4757 3.58724 11.2087 3.25 12 3.25C12.7913 3.25 13.5243 3.58724 14.5647 4.06585L19.6573 6.40525C20.513 6.79828 21.2323 7.12867 21.731 7.45333C22.2326 7.77985 22.75 8.25262 22.75 9C22.75 9.74738 22.2326 10.2202 21.731 10.5467C21.2323 10.8713 20.513 11.2017 19.6573 11.5948L14.5647 13.9341C13.5244 14.4128 12.7913 14.75 12 14.75C11.2087 14.75 10.4757 14.4128 9.43532 13.9342L9.4353 13.9341L4.3427 11.5947L4.34269 11.5947C3.487 11.2017 2.76767 10.8713 2.26898 10.5467C1.76745 10.2202 1.25 9.74738 1.25 9C1.25 8.25262 1.76745 7.77985 2.26898 7.45333C2.76767 7.12867 3.48701 6.79827 4.34271 6.40525L9.43531 4.06585Z",
+		"M3.43379 12.8281C2.97382 13.0479 2.57882 13.2518 2.26898 13.4535C1.76745 13.7801 1.25 14.2528 1.25 15.0002C1.25 15.7476 1.76745 16.2204 2.26898 16.5469C2.76766 16.8715 3.48698 17.2019 4.34265 17.5949L9.4353 19.9344C10.4756 20.413 11.2087 20.7502 12 20.7502C12.7913 20.7502 13.5244 20.413 14.5647 19.9344L19.6573 17.595C20.513 17.2019 21.2323 16.8715 21.731 16.5469C22.2326 16.2204 22.75 15.7476 22.75 15.0002C22.75 14.2528 22.2326 13.7801 21.731 13.4535C21.4212 13.2518 21.0262 13.0479 20.5662 12.8281C20.499 12.8591 20.4317 12.8899 20.3646 12.9208L15.0478 15.3634C14.1346 15.785 13.1268 16.2502 12 16.2502C10.8732 16.2502 9.86543 15.785 8.95222 15.3634L3.63539 12.9208C3.56827 12.8899 3.50101 12.8591 3.43379 12.8281Z"
+	],
+	"content": [
+		{
+			"id": "box-shadow-styling",
+			"title": "Box Shadows",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "box-shadow-tabs",
+					"title": "Box Shadows",
+					"type": "tabs-container",
+					"style": "inline",
+					"content": [
+						{
+							"id": "box-shadow-1-tab",
+							"title": "1",
+							"dynamicTitle": "box-shadow-1-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "box-shadow-1-name",
+									"title": "Name",
+									"type": "text",
+									"default": "1",
+									"skip-if-empty": true,
+									"tooltip": "Name your box shadow. This determines the CSS variable name: --box-shadow-[name]."
+								},
+								{
+									"id": "box-shadow-1-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 0 40px color-mix(in srgb, black 10%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "Any valid box-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "box-shadow-2-tab",
+							"title": "2",
+							"dynamicTitle": "box-shadow-2-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "box-shadow-2-name",
+									"title": "Name",
+									"type": "text",
+									"default": "2",
+									"skip-if-empty": true,
+									"tooltip": "Name your box shadow. This determines the CSS variable name: --box-shadow-[name]."
+								},
+								{
+									"id": "box-shadow-2-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 0 60px color-mix(in srgb, black 20%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "Any valid box-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "box-shadow-3-tab",
+							"title": "3",
+							"dynamicTitle": "box-shadow-3-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "box-shadow-3-name",
+									"title": "Name",
+									"type": "text",
+									"default": "3",
+									"skip-if-empty": true,
+									"tooltip": "Name your box shadow. This determines the CSS variable name: --box-shadow-[name]."
+								},
+								{
+									"id": "box-shadow-3-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 0 80px color-mix(in srgb, black 30%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "Any valid box-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "box-shadow-4-tab",
+							"title": "4",
+							"dynamicTitle": "box-shadow-4-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "box-shadow-4-name",
+									"title": "Name",
+									"type": "text",
+									"default": "4",
+									"skip-if-empty": true,
+									"tooltip": "Name your box shadow. This determines the CSS variable name: --box-shadow-[name]."
+								},
+								{
+									"id": "box-shadow-4-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "",
+									"skip-if-empty": true,
+									"tooltip": "Any valid box-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "box-shadow-5-tab",
+							"title": "5",
+							"dynamicTitle": "box-shadow-5-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "box-shadow-5-name",
+									"title": "Name",
+									"type": "text",
+									"default": "5",
+									"skip-if-empty": true,
+									"tooltip": "Name your box shadow. This determines the CSS variable name: --box-shadow-[name]."
+								},
+								{
+									"id": "box-shadow-5-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "",
+									"skip-if-empty": true,
+									"tooltip": "Any valid box-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "text-shadow-styling",
+			"title": "Text Shadows",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "text-shadow-tabs",
+					"title": "Text Shadows",
+					"type": "tabs-container",
+					"style": "inline",
+					"content": [
+						{
+							"id": "text-shadow-1-tab",
+							"title": "1",
+							"dynamicTitle": "text-shadow-1-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "text-shadow-1-name",
+									"title": "Name",
+									"type": "text",
+									"default": "1",
+									"skip-if-empty": true,
+									"tooltip": "Name your text shadow. This determines the CSS variable name: --text-shadow-[name]."
+								},
+								{
+									"id": "text-shadow-1-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 1px 2px color-mix(in srgb, black 20%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "Any valid text-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "text-shadow-2-tab",
+							"title": "2",
+							"dynamicTitle": "text-shadow-2-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "text-shadow-2-name",
+									"title": "Name",
+									"type": "text",
+									"default": "2",
+									"skip-if-empty": true,
+									"tooltip": "Name your text shadow. This determines the CSS variable name: --text-shadow-[name]."
+								},
+								{
+									"id": "text-shadow-2-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 2px 4px color-mix(in srgb, black 30%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "Any valid text-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "text-shadow-3-tab",
+							"title": "3",
+							"dynamicTitle": "text-shadow-3-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "text-shadow-3-name",
+									"title": "Name",
+									"type": "text",
+									"default": "3",
+									"skip-if-empty": true,
+									"tooltip": "Name your text shadow. This determines the CSS variable name: --text-shadow-[name]."
+								},
+								{
+									"id": "text-shadow-3-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 4px 8px color-mix(in srgb, black 40%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "Any valid text-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "text-shadow-4-tab",
+							"title": "4",
+							"dynamicTitle": "text-shadow-4-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "text-shadow-4-name",
+									"title": "Name",
+									"type": "text",
+									"default": "4",
+									"skip-if-empty": true,
+									"tooltip": "Name your text shadow. This determines the CSS variable name: --text-shadow-[name]."
+								},
+								{
+									"id": "text-shadow-4-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "",
+									"skip-if-empty": true,
+									"tooltip": "Any valid text-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "text-shadow-5-tab",
+							"title": "5",
+							"dynamicTitle": "text-shadow-5-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "text-shadow-5-name",
+									"title": "Name",
+									"type": "text",
+									"default": "5",
+									"skip-if-empty": true,
+									"tooltip": "Name your text shadow. This determines the CSS variable name: --text-shadow-[name]."
+								},
+								{
+									"id": "text-shadow-5-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "",
+									"skip-if-empty": true,
+									"tooltip": "Any valid text-shadow value.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "drop-shadow-styling",
+			"title": "Drop Shadows",
+			"type": "accordion-container",
+			"content": [
+				{
+					"id": "drop-shadow-tabs",
+					"title": "Drop Shadows",
+					"type": "tabs-container",
+					"style": "inline",
+					"content": [
+						{
+							"id": "drop-shadow-1-tab",
+							"title": "1",
+							"dynamicTitle": "drop-shadow-1-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "drop-shadow-1-name",
+									"title": "Name",
+									"type": "text",
+									"default": "1",
+									"skip-if-empty": true,
+									"tooltip": "Name your drop shadow. This determines the CSS variable name: --drop-shadow-[name]."
+								},
+								{
+									"id": "drop-shadow-1-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 1px 2px color-mix(in srgb, black 15%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "The drop-shadow value without the drop-shadow() wrapper. ACSS wraps it for you.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "drop-shadow-2-tab",
+							"title": "2",
+							"dynamicTitle": "drop-shadow-2-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "drop-shadow-2-name",
+									"title": "Name",
+									"type": "text",
+									"default": "2",
+									"skip-if-empty": true,
+									"tooltip": "Name your drop shadow. This determines the CSS variable name: --drop-shadow-[name]."
+								},
+								{
+									"id": "drop-shadow-2-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 4px 6px color-mix(in srgb, black 20%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "The drop-shadow value without the drop-shadow() wrapper. ACSS wraps it for you.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "drop-shadow-3-tab",
+							"title": "3",
+							"dynamicTitle": "drop-shadow-3-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "drop-shadow-3-name",
+									"title": "Name",
+									"type": "text",
+									"default": "3",
+									"skip-if-empty": true,
+									"tooltip": "Name your drop shadow. This determines the CSS variable name: --drop-shadow-[name]."
+								},
+								{
+									"id": "drop-shadow-3-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "0 10px 15px color-mix(in srgb, black 25%, transparent)",
+									"skip-if-empty": true,
+									"tooltip": "The drop-shadow value without the drop-shadow() wrapper. ACSS wraps it for you.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "drop-shadow-4-tab",
+							"title": "4",
+							"dynamicTitle": "drop-shadow-4-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "drop-shadow-4-name",
+									"title": "Name",
+									"type": "text",
+									"default": "4",
+									"skip-if-empty": true,
+									"tooltip": "Name your drop shadow. This determines the CSS variable name: --drop-shadow-[name]."
+								},
+								{
+									"id": "drop-shadow-4-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "",
+									"skip-if-empty": true,
+									"tooltip": "The drop-shadow value without the drop-shadow() wrapper. ACSS wraps it for you.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "drop-shadow-5-tab",
+							"title": "5",
+							"dynamicTitle": "drop-shadow-5-name",
+							"type": "tab",
+							"content": [
+								{
+									"id": "drop-shadow-5-name",
+									"title": "Name",
+									"type": "text",
+									"default": "5",
+									"skip-if-empty": true,
+									"tooltip": "Name your drop shadow. This determines the CSS variable name: --drop-shadow-[name]."
+								},
+								{
+									"id": "drop-shadow-5-value",
+									"title": "Value",
+									"type": "textarea",
+									"default": "",
+									"skip-if-empty": true,
+									"tooltip": "The drop-shadow value without the drop-shadow() wrapper. ACSS wraps it for you.",
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,105 @@
+// Blockquote Variables
+$option-blockquote-styling: on !default;
+$option-auto-style-blockquotes: on !default;
+$blockquote-selector-exclusions: null !default;
+
+$blockquote-selector: ":where(blockquote:where(:not(figure > blockquote)), figure:has(>blockquote), .blockquote)";
+@if $option-auto-style-blockquotes == off {
+	$blockquote-selector: ".blockquote";
+}
+@if $blockquote-selector-exclusions != null and $blockquote-selector-exclusions != "" {
+	$blockquote-selector: "#{$blockquote-selector}:where(:not(:is(#{$blockquote-selector-exclusions})))";
+}
+// Main Blockquote
+$blockquote-padding: var(--space-m) !default;
+$blockquote-gap: 1em !default;
+$blockquote-border-width: 0 0 0 3px !default;
+$blockquote-border-style: solid !default;
+$blockquote-border-color: var(--primary) !default;
+$blockquote-radius: var(--radius) !default;
+$blockquote-background: var(--neutral-ultra-light) !default;
+$blockquote-box-shadow: none !default;
+$blockquote-max-width: null !default;
+
+// Blockquote Text
+$blockquote-text-color: inherit !default;
+$blockquote-text-font-family: inherit !default;
+$blockquote-text-font-style: normal !default;
+$blockquote-text-font-size: var(--text-l) !default;
+$blockquote-text-font-weight: normal !default;
+$blockquote-text-line-height: inherit !default;
+$blockquote-text-align: left !default;
+$blockquote-text-transform: none !default;
+
+
+// Blockquote Footer & Caption
+$blockquote-footer-padding: 0 !default;
+$blockquote-footer-margin-block: 1em 0 !default;
+$blockquote-footer-font-family: inherit !default;
+$blockquote-footer-font-size: var(--text-s) !default;
+$blockquote-footer-font-weight: normal !default;
+$blockquote-footer-font-style: normal !default;
+$blockquote-footer-line-height: 1.5 !default;
+$blockquote-footer-text-transform: none !default;
+$blockquote-footer-color: currentColor !default;
+
+// Blockquote Cite
+$blockquote-cite-font-family: inherit !default;
+$blockquote-cite-font-size: inherit !default;
+$blockquote-cite-font-weight: inherit !default;
+$blockquote-cite-font-style: inherit !default;
+$blockquote-cite-line-height: inherit !default;
+$blockquote-cite-text-transform: inherit !default;
+$blockquote-cite-color: currentColor !default;
+
+
+// Main Map with Four Sections
+$blockquote-styles: (
+	"main": (
+		"padding": $blockquote-padding,
+		"gap": $blockquote-gap,
+		"border-width": $blockquote-border-width,
+		"border-style": $blockquote-border-style,
+		"border-color": $blockquote-border-color,
+		"border-radius": $blockquote-radius,
+		"background": $blockquote-background,
+		"box-shadow": $blockquote-box-shadow,
+		"max-inline-size": $blockquote-max-width,
+	),
+	"text": (
+		"color": $blockquote-text-color,
+		"font-family": $blockquote-text-font-family,
+		"font-style": $blockquote-text-font-style,
+		"font-size": $blockquote-text-font-size,
+		"font-weight": $blockquote-text-font-weight,
+		"line-height": $blockquote-text-line-height,
+		"text-align": $blockquote-text-align,
+		"text-transform": $blockquote-text-transform,
+	),
+	"footer": (
+		"padding": $blockquote-footer-padding,
+		"margin-block": $blockquote-footer-margin-block,
+		"font-family": $blockquote-footer-font-family,
+		"font-size": $blockquote-footer-font-size,
+		"font-weight": $blockquote-footer-font-weight,
+		"font-style": $blockquote-footer-font-style,
+		"line-height": $blockquote-footer-line-height,
+		"text-transform": $blockquote-footer-text-transform,
+		"color": $blockquote-footer-color,
+	),
+	"cite": (
+		"font-family": $blockquote-cite-font-family,
+		"font-size": $blockquote-cite-font-size,
+		"font-weight": $blockquote-cite-font-weight,
+		"font-style": $blockquote-cite-font-style,
+		"line-height": $blockquote-cite-line-height,
+		"text-transform": $blockquote-cite-text-transform,
+		"color": $blockquote-cite-color,
+	),
+);
+
+// Extract Each Section into Its Own Map
+$blockquote-main-styles: map-get($blockquote-styles, "main");
+$blockquote-text-styles: map-get($blockquote-styles, "text");
+$blockquote-footer-styles: map-get($blockquote-styles, "footer");
+$blockquote-cite-styles: map-get($blockquote-styles, "cite");

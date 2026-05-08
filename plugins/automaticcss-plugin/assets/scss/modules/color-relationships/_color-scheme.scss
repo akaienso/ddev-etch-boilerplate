@@ -1,0 +1,27 @@
+// Add support for color scheme so contextual utility values are re-mapped to correct scheme.
+// All new relationship utilities must be accounted for here.
+@if $option-relate-bg-text == on {
+    :root {
+		@if $option-contextual-color-variables == on {
+			--bg-ultra-light-text: #{$bg-ultra-light-text};
+			--bg-light-text: #{$bg-light-text};
+			--bg-dark-text: #{$bg-dark-text};
+			--bg-ultra-dark-text: #{$bg-ultra-dark-text};
+		}
+		// Generate Contextual Heading Relationship Tokens if Values are Set
+		@each $color, $value in $contextual-heading-relationships {
+			@if $value != null {
+				--bg-#{$color}-heading: #{$value};
+			}
+		}
+		// Generate Contextual Link Relationship Tokens if Values are Set
+		@each $color, $value in $contextual-link-relationships {
+			@if nth($value, 1) != null {
+				--bg-#{$color}-link: #{nth($value, 1)};
+			}
+			@if nth($value, 2) != null {
+				--bg-#{$color}-link-hover: #{nth($value, 2)};
+			}
+		}
+    }
+}

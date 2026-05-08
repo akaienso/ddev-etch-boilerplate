@@ -1,0 +1,77 @@
+@import "vars";
+@import "mixins";
+
+// ==========================================================================
+// Border Effect Utility Classes
+// ==========================================================================
+
+// Keyframes for ripple effects (only output when enabled)
+@if $option-border-ripple == on {
+	@keyframes border-ripple-out {
+		0% {
+			top: calc(var(--border-ripple-width, 4px) * -1);
+			right: calc(var(--border-ripple-width, 4px) * -1);
+			bottom: calc(var(--border-ripple-width, 4px) * -1);
+			left: calc(var(--border-ripple-width, 4px) * -1);
+			opacity: 1;
+		}
+		100% {
+			top: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			right: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			bottom: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			left: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			opacity: 0;
+		}
+	}
+	
+	@keyframes border-ripple-in {
+		0% {
+			top: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			right: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			bottom: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			left: calc((var(--border-ripple-width, 4px) + var(--border-ripple-distance, 12px)) * -1);
+			opacity: 0;
+		}
+		100% {
+			top: calc(var(--border-ripple-width, 4px) * -1);
+			right: calc(var(--border-ripple-width, 4px) * -1);
+			bottom: calc(var(--border-ripple-width, 4px) * -1);
+			left: calc(var(--border-ripple-width, 4px) * -1);
+			opacity: 1;
+		}
+	}
+	
+	.on-hover--ripple-out {
+		@include border-effect-ripple-out;
+	}
+	
+	.on-hover--ripple-in {
+		@include border-effect-ripple-in;
+	}
+}
+
+// Outline Effects
+@if $option-border-outline == on {
+	.on-hover--outline-out {
+		@include border-effect-outline-out;
+	}
+	
+	.on-hover--outline-in {
+		@include border-effect-outline-in;
+	}
+}
+
+// Underline Effects
+@if $option-border-underline == on {
+	.on-hover--underline-left {
+		@include border-effect-underline-left;
+	}
+	
+	.on-hover--underline-center {
+		@include border-effect-underline-center;
+	}
+	
+	.on-hover--underline-right {
+		@include border-effect-underline-right;
+	}
+}

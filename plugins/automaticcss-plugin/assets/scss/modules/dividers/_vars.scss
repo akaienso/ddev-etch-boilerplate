@@ -1,0 +1,18 @@
+$option-divider-classes: off !default;
+$option-divider-variables: on !default;
+
+// Global
+$divider-size: 1px !default;
+$divider-style: solid !default;
+$divider-inline-size: 100% !default;
+$divider-gap: var(--content-gap) !default;
+
+// Colors
+$divider-color-light: var(--white-trans-20) !default;
+$divider-color-dark: var(--black-trans-20) !default;
+$divider-scheme-default: "Dark" !default;
+
+// Full
+$divider-main: if($divider-scheme-default == "Dark" or not $divider-scheme-default, var(--divider-size) var(--divider-style) var(--divider-color-dark), var(--divider-size) var(--divider-style) var(--divider-color-light)) !default;
+$divider-dark: var(--divider-size) var(--divider-style) var(--divider-color-dark);
+$divider-light: var(--divider-size) var(--divider-style) var(--divider-color-light);

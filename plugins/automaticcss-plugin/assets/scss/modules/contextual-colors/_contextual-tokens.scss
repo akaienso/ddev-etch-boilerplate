@@ -1,0 +1,17 @@
+// These must be placed in .color-scheme--main for scheme compatibility
+@if $option-contextual-color-variables == on {
+	/* Contextual Color Variables */
+	:root {
+		--body-bg-color: #{$body-bg-color};
+		@each $utility-category, $utility-group in $contextual-colors {
+			@each $utility-name, $utility-value in $utility-group {
+				@if $utility-category == "text-colors" {
+						--text-#{$utility-name}: #{$utility-value};
+				}
+				@if $utility-category == "background-colors" {
+					--bg-#{$utility-name}: #{$utility-value};
+			}
+			}
+		}
+	}
+}

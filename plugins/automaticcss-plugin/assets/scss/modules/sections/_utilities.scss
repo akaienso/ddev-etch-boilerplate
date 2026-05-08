@@ -1,0 +1,21 @@
+@if $option-section-padding == on {
+	/* Feat: Section Padding */
+  @each $size, $value in $sectionSpacing {
+    .section--#{$size} {
+      padding-block: var(--section-space-#{$size});
+      padding-inline: var(--gutter);
+    }
+  }
+
+  .section--none {
+    padding-block: 0;
+    padding-inline: var(--gutter);
+  }
+
+	@each $extension in $shirtSizes {
+		.header--#{$extension} {
+			padding-block: var(--space-#{$extension});
+			padding-inline: var(--gutter);
+		}
+	}
+}

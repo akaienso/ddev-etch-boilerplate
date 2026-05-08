@@ -1,0 +1,4 @@
+@if $option-focus-styles == on {
+	/* Feat: Focus Styles */
+	@include focus-styles;
+}

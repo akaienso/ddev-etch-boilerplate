@@ -1,0 +1,14 @@
+@if $option-text-shadow-variables == on {
+	/* Feat: Text Shadow Variables */
+	:root {
+		--text-shadow-#{$text-shadow-1-name}: #{$text-shadow-1-value};
+		--text-shadow-#{$text-shadow-2-name}: #{$text-shadow-2-value};
+		--text-shadow-#{$text-shadow-3-name}: #{$text-shadow-3-value};
+		@if $text-shadow-4-value != null {
+			--text-shadow-#{$text-shadow-4-name}: #{$text-shadow-4-value};
+		}
+		@if $text-shadow-5-value != null {
+			--text-shadow-#{$text-shadow-5-name}: #{$text-shadow-5-value};
+		}
+	}
+}

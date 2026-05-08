@@ -1,0 +1,202 @@
+@if $option-inverted-radius-framework == on {
+    /* Inverted Radius Framework */
+    [data-inverted-radius-1-position],
+    [data-inverted-radius-2-position] {
+        position: var(--inverted-radius-parent-position, absolute);
+        background: var(--bg, var(--white));
+        z-index: 1;
+        isolation: isolate;
+        /* Border radius options */
+        --slice-top-left: var(--radius) 0 0 0;
+        --slice-top-right: 0 var(--radius) 0 0;
+        --slice-bottom-right: 0 0 var(--radius) 0;
+        --slice-bottom-left: 0 0 0 var(--radius);
+        /* Positions */
+        --position-top-left: 0 auto auto 0;
+        --position-top-right: 0 0 auto auto;
+        --position-bottom-left: auto auto 0 0;
+        --position-bottom-right: auto 0 0 auto;
+
+        --position-top-left-outside: 0 auto auto calc(var(--radius) * -1);
+        --position-top-right-outside: 0 calc(var(--radius) * -1) auto auto;
+        --position-bottom-left-outside: auto 0 0 calc(var(--radius) * -1);
+        --position-bottom-right-outside: auto calc(var(--radius) * -1) 0 auto;
+
+		--position-top-outside-left: calc(var(--radius) * -1) auto auto 0;
+        --position-top-outside-right: calc(var(--radius) * -1) 0 auto auto;
+        --position-bottom-outside-left: auto 0 calc(var(--radius) * -1) 0;
+        --position-bottom-outside-right: auto 0 calc(var(--radius) * -1) auto;
+
+        --position-top-outside-left-outside: calc(var(--radius) * -1) auto auto calc(var(--radius) * -1);
+        --position-top-outside-right-outside: calc(var(--radius) * -1) calc(var(--radius) * -1) auto auto;
+        --position-bottom-outside-left-outside: auto auto calc(var(--radius) * -1) calc(var(--radius) * -1);
+        --position-bottom-outside-right-outside: auto calc(var(--radius) * -1) calc(var(--radius) * -1) auto;
+        /* Box Shadow Values */
+        --shadow-bottom-right: var(--radius) var(--radius) 0 var(--radius) var(--bg, var(--white));
+        --shadow-bottom-left: calc(var(--radius) * -1) var(--radius) 0 var(--radius) var(--bg, var(--white));
+        --shadow-top-right: var(--radius) calc(var(--radius) * -1) 0 var(--radius) var(--bg, var(--white));
+        --shadow-top-left: calc(var(--radius) * -1) calc(var(--radius) * -1) 0 var(--radius) var(--bg, var(--white));
+        --inverted-radius-1-shadow: var(--shadow-top-left);
+        --inverted-radius-2-shadow: var(--shadow-top-left);
+    }
+
+    /* First corner positions */
+    [data-inverted-radius-1-position="top-left"] {
+        --inverted-radius-1-position: var(--position-top-left);
+    }
+    [data-inverted-radius-1-position="top-right"] {
+        --inverted-radius-1-position: var(--position-top-right);
+    }
+    [data-inverted-radius-1-position="bottom-left"] {
+        --inverted-radius-1-position: var(--position-bottom-left);
+    }
+    [data-inverted-radius-1-position="bottom-right"] {
+        --inverted-radius-1-position: var(--position-bottom-right);
+    }
+    [data-inverted-radius-1-position="top-outside-left"] {
+        --inverted-radius-1-position: var(--position-top-outside-left);
+    }
+    [data-inverted-radius-1-position="top-outside-right"] {
+        --inverted-radius-1-position: var(--position-top-outside-right);
+    }
+    [data-inverted-radius-1-position="bottom-outside-left"] {
+        --inverted-radius-1-position: var(--position-bottom-outside-left);
+    }
+    [data-inverted-radius-1-position="bottom-outside-right"] {
+        --inverted-radius-1-position: var(--position-bottom-outside-right);
+    }
+    [data-inverted-radius-1-position="top-left-outside"] {
+        --inverted-radius-1-position: var(--position-top-left-outside);
+    }
+    [data-inverted-radius-1-position="top-right-outside"] {
+        --inverted-radius-1-position: var(--position-top-right-outside);
+    }
+    [data-inverted-radius-1-position="bottom-left-outside"] {
+        --inverted-radius-1-position: var(--position-bottom-left-outside);
+    }
+    [data-inverted-radius-1-position="bottom-right-outside"] {
+        --inverted-radius-1-position: var(--position-bottom-right-outside);
+    }
+    [data-inverted-radius-1-position="top-outside-left-outside"] {
+        --inverted-radius-1-position: var(--position-top-outside-left-outside);
+    }
+    [data-inverted-radius-1-position="top-outside-right-outside"] {
+        --inverted-radius-1-position: var(--position-top-outside-right-outside);
+    }
+    [data-inverted-radius-1-position="bottom-outside-left-outside"] {
+        --inverted-radius-1-position: var(--position-bottom-outside-left-outside);
+    }
+    [data-inverted-radius-1-position="bottom-outside-right-outside"] {
+        --inverted-radius-1-position: var(--position-bottom-outside-right-outside);
+    }
+
+    /* Second corner positions */
+    [data-inverted-radius-2-position="top-left"] {
+        --inverted-radius-2-position: var(--position-top-left);
+    }
+    [data-inverted-radius-2-position="top-right"] {
+        --inverted-radius-2-position: var(--position-top-right);
+    }
+    [data-inverted-radius-2-position="bottom-left"] {
+        --inverted-radius-2-position: var(--position-bottom-left);
+    }
+    [data-inverted-radius-2-position="bottom-right"] {
+        --inverted-radius-2-position: var(--position-bottom-right);
+    }
+    [data-inverted-radius-2-position="top-outside-left"] {
+        --inverted-radius-2-position: var(--position-top-outside-left);
+    }
+    [data-inverted-radius-2-position="top-outside-right"] {
+        --inverted-radius-2-position: var(--position-top-outside-right);
+    }
+    [data-inverted-radius-2-position="bottom-outside-left"] {
+        --inverted-radius-2-position: var(--position-bottom-outside-left);
+    }
+    [data-inverted-radius-2-position="bottom-outside-right"] {
+        --inverted-radius-2-position: var(--position-bottom-outside-right);
+    }
+    [data-inverted-radius-2-position="top-left-outside"] {
+        --inverted-radius-2-position: var(--position-top-left-outside);
+    }
+    [data-inverted-radius-2-position="top-right-outside"] {
+        --inverted-radius-2-position: var(--position-top-right-outside);
+    }
+    [data-inverted-radius-2-position="bottom-left-outside"] {
+        --inverted-radius-2-position: var(--position-bottom-left-outside);
+    }
+    [data-inverted-radius-2-position="bottom-right-outside"] {
+        --inverted-radius-2-position: var(--position-bottom-right-outside);
+    }
+    [data-inverted-radius-2-position="top-outside-left-outside"] {
+        --inverted-radius-2-position: var(--position-top-outside-left-outside);
+    }
+    [data-inverted-radius-2-position="top-outside-right-outside"] {
+        --inverted-radius-2-position: var(--position-top-outside-right-outside);
+    }
+    [data-inverted-radius-2-position="bottom-outside-left-outside"] {
+        --inverted-radius-2-position: var(--position-bottom-outside-left-outside);
+    }
+    [data-inverted-radius-2-position="bottom-outside-right-outside"] {
+        --inverted-radius-2-position: var(--position-bottom-outside-right-outside);
+    }
+
+    /* Corner types */
+    [data-inverted-radius-1-slice="top-left"] {
+        --inverted-radius-1-slice: var(--slice-top-left);
+        --inverted-radius-1-shadow: var(--shadow-top-left);
+    }
+    [data-inverted-radius-1-slice="top-right"] {
+        --inverted-radius-1-slice: var(--slice-top-right);
+        --inverted-radius-1-shadow: var(--shadow-top-right);
+    }
+    [data-inverted-radius-1-slice="bottom-left"] {
+        --inverted-radius-1-slice: var(--slice-bottom-left);
+        --inverted-radius-1-shadow: var(--shadow-bottom-left);
+    }
+    [data-inverted-radius-1-slice="bottom-right"] {
+        --inverted-radius-1-slice: var(--slice-bottom-right);
+        --inverted-radius-1-shadow: var(--shadow-bottom-right);
+    }
+    [data-inverted-radius-2-slice="top-left"] {
+        --inverted-radius-2-slice: var(--slice-top-left);
+        --inverted-radius-2-shadow: var(--shadow-top-left);
+    }
+    [data-inverted-radius-2-slice="top-right"] {
+        --inverted-radius-2-slice: var(--slice-top-right);
+        --inverted-radius-2-shadow: var(--shadow-top-right);
+    }
+    [data-inverted-radius-2-slice="bottom-left"] {
+        --inverted-radius-2-slice: var(--slice-bottom-left);
+        --inverted-radius-2-shadow: var(--shadow-bottom-left);
+    }
+    [data-inverted-radius-2-slice="bottom-right"] {
+        --inverted-radius-2-slice: var(--slice-bottom-right);
+        --inverted-radius-2-shadow: var(--shadow-bottom-right);
+    }
+
+    /* Pseudo-elements */
+    [data-inverted-radius-1-position]::before {
+        content: '';
+        position: absolute;
+        inset: var(--inverted-radius-1-position);
+        border-radius: var(--inverted-radius-1-slice);
+        box-shadow: var(--inverted-radius-1-shadow);
+        width: var(--radius);
+        height: var(--radius);
+        aspect-ratio: 1;
+        z-index: -1;
+        background: transparent;
+    }
+    [data-inverted-radius-2-position]::after {
+        content: '';
+        position: absolute;
+        inset: var(--inverted-radius-2-position);
+        border-radius: var(--inverted-radius-2-slice);
+        box-shadow: var(--inverted-radius-2-shadow);
+        width: var(--radius);
+        height: var(--radius);
+        aspect-ratio: 1;
+        z-index: -1;
+        background: transparent;
+    }
+}

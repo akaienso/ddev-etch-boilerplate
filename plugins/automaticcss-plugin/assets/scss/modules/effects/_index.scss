@@ -1,0 +1,25 @@
+// ==========================================================================
+// Effects Module
+// Organized by effect type for better maintainability
+// ==========================================================================
+
+// Transition utilities and easing presets
+@import "transition/index";
+
+// Hover effects (transform, shadow, opacity, filter)
+@import "hover/index";
+
+// Border effects (ripple, outline, underline)
+@import "border/index";
+
+// Entrance animations (scroll-driven)
+@import "entrance/index";
+
+// Exit animations (scroll-driven)
+@import "exit/index";
+
+// Visible animations (intersection observer)
+@import "visible/index";
+
+// Reduced motion support
+@import "reduced-motion";

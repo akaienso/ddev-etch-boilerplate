@@ -1,0 +1,30 @@
+$option-bricks-css-first: off !default;
+$option-bricks-css-improved: off !default;
+
+@if $option-bricks-css-improved == on {
+	.bricks-panel-controls {
+		:is(.control-groups, .control-group) {
+			display: flex;
+			flex-direction: column;
+		}
+		// Target the CSS control group
+		[data-control-group="_css"] {
+			.control-group-title {
+				order: -2;
+			}
+			[data-controlkey="_cssCustom"] {
+				order: -1;
+			}
+			.CodeMirror-wrap {
+				min-height: 80vh;
+			}
+		}
+	}
+}
+@if $option-bricks-css-first == on {
+	.bricks-panel-controls {
+		[data-control-group="_css"] {
+			order: -1;
+		}
+	}
+}

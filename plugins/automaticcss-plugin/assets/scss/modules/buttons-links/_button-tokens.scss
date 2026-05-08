@@ -1,0 +1,57 @@
+@if $option-buttons == on {
+
+	/* Feat: Buttons */
+	:root {
+
+		// Indicator for if outline buttons are on or off
+		@if $option-primary-btn-outline == on {
+			--option-primary-btn-outline: on;
+		}
+
+		@if $option-secondary-btn-outline == on {
+			--option-secondary-btn-outline: on;
+		}
+
+		@if $option-tertiary-btn-outline == on {
+			--option-tertiary-btn-outline: on;
+		}
+
+		@if $option-accent-btn-outline == on {
+			--option-accent-btn-outline: on;
+		}
+
+		@if $option-base-btn-outline == on {
+			--option-base-btn-outline: on;
+		}
+
+		@if $option-neutral-btn-outline == on {
+			--option-neutral-btn-outline: on;
+		}
+
+		// Button Style Token
+		--btn-padding-block: #{$btn-padding-block};
+		--btn-padding-inline: #{$btn-padding-inline};
+		--btn-min-width: #{$btn-min-width}rem;
+		--btn-width: #{$btn-width};
+		--btn-line-height: #{$btn-line-height};
+		--btn-font-size: #{$btn-font-size};
+		--btn-font-weight: #{$btn-font-weight};
+		--btn-font-family: #{$btn-font-family};
+		--btn-font-style: #{$btn-font-style};
+		--btn-text-decoration: #{$btn-text-decoration};
+		--btn-text-decoration-hover: #{$btn-text-decoration-hover};
+		--btn-letter-spacing: #{$btn-letter-spacing};
+		--btn-text-transform: #{$btn-text-transform};
+		--btn-border-width: #{$btn-border-width};
+		--btn-border-style: #{$btn-border-style};
+		--btn-border-radius: #{$btn-border-radius};
+		--btn-radius: #{$btn-border-radius}; // Alias for btn-border-radius
+		--btn-justify-content: #{$btn-justify-content};
+		--btn-align-items: #{$btn-align-items};
+		--btn-text-align: #{$btn-text-align};
+
+		@if $btn-use-global-transition-option == off {
+			--btn-transition: #{$btn-transition};
+		}
+	}
+}

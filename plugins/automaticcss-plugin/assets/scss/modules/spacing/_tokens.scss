@@ -1,0 +1,32 @@
+@if $option-load-default-section-styles == on {
+	/* Feat: Default Section Styles */
+	:root {
+		--section-padding-block: #{$section-padding-block};
+		--gutter: #{$gutter};
+	}
+}
+
+@if $option-space-variables == on {
+	/* Feat: Space Variables */
+	:root {
+		@each $variable, $value in $spacing {
+			--space-#{$variable}: #{$value};
+		}
+	}
+}
+@if $option-section-space-variables == on {
+	/* Feat: Section Space Variables */
+	:root {
+		@each $variable, $value in $sectionSpacing {
+			--section-space-#{$variable}: #{$value};
+		}
+	}
+}
+@if $option-contextual-space-variables == on {
+	/* Feat: Contextual Space Variables */
+	:root {
+		@each $utility-name, $utility-value in $contextual-spacing {
+			--#{$utility-name}: #{$utility-value};
+		}
+	}
+}

@@ -1,0 +1,2846 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "form-styling",
+	"title": "Form Styling",
+	"type": "screen-container",
+	"content": [
+		{
+			"id": "forms-message",
+			"type": "section-container",
+			"title": "Form Framework",
+			"displayWhen": [
+						"option-forms",
+						"off"
+					],
+			"content": [
+				{
+					"id": "forms-message-2",
+					"type": "message",
+					"text": "<p>ACSS gives you the ability to style forms from <a target='_blank' href='https://gearyco.link/wsform'>WS Form</a> with a single utility class.</p><p><strong style='color: var(--e-primary);'>Don't own a license?</strong> You can get 30% off a license as an ACSS user by <a target='_blank' href='https://gearyco.link/wsform'>clicking here</a> and using code 'ACSS' at checkout.</p><p>WS Form is currently the most powerful and flexible form plugin with the highest quality support in the WordPress ecosystem, which is exactly why we chose it as the flagship form system for ACSS compatibility.</p>"
+				}
+			]
+		},
+		{
+			"id": "form-styling-settings",
+			"type": "section-container",
+			"title": "Settings",
+			"content": [
+				{
+					"id": "option-forms",
+					"title": "Load Forms",
+					"type": "toggle",
+					"style": "primary",
+					"default": "off"
+				},
+				{
+					"id": "option-style-forms-automatically",
+					"title": "Style Forms Automatically",
+					"type": "toggle",
+					"style": "primary",
+					"default": "on",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					]
+				}
+			]
+		},
+		{
+			"id": "form-styling-section",
+			"type": "section-container",
+			"title": "Styling",
+			"displayWhen": [
+				"option-forms",
+				"on"
+			],
+			"content": [
+				{
+					"id": "f-form-styling",
+					"title": "Form Defaults",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-form-spacing-section",
+							"title": "Spacing",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-form-grid-gap",
+									"title": "Grid Gap",
+									"type": "text",
+									"default": "20px",
+									"cssVariable": "--wsf-form-grid-gap",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-padding-inline",
+									"title": "Inline Padding",
+									"type": "text",
+									"default": "0px",
+									"cssVariable": "--wsf-form-padding-horizontal",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-padding-block",
+									"title": "Block Padding",
+									"type": "text",
+									"default": "0px",
+									"cssVariable": "--wsf-form-padding-vertical",
+									"target": ".wsf-form"
+								}
+							]
+						},
+						{
+							"id": "f-form-typography-section",
+							"title": "Typography",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-form-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-m",
+									"cssVariable": "--wsf-form-font-size",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-font-size-small",
+									"title": "Font Size Small",
+									"type": "text",
+									"default": "--text-s",
+									"cssVariable": "--wsf-form-font-size-small",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-font-size-large",
+									"title": "Font Size Large",
+									"type": "text",
+									"default": "--text-l",
+									"cssVariable": "--wsf-form-font-size-large",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"overline",
+										"inherit"
+									],
+									"cssVariable": "--wsf-form-font-style",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-form-font-weight",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-letter-spacing",
+									"title": "Letter Spacing",
+									"type": "text",
+									"default": "--text-letter-spacing",
+									"cssVariable": "--wsf-form-letter-spacing",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height",
+									"cssVariable": "--wsf-form-line-height",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"none",
+										"underline",
+										"overline",
+										"line-through",
+										"inherit"
+									],
+									"cssVariable": "--wsf-form-text-decoration",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"none",
+										"capitalize",
+										"uppercase",
+										"lowercase",
+										"inherit"
+									],
+									"cssVariable": "--wsf-form-text-transform",
+									"target": ".wsf-form"
+								}
+							]
+						},
+						{
+							"id": "f-form-border-section",
+							"title": "Border",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-form-border-radius",
+									"title": "Border Radius",
+									"type": "text",
+									"default": "0",
+									"cssVariable": "--wsf-form-border-radius",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-border-width",
+									"title": "Border Size",
+									"type": "text",
+									"default": "0px",
+									"cssVariable": "--wsf-form-border-width",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-border-style",
+									"title": "Border Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"none",
+										"dotted",
+										"dashed",
+										"solid",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset",
+										"initial",
+										"inherit",
+										"hidden"
+									],
+									"cssVariable": "--wsf-form-border-style",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-border-color",
+									"title": "Border Color",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-form-border-color",
+									"target": ".wsf-form"
+								}
+							]
+						},
+						{
+							"id": "f-form-transition-section",
+							"title": "Transition",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "form-use-global-transition-option",
+									"title": "Use Global Transition",
+									"type": "toggle",
+									"default": "on"
+								},
+								{
+									"id": "f-form-transition-timing-function",
+									"title": "Timing Function",
+									"type": "text",
+									"default": "ease-in-out",
+									"placeholder": "ease-in-out",
+									"displayWhen": [
+										"form-use-global-transition-option",
+										"off"
+									],
+									"validation": {
+										"required": false
+									}
+								},
+								{
+									"id": "f-form-transition-duration",
+									"title": "Duration",
+									"type": "text",
+									"default": ".3s",
+									"placeholder": ".3s",
+									"displayWhen": [
+										"form-use-global-transition-option",
+										"off"
+									],
+									"validation": {
+										"required": false
+									}
+								}
+							]
+						},
+						{
+							"id": "f-form-color-section",
+							"title": "Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-form-color-background",
+									"title": "Background Color",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-form-color-background",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-color-base",
+									"title": "Base",
+									"type": "text",
+									"default": "var(--text-dark)",
+									"cssVariable": "--wsf-form-color-base",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-color-base-contrast",
+									"title": "Base Contrast",
+									"type": "text",
+									"default": "var(--text-light)",
+									"cssVariable": "--wsf-form-color-base-contrast",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-color-accent",
+									"title": "Accent",
+									"type": "text",
+									"default": "--primary",
+									"cssVariable": "--wsf-form-color-accent",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-color-neutral",
+									"title": "Neutral",
+									"type": "text",
+									"default": "--neutral-light",
+									"cssVariable": "--wsf-form-color-neutral",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-color-primary",
+									"title": "Primary",
+									"type": "text",
+									"default": "--primary",
+									"cssVariable": "--wsf-form-color-primary",
+									"target": ".wsf-form"
+								},
+								{
+									"id": "f-form-color-secondary",
+									"title": "Secondary",
+									"type": "text",
+									"default": "--secondary",
+									"cssVariable": "--wsf-form-color-secondary",
+									"target": ".wsf-form"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-tab-styling",
+					"title": "Tab",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-tab-borders-section",
+							"title": "Borders",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-tab-group-border-style",
+									"title": "Bottom Border Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"none",
+										"dotted",
+										"dashed",
+										"solid",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset",
+										"initial",
+										"inherit",
+										"hidden"
+									],
+									"cssVariable": "--wsf-group-ul-border-style",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-group-border-size",
+									"title": "Bottom Border Size",
+									"type": "text",
+									"default": "1px",
+									"cssVariable": "--wsf-group-ul-border-width",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-border-radius",
+									"title": "Active Border Radius",
+									"type": "text",
+									"default": "--btn-border-radius",
+									"cssVariable": "--wsf-group-li-border-radius",
+									"target": ".wsf-tab-active"
+								},
+								{
+									"id": "f-tab-active-border-style",
+									"title": "Active Border Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"none",
+										"dotted",
+										"dashed",
+										"solid",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset",
+										"initial",
+										"inherit",
+										"hidden"
+									],
+									"cssVariable": "--wsf-group-li-border-style",
+									"target": ".wsf-tab-active"
+								},
+								{
+									"id": "f-tab-active-border-size",
+									"title": "Active Border Size",
+									"type": "text",
+									"default": "1px",
+									"cssVariable": "--wsf-group-li-border-width",
+									"target": ".wsf-tab-active"
+								},
+								{
+									"id": "f-tab-border-section",
+									"title": "Border Color",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-tab-border-color",
+											"title": "Default Border",
+											"type": "text",
+											"default": "--primary-light",
+											"cssVariable": "--wsf-group-li-border-color",
+											"target": ".wsf-group-tab"
+										},
+										{
+											"id": "f-tab-border-color-active",
+											"title": "Active Border",
+											"type": "text",
+											"default": "--primary",
+											"cssVariable": "--wsf-group-li-border-color-active",
+											"target": ".wsf-group-tab"
+										},
+										{
+											"id": "f-tab-border-color-focus",
+											"title": "Focused Border",
+											"type": "text",
+											"default": "--primary",
+											"cssVariable": "--wsf-group-li-border-color-focus",
+											"target": ".wsf-group-tab"
+										},
+										{
+											"id": "f-tab-border-color-disabled",
+											"title": "Disabled Border",
+											"type": "text",
+											"default": "color-mix(in oklch, var(--neutral) 60%, transparent)",
+											"cssVariable": "--wsf-group-li-border-color-disabled",
+											"target": ".wsf-group-tab"
+										},
+										{
+											"id": "f-tab-ul-border-color",
+											"title": "Bottom Border",
+											"type": "text",
+											"default": "--neutral",
+											"cssVariable": "--wsf-group-ul-border-color",
+											"target": ".wsf-group-tabs"
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "f-tab-spacing-section",
+							"title": "Size",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-tab-group-gap",
+									"title": "Tabs Gap",
+									"type": "text",
+									"default": "0px",
+									"cssVariable": "--wsf-group-li-gap",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-padding-x",
+									"title": "Inline Padding",
+									"type": "text",
+									"default": "1.5em",
+									"cssVariable": "--wsf-group-li-padding-horizontal",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-padding-y",
+									"title": "Block Padding",
+									"type": "text",
+									"default": ".75em",
+									"cssVariable": "--wsf-group-li-padding-vertical",
+									"target": ".wsf-group-tabs"
+								}
+							]
+						},
+						{
+							"id": "f-tab-background-section",
+							"title": "Background Color",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-group-li-color-background",
+									"title": "Default",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-group-li-color-background",
+									"target": ".wsf-group-tab"
+								},
+								{
+									"id": "f-group-li-color-background-active",
+									"title": "Active",
+									"type": "text",
+									"default": "--text-light",
+									"cssVariable": "--wsf-group-li-color-background-active",
+									"target": ".wsf-group-tab"
+								},
+								{
+									"id": "f-group-li-color-background-focus",
+									"title": "Focused",
+									"type": "text",
+									"default": "--text-light",
+									"cssVariable": "--wsf-group-li-color-background-focus",
+									"target": ".wsf-group-tab"
+								},
+								{
+									"id": "f-group-li-color-background-disabled",
+									"title": "Disabled",
+									"type": "text",
+									"default": "color-mix(in oklch, var(--neutral) 60%, transparent)",
+									"cssVariable": "--wsf-group-li-color-background-disabled",
+									"target": ".wsf-group-tab"
+								}
+							]
+						},
+						{
+							"id": "f-tab-typography-section",
+							"title": "Typography",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-tab-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--f-form-font-size",
+									"cssVariable": "--wsf-group-li-font-size",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-group-li-font-weight",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "inherit",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"overline",
+										"inherit"
+									],
+									"cssVariable": "--wsf-group-li-font-style",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--f-form-line-height",
+									"cssVariable": "--wsf-group-li-line-height",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "inherit",
+									"options": [
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-group-li-text-transform",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "inherit",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-group-li-text-decoration",
+									"target": ".wsf-group-tabs"
+								},
+								{
+									"id": "f-tab-text-section",
+									"title": "Text Color",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-tab-text-color",
+											"title": "Default",
+											"type": "text",
+											"default": "var(--f-form-color-base)",
+											"cssVariable": "--wsf-group-li-color",
+											"target": ".wsf-group-tab a"
+										},
+										{
+											"id": "f-tab-text-color-active",
+											"title": "Active Text",
+											"type": "text",
+											"default": "var(--f-form-color-base)",
+											"cssVariable": "--wsf-group-li-color-active",
+											"target": ".wsf-tab-active a"
+										},
+										{
+											"id": "f-tab-text-color-focus",
+											"title": "Focused Text",
+											"type": "text",
+											"default": "var(--f-form-color-base)",
+											"cssVariable": "--wsf-group-li-color-focus",
+											"target": ".wsf-group-tab a"
+										},
+										{
+											"id": "f-tab-text-color-disabled",
+											"title": "Disabled Text",
+											"type": "text",
+											"default": "color-mix(in oklch, var(--neutral) 60%, transparent)",
+											"cssVariable": "--wsf-group-li-color-disabled",
+											"target": ".wsf-group-tab a"
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "f-tab-styled-section",
+							"title": "Styled - Steps",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-tab-styled-size",
+									"title": "Size",
+									"type": "text",
+									"default": "--space-l",
+									"cssVariable": "--wsf-group-li-steps-size",
+									"target": ".wsf-steps"
+								},
+								{
+									"id": "f-tab-styled-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--f-form-font-size",
+									"cssVariable": "--wsf-group-li-steps-font-size",
+									"target": ".wsf-steps"
+								},
+								{
+									"id": "f-tab-styled-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"overline",
+										"inherit"
+									],
+									"cssVariable": "--wsf-group-li-steps-font-style",
+									"target": ".wsf-steps"
+								},
+								{
+									"id": "f-tab-styled-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-group-li-steps-font-weight",
+									"target": ".wsf-steps"
+								},
+								{
+									"id": "f-tab-styled-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-group-li-steps-text-decoration",
+									"target": ".wsf-steps"
+								}
+							]
+						},
+						{
+							"id": "f-styled-section",
+							"title": "Styled - Steps Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-tab-styled-color-background",
+									"title": "Background",
+									"type": "text",
+									"default": "var(--white)",
+									"cssVariable": "--wsf-group-li-steps-color-background",
+									"target": ".wsf-steps a"
+								},
+								{
+									"id": "f-tab-styled-background-active",
+									"title": "Active Background",
+									"type": "text",
+									"default": "var(--primary-light)",
+									"cssVariable": "--wsf-group-li-steps-color-background-active",
+									"target": ".wsf-steps .wsf-tab-active a"
+								},
+								{
+									"id": "f-tab-styled-background-complete",
+									"title": "Complete Background",
+									"type": "text",
+									"default": "var(--primary)",
+									"cssVariable": "--wsf-group-li-steps-color-background-complete",
+									"target": ".wsf-steps a"
+								},
+								{
+									"id": "f-tab-styled-border-color",
+									"title": "Border",
+									"type": "text",
+									"default": "var(--primary-light)",
+									"cssVariable": "--wsf-group-li-steps-border-color",
+									"target": ".wsf-steps a"
+								},
+								{
+									"id": "f-tab-styled-border-color-active",
+									"title": "Active Border",
+									"type": "text",
+									"default": "var(--primary)",
+									"cssVariable": "--wsf-group-li-steps-border-color-active",
+									"target": ".wsf-steps .wsf-tab-active a"
+								},
+								{
+									"id": "f-tab-styled-border-color-complete",
+									"title": "Complete Border",
+									"type": "text",
+									"default": "var(--primary)",
+									"cssVariable": "--wsf-group-li-steps-border-color-complete",
+									"target": ".wsf-steps a"
+								},
+								{
+									"id": "f-tab-styled-color",
+									"title": "Text Color",
+									"type": "text",
+									"default": "var(--f-form-color-base)",
+									"cssVariable": "--wsf-group-li-steps-color",
+									"target": ".wsf-steps a"
+								},
+								{
+									"id": "f-tab-styled-color-active",
+									"title": "Active Text",
+									"type": "text",
+									"default": "var(--f-form-color-base)",
+									"cssVariable": "--wsf-group-li-steps-color-active",
+									"target": ".wsf-steps .wsf-tab-active a"
+								},
+								{
+									"id": "f-tab-styled-color-complete",
+									"title": "Complete Text",
+									"type": "text",
+									"default": "var(--text-light)",
+									"cssVariable": "--wsf-group-li-steps-color-complete",
+									"target": ".wsf-steps a"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-section-styling",
+					"title": "Section",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-section-color-background",
+							"title": "Background Color",
+							"type": "text",
+							"default": "transparent",
+							"cssVariable": "--wsf-section-color-background",
+							"target": ".wsf-section"
+						},
+						{
+							"id": "f-section-legend-section",
+							"title": "Legend",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-section-legend-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--f-form-font-size",
+									"cssVariable": "--wsf-section-legend-font-size",
+									"target": ".wsf-section > legend"
+								},
+								{
+									"id": "f-section-legend-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"overline",
+										"inherit"
+									],
+									"cssVariable": "--wsf-section-legend-font-style",
+									"target": ".wsf-section > legend"
+								},
+{
+								"id": "f-section-legend-font-weight",
+								"title": "Font Weight",
+								"type": "text",
+								"default": "",
+								"placeholder": "e.g. 400, 500, 600",
+								"cssVariable": "--wsf-section-legend-font-weight",
+								"target": ".wsf-section > legend"
+							},
+								{
+									"id": "f-section-legend-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--f-form-line-height",
+									"cssVariable": "--wsf-section-legend-line-height",
+									"target": ".wsf-section > legend"
+								},
+								{
+									"id": "f-section-legend-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-section-legend-text-decoration",
+									"target": ".wsf-section > legend"
+								},
+								{
+									"id": "f-section-legend-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-section-legend-text-transform",
+									"target": ".wsf-section > legend"
+								},
+								{
+									"id": "f-section-legend-gap",
+									"title": "Gap",
+									"type": "text",
+									"default": "1rem",
+									"cssVariable": "--wsf-section-legend-gap",
+									"target": ".wsf-section > legend"
+								}
+							]
+						},
+						{
+							"id": "f-section-legend",
+							"title": "Legend Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-section-legend-color-background",
+									"title": "Legend Background",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-section-legend-color-background",
+									"target": ".wsf-section"
+								},
+								{
+									"id": "f-section-legend-color",
+									"title": "Legend",
+									"type": "text",
+									"default": "--f-form-color-base",
+									"cssVariable": "--wsf-section-legend-color",
+									"target": ".wsf-section"
+								}
+							]
+						},
+						{
+							"id": "f-section-repeater-section",
+							"title": "Repeater Icons",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-section-repeater-icons-size",
+									"title": "Size",
+									"type": "text",
+									"default": "--text-m",
+									"cssVariable": "--wsf-section-icon-size",
+									"target": ".wsf-section-icons"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-field-fieldset-legend-section",
+					"title": "Fieldset",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-fieldset-legend-font-size",
+							"title": "Font Size",
+							"type": "text",
+							"default": "--f-form-font-size",
+							"cssVariable": "--wsf-field-fieldset-legend-font-size",
+							"target": ".wsf-fieldset > legend"
+						},
+						{
+							"id": "f-field-fieldset-legend-font-style",
+							"title": "Font Style",
+							"type": "select",
+							"default": "normal",
+							"options": [
+								"normal",
+								"italic",
+								"oblique",
+								"overline",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-fieldset-legend-font-style",
+							"target": ".wsf-fieldset > legend"
+						},
+						{
+							"id": "f-field-fieldset-legend-font-weight",
+							"title": "Font Weight",
+							"type": "text",
+							"default": "400",
+							"placeholder": "e.g. 400, 500, 600",
+							"cssVariable": "--wsf-field-fieldset-legend-font-weight",
+							"target": ".wsf-fieldset > legend"
+						},
+						{
+							"id": "f-field-fieldset-legend-text-transform",
+							"title": "Text Transform",
+							"type": "select",
+							"default": "none",
+							"options": [
+								"uppercase",
+								"lowercase",
+								"capitalize",
+								"none",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-fieldset-legend-text-transform",
+							"target": ".wsf-fieldset > legend"
+						},
+						{
+							"id": "f-field-fieldset-legend-text-decoration",
+							"title": "Text Decoration",
+							"type": "select",
+							"default": "none",
+							"options": [
+								"underline",
+								"line-through",
+								"overline",
+								"none",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-fieldset-legend-text-decoration",
+							"target": ".wsf-fieldset > legend"
+						},
+						{
+							"id": "f-field-fieldset-legend-gap",
+							"title": "Gap",
+							"type": "text",
+							"default": "0.5em",
+							"cssVariable": "--wsf-field-fieldset-legend-gap",
+							"target": ".wsf-fieldset > legend"
+						},
+						{
+							"id": "f-fieldset-styling",
+							"title": "Fieldset Legend",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-fieldset-legend-color",
+									"title": "Legend Color",
+									"type": "text",
+									"default": "--f-form-color-base",
+									"cssVariable": "--wsf-field-fieldset-legend-color",
+									"target": ".wsf-fieldset"
+								},
+								{
+									"id": "f-field-fieldset-legend-color-background",
+									"title": "Legend Background",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-field-fieldset-legend-color-background",
+									"target": ".wsf-fieldset"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-label-styling",
+					"title": "Label",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-label-font-size",
+							"title": "Font Size",
+							"type": "text",
+							"default": "--f-form-font-size",
+							"cssVariable": "--wsf-field-label-font-size",
+							"target": ".wsf-label"
+						},
+						{
+							"id": "f-field-label-font-weight",
+							"title": "Font Weight",
+							"type": "text",
+							"default": "400",
+							"placeholder": "e.g. 400, 500, 600",
+							"cssVariable": "--wsf-field-label-font-weight",
+							"target": ".wsf-label"
+						},
+						{
+							"id": "f-field-label-line-height",
+							"title": "Line Height",
+							"type": "text",
+							"default": "--text-line-height",
+							"cssVariable": "--wsf-field-label-line-height",
+							"target": ".wsf-label"
+						},
+						{
+							"id": "f-field-label-gap",
+							"title": "Gap",
+							"type": "text",
+							"default": "0.5em",
+							"cssVariable": "--wsf-field-label-gap",
+							"target": ".wsf-label"
+						},
+						{
+							"id": "f-field-inside-label-vertical-offset",
+							"title": "Inside Label Vertical Offset",
+							"type": "text",
+							"default": "-20px",
+							"cssVariable": "--wsf-field-label-inside-offset",
+							"target": ".wsf-label-position-inside"
+						},
+						{
+							"id": "f-field-inside-label-scale",
+							"title": "Inside Label Scale",
+							"type": "text",
+							"default": "0.9",
+							"cssVariable": "--wsf-field-label-inside-scale",
+							"target": ".wsf-label-position-inside"
+						},
+						{
+							"id": "f-label-colors-section",
+							"title": "Label Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-label-color",
+									"title": "Text Color",
+									"type": "text",
+									"default": "var(--neutral-dark)",
+									"cssVariable": "--wsf-field-label-color",
+									"target": ".wsf-label, .gform-field-label"
+								},
+								{
+									"id": "f-field-label-color-background",
+									"title": "Background Color",
+									"type": "text",
+									"default": "",
+									"cssVariable": "--wsf-field-label-color-background",
+									"target": ".wsf-label"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-field-help-section",
+					"title": "Help",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-help-font-size",
+							"title": "Font Size",
+							"type": "text",
+							"default": "--text-s",
+							"cssVariable": "--wsf-field-help-font-size",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-field-help-font-style",
+							"title": "Font Style",
+							"type": "select",
+							"default": "normal",
+							"options": [
+								"normal",
+								"italic",
+								"oblique",
+								"overline",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-help-font-style",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-field-help-font-weight",
+							"title": "Font Weight",
+							"type": "text",
+							"default": "400",
+							"placeholder": "e.g. 400, 500, 600",
+							"cssVariable": "--wsf-field-help-font-weight",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-field-help-line-height",
+							"title": "Line Height",
+							"type": "text",
+							"default": "1.5",
+							"cssVariable": "--wsf-field-help-line-height",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-field-help-text-decoration",
+							"title": "Text Decoration",
+							"type": "select",
+							"default": "none",
+							"options": [
+								"underline",
+								"line-through",
+								"overline",
+								"none",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-help-text-decoration",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-field-help-text-transform",
+							"title": "Text Transform",
+							"type": "select",
+							"default": "none",
+							"options": [
+								"uppercase",
+								"lowercase",
+								"capitalize",
+								"none",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-help-text-transform",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-field-help-gap",
+							"title": "Gap",
+							"type": "text",
+							"default": "0.5em",
+							"cssVariable": "--wsf-field-help-gap",
+							"target": ".wsf-help"
+						},
+						{
+							"id": "f-help-styling",
+							"title": "Help Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-help-text-color",
+									"title": "Text Color",
+									"type": "text",
+									"default": "--f-form-color-base",
+									"cssVariable": "--wsf-field-help-color",
+									"target": ".wsf-help"
+								},
+								{
+									"id": "f-help-text-color-background",
+									"title": "Background Color",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-field-help-color-background",
+									"target": ".wsf-help"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-field-styling",
+					"title": "Input",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-typography-section",
+							"title": "Typography",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-typography-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-m",
+									"cssVariable": "--wsf-field-font-size",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-typography-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-font-style",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-typography-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "400",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-field-font-weight",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-typography-letter-spacing",
+									"title": "Letter Spacing",
+									"type": "text",
+									"default": "--text-letter-spacing",
+									"cssVariable": "--wsf-field-letter-spacing",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-typography-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height",
+									"cssVariable": "--wsf-field-line-height",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-typography-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-text-decoration",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-typography-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-text-transform",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-text-section",
+							"title": "Typography Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-input-text",
+									"type": "hover-container",
+									"content": [
+										{
+											"id": "f-field-color",
+											"title": "Text Color",
+											"type": "text",
+											"default": "var(--f-form-color-base)",
+											"cssVariable": "--wsf-field-color",
+											"target": ".wsf-field"
+										},
+										{
+											"id": "f-field-color-hover",
+											"title": "Text Color",
+											"type": "text",
+											"default": "var(--f-field-color)",
+											"cssVariable": "--wsf-field-color-hover",
+											"target": ".wsf-field"
+										}
+									]
+								},
+								{
+									"id": "f-field-color-focus",
+									"title": "Focus Text Color",
+									"type": "text",
+									"default": "var(--f-field-color)",
+									"cssVariable": "--wsf-field-color-focus",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-color-disabled",
+									"title": "Disabled Text Color",
+									"type": "text",
+									"default": "color-mix(in oklch, var(--neutral) 80%, transparent)",
+									"cssVariable": "--wsf-field-color-disabled",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-color-invalid",
+									"title": "Invalid Text Color",
+									"type": "text",
+									"default": "--danger",
+									"cssVariable": "--wsf-field-color-invalid",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-color-placeholder",
+									"title": "Placeholder Text Color",
+									"type": "text",
+									"default": "var(--neutral-light)",
+									"cssVariable": "--wsf-field-color-placeholder",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-bg-section",
+							"title": "Background",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-background",
+									"type": "hover-container",
+									"content": [
+										{
+											"id": "f-field-color-background",
+											"title": "Background Color",
+											"type": "text",
+											"default": "--f-form-color-base-contrast",
+											"cssVariable": "--wsf-field-color-background",
+											"target": ".wsf-field"
+										},
+										{
+											"id": "f-field-color-background-hover",
+											"title": "Background Color",
+											"type": "text",
+											"default": "--f-field-color-background",
+											"cssVariable": "--wsf-field-color-background-hover",
+											"target": ".wsf-field"
+										}
+									]
+								},
+								{
+									"id": "f-field-color-background-focus",
+									"title": "Focus Background",
+									"type": "text",
+									"default": "--f-field-color-background",
+									"cssVariable": "--wsf-field-color-background-focus",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-color-background-disabled",
+									"title": "Disabled Background",
+									"type": "text",
+									"default": "color-mix(in oklch, var(--neutral) 80%, transparent)",
+									"cssVariable": "--wsf-field-color-background-disabled",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-color-background-invalid",
+									"title": "Invalid Background",
+									"type": "text",
+									"default": "--f-field-color-background",
+									"cssVariable": "--wsf-field-color-background-invalid",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-border-section",
+							"title": "Border",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-border-placement",
+									"title": "Placement",
+									"type": "select",
+									"default": "all",
+									"options": [
+										"all",
+										"bottom"
+									]
+								},
+								{
+									"id": "f-field-border-radius",
+									"title": "Radius",
+									"type": "text",
+									"default": "--radius",
+									"cssVariable": "--wsf-field-border-radius",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-border-size",
+									"title": "Size",
+									"type": "text",
+									"default": "1px",
+									"cssVariable": "--wsf-field-border-width",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-border-style",
+									"title": "Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"solid",
+										"dotted",
+										"dashed",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset"
+									],
+									"cssVariable": "--wsf-field-border-style",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-border-color-section",
+							"title": "Border Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-border",
+									"type": "hover-container",
+									"content": [
+										{
+											"id": "f-field-border-color",
+											"title": "Border Color",
+											"type": "text",
+											"default": "--border-color-dark",
+											"cssVariable": "--wsf-field-border-color",
+											"target": ".wsf-field"
+										},
+										{
+											"id": "f-field-border-color-hover",
+											"title": "Border Color",
+											"type": "text",
+											"default": "--border-color-dark",
+											"cssVariable": "--wsf-field-border-color-hover",
+											"target": ".wsf-field"
+										}
+									]
+								},
+								{
+									"id": "f-field-border-color-focus",
+									"title": "Focus Border Color",
+									"type": "text",
+									"default": "--primary",
+									"cssVariable": "--wsf-field-border-color-focus",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-border-color-disabled",
+									"title": "Disabled Border Color",
+									"type": "text",
+									"default": "color-mix(in oklch, var(--neutral) 60%, transparent)",
+									"cssVariable": "--wsf-field-border-color-disabled",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-border-color-invalid",
+									"title": "Invalid Border Color",
+									"type": "text",
+									"default": "--danger",
+									"cssVariable": "--wsf-field-border-color-invalid",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-box-shadow-color-focus",
+									"title": "Box Shadow (Focus) Color",
+									"type": "text",
+									"default": "--primary",
+									"cssVariable": "--wsf-field-box-shadow-color-focus",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-box-shadow-section",
+							"title": "Box Shadow (Focus)",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-box-shadow-width-focus",
+									"title": "Width",
+									"type": "text",
+									"default": "0px",
+									"cssVariable": "--wsf-field-box-shadow-width-focus",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-error-section",
+							"title": "Invalid Feedback",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-error-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-s",
+									"cssVariable": "--wsf-field-invalid-feedback-font-size",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"overline",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-invalid-feedback-font-style",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "400",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-field-invalid-feedback-font-weight",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-letter-spacing",
+									"title": "Letter Spacing",
+									"type": "text",
+									"default": "--text-letter-spacing",
+									"cssVariable": "--wsf-field-invalid-feedback-letter-spacing",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height",
+									"cssVariable": "--wsf-field-invalid-feedback-line-height",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-invalid-feedback-text-decoration",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-invalid-feedback-text-transform",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-error-gap",
+									"title": "Gap",
+									"type": "text",
+									"default": "0.5em",
+									"cssVariable": "--wsf-field-invalid-feedback-gap",
+									"target": ".wsf-invalid-feedback"
+								}
+							]
+						},
+						{
+							"id": "f-field-invalid-feedback",
+							"title": "Invalid Feedback Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-invalid-feedback-color",
+									"title": "Invalid Text Color",
+									"type": "text",
+									"default": "--danger",
+									"cssVariable": "--wsf-field-invalid-feedback-color",
+									"target": ".wsf-invalid-feedback"
+								},
+								{
+									"id": "f-field-invalid-feedback-color-background",
+									"title": "Invalid Background",
+									"type": "text",
+									"default": "transparent",
+									"cssVariable": "--wsf-field-invalid-feedback-color-background",
+									"target": ".wsf-invalid-feedback"
+								}
+							]
+						},
+						{
+							"id": "f-field-padding-section",
+							"title": "Padding",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-inline-padding",
+									"title": "Inline Padding",
+									"type": "text",
+									"default": "10px",
+									"cssVariable": "--wsf-field-padding-horizontal",
+									"target": ".wsf-field"
+								},
+								{
+									"id": "f-field-block-padding",
+									"title": "Block Padding",
+									"type": "text",
+									"default": "8.5px",
+									"cssVariable": "--wsf-field-padding-vertical",
+									"target": ".wsf-field"
+								}
+							]
+						},
+						{
+							"id": "f-field-prefix-suffix-section",
+							"title": "Prefix/Suffix",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-prefix-suffix-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-s",
+									"cssVariable": "--wsf-field-prefix-suffix-font-size",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"overline",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-prefix-suffix-font-style",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "400",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-field-prefix-suffix-font-weight",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-letter-spacing",
+									"title": "Letter Spacing",
+									"type": "text",
+									"default": "--text-letter-spacing",
+									"cssVariable": "--wsf-field-prefix-suffix-letter-spacing",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height",
+									"cssVariable": "--wsf-field-prefix-suffix-line-height",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-prefix-suffix-text-decoration",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"none",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-prefix-suffix-text-transform",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								}
+							]
+						},
+						{
+							"id": "f-field-prefix-suffix-styling",
+							"title": "Prefix/Suffix Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-prefix-suffix-color",
+									"title": "Color",
+									"type": "text",
+									"default": "var(--f-form-color-base)",
+									"cssVariable": "--wsf-field-prefix-suffix-color",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								},
+								{
+									"id": "f-field-prefix-suffix-color-background",
+									"title": "Background",
+									"type": "text",
+									"default": "var(--neutral-semi-light)",
+									"cssVariable": "--wsf-field-prefix-suffix-color-background",
+									"target": ".wsf-input-group-prepend, .wsf-input-group-append"
+								}
+							]
+						},
+						{
+							"id": "f-field-tooltip-section",
+							"title": "Tooltip",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-tooltip-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-xs",
+									"cssVariable": "--wsf-field-tooltip-font-size",
+									"target": "[data-wsf-tooltip]"
+								},
+								{
+									"id": "f-field-tooltip-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "400",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-field-tooltip-font-weight",
+									"target": "[data-wsf-tooltip]"
+								},
+								{
+									"id": "f-field-tooltip-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height",
+									"cssVariable": "--wsf-field-tooltip-line-height",
+									"target": "[data-wsf-tooltip]"
+								},
+								{
+									"id": "f-field-tooltip-radius",
+									"title": "Border Radius",
+									"type": "text",
+									"default": "--radius-s",
+									"cssVariable": "--wsf-field-tooltip-border-radius",
+									"target": "[data-wsf-tooltip]"
+								},
+								{
+									"id": "f-field-tooltip-gap",
+									"title": "Gap",
+									"type": "text",
+									"default": "5px",
+									"cssVariable": "--wsf-field-tooltip-gap",
+									"target": "[data-wsf-tooltip]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-buttons-styles",
+					"title": "Buttons",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-submit-button-style",
+							"title": "Submit Button Style",
+							"type": "text",
+							"default": "primary",
+							"skip-if-empty": true,
+							"tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+							"output": "quotes"
+						},
+						{
+							"id": "f-next-button-style",
+							"title": "Next Button Style",
+							"type": "text",
+							"default": "primary",
+							"skip-if-empty": true,
+							"tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+							"output": "quotes"
+						},
+						{
+							"id": "f-prev-button-style",
+							"title": "Previous Button Style",
+							"type": "text",
+							"default": "\"primary.btn--outline\"",
+							"skip-if-empty": true,
+							"tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+							"output": "quotes"
+						},
+						{
+							"id": "f-save-button-style",
+							"title": "Save Button Style",
+							"type": "text",
+							"default": "primary",
+							"skip-if-empty": true,
+							"tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+							"output": "quotes"
+						},
+						{
+							"id": "f-reset-button-style",
+							"title": "Reset Button Style",
+							"type": "text",
+							"default": "primary",
+							"skip-if-empty": true,
+							"tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+							"output": "quotes"
+						},
+						{
+							"id": "f-clear-button-style",
+							"title": "Clear Button Style",
+							"type": "text",
+							"default": "\"primary.btn--outline\"",
+							"skip-if-empty": true,
+							"tooltip": "Expects the name of a button style (primary, secondary, etc.). You can attach '.btn--outline' to style name for outline variations",
+							"output": "quotes"
+						}
+					]
+				},
+				{
+					"id": "f-checkbox-styles",
+					"title": "Checkbox",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-checkbox-border-radius",
+							"title": "Border Radius",
+							"type": "text",
+							"default": "4px",
+							"cssVariable": "--wsf-field-checkbox-border-radius",
+							"target": "input[type=checkbox].wsf-field"
+						},
+						{
+							"id": "f-checkbox-gap-inline",
+							"title": "Inline Gap",
+							"type": "text",
+							"default": "6px",
+							"cssVariable": "--wsf-field-checkbox-gap-horizontal",
+							"target": "input[type=checkbox].wsf-field + label"
+						},
+						{
+							"id": "f-checkbox-gap-block",
+							"title": "Block Gap",
+							"type": "text",
+							"default": "10px",
+							"cssVariable": "--wsf-field-checkbox-gap-vertical",
+							"target": "[data-row-checkbox]"
+						},
+						{
+							"id": "f-checkbox-styling",
+							"title": "Checkbox Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-checkbox-color-background",
+									"title": "Color Background",
+									"type": "text",
+									"default": "var(--white)",
+									"cssVariable": "--wsf-field-checkbox-color-background",
+									"target": "input[type=checkbox]"
+								},
+								{
+									"id": "f-field-checkbox-checked-color-background",
+									"title": "Checked Color Background",
+									"type": "text",
+									"default": "var(--primary)",
+									"cssVariable": "--wsf-field-checkbox-checked-color-background",
+									"target": "input[type=checkbox].wsf-field:checked"
+								},
+								{
+									"id": "f-field-checkbox-checkmark-color",
+									"title": "Checkmark Color",
+									"type": "text",
+									"default": "var(--white)",
+									"cssVariable": "--wsf-field-checkbox-checkmark-color",
+									"target": "input[type=checkbox]"
+								},
+								{
+									"id": "f-checkbox-button-style",
+									"title": "Button",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-field-checkbox-button-color-background",
+											"title": "Button Color Background",
+											"type": "text",
+											"default": "var(--neutral-light)",
+											"cssVariable": "--wsf-field-checkbox-button-color-background",
+											"target": "input[type=checkbox].wsf-button + label"
+										},
+										{
+											"id": "f-field-checkbox-button-color",
+											"title": "Button Color",
+											"type": "text",
+											"default": "var(--neutral)",
+											"cssVariable": "--wsf-field-checkbox-button-color",
+											"target": "input[type=checkbox].wsf-button + label"
+										},
+										{
+											"id": "f-field-checkbox-checked-button-color-background",
+											"title": "Checked Button Color Background",
+											"type": "text",
+											"default": "var(--primary)",
+											"cssVariable": "--wsf-field-checkbox-checked-button-color-background",
+											"target": "input[type=checkbox].wsf-field.wsf-button:checked + label"
+										},
+										{
+											"id": "f-field-checkbox-checked-button-color",
+											"title": "Checked Button Color",
+											"type": "text",
+											"default": "var(--white)",
+											"cssVariable": "--wsf-field-checkbox-checked-button-color",
+											"target": "input[type=checkbox].wsf-field.wsf-button:checked + label"
+										}
+									]
+								},
+								{
+									"id": "f-checkbox-switch-style",
+									"title": "Switch",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-field-checkbox-switch-color",
+											"title": "Switch Color",
+											"type": "text",
+											"default": "var(--neutral-light)",
+											"cssVariable": "--wsf-field-checkbox-switch-color",
+											"target": "input[type=checkbox].wsf-field.wsf-switch + label"
+										},
+										{
+											"id": "f-field-checkbox-checked-switch-color-background",
+											"title": "Checked Switch Color Background",
+											"type": "text",
+											"default": "var(--primary)",
+											"cssVariable": "--wsf-field-checkbox-checked-switch-color-background",
+											"target": "input[type=checkbox].wsf-field.wsf-switch + label"
+										},
+										{
+											"id": "f-field-checkbox-checked-switch-color",
+											"title": "Checked Switch Color",
+											"type": "text",
+											"default": "var(--white)",
+											"cssVariable": "--wsf-field-checkbox-checked-switch-color",
+											"target": "input[type=checkbox].wsf-field.wsf-switch:checked + label"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-radio-styles",
+					"title": "Radio",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-radio-gap-inline",
+							"title": "Gap Inline",
+							"type": "text",
+							"default": "6px",
+							"cssVariable": "--wsf-field-radio-gap-horizontal",
+							"target": "input[type=radio].wsf-field + label"
+						},
+						{
+							"id": "f-field-radio-gap-block",
+							"title": "Gap Block",
+							"type": "text",
+							"default": "10px",
+							"cssVariable": "--wsf-field-radio-gap-vertical",
+							"target": "[data-row-radio]"
+						},
+						{
+							"id": "f-radio-styling",
+							"title": "Radio Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-radio-color-background",
+									"title": "Color Background",
+									"type": "text",
+									"default": "var(--white)",
+									"cssVariable": "--wsf-field-radio-color-background",
+									"target": "input[type=radio]"
+								},
+								{
+									"id": "f-field-radio-checked-color",
+									"title": "Checked Color",
+									"type": "text",
+									"default": "var(--primary)",
+									"cssVariable": "--wsf-field-radio-checked-color",
+									"target": "input[type=radio].wsf-field:checked"
+								},
+								{
+									"id": "f-radio-button-style",
+									"title": "Button",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-field-radio-button-color-background",
+											"title": "Button Color Background",
+											"type": "text",
+											"default": "var(--neutral-light)",
+											"cssVariable": "--wsf-field-radio-button-color-background",
+											"target": "input[type=radio].wsf-button + label"
+										},
+										{
+											"id": "f-field-radio-button-color",
+											"title": "Button Color",
+											"type": "text",
+											"default": "var(--neutral)",
+											"cssVariable": "--wsf-field-radio-button-color",
+											"target": "input[type=radio].wsf-button + label"
+										},
+										{
+											"id": "f-field-radio-checked-button-color-background",
+											"title": "Checked Button Color Background",
+											"type": "text",
+											"default": "var(--primary)",
+											"cssVariable": "--wsf-field-radio-checked-button-color-background",
+											"target": "input[type=radio].wsf-field.wsf-button:checked + label"
+										},
+										{
+											"id": "f-field-radio-checked-button-color",
+											"title": "Checked Button Color",
+											"type": "text",
+											"default": "var(--white)",
+											"cssVariable": "--wsf-field-radio-checked-button-color",
+											"target": "input[type=radio].wsf-field.wsf-button:checked + label"
+										}
+									]
+								},
+								{
+									"id": "f-radio-switch-style",
+									"title": "Switch",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-field-radio-switch-color",
+											"title": "Switch Color",
+											"type": "text",
+											"default": "var(--neutral-light)",
+											"cssVariable": "--wsf-field-radio-switch-color",
+											"target": "input[type=radio].wsf-field.wsf-switch + label"
+										},
+										{
+											"id": "f-field-radio-checked-switch-color-background",
+											"title": "Checked Switch Color Background",
+											"type": "text",
+											"default": "var(--primary)",
+											"cssVariable": "--wsf-field-radio-checked-switch-color-background",
+											"target": "input[type=radio].wsf-field.wsf-switch + label"
+										},
+										{
+											"id": "f-field-radio-checked-switch-color",
+											"title": "Checked Switch Color",
+											"type": "text",
+											"default": "var(--white)",
+											"cssVariable": "--wsf-field-radio-checked-switch-color",
+											"target": "input[type=radio].wsf-field.wsf-switch:checked + label"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-select-styles",
+					"title": "Select",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-select-arrow-width",
+							"title": "Arrow Width",
+							"type": "text",
+							"default": "12px",
+							"cssVariable": "--wsf-field-select-arrow-width",
+							"target": ".wsf-select-arrow"
+						},
+						{
+							"id": "f-field-select-arrow-height",
+							"title": "Arrow Height",
+							"type": "text",
+							"default": "6px",
+							"cssVariable": "--wsf-field-select-arrow-height",
+							"target": ".wsf-select-arrow"
+						},
+						{
+							"id": "f-select-styling",
+							"title": "Select Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-select-arrow-color",
+									"title": "Select Arrow Color",
+									"type": "text",
+									"default": "var(--neutral)",
+									"cssVariable": "--wsf-field-select-arrow-color",
+									"target": ".wsf-select-arrow"
+								},
+								{
+									"id": "f-select2-styling",
+									"title": "Select2",
+									"type": "section-container",
+									"content": [
+										{
+											"id": "f-field-select2-choice-color-background",
+											"title": "Choice Background",
+											"type": "text",
+											"default": "var(--neutral-light)",
+											"cssVariable": "--wsf-field-select-select2-choice-color-background",
+											"target": ".select2-selection__rendered"
+										},
+										{
+											"id": "f-field-select2-choice-color",
+											"title": "Choice Color",
+											"type": "text",
+											"default": "var(--neutral)",
+											"cssVariable": "--wsf-field-select-select2-choice-color",
+											"target": ".select2-selection__rendered"
+										},
+										{
+											"id": "f-field-select2-choice-color-remove",
+											"title": "Remove Choice Color",
+											"type": "text",
+											"default": "var(--neutral)",
+											"cssVariable": "--wsf-field-select-select2-choice-color-remove",
+											"target": ".select2-selection__rendered"
+										},
+										{
+											"id": "f-field-select2-result-color-background",
+											"title": "Result Background",
+											"type": "text",
+											"default": "var(--neutral-light)",
+											"cssVariable": "--wsf-field-select-select2-result-color-background"
+										},
+										{
+											"id": "f-field-select2-result-color-background-selected",
+											"title": "Selected Result Background",
+											"type": "text",
+											"default": "var(--primary)",
+											"cssVariable": "--wsf-field-select-select2-result-color-background-selected"
+										},
+										{
+											"id": "f-field-select2-result-color-background-highlighted",
+											"title": "Highlighted Result Background",
+											"type": "text",
+											"default": "var(--primary)",
+											"cssVariable": "--wsf-field-select-select2-result-color-background-highlighted"
+										},
+										{
+											"id": "f-field-select2-result-color",
+											"title": "Result Color",
+											"type": "text",
+											"default": "var(--neutral)",
+											"cssVariable": "--wsf-field-select-select2-result-color"
+										},
+										{
+											"id": "f-field-select2-result-color-selected",
+											"title": "Selected Result Color",
+											"type": "text",
+											"default": "var(--white)",
+											"cssVariable": "--wsf-field-select-select2-result-color-selected"
+										},
+										{
+											"id": "f-field-select2-result-color-highlighted",
+											"title": "Highlighted Result Color",
+											"type": "text",
+											"default": "var(--white)",
+											"cssVariable": "--wsf-field-select-select2-result-color-highlighted"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-progress-bar-styling",
+					"title": "Progress Bar",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-progress-color-background",
+							"title": "Background Color",
+							"type": "text",
+							"default": "var(--neutral-ultra-light)",
+							"cssVariable": "--wsf-field-progress-color-background",
+							"target": ".wsf-progress"
+						},
+						{
+							"id": "f-field-progress-color-background-bar",
+							"title": "Bar Color",
+							"type": "text",
+							"default": "var(--primary-light)",
+							"cssVariable": "--wsf-field-progress-color-background-bar",
+							"target": "progress"
+						},
+						{
+							"id": "f-field-progress-color-background-complete",
+							"title": "Complete Bar Color",
+							"type": "text",
+							"default": "var(--primary)",
+							"cssVariable": "--wsf-field-progress-color-background-complete",
+							"target": "progress"
+						}
+					]
+				},
+				{
+					"id": "f-field-range-slider",
+					"title": "Range Slider",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-range-slider-radius",
+							"title": "Track Border Radius",
+							"type": "text",
+							"default": "50px",
+							"cssVariable": "--wsf-field-range-track-border-radius",
+							"target": "input[type=range]"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-font-size",
+							"title": "Tickmark Font Size",
+							"type": "text",
+							"default": "--text-s",
+							"cssVariable": "--wsf-field-range-tickmark-label-font-size",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-font-style",
+							"title": "Tickmark Font Style",
+							"type": "select",
+							"default": "normal",
+							"options": [
+								"normal",
+								"italic",
+								"oblique",
+								"initial",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-range-tickmark-label-font-style",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-font-weight",
+							"title": "Tickmark Font Weight",
+							"type": "text",
+							"default": "400",
+							"placeholder": "e.g. 400, 500, 600",
+							"cssVariable": "--wsf-field-range-tickmark-label-font-weight",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-letter-spacing",
+							"title": "Tickmark Letter Spacing",
+							"type": "text",
+							"default": "--text-letter-spacing",
+							"cssVariable": "--wsf-field-range-tickmark-label-letter-spacing",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-line-height",
+							"title": "Tickmark Line Height",
+							"type": "text",
+							"default": "--text-line-height",
+							"cssVariable": "--wsf-field-range-tickmark-label-line-height",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-text-decoration",
+							"title": "Tickmark Text Decoration",
+							"type": "select",
+							"default": "none",
+							"options": [
+								"none",
+								"underline",
+								"line-through",
+								"overline",
+								"initial",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-range-tickmark-label-text-decoration",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-field-range-slider-tickmark-text-transform",
+							"title": "Tickmark Text Transform",
+							"type": "select",
+							"default": "none",
+							"options": [
+								"none",
+								"uppercase",
+								"lowercase",
+								"capitalize",
+								"initial",
+								"inherit"
+							],
+							"cssVariable": "--wsf-field-range-tickmark-label-text-transform",
+							"target": "input[type=range].wsf-field + datalist option"
+						},
+						{
+							"id": "f-range-color-styling",
+							"title": "Range Slider Colors",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-range-track-color",
+									"title": "Track Color",
+									"type": "text",
+									"default": "var(--neutral-ultra-light)",
+									"cssVariable": "--wsf-field-range-track-color",
+									"target": "input[type=range]"
+								},
+								{
+									"id": "f-field-range-track-lower-color",
+									"title": "Left Track Color",
+									"type": "text",
+									"default": "var(--neutral-light)",
+									"cssVariable": "--wsf-field-range-track-lower-color",
+									"target": "input[type=range]"
+								},
+								{
+									"id": "f-field-range-track-upper-color",
+									"title": "Right Track Color",
+									"type": "text",
+									"default": "var(--neutral-ultra-light)",
+									"cssVariable": "--wsf-field-range-track-upper-color",
+									"target": "input[type=range]"
+								},
+								{
+									"id": "f-field-range-thumb-color",
+									"title": "Thumb Color",
+									"type": "text",
+									"default": "var(--primary)",
+									"cssVariable": "--wsf-field-range-thumb-color",
+									"target": "input[type=range]"
+								},
+								{
+									"id": "f-field-range-tickmark-color",
+									"title": "Tickmark Color",
+									"type": "text",
+									"default": "var(--neutral)",
+									"cssVariable": "--wsf-field-range-tickmark-color",
+									"target": "input[type=range] + datalist option"
+								},
+								{
+									"id": "f-field-range-tickmark-label-color",
+									"title": "Tickmark Label Color",
+									"type": "text",
+									"default": "var(--neutral)",
+									"cssVariable": "--wsf-field-range-tickmark-label-color",
+									"target": "input[type=range] + datalist option"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "f-field-types-styles",
+					"title": "Other Field Types",
+					"type": "accordion-container",
+					"displayWhen": [
+						"option-forms",
+						"on"
+					],
+					"content": [
+						{
+							"id": "f-field-date-time",
+							"title": "Date/Time",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-datetime-calendar-border-style",
+									"title": "Calendar Border Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"none",
+										"dotted",
+										"dashed",
+										"solid",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset",
+										"initial",
+										"inherit"
+									]
+								},
+								{
+									"id": "f-field-datetime-calendar-border-width",
+									"title": "Calendar Border Width",
+									"type": "text",
+									"default": "1px"
+								},
+								{
+									"id": "f-field-datetime-calendar-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-s"
+								},
+								{
+									"id": "f-field-datetime-calendar-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"inherit"
+									]
+								},
+								{
+									"id": "f-field-datetime-calendar-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "400",
+									"placeholder": "e.g. 400, 500, 600"
+								},
+								{
+									"id": "f-field-datetime-calendar-letter-spacing",
+									"title": "Letter Spacing",
+									"type": "text",
+									"default": "--text-letter-spacing"
+								},
+								{
+									"id": "f-field-datetime-calendar-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height"
+								},
+								{
+									"id": "f-field-datetime-calendar-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"underline",
+										"line-through",
+										"overline",
+										"none",
+										"inherit"
+									]
+								},
+								{
+									"id": "f-field-datetime-calendar-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"none",
+										"inherit"
+									]
+								},
+								{
+									"id": "f-field-datetime-padding-vertical",
+									"title": "Block Padding",
+									"type": "text",
+									"default": "6px"
+								},
+								{
+									"id": "f-field-datetime-padding-horizontal",
+									"title": "Inline Padding",
+									"type": "text",
+									"default": "8px"
+								}
+							]
+						},
+						{
+							"id": "f-field-navigation",
+							"title": "Navigation",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-navigation-border-style",
+									"title": "Border Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"none",
+										"dotted",
+										"dashed",
+										"solid",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset",
+										"initial",
+										"inherit"
+									]
+								},
+								{
+									"id": "f-field-navigation-border-width",
+									"title": "Border Width",
+									"type": "text",
+									"default": "1px"
+								}
+							]
+						},
+						{
+							"id": "f-field-file",
+							"title": "File",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-file-dropzone-border-style",
+									"title": "Dropzone Border Style",
+									"type": "select",
+									"default": "solid",
+									"options": [
+										"none",
+										"dotted",
+										"dashed",
+										"solid",
+										"double",
+										"groove",
+										"ridge",
+										"inset",
+										"outset",
+										"initial",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-file-dropzonejs-border-style",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-border-width",
+									"title": "Dropzone Border Width",
+									"type": "text",
+									"default": "1px",
+									"cssVariable": "--wsf-field-file-dropzonejs-border-width",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-radius",
+									"title": "Dropzone Border Radius",
+									"type": "text",
+									"default": "--radius",
+									"cssVariable": "--wsf-field-file-dropzonejs-border-radius",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-padding-inline",
+									"title": "Dropzone Inline Padding",
+									"type": "text",
+									"default": "--wsf-form-grid-gap",
+									"cssVariable": "--wsf-field-file-dropzonejs-padding-horizontal",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-padding-block",
+									"title": "Dropzone Block Padding",
+									"type": "text",
+									"default": "--wsf-form-grid-gap",
+									"cssVariable": "--wsf-field-file-dropzonejs-padding-vertical",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-progress-radius",
+									"title": "Progress Border Radius",
+									"type": "text",
+									"default": "--radius",
+									"cssVariable": "--wsf-field-file-dropzonejs-progress-radius",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-progress-gap",
+									"title": "Progress Gap",
+									"type": "text",
+									"default": "5px",
+									"cssVariable": "--wsf-field-file-dropzonejs-progress-gap",
+									"target": ".dropzone"
+								},
+								{
+									"id": "f-field-file-dropzone-progress-height",
+									"title": "Progress Height",
+									"type": "text",
+									"default": "10px",
+									"cssVariable": "--wsf-field-file-dropzonejs-progress-height",
+									"target": ".dropzone"
+								}
+							]
+						},
+						{
+							"id": "f-field-text-editor",
+							"title": "Text Editor",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "f-field-text-editor-font-size",
+									"title": "Font Size",
+									"type": "text",
+									"default": "--text-s",
+									"cssVariable": "--wsf-field-texteditor-font-size",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-font-style",
+									"title": "Font Style",
+									"type": "select",
+									"default": "normal",
+									"options": [
+										"normal",
+										"italic",
+										"oblique",
+										"initial",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-texteditor-font-style",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-font-weight",
+									"title": "Font Weight",
+									"type": "text",
+									"default": "400",
+									"placeholder": "e.g. 400, 500, 600",
+									"cssVariable": "--wsf-field-texteditor-font-weight",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-letter-spacing",
+									"title": "Letter Spacing",
+									"type": "text",
+									"default": "--text-letter-spacing",
+									"cssVariable": "--wsf-field-texteditor-letter-spacing",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-line-height",
+									"title": "Line Height",
+									"type": "text",
+									"default": "--text-line-height",
+									"cssVariable": "--wsf-field-texteditor-line-height",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-text-decoration",
+									"title": "Text Decoration",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"none",
+										"underline",
+										"line-through",
+										"overline",
+										"initial",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-texteditor-text-decoration",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-text-transform",
+									"title": "Text Transform",
+									"type": "select",
+									"default": "none",
+									"options": [
+										"none",
+										"uppercase",
+										"lowercase",
+										"capitalize",
+										"initial",
+										"inherit"
+									],
+									"cssVariable": "--wsf-field-texteditor-text-transform",
+									"target": "[data-text-editor] p"
+								},
+								{
+									"id": "f-field-text-editor-p-margin-bottom",
+									"title": "<p> Margin Bottom",
+									"type": "text",
+									"default": "1em",
+									"cssVariable": "--wsf-field-texteditor-p-margin-bottom",
+									"target": "[data-text-editor] p"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

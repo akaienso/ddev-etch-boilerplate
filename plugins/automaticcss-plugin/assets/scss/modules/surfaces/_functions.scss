@@ -1,0 +1,21 @@
+// This function checks for surface relationships
+// and appends the surface selectors to a dynamic selector string.
+// Use the function like this: $selector_string: '.bg--#{$color}' + get_surface_selectors($color);
+// Change .bg--#{$color} to the desired base selector.
+// Then output $selector_string as the final selector.
+@function get_surface_selectors($color) {
+  $selector_string: "";
+  $i: 1;
+
+  @each $surface, $props in $surfaces {
+    @if map-get($props, "relationship") == $color {
+      $custom-name: map-get($props, "name");
+      $selector_string: $selector_string +
+        ", .surface-#{$i}, .surface-#{$custom-name}";
+
+      $i: $i + 1;
+    }
+  }
+
+  @return $selector_string;
+}

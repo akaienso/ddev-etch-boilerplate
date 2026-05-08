@@ -1,0 +1,33 @@
+$f-form-border-radius: 0 !default;
+$f-form-border-width: 0px !default;
+$f-form-border-style: solid !default;
+
+$f-form-grid-gap: 20px !default;
+$f-form-padding-inline: 0px !default;
+$f-form-padding-block: 0px !default;
+
+$form-use-global-transition-option: on !default;
+$f-form-transition-timing-function: ease-in-out !default;
+$f-form-transition-duration: 0.3s !default;
+
+$f-form-font-size: var(--text-m) !default;
+$f-form-font-size-small: var(--text-s) !default;
+$f-form-font-size-large: var(--text-l) !default;
+
+$f-form-font-style: normal !default;
+$f-form-font-weight: normal !default;
+$f-form-letter-spacing: normal !default;
+$f-form-line-height: var(--text-line-height) !default;
+$f-form-text-decoration: none !default;
+$f-form-text-transform: none !default;
+
+
+// Colors
+$f-form-color-background: transparent !default;
+$f-form-color-base: var(--text-dark) !default;
+$f-form-color-base-contrast: var(--text-light) !default;
+$f-form-color-accent: var(--primary) !default;
+$f-form-color-neutral: var(--neutral-light) !default;
+$f-form-color-primary: var(--primary) !default;
+$f-form-color-secondary: var(--secondary) !default;
+$f-form-border-color: transparent !default;

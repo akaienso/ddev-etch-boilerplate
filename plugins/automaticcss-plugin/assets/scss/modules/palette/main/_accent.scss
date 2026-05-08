@@ -1,0 +1,70 @@
+// accent Options
+$option-accent-clr: on !default;
+
+// OKLCH
+$accent-l-oklch: 0.66 !default;
+$accent-c-oklch: 0.15 !default;
+$accent-h-oklch: 21.57 !default;
+$accent-hover-l-oklch: 0.76 !default;
+$accent-hover-c-oklch: 0.15 !default;
+$accent-hover-h-oklch: 21.57 !default;
+$accent-ultra-light-l-oklch: 0.95 !default;
+$accent-ultra-light-c-oklch: 0.15 !default;
+$accent-ultra-light-h-oklch: 21.57 !default;
+$accent-light-l-oklch: 0.85 !default;
+$accent-light-c-oklch: 0.15 !default;
+$accent-light-h-oklch: 21.57 !default;
+$accent-dark-l-oklch: 0.25 !default;
+$accent-dark-c-oklch: 0.15 !default;
+$accent-dark-h-oklch: 21.57 !default;
+$accent-ultra-dark-l-oklch: 0.10 !default;
+$accent-ultra-dark-c-oklch: 0.15 !default;
+$accent-ultra-dark-h-oklch: 21.57 !default;
+$accent-semi-light-l-oklch: 0.60 !default;
+$accent-semi-light-c-oklch: 0.15 !default;
+$accent-semi-light-h-oklch: 21.57 !default;
+$accent-semi-dark-l-oklch: 0.40 !default;
+$accent-semi-dark-c-oklch: 0.15 !default;
+$accent-semi-dark-h-oklch: 21.57 !default;
+
+@if $option-palette-unify-brand-lightness == on {
+  $accent-l-oklch: $unified-lightness-value;
+}
+
+// Custom Scheme Controls for Main Color
+$accent-l-alt-oklch: null !default;
+$accent-c-alt-oklch: null !default;
+
+// Custom Scheme for Hover Shade
+$accent-hover-l-alt-oklch: null !default;
+$accent-hover-c-alt-oklch: null !default;
+
+// Accent Color Map
+$color-accent:(); // Initialize Map
+@if $option-accent-clr == on {
+  $color-accent: (
+    "main": (
+      "accent": oklch($accent-l-oklch $accent-c-oklch $accent-h-oklch),
+      "accent-hover": oklch($accent-hover-l-oklch $accent-hover-c-oklch $accent-hover-h-oklch),
+      "accent-ultra-light": oklch($accent-ultra-light-l-oklch $accent-ultra-light-c-oklch $accent-ultra-light-h-oklch),
+      "accent-light": oklch($accent-light-l-oklch $accent-light-c-oklch $accent-light-h-oklch),
+      "accent-semi-light": oklch($accent-semi-light-l-oklch $accent-semi-light-c-oklch $accent-semi-light-h-oklch),
+      "accent-semi-dark": oklch($accent-semi-dark-l-oklch $accent-semi-dark-c-oklch $accent-semi-dark-h-oklch),
+      "accent-dark": oklch($accent-dark-l-oklch $accent-dark-c-oklch $accent-dark-h-oklch),
+      "accent-ultra-dark": oklch($accent-ultra-dark-l-oklch $accent-ultra-dark-c-oklch $accent-ultra-dark-h-oklch),
+    ),
+    "alt": (
+      "accent-alt": oklch(
+        if($accent-l-alt-oklch, $accent-l-alt-oklch, $accent-l-oklch)
+        if($accent-c-alt-oklch, $accent-c-alt-oklch, $accent-c-oklch)
+        $accent-h-oklch
+      ),
+      "accent-hover-alt": oklch(
+        if($accent-hover-l-alt-oklch, $accent-hover-l-alt-oklch, $accent-hover-l-oklch)
+        if($accent-hover-c-alt-oklch, $accent-hover-c-alt-oklch, $accent-hover-c-oklch)
+        $accent-hover-h-oklch
+      ),
+    )
+  );
+}
+

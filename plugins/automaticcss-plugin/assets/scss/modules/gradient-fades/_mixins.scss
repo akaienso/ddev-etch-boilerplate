@@ -1,0 +1,79 @@
+@mixin fade($axis, $amount: 25%) {
+	--fade-amount: #{$amount};
+
+	@if $axis == 'block' {
+	  -webkit-mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black var(--fade-amount),
+		black calc(100% - var(--fade-amount)),
+		transparent 100%
+	  );
+	  mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black var(--fade-amount),
+		black calc(100% - var(--fade-amount)),
+		transparent 100%
+	  );
+	} @else if $axis == 'inline' {
+	  -webkit-mask-image: linear-gradient(
+		to right,
+		transparent 0%,
+		black var(--fade-amount),
+		black calc(100% - var(--fade-amount)),
+		transparent 100%
+	  );
+	  mask-image: linear-gradient(
+		to right,
+		transparent 0%,
+		black var(--fade-amount),
+		black calc(100% - var(--fade-amount)),
+		transparent 100%
+	  );
+	} @else if $axis == 'top' {
+	  -webkit-mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	  mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	} @else if $axis == 'bottom' {
+	  -webkit-mask-image: linear-gradient(
+		to top,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	  mask-image: linear-gradient(
+		to top,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	} @else if $axis == 'left' {
+	  -webkit-mask-image: linear-gradient(
+		to right,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	  mask-image: linear-gradient(
+		to right,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	} @else if $axis == 'right' {
+	  -webkit-mask-image: linear-gradient(
+		to left,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	  mask-image: linear-gradient(
+		to left,
+		transparent 0%,
+		black var(--fade-amount)
+	  );
+	}
+  }

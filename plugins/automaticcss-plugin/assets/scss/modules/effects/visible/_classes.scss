@@ -1,0 +1,226 @@
+@import "vars";
+
+// ==========================================================================
+// Visible Animation Utility Classes (.on-visible--)
+// JavaScript-powered with Intersection Observer - plays once and stays visible
+// Composable: combine multiple classes like "on-visible--fade on-visible--grow"
+// ==========================================================================
+
+// Base transition for all visible animations (uses CSS transitions, not keyframes)
+@if $option-visible-fade == on or $option-visible-float == on or $option-visible-sink == on or $option-visible-slide == on or $option-visible-grow == on or $option-visible-shrink == on or $option-visible-blur == on {
+	// Build transition-property list based on enabled effects
+	$visible-transition-properties: ();
+	
+	@if $option-visible-fade == on {
+		$visible-transition-properties: append($visible-transition-properties, opacity, comma);
+	}
+	
+	@if $option-visible-float == on or $option-visible-sink == on or $option-visible-slide == on {
+		$visible-transition-properties: append($visible-transition-properties, translate, comma);
+	}
+	
+	@if $option-visible-grow == on or $option-visible-shrink == on {
+		$visible-transition-properties: append($visible-transition-properties, scale, comma);
+	}
+	
+	@if $option-visible-blur == on {
+		$visible-transition-properties: append($visible-transition-properties, filter, comma);
+	}
+	
+	[class*="on-visible--"]:not([class*="on-visible-all"]) {
+		transition-property: #{$visible-transition-properties};
+		transition-duration: var(--visible-duration, 0.6s);
+		transition-timing-function: var(--visible-timing, cubic-bezier(0.4, 0, 0.2, 1));
+		transition-delay: var(--visible-delay, 0s);
+	}
+}
+
+// Each class sets initial hidden state and visible state
+@if $option-visible-fade == on {
+	.on-visible--fade {
+		opacity: var(--visible-opacity-start, 0);
+		
+		&.acss-visible {
+			opacity: 1;
+		}
+	}
+}
+
+@if $option-visible-float == on {
+	.on-visible--float {
+		translate: 0 var(--visible-float-distance, 40px);
+		
+		&.acss-visible {
+			translate: 0 0;
+		}
+	}
+}
+
+@if $option-visible-sink == on {
+	.on-visible--sink {
+		translate: 0 calc(var(--visible-sink-distance, 40px) * -1);
+		
+		&.acss-visible {
+			translate: 0 0;
+		}
+	}
+}
+
+@if $option-visible-slide == on {
+	.on-visible--slide-left {
+		translate: var(--visible-slide-distance, 40px) 0;
+		
+		&.acss-visible {
+			translate: 0 0;
+		}
+	}
+	
+	.on-visible--slide-right {
+		translate: calc(var(--visible-slide-distance, 40px) * -1) 0;
+		
+		&.acss-visible {
+			translate: 0 0;
+		}
+	}
+}
+
+@if $option-visible-grow == on {
+	.on-visible--grow {
+		scale: var(--visible-scale-start, 0.9);
+		
+		&.acss-visible {
+			scale: 1;
+		}
+	}
+}
+
+@if $option-visible-shrink == on {
+	.on-visible--shrink {
+		scale: var(--visible-scale-shrink, 1.1);
+		
+		&.acss-visible {
+			scale: 1;
+		}
+	}
+}
+
+@if $option-visible-blur == on {
+	.on-visible--blur {
+		filter: blur(var(--visible-blur-amount, 8px));
+		
+		&.acss-visible {
+			filter: blur(0);
+		}
+	}
+}
+
+// Visible all - applies animation to direct children
+@if $option-visible-fade == on or $option-visible-float == on or $option-visible-sink == on or $option-visible-slide == on or $option-visible-grow == on or $option-visible-shrink == on or $option-visible-blur == on {
+	$visible-transition-properties: ();
+	
+	@if $option-visible-fade == on {
+		$visible-transition-properties: append($visible-transition-properties, opacity, comma);
+	}
+	
+	@if $option-visible-float == on or $option-visible-sink == on or $option-visible-slide == on {
+		$visible-transition-properties: append($visible-transition-properties, translate, comma);
+	}
+	
+	@if $option-visible-grow == on or $option-visible-shrink == on {
+		$visible-transition-properties: append($visible-transition-properties, scale, comma);
+	}
+	
+	@if $option-visible-blur == on {
+		$visible-transition-properties: append($visible-transition-properties, filter, comma);
+	}
+	
+	[class*="on-visible-all--"] > * {
+		transition-property: #{$visible-transition-properties};
+		transition-duration: var(--visible-duration, 0.6s);
+		transition-timing-function: var(--visible-timing, cubic-bezier(0.4, 0, 0.2, 1));
+		transition-delay: var(--visible-delay, 0s);
+	}
+}
+
+@if $option-visible-fade == on {
+	.on-visible-all--fade > * {
+		opacity: var(--visible-opacity-start, 0);
+	}
+	
+	.on-visible-all--fade.acss-visible > * {
+		opacity: 1;
+	}
+}
+
+@if $option-visible-float == on {
+	.on-visible-all--float > * {
+		translate: 0 var(--visible-float-distance, 40px);
+	}
+	
+	.on-visible-all--float.acss-visible > * {
+		translate: 0 0;
+	}
+}
+
+@if $option-visible-sink == on {
+	.on-visible-all--sink > * {
+		translate: 0 calc(var(--visible-sink-distance, 40px) * -1);
+	}
+	
+	.on-visible-all--sink.acss-visible > * {
+		translate: 0 0;
+	}
+}
+
+@if $option-visible-slide == on {
+	.on-visible-all--slide-left > * {
+		translate: var(--visible-slide-distance, 40px) 0;
+	}
+	
+	.on-visible-all--slide-left.acss-visible > * {
+		translate: 0 0;
+	}
+	
+	.on-visible-all--slide-right > * {
+		translate: calc(var(--visible-slide-distance, 40px) * -1) 0;
+	}
+	
+	.on-visible-all--slide-right.acss-visible > * {
+		translate: 0 0;
+	}
+}
+
+@if $option-visible-grow == on {
+	.on-visible-all--grow > * {
+		scale: var(--visible-scale-start, 0.9);
+	}
+	
+	.on-visible-all--grow.acss-visible > * {
+		scale: 1;
+	}
+}
+
+@if $option-visible-shrink == on {
+	.on-visible-all--shrink > * {
+		scale: var(--visible-scale-shrink, 1.1);
+	}
+	
+	.on-visible-all--shrink.acss-visible > * {
+		scale: 1;
+	}
+}
+
+@if $option-visible-blur == on {
+	.on-visible-all--blur > * {
+		filter: blur(var(--visible-blur-amount, 8px));
+	}
+	
+	.on-visible-all--blur.acss-visible > * {
+		filter: blur(0);
+	}
+}
+
+// Stagger: auto-delay children based on sibling position (limited browser support)
+[class*="on-visible-all--"].on-visible--stagger > * {
+	transition-delay: calc(#{"sibling-index()"} * var(--visible-stagger-interval, 0.1s));
+}

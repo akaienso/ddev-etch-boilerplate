@@ -1,0 +1,216 @@
+// General
+$custom-overlay-pseudo-element: "before" !default;
+
+// Overlay 1
+$overlay-1-name: "1" !default;
+$overlay-1-bg-color: null !default;
+$overlay-1-background-type: "gradient" !default;
+$overlay-1-background: null !default;
+$overlay-1-background-image: null !default;
+$overlay-1-background-size: null !default;
+$overlay-1-background-position: null !default;
+$overlay-1-background-attachment: static !default;
+$overlay-1-background-repeat: repeat !default;
+$overlay-1-background-blur: null !default;
+$overlay-1-blend-mode: null !default;
+$overlay-1-opacity: .7 !default;
+$overlay-1-border-radius: null !default;
+$overlay-1-animation: null !default;
+$overlay-1-overlay: null !default;
+$overlay-1-inset: null !default;
+
+$overlay-1-active: false;
+@if $overlay-1-bg-color != null or $overlay-1-background != null or $overlay-1-background-image != null {
+	$overlay-1-active: true;
+}
+
+// Overlay 2
+$overlay-2-name: "2" !default;
+$overlay-2-bg-color: null !default;
+$overlay-2-background-type: "gradient" !default;
+$overlay-2-background: null !default;
+$overlay-2-background-image: null !default;
+$overlay-2-background-size: null !default;
+$overlay-2-background-position: null !default;
+$overlay-2-background-attachment: static !default;
+$overlay-2-background-repeat: repeat !default;
+$overlay-2-background-blur: null !default;
+$overlay-2-blend-mode: null !default;
+$overlay-2-opacity: .7 !default;
+$overlay-2-border-radius: null !default;
+$overlay-2-animation: null !default;
+$overlay-2-overlay: null !default;
+$overlay-2-inset: null !default;
+
+$overlay-2-active: false;
+@if $overlay-2-bg-color != null or $overlay-2-background != null or $overlay-2-background-image != null {
+	$overlay-2-active: true;
+}
+
+// Overlay 3
+$overlay-3-name: "3" !default;
+$overlay-3-bg-color: null !default;
+$overlay-3-background-type: "gradient" !default;
+$overlay-3-background: null !default;
+$overlay-3-background-image: null !default;
+$overlay-3-background-size: null !default;
+$overlay-3-background-position: null !default;
+$overlay-3-background-attachment: static !default;
+$overlay-3-background-repeat: repeat !default;
+$overlay-3-background-blur: null !default;
+$overlay-3-blend-mode: null !default;
+$overlay-3-opacity: .7 !default;
+$overlay-3-border-radius: null !default;
+$overlay-3-animation: null !default;
+$overlay-3-overlay: null !default;
+$overlay-3-inset: null !default;
+
+$overlay-3-active: false;
+@if $overlay-3-bg-color != null or $overlay-3-background != null or $overlay-3-background-image != null {
+	$overlay-3-active: true;
+}
+
+// Overlay 4
+$overlay-4-name: "4" !default;
+$overlay-4-bg-color: null !default;
+$overlay-4-background-type: "gradient" !default;
+$overlay-4-background: null !default;
+$overlay-4-background-image: null !default;
+$overlay-4-background-size: null !default;
+$overlay-4-background-position: null !default;
+$overlay-4-background-attachment: static !default;
+$overlay-4-background-repeat: repeat !default;
+$overlay-4-background-blur: null !default;
+$overlay-4-blend-mode: null !default;
+$overlay-4-opacity: .7 !default;
+$overlay-4-border-radius: null !default;
+$overlay-4-animation: null !default;
+$overlay-4-overlay: null !default;
+$overlay-4-inset: null !default;
+
+$overlay-4-active: false;
+@if $overlay-4-bg-color != null or $overlay-4-background != null or $overlay-4-background-image != null {
+	$overlay-4-active: true;
+}
+
+// Overlay 5
+$overlay-5-name: "5" !default;
+$overlay-5-bg-color: null !default;
+$overlay-5-background-type: "gradient" !default;
+$overlay-5-background: null !default;
+$overlay-5-background-image: null !default;
+$overlay-5-background-size: null !default;
+$overlay-5-background-position: null !default;
+$overlay-5-background-attachment: static !default;
+$overlay-5-background-repeat: repeat !default;
+$overlay-5-background-blur: null !default;
+$overlay-5-blend-mode: null !default;
+$overlay-5-opacity: .7 !default;
+$overlay-5-border-radius: null !default;
+$overlay-5-animation: null !default;
+$overlay-5-overlay: null !default;
+$overlay-5-inset: null !default;
+
+$overlay-5-active: false;
+@if $overlay-5-bg-color != null or $overlay-5-background != null or $overlay-5-background-image != null {
+	$overlay-5-active: true;
+}
+
+
+$custom-overlays: (
+  1: (
+    name: $overlay-1-name,
+    bg-color: $overlay-1-bg-color,
+	type: $overlay-1-background-type,
+    background: $overlay-1-background,
+	background-image: $overlay-1-background-image,
+	background-blur: $overlay-1-background-blur,
+	opacity: $overlay-1-opacity,
+    background-size: $overlay-1-background-size,
+    background-position: $overlay-1-background-position,
+    background-attachment: $overlay-1-background-attachment,
+    background-repeat: $overlay-1-background-repeat,
+	blend-mode: $overlay-1-blend-mode,
+    border-radius: $overlay-1-border-radius,
+    animation: $overlay-1-animation,
+    overlay: $overlay-1-overlay,
+	inset: $overlay-1-inset,
+	isActive: $overlay-1-active
+  ),
+  2: (
+    name: $overlay-2-name,
+    bg-color: $overlay-2-bg-color,
+	type: $overlay-2-background-type,
+    background: $overlay-2-background,
+	background-image: $overlay-2-background-image,
+	background-blur: $overlay-2-background-blur,
+	opacity: $overlay-2-opacity,
+    background-size: $overlay-2-background-size,
+    background-position: $overlay-2-background-position,
+    background-attachment: $overlay-2-background-attachment,
+    background-repeat: $overlay-2-background-repeat,
+	blend-mode: $overlay-2-blend-mode,
+    border-radius: $overlay-2-border-radius,
+    animation: $overlay-2-animation,
+    overlay: $overlay-2-overlay,
+	inset: $overlay-2-inset,
+	isActive: $overlay-2-active
+  ),
+  3: (
+    name: $overlay-3-name,
+    bg-color: $overlay-3-bg-color,
+	type: $overlay-3-background-type,
+    background: $overlay-3-background,
+	background-image: $overlay-3-background-image,
+	background-blur: $overlay-3-background-blur,
+	opacity: $overlay-3-opacity,
+    background-size: $overlay-3-background-size,
+    background-position: $overlay-3-background-position,
+    background-attachment: $overlay-3-background-attachment,
+    background-repeat: $overlay-3-background-repeat,
+	blend-mode: $overlay-3-blend-mode,
+    border-radius: $overlay-3-border-radius,
+    animation: $overlay-3-animation,
+    overlay: $overlay-3-overlay,
+	inset: $overlay-3-inset,
+	isActive: $overlay-3-active
+  ),
+  4: (
+    name: $overlay-4-name,
+    bg-color: $overlay-4-bg-color,
+	type: $overlay-4-background-type,
+    background: $overlay-4-background,
+	background-image: $overlay-4-background-image,
+	background-blur: $overlay-4-background-blur,
+	opacity: $overlay-4-opacity,
+    background-size: $overlay-4-background-size,
+    background-position: $overlay-4-background-position,
+    background-attachment: $overlay-4-background-attachment,
+    background-repeat: $overlay-4-background-repeat,
+	blend-mode: $overlay-4-blend-mode,
+    border-radius: $overlay-4-border-radius,
+    animation: $overlay-4-animation,
+    overlay: $overlay-4-overlay,
+	inset: $overlay-4-inset,
+	isActive: $overlay-4-active
+  ),
+  5: (
+    name: $overlay-5-name,
+    bg-color: $overlay-5-bg-color,
+	type: $overlay-5-background-type,
+    background: $overlay-5-background,
+	background-image: $overlay-5-background-image,
+	background-blur: $overlay-5-background-blur,
+	opacity: $overlay-5-opacity,
+    background-size: $overlay-5-background-size,
+    background-position: $overlay-5-background-position,
+    background-attachment: $overlay-5-background-attachment,
+    background-repeat: $overlay-5-background-repeat,
+	blend-mode: $overlay-5-blend-mode,
+    border-radius: $overlay-5-border-radius,
+    animation: $overlay-5-animation,
+    overlay: $overlay-5-overlay,
+	inset: $overlay-5-inset,
+	isActive: $overlay-5-active
+  )
+);

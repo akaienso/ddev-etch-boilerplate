@@ -1,0 +1,150 @@
+@if $option-load-default-body-styles == on or $option-load-default-heading-styles == on or $option-load-default-text-styles == on {
+
+	/* Feat: Body, Heading, or Text Defaults */
+	html {
+		@if $output-root-font-size != false {
+			font-size: var(--root-font-size) !important;
+		}
+	}
+}
+
+$body-selector: 'body';
+$p-selector: 'p';
+
+@if $option-load-default-body-styles == on {
+
+	/* Feat: Body Defaults */
+	@if variable-exists(is-gutenberg) and $is-gutenberg == true {
+		$body-selector: 'body';
+		$p-selector: 'p';
+	}
+
+	@else {
+		$body-selector: ':where(body)';
+		$p-selector: ':where(p)';
+	}
+
+	#{$body-selector} {
+		// Set body font size
+		font-size: var(--text-m);
+		overflow-x: clip;
+
+		// Set default text styles
+		@each $prop, $value in $textDefaultStyles {
+			@if $value != null and $prop != "max-width" {
+				#{$prop}: var(--text-#{$prop});
+			}
+		}
+
+		// Set default background color
+		background: var(--body-bg-color);
+
+		// Default paragraph length cap
+		@if $text-max-width != null {
+
+			p,
+			:where(ul:not([class], ol:not([class])) li) {
+				max-inline-size: var(--text-m-length, $text-max-width);
+				width: 100%;
+			}
+		}
+
+		// Set transition (for color scheme)
+		transition: background var(--transition);
+	}
+
+	#{$p-selector} {
+		line-height: var(--text-line-height, $base-text-lh);
+	}
+
+}
+
+// Default link styles
+$link-default-not-selectors: null;
+
+@if $option-link-default-not == off or $link-default-not == null {
+	$link-default-not-selectors: "[class*=" btn--"]";
+}
+
+@else {
+	$link-default-not-selectors: "[class*=" btn--"], #{$link-default-not}";
+}
+
+@if $option-load-default-link-styles == on {
+
+	/* Feat: Link Defaults */
+	body a:where(:not(#{$link-default-not-selectors})) {
+		color: var(--link-color, $link-color);
+		font-weight: var(--link-weight, $link-weight);
+		-webkit-text-decoration: var(--link-decoration, $link-decoration);
+		text-decoration: var(--link-decoration, $link-decoration);
+		text-underline-offset: var(--link-underline-offset, $link-underline-offset);
+
+		@if $link-decoration-color != null {
+			text-decoration-color: var(--link-decoration-color);
+		}
+
+		@if $link-decoration-thickness != null {
+			text-decoration-thickness: var(--link-decoration-thickness);
+		}
+
+		transition: var(--link-transition, var(--transition));
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				color: var(--link-color-hover, $link-color-hover);
+
+				@if $link-decoration-hover != "inherit" {
+					-webkit-text-decoration: var(--link-decoration-hover, $link-decoration-hover);
+					text-decoration: var(--link-decoration-hover, $link-decoration-hover);
+				}
+
+				@if $link-decoration-color-hover != null {
+					--link-decoration-color: var(--link-decoration-color-hover);
+				}
+
+				@if $link-decoration-thickness != null {
+					text-decoration-thickness: var(--link-decoration-thickness);
+				}
+			}
+		}
+	}
+}
+
+@if $option-load-default-heading-styles == on {
+	/* Feat: Heading Defaults */
+	// Apply default heading styles to all headings
+	$headings-list: (
+	);
+
+@for $i from 1 through 6 {
+	$headings-list: append($headings-list, 'h#{$i}, :where(.h#{$i}),');
+}
+
+#{$headings-list} {
+	@each $prop, $value in $headingDefaultStyles {
+		@if $value != null {
+			#{$prop}: var(--heading-#{$prop});
+		}
+	}
+}
+
+// Apply specific heading styles to each heading
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-size: var(--h#{$i});
+		// Directly access the map for the current heading level h#{$i}
+		$current-heading-styles: map-get($headingGlobalStyles, 'h#{$i}');
+
+		// Check if there is a valid map for the current heading
+		@if $current-heading-styles != null {
+			@each $prop, $value in $current-heading-styles {
+				@if $value != null {
+					// Output the property with a CSS variable
+					#{$prop}: var(--h#{$i}-#{$prop});
+				}
+			}
+		}
+	}
+}
+}

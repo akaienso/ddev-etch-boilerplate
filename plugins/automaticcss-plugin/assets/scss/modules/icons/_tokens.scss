@@ -1,0 +1,23 @@
+@if $option-icons == on {
+	/* Feat: Icon Variables */
+	:root {
+		// Generate global icon tokens
+		@each $prop, $value in $icon-styles {
+			@if $value != null {
+				--icon-#{$prop}: #{$value};
+			}
+		}
+		// Generate icon size tokens
+		@each $size, $value in $icon-sizes {
+			@if $value != null {
+				--icon-size-#{$size}: #{$value};
+			}
+		}
+		// Generate icon padding tokens (needed for boxed style at any size)
+		@each $size, $value in $icon-paddings {
+			@if $value != null {
+				--icon-padding-#{$size}: #{$value};
+			}
+		}
+	}
+}

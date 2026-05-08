@@ -1,0 +1,28 @@
+// ==========================================================================
+// Visible Animation Variables (Intersection Observer - plays once)
+// ==========================================================================
+
+// Individual Visible Animation Options
+$option-visible-fade: off !default;
+$option-visible-float: off !default;
+$option-visible-sink: off !default;
+$option-visible-slide: off !default;
+$option-visible-grow: off !default;
+$option-visible-shrink: off !default;
+$option-visible-blur: off !default;
+
+// --------------------------------------------------------------------------
+// Visible Animation Settings
+// --------------------------------------------------------------------------
+$visible-duration: 0.6s !default;
+$visible-timing: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$visible-delay: 0s !default;
+$visible-threshold: 0.2 !default;
+$visible-opacity-start: 0 !default;
+$visible-float-distance: 40px !default;
+$visible-sink-distance: 40px !default;
+$visible-slide-distance: 40px !default;
+$visible-scale-start: 0.9 !default;
+$visible-scale-shrink: 1.1 !default;
+$visible-blur-amount: 8px !default;
+$visible-stagger-interval: 0.1s !default;

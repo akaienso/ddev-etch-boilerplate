@@ -1,0 +1,18 @@
+$option-bw-color-variables: on !default;
+
+// Black and White Map
+$color-bw:(
+  "main": (
+    "white": #fff,
+    "black": #000,
+  ),
+  "alt": (
+    "white-alt": #000,
+    "black-alt": #fff,
+  ),
+);
+
+@if $option-bw-color-variables != on {
+	$color-bw: ();
+}
+

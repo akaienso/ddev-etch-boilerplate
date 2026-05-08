@@ -1,0 +1,79 @@
+@import "automatic-imports";
+
+// Tokens
+@include if-inline-tokens-off {
+	@import "modules/tokens";
+}
+// Defaults
+@include if-layer-defaults {
+	@import "modules/color-scheme/output";
+	@import "modules/reset/output";
+	@import "modules/fonts/output";
+	@import "modules/defaults/output";
+	@import "modules/blockquotes/output";
+}
+
+// Anchors, Links, Buttons
+@include if-layer-anchors {
+	@import "modules/buttons-links/buttons";
+	@import "modules/buttons-links/links/external-links/output";
+}
+
+// Cards
+@include if-layer-cards {
+	@import "modules/cards/classes";
+}
+
+// Icons
+@include if-layer-icons {
+	@import "modules/icons/classes";
+}
+
+// Utilities
+@include if-layer-utilities {
+	@import "modules/overflow-detection/output";
+	@import "modules/boxed-layout/output";
+	@import "modules/scrolling/output";
+	@import "modules/accessibility/accessibility";
+	@import "modules/accessibility/selection-styling";
+	@import "modules/focus/focus-styling";
+	@import "modules/offset-content/offset-content";
+	@import "modules/sections/defaults";
+	@import "modules/background-classes/classes";
+	@import "modules/surfaces/classes";
+	@import "modules/overlays/custom/classes";
+	@import "modules/contextual-colors/output";
+	@import "modules/grid/variable-grid/output";
+	@import "modules/color-relationships/output";
+	@import "modules/sections/utilities";
+	@import "modules/overlays/classes";
+	@import "modules/text/text";
+	@import "modules/line-clamp/utilities";
+	@import "modules/position/sticky/classes";
+	@import "modules/object-fit/object-fit";
+	@import "modules/columns/columns";
+	@import "modules/grid/auto-grid/classes";
+	@import "modules/flex-grid/flex-grids";
+	@import "modules/order/classes";
+	@import "modules/width/output";
+	@import "modules/lists/output";
+	@import "modules/ribbons";
+	@import "modules/spacing/gap/gaps";
+	@import "modules/borders/classes";
+	@import "modules/dividers/classes";
+	@import "modules/buttons-links/links/output";
+	@import "modules/effects/index";
+	@import "modules/dashboard-icon-display/output";
+	@import "modules/borders/inverted-radius/utilities";
+	@import "modules/gradient-fades/classes";
+	@import "modules/forms/ws-form/output";
+	@import "modules/is-bg/output";
+}
+
+// Content Grid Should Not Be in a Layer
+@import "modules/grid/content-grid";
+
+//Other
+@import "modules/spacing/smart-spacing/smart-spacing";
+@import "modules/loom-fix";
+

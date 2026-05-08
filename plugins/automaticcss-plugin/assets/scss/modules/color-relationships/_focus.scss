@@ -1,0 +1,13 @@
+@if $option-relate-bg-text == on {
+	@each $color, $value in $contextual-focus-relationships {
+		@if $value != null and $value != '' {
+			.bg--#{$color} {
+				--focus-color: var(--bg-#{$color}-focus);
+				// Account for buttons which have higher specificity
+				[class*="btn"]:not(.unrelate) {
+					--focus-color: var(--bg-#{$color}-focus);
+				}
+			}
+		}
+	}
+}

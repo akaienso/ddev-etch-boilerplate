@@ -1,0 +1,157 @@
+// The basic automatic.css stylesheet won't load correctly in the block editor when enqueued with add_editor_style(),
+// because the contents of html and body styles are mushed together in the .editor-styles-wrapper div, and that messes up the root font size.
+// This file mimics the contents of automatic.css in a way it can be safely enqueued with add_editor_style() in PHP.
+// It skips the root font size, which the block editor would mess up, and is fixed via JS.
+$is-gutenberg: true;
+$output-root-font-size: false;
+$option-layer-defaults: off;
+$option-layer-anchors: off;
+$option-layer-cards: off;
+$option-layer-icons: off;
+$option-layer-utilities: off;
+$option-inline-tokens: off;
+
+// Import all the maps, vars, mixins, etc.
+@import "../../automatic-imports";
+
+// Import the entire framework
+@import "../../automatic.scss";
+
+// Import accessibility badge
+@import "accessibility";
+
+
+// For some reason we need to add space below the GB page/post title.
+.editor-visual-editor__post-title-wrapper {
+	margin-block-end: 4rem;
+}
+
+// We have to select the non-frame wrapper on blog posts like this:
+#{$wp-blog-types-gb-selector} {
+	// Then we have to set the max width to ensure it's always a good post writing experience
+	// Custom blog post themes will override this area and it could be bad, so we set the
+	// value explicitly.
+	max-width: 745px;
+	margin-inline: auto;
+
+	// We also need to add smart spacing here if it's enabled.
+	@if $option-smart-spacing == on {
+		@include smart-spacing;
+	}
+}
+
+:is(#{$wp-blog-post-type-list}) {
+	// Set default background and foreground colors
+	@if $wp-post-background != null {
+		background: $wp-post-background;
+	}
+	@if $wp-post-foreground != null {
+		color: $wp-post-foreground;
+	}
+}
+
+// Post editor doesn't know if user is using content grid, so we have to
+// check and and then add it if its detected.
+@if $wp-traditional-theme == on {
+	.wp-block-post-content:has(.content--feature) {
+		@include content-grid;
+		@if $option-smart-spacing == on {
+			@include smart-spacing;
+		}
+		--content-width: 60ch;
+	}
+}
+// Images in figure tags and picture tags break due to block editor styles.
+// We have to fix them.
+:is(figure, picture):is(.content--feature, .content--feature-max, .content--full, .content--full-safe) > div {
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+body {
+	// Have to set "p" specifically to override the block editor styles
+	p {
+		font-size: var(--default-font-size, var(--text-m));
+		line-height: var(--text-line-height, $base-text-lh);
+		margin-block: 0;
+	}
+	font-size: var(--default-font-size, var(--text-m));
+	line-height: var(--text-line-height, $base-text-lh);
+	// Set default text styles
+	@each $prop, $value in $textDefaultStyles {
+		@if $value != null and $prop != "max-width" {
+			#{$prop}: var(--text-#{$prop});
+		}
+	}
+
+	// Default paragraph length cap
+	@if $text-max-width != null {
+		p, li {
+			max-inline-size: var(--text-m-length, $text-max-width);
+			width: 100%;
+		}
+	}
+}
+
+// If Traditional theme is enabled, we need these block editor overrides:
+@if $wp-traditional-theme == on {
+	// Protect the page header in the block editor
+	.editor-visual-editor__post-title-wrapper h1 {
+		max-width: 840px; // Default content width for traditional theme in block editor
+	}
+
+	// Default body styles for block editor
+	body {
+		// Set body font size
+		font-size: var(--default-font-size, var(--text-m));
+		// Set default line height
+		line-height: var(--text-line-height, $base-text-lh);
+
+		// Set default text styles
+		@each $prop, $value in $textDefaultStyles {
+			@if $value != null and $prop != "max-width" {
+				#{$prop}: var(--text-#{$prop});
+			}
+		}
+
+		// Set default background color
+		background-color: var(--body-bg-color, $body-bg-color);
+		// Default paragraph length cap
+		@if $text-max-width != null {
+			p, li {
+				max-inline-size: var(--text-m-length, $text-max-width);
+				width: 100%;
+			}
+		}
+	}
+	// Smart Spacing for block editor
+	@if $option-smart-spacing == on {
+		// Create space between header title and content
+		.editor-visual-editor__post-title-wrapper {
+			margin-block-end: calc(var(--flow-spacing) * 2);
+		}
+
+		// Normalize spacing for .wp-block elements
+		body :where(.wp-block) {
+			margin-block: 0;
+		}
+		// Smart spacing for block editor
+		:where(.wp-block-post-content),
+		// Smart spacing for utility class usage
+		.smart-spacing {
+			// > .wp-block:first-child {
+			// 	margin-block: 0;
+			// }
+			> * + div.wp-block {
+				margin-block-start: var(--flow-spacing);
+			}
+			@include smart-spacing;
+		}
+		// Revert smart spacing for metaboxes
+		@if $option-use-gutenberg-for-page-building == off {
+			.edit-post-layout__metaboxes :where(p,h1,h2,h3,h4,h5,h6,ul,ol,li) {
+			margin-block: revert;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+@if $option-focus-styles == on {
+	/* Feat: Focus Styles */
+	:root {
+			--focus-color: #{$focus-color};
+			--focus-width: #{$focus-width};
+			--focus-offset: #{$focus-offset};
+	}
+}

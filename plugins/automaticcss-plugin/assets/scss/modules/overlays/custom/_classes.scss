@@ -1,0 +1,80 @@
+@each $overlay-number, $set in $custom-overlays {
+	$name: map-get($set, name);
+	$selector: null;
+	@if $name != null {
+		$selector: ".overlay-#{$overlay-number}, .overlay-#{$name}";
+	} @else {
+		$selector: ".overlay-#{$overlay-number}";
+	}
+	$isActive: map-get($set, isActive);
+	$type: map-get($set, type);
+	$bg-color: map-get($set, bg-color);
+	$background: map-get($set, background);
+	$background-image: map-get($set, background-image);
+	$background-blur: map-get($set, background-blur);
+	$blend-mode: map-get($set, blend-mode);
+	$border-radius: map-get($set, border-radius);
+	$nested-overlay: map-get($set, overlay);
+	$animation: map-get($set, animation);
+	@if $isActive == true {
+		#{$selector} {
+			position: relative;
+			isolation: isolate;
+			&::#{$custom-overlay-pseudo-element} {
+				content: "";
+				display: flex;
+				position: absolute;
+				// User can change the background color of the overlay.
+				@if $bg-color != null {
+					background-color: var(--overlay-bg-color, var(--overlay-#{$overlay-number}-bg-color));
+				}
+				// If the overlay uses a background, load the background properties.
+				@if $type == "gradient" {
+					background-image: var(--overlay-background, var(--overlay-#{$overlay-number}-background));
+				}
+				@if $type == "image" {
+					background-image: url($background-image);
+				}
+				// If the overlay uses a background image, load the background image properties.
+				@if $type == "image" or $type == "gradient" {
+					background-size: var(--overlay-background-size, var(--overlay-#{$overlay-number}-background-size));
+					background-position: var(--overlay-background-position, var(--overlay-#{$overlay-number}-background-position));
+					background-repeat: var(--overlay-background-repeat, var(--overlay-#{$overlay-number}-background-repeat));
+					background-attachment: var(--overlay-background-attachment, var(--overlay-#{$overlay-number}-background-attachment));
+				}
+				// User can add background blur to the overlay.
+				@if $background-blur != null {
+					backdrop-filter: blur(var(--overlay-background-blur, var(--overlay-#{$overlay-number}-background-blur)));
+				}
+				// User can change the opacity of the overlay.
+				opacity: var(--overlay-opacity, var(--overlay-#{$overlay-number}-opacity));
+				// User can change the blend mode of the overlay.
+				@if $blend-mode != null {
+					mix-blend-mode: var(--overlay-blend-mode, var(--overlay-#{$overlay-number}-blend-mode));
+				}
+				// User can change the border radius of the overlay.
+				@if $border-radius != null {
+					border-radius: var(--overlay-border-radius, var(--overlay-#{$overlay-number}-border-radius));
+				}
+				// User can animate the overlay.
+				@if $animation != null {
+					animation: var(--overlay-animation, var(--overlay-#{$overlay-number}-animation));
+				}
+				// Support for nested overlays.
+				@if $nested-overlay != null {
+					border-image: fill 1 var(--overlay-overlay, var(--overlay-#{$overlay-number}-overlay));
+				}
+				// Support for blend mode.
+				@if $blend-mode != null {
+					mix-blend-mode: var(--overlay-blend-mode, var(--overlay-#{$overlay-number}-blend-mode));
+				}
+				// User can change the inset of the overlay.
+				inset: var(--overlay-inset, var(--overlay-#{$overlay-number}-inset, 0));
+				z-index: var(--overlay-z-index, var(--overlay-#{$overlay-number}-z-index, -1));
+			}
+		}
+		figure:where(:has(>img, >picture, >svg, >video, >iframe)):where(#{$selector}) {
+			--overlay-z-index: 0;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+// Odd and even numbers list for logic checks
+$odd-numbers-list: ();
+@for $i from 1 through 99 {
+    @if $i % 2 == 1 {
+        $odd-numbers-list: append($odd-numbers-list, $i);
+    }
+}
+$even-numbers-list: ();
+@for $i from 1 through 99 {
+    @if $i % 2 == 0 and $i != 2 {
+        $even-numbers-list: append($even-numbers-list, $i);
+    }
+}

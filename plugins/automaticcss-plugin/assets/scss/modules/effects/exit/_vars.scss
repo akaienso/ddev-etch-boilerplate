@@ -1,0 +1,26 @@
+// ==========================================================================
+// Exit Animation Variables
+// ==========================================================================
+
+// Individual Exit Animation Options
+$option-exit-fade: off !default;
+$option-exit-float: off !default;
+$option-exit-sink: off !default;
+$option-exit-slide: off !default;
+$option-exit-grow: off !default;
+$option-exit-shrink: off !default;
+$option-exit-blur: off !default;
+
+// --------------------------------------------------------------------------
+// Exit Animation Settings
+// --------------------------------------------------------------------------
+$exit-range-start: cover 50% !default;
+$exit-range-end: cover 100% !default;
+$exit-opacity-target: 0 !default;
+$exit-float-distance: 40px !default;
+$exit-sink-distance: 40px !default;
+$exit-slide-distance: 40px !default;
+$exit-scale-amount: 0.9 !default;
+$exit-scale-grow: 1.1 !default;
+$exit-blur-amount: 8px !default;
+$exit-stagger-interval: 5% !default;

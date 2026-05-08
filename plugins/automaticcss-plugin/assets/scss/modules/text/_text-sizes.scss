@@ -1,0 +1,35 @@
+@if $option-text-size-classes == on {
+
+	// Global styles
+	:is(.text--xxl, .text--xl, .text--l, .text--m, .text--s, .text--xs) {
+		@each $prop, $value in $textDefaultStyles {
+
+			// Color and max-width must be excluded from text size classes.
+			@if $value != null and $prop != "color" and $prop != "max-width" {
+				#{$prop}: var(--text-#{$prop});
+			}
+		}
+	}
+
+	// Individual styles
+	@each $size, $style-list in $textGlobalStyles {
+		.text--#{$size} {
+			font-size: var(--text-#{$size});
+
+			@each $prop, $value in $style-list {
+				@if $value != null and $prop != "max-width" {
+					#{$prop}: var(--text-#{$size}-#{$prop});
+				}
+			}
+		}
+
+		// Handle max-width based on the class being on a sensible element
+		.text--#{$size}:is(#{$textTargets}) {
+			@each $prop, $value in $style-list {
+				@if $value != null and $prop == "max-width" {
+					#{$prop}: var(--text-#{$size}-#{$prop});
+				}
+			}
+		}
+	}
+}

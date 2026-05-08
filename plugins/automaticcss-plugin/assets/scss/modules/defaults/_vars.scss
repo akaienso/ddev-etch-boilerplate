@@ -1,0 +1,10 @@
+$option-load-default-html-styles: on !default;
+$option-load-default-body-styles: on !default;
+$option-load-default-heading-styles: on !default;
+$option-load-default-text-styles: on !default;
+$option-load-default-link-styles: on !default;
+
+@import "headings/vars";
+@import "headings/maps";
+@import "text/vars";
+@import "text/maps";

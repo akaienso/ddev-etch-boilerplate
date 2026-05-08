@@ -1,0 +1,14 @@
+@import "options";
+
+// Scroll Margin
+$scroll-margin-max: 0 !default; // Desktop
+$scroll-margin-min: 0 !default; // Mobile
+$scroll-margin: fluidClamp($scroll-margin-min, $scroll-margin-max);
+$offset: $scroll-margin;
+
+// If header height is used for scroll offset,
+// then combine the header height with the scroll margin
+// and overwrite the offset variables with the new value.
+@if $option-use-header-height-for-scroll-offset == on {
+    $offset: calc(var(--scroll-margin) + var(--header-height));
+}

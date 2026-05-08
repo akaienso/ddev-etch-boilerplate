@@ -1,0 +1,28 @@
+@if $option-forms == on {
+	// Global styles that apply regardless of theme
+	@if $option-style-forms-automatically == on {
+		form.wsf-form {
+			@each $wsf-var, $value in $wsf-form-styles {
+				--#{$wsf-var}: #{$value};
+			}
+		}
+	} @else {
+		.wsf-form:is(.form--light, .form--dark),
+		:is(.form--light, .form--dark) .wsf-form {
+			@each $wsf-var, $value in $wsf-form-styles {
+				--#{$wsf-var}: #{$value};
+			}
+		}
+	}
+
+	// Utility classes to force specific color-scheme.
+	form.wsf-form.form--light, .form--light .wsf-form {
+		color-scheme: light;
+	}
+
+	form.wsf-form.form--dark, .form--dark .wsf-form {
+		color-scheme: dark;
+	}
+}
+
+@import "buttons";

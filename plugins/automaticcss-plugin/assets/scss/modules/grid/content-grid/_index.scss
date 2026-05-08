@@ -1,0 +1,67 @@
+@if $option-content-grid == on {
+	/* Feat: Content Grid */
+	:where(.content-grid) {
+		@include content-grid;
+	}
+
+	.content--feature {
+		grid-column: feature;
+	}
+	.content--feature-max {
+		grid-column: feature-max;
+	}
+	.content--full {
+		grid-column: full;
+	}
+	.content--full-safe {
+		grid-column: full;
+		padding-inline: var(--gutter);
+	}
+	.content-grid:where(.content--full-safe) {
+		padding-inline: var(--gutter);
+	}
+
+	:is(.content--feature, .content--feature-max, .content--full, .content--full-safe):not(
+		.content-grid--off :is(.content--feature, .content--feature-max, .content--full, .content--full-safe)
+	) {
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	// Fix images inside of figure and picture tags
+	:is(.content--feature, .content--feature-max, .content--full, .content--full-safe) :is(figure img, picture img){
+		width: 100%;
+	}
+
+	// Prevent collisions between content grid and padding classes
+	@if $option-section-padding == on {
+		.content-grid {
+			&:is(
+				[class*="padding--"],
+				[class*="section--"],
+				[class*="header--"]
+				) {
+					padding-inline: 0;
+			}
+		}
+	}
+}
+
+// Make content grid the default structure for sections
+@if $option-content-grid == on and $option-content-grid-sections == on {
+	@if $content-grid-exclusions == null {
+	  :where(section:not(section section)):not(.content-grid--off) {
+		@include content-grid;
+	  }
+	  :where(section:not(section section)).content-grid--off {
+		padding-inline: var(--gutter);
+	  }
+	} @else {
+	  :where(section:not(section section)):not(#{$content-grid-exclusions}) {
+		@include content-grid;
+	  }
+	  :where(section:not(section section)):where(#{$content-grid-exclusions}) {
+		padding-inline: var(--gutter);
+	  }
+	}
+  }

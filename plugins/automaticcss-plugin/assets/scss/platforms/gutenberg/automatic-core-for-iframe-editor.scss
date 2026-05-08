@@ -1,0 +1,76 @@
+$is-gutenberg: true;
+$option-layer-defaults: off;
+$option-layer-anchors: off;
+$option-layer-cards: off;
+$option-layer-icons: off;
+$option-layer-utilities: off;
+$option-inline-tokens: off;
+
+@import "../../automatic";
+
+// We have to select the non-frame wrapper on blog posts like this:
+#{$wp-blog-types-gb-selector} {
+	// Then we have to set the max width to ensure it's always a good post writing experience
+	// Custom blog post themes will override this area and it could be bad, so we set the
+	// value explicitly.
+	max-width: 745px;
+	margin-inline: auto;
+	
+	// We also need to add smart spacing here if it's enabled.
+	@if $option-smart-spacing == on {
+		@include smart-spacing;
+	}
+}
+
+
+// Make sure there's space between the page title and content
+.editor-visual-editor__post-title-wrapper {
+	margin-block-end: 4rem;
+	h1 {
+		max-width: 745px;
+	}
+}
+
+// Override default background and foreground colors on blog posts
+:is(#{$wp-blog-post-type-list}) {
+	@if $wp-post-background != null {
+		background: $wp-post-background;
+	}
+	@if $wp-post-foreground != null {
+		color: $wp-post-foreground;
+	}
+}
+
+//If Traditional theme is enabled, we need these block editor overrides:
+@if $wp-traditional-theme == on {
+	// Smart Spacing for block editor
+	@if $option-smart-spacing == on {
+		// Create space between header title and content
+		.editor-visual-editor__post-title-wrapper {
+			margin-block-end: calc(var(--flow-spacing) * 2);
+		}
+
+		// Normalize spacing for .wp-block elements
+		body :where(.wp-block) {
+			margin-block: 0;
+		}
+		// Smart spacing for block editor
+		:where(.wp-block-post-content),
+		// Smart spacing for utility class usage
+		.smart-spacing {
+			// > .wp-block:first-child {
+			// 	margin-block: 0;
+			// }
+			> * + div.wp-block {
+				margin-block-start: var(--flow-spacing);
+			}
+			@include smart-spacing;
+		}
+		// Revert smart spacing for metaboxes
+		@if $option-use-gutenberg-for-page-building == off {
+			.edit-post-layout__metaboxes :where(p,h1,h2,h3,h4,h5,h6,ul,ol,li) {
+			margin-block: revert;
+			}
+		}
+	}
+}

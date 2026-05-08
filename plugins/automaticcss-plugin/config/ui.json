@@ -1,0 +1,204 @@
+{
+	"id": "dashboard",
+	"type": "dashboard-container",
+	"screens": [
+		"palette",
+		"backgrounds-text",
+		"color-scheme",
+		"typography",
+		"layout",
+		"spacing",
+		"buttons-links",
+		"surfaces-overlays",
+		"borders-dividers",
+		"shadows",
+		"cards",
+		"icons",
+		"additional-styling",
+		"animations",
+		"form-styling",
+		"custom-css",
+		"options",
+		"cheat-sheet"
+	],
+	"config": {
+		"dashboardOpen": true
+	},
+	"globals": {
+		"color": {
+			"isActive": true,
+			"shades": [
+				{
+					"name": "ultra-light",
+					"l": 95
+				},
+				{
+					"name": "light",
+					"l": 85
+				},
+				{
+					"name": "semi-light",
+					"l": 65
+				},
+				{
+					"name": "semi-dark",
+					"l": 35
+				},
+				{
+					"name": "dark",
+					"l": 25
+				},
+				{
+					"name": "ultra-dark",
+					"l": 10
+				},
+				{
+					"name": "hover",
+					"lMultiplier": 1.15
+				}
+			]
+		},
+		"calculatedVariableGroups": {
+			"border-radius": {
+				"calculationType": "simple-scale",
+				"baseValueSetting": "base-radius",
+				"scaleValueSetting": "radius-scale",
+				"variables": [
+					"radius-xxl",
+					"radius-xl",
+					"radius-l",
+					"radius-m",
+					"radius-s",
+					"radius-xs"
+				],
+				"baseVariable": "radius-m"
+			},
+			"form-help-size": {
+				"calculationType": "simple-clamp",
+				"mobileBaseValueSetting": "f-help-size-min",
+				"desktopBaseValueSetting": "f-help-size-max",
+				"variable": "f-help-size",
+				"target": ".wsf-help"
+			},
+			"spacing": {
+				"calculationType": "clamp",
+				"mobileBaseValueSetting": "base-space-min",
+				"desktopBaseValueSetting": "base-space",
+				"mobileScaleValueSetting": "mob-space-scale",
+				"desktopScaleValueSetting": "space-scale",
+				"variables": [
+					"space-xxl",
+					"space-xl",
+					"space-l",
+					"space-m",
+					"space-s",
+					"space-xs"
+				],
+				"baseVariable": "space-m"
+			},
+			"section-padding": {
+				"calculationType": "simple-clamp",
+				"mobileBaseValueSetting": "section-padding-x-min",
+				"desktopBaseValueSetting": "section-padding-x-max",
+				"contentWidthMinSetting": "vp-min",
+				"contentWidthMaxSetting": "vp-max",
+				"variable": "section-padding-x"
+			},
+			"section-spacing": {
+				"calculationType": "clamp",
+				"mobileBaseValueSetting": "base-space-min",
+				"mobileBaseValueMultiplierSetting": "mob-space-adjust-section",
+				"desktopBaseValueSetting": "base-space",
+				"desktopBaseValueMultiplierSetting": "space-adjust-section",
+				"mobileScaleValueSetting": "mob-space-scale",
+				"desktopScaleValueSetting": "space-scale",
+				"variables": [
+					"space-xxl",
+					"space-xl",
+					"space-l",
+					"space-m",
+					"space-s",
+					"space-xs"
+				],
+				"baseVariable": "space-m"
+			},
+			"headings": {
+				"calculationType": "clamp",
+				"mobileBaseValueSetting": "base-heading-mob",
+				"desktopBaseValueSetting": "base-heading-desk",
+				"mobileScaleValueSetting": "mob-heading-scale",
+				"desktopScaleValueSetting": "heading-scale",
+				"variables": ["h1", "h2", "h3", "h4", "h5", "h6"],
+				"overrides": {
+					"h1": {
+						"mobileBaseValueSetting": "h1-min",
+						"desktopBaseValueSetting": "h1-max"
+					},
+					"h2": {
+						"mobileBaseValueSetting": "h2-min",
+						"desktopBaseValueSetting": "h2-max"
+					},
+					"h3": {
+						"mobileBaseValueSetting": "h3-min",
+						"desktopBaseValueSetting": "h3-max"
+					},
+					"h4": {
+						"mobileBaseValueSetting": "h4-min",
+						"desktopBaseValueSetting": "h4-max"
+					},
+					"h5": {
+						"mobileBaseValueSetting": "h5-min",
+						"desktopBaseValueSetting": "h5-max"
+					},
+					"h6": {
+						"mobileBaseValueSetting": "h6-min",
+						"desktopBaseValueSetting": "h6-max"
+					}
+				},
+				"baseVariable": "h4"
+			},
+			"text": {
+				"calculationType": "clamp",
+				"mobileBaseValueSetting": "base-text-mob",
+				"desktopBaseValueSetting": "base-text-desk",
+				"mobileScaleValueSetting": "mob-text-scale",
+				"desktopScaleValueSetting": "text-scale",
+				"variables": [
+					"text-xxl",
+					"text-xl",
+					"text-l",
+					"text-m",
+					"text-s",
+					"text-xs"
+				],
+				"overrides": {
+					"text-xxl": {
+						"mobileBaseValueSetting": "text-xxl-min",
+						"desktopBaseValueSetting": "text-xxl-max"
+					},
+					"text-xl": {
+						"mobileBaseValueSetting": "text-xl-min",
+						"desktopBaseValueSetting": "text-xl-max"
+					},
+					"text-l": {
+						"mobileBaseValueSetting": "text-l-min",
+						"desktopBaseValueSetting": "text-l-max"
+					},
+					"text-m": {
+						"mobileBaseValueSetting": "text-m-min",
+						"desktopBaseValueSetting": "text-m-max"
+					},
+					"text-s": {
+						"mobileBaseValueSetting": "text-s-min",
+						"desktopBaseValueSetting": "text-s-max"
+					},
+					"text-xs": {
+						"mobileBaseValueSetting": "text-xs-min",
+						"desktopBaseValueSetting": "text-xs-max"
+					}
+				},
+				"baseVariable": "text-m"
+			}
+		}
+	}
+}

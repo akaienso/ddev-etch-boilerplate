@@ -1,0 +1,570 @@
+{
+	"$schema": "screen.schema.json",
+	"id": "cards",
+	"title": "Cards",
+	"type": "screen-container",
+	"iconPaths": [
+		"M1 16.0625C1 16.5301 1.37617 16.9062 1.84375 16.9062H3.94258C4.30117 18.0488 5.36641 18.875 6.625 18.875C7.88359 18.875 8.94883 18.0488 9.30742 16.9062H18.1562C18.6238 16.9062 19 16.5301 19 16.0625C19 15.5949 18.6238 15.2188 18.1562 15.2188H9.30742C8.94883 14.0762 7.88359 13.25 6.625 13.25C5.36641 13.25 4.30117 14.0762 3.94258 15.2188H1.84375C1.37617 15.2188 1 15.5949 1 16.0625ZM5.5 16.0625C5.5 15.7641 5.61853 15.478 5.82951 15.267C6.04048 15.056 6.32663 14.9375 6.625 14.9375C6.92337 14.9375 7.20952 15.056 7.42049 15.267C7.63147 15.478 7.75 15.7641 7.75 16.0625C7.75 16.3609 7.63147 16.647 7.42049 16.858C7.20952 17.069 6.92337 17.1875 6.625 17.1875C6.32663 17.1875 6.04048 17.069 5.82951 16.858C5.61853 16.647 5.5 16.3609 5.5 16.0625ZM12.25 10.4375C12.25 10.1391 12.3685 9.85298 12.5795 9.64201C12.7905 9.43103 13.0766 9.3125 13.375 9.3125C13.6734 9.3125 13.9595 9.43103 14.1705 9.64201C14.3815 9.85298 14.5 10.1391 14.5 10.4375C14.5 10.7359 14.3815 11.022 14.1705 11.233C13.9595 11.444 13.6734 11.5625 13.375 11.5625C13.0766 11.5625 12.7905 11.444 12.5795 11.233C12.3685 11.022 12.25 10.7359 12.25 10.4375ZM13.375 7.625C12.1164 7.625 11.0512 8.45117 10.6926 9.59375H1.84375C1.37617 9.59375 1 9.96992 1 10.4375C1 10.9051 1.37617 11.2812 1.84375 11.2812H10.6926C11.0512 12.4238 12.1164 13.25 13.375 13.25C14.6336 13.25 15.6988 12.4238 16.0574 11.2812H18.1562C18.6238 11.2812 19 10.9051 19 10.4375C19 9.96992 18.6238 9.59375 18.1562 9.59375H16.0574C15.6988 8.45117 14.6336 7.625 13.375 7.625ZM7.75 5.9375C7.45163 5.9375 7.16548 5.81897 6.95451 5.608C6.74353 5.39702 6.625 5.11087 6.625 4.8125C6.625 4.51413 6.74353 4.22798 6.95451 4.017C7.16548 3.80603 7.45163 3.6875 7.75 3.6875C8.04837 3.6875 8.33452 3.80603 8.54549 4.017C8.75647 4.22798 8.875 4.51413 8.875 4.8125C8.875 5.11087 8.75647 5.39702 8.54549 5.608C8.33452 5.81897 8.04837 5.9375 7.75 5.9375ZM10.4324 3.96875C10.0738 2.82617 9.00859 2 7.75 2C6.49141 2 5.42617 2.82617 5.06758 3.96875H1.84375C1.37617 3.96875 1 4.34492 1 4.8125C1 5.28008 1.37617 5.65625 1.84375 5.65625H5.06758C5.42617 6.79883 6.49141 7.625 7.75 7.625C9.00859 7.625 10.0738 6.79883 10.4324 5.65625H18.1562C18.6238 5.65625 19 5.28008 19 4.8125C19 4.34492 18.6238 3.96875 18.1562 3.96875H10.4324Z"
+	],
+	"content": [
+		{
+			"id": "cards-section-container",
+			"type": "section-container",
+			"title": "Card Framework",
+			"content": [
+				{
+					"id": "option-cards",
+					"title": "Card Framework",
+					"type": "toggle",
+					"default": "off",
+					"style": "primary",
+					"tooltip": "Enable the ACSS card framework.",
+					"documentation": "https://automaticcss.com/docs/card-framework/"
+				}
+			]
+		},
+		{
+			"id": "card-tabs",
+			"title": "Card Tabs",
+			"type": "tabs-container",
+			"style": "full-width",
+			"tooltip": "",
+			"displayWhen": [
+				"option-cards",
+				"on"
+			],
+			"content": [
+				{
+					"id": "card-styling",
+					"title": "Card Styling",
+					"type": "tab",
+					"icon": "settings",
+					"content": [
+						{
+							"id": "primary-card-style-section",
+							"title": "Default Card Scheme",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "primary-card-style-message",
+									"type": "message",
+									"text": "Set the default style for your site's cards. You can choose to inherit the color scheme (from the site or parent container), or force all cards to be light or dark."
+								},
+								{
+									"id": "primary-card-style",
+									"title": "Default Card Scheme",
+									"type": "select",
+									"default": "Inherit",
+									"options": [
+										"Inherit",
+										"Light",
+										"Dark"
+									],
+									"tooltip": "Choose the primary/default card style.",
+									"documentation": "https://automaticcss.com/docs/card-framework/"
+								}
+							]
+						},
+						{
+							"id": "card-styling-options-section",
+							"title": "Styling Options",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "card-styling-message",
+									"type": "message",
+									"text": "The card framework unifies styling across your cards. Configure your default card styling below."
+								},
+								{
+									"id": "card-colors",
+									"title": "Background & Foreground",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-background",
+											"title": "Background",
+											"type": "text",
+											"default": "var(--neutral-ultra-light)",
+											"cssVariable": "--card-background",
+											"target": ":is([class*='card']:where(:not([class*='__'], [class*='--dark'], [class*='--alt'])))",
+											"tooltip": "Background of light cards. Accepts any valid background value.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-heading-color",
+											"title": "Heading Color",
+											"type": "text",
+											"default": "var(--text-dark)",
+											"tooltip": "Heading color for light cards targeting (__heading) elements.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-text-color",
+											"title": "Text Color",
+											"type": "text",
+											"default": "var(--text-dark-muted)",
+											"tooltip": "Text color for light cards",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								},
+								{
+									"id": "card-spacing",
+									"title": "Spacing",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"displayWhen": [
+										"option-cards",
+										"on"
+									],
+									"content": [
+										{
+											"id": "card-padding",
+											"title": "Card Padding",
+											"type": "text",
+											"default": "var(--space-m)",
+											"tooltip": "Padding of the main card element.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-gap",
+											"title": "Card Content Gap",
+											"type": "text",
+											"default": "calc(var(--content-gap) / 2)",
+											"tooltip": "Space between content in cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								},
+								{
+									"id": "card-typography",
+									"title": "Typography",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-heading-size",
+											"title": "Heading Size",
+											"type": "text",
+											"default": "var(--h3)",
+											"tooltip": "Size of card headings (h1-h6) targeting any '__heading' element.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-text-size",
+											"title": "Text Size",
+											"type": "text",
+											"default": "var(--text-s)",
+											"tooltip": "Default size of card text.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								},
+								{
+									"id": "card-borders",
+									"title": "Borders",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+									{
+										"id": "option-card-concentric-radius",
+										"title": "Concentric Radius",
+										"type": "select",
+										"default": "off",
+										"options": [
+											"off",
+											"standard",
+											"reverse"
+										],
+										"tooltip": "Concentric: outer radius expands to maintain proportional inner corners. Reverse: outer radius uses the global radius, inner elements get a smaller calculated radius.",
+										"documentation": "https://automaticcss.com/docs/card-framework/"
+									},
+									{
+										"id": "card-min-radius",
+										"title": "Minimum Radius",
+										"type": "text",
+										"default": "4px",
+										"placeholder": "4px",
+										"tooltip": "Minimum radius for inner elements when using reverse concentric radius. Prevents the calculated radius from becoming too small.",
+										"documentation": "https://automaticcss.com/docs/card-framework/",
+										"displayWhen": [
+											"option-card-concentric-radius",
+											"reverse"
+										]
+									},
+									{
+										"id": "card-border-width",
+											"title": "Border Width",
+											"type": "text",
+											"default": "var(--border-width)",
+											"tooltip": "Thickness of the card border.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-border-style",
+											"title": "Border Style",
+											"type": "select",
+											"default": "solid",
+											"options": [
+												"solid",
+												"dashed",
+												"dotted",
+												"double",
+												"groove",
+												"ridge",
+												"inset",
+												"outset",
+												"none"
+											],
+											"tooltip": "Style of the card border.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-border-color",
+											"title": "Border Color",
+											"type": "text",
+											"default": "var(--border-color-dark)",
+											"tooltip": "Border color for light cards. Transparent is a valid value.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+									{
+										"id": "card-radius",
+										"title": "Border Radius",
+										"type": "text",
+										"default": "var(--radius)",
+										"tooltip": "Radius of the card border.",
+										"documentation": "https://automaticcss.com/docs/card-framework/",
+										"displayWhen": [
+											"option-card-concentric-radius",
+											"off"
+										]
+									}
+								]
+								},
+								{
+									"id": "card-buttons-links",
+									"title": "Buttons & Links",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-link-hover",
+											"type": "hover-container",
+											"content": [
+												{
+													"id": "card-link-color",
+													"title": "Link Color",
+													"type": "text",
+													"default": "var(--primary)",
+													"tooltip": "Link color for light cards.",
+													"documentation": "https://automaticcss.com/docs/card-framework/"
+												},
+												{
+													"id": "card-link-hover-color",
+													"title": "Link Hover",
+													"type": "text",
+													"default": "var(--primary-hover)",
+													"tooltip": "Hover link color for light cards.",
+													"documentation": "https://automaticcss.com/docs/card-framework/"
+												}
+											]
+										},
+										{
+											"id": "card-button-style",
+											"title": "Button Style",
+											"type": "text",
+											"default": "primary",
+											"output": "quotes",
+											"tooltip": "Button style for light cards. Targets all .btn-- elements.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-button-font-size",
+											"title": "Button Text Size",
+											"type": "text",
+											"default": "var(--text-s)",
+											"tooltip": "Default size of card buttons.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								},
+								{
+									"id": "card-icons",
+									"title": "Icons",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-icon-note",
+											"type": "message",
+											"text": "Icons must use the '[data-icon]' data attribute to be styled by the card framework."
+										},
+										{
+											"id": "card-icon-size",
+											"title": "Icon Size",
+											"type": "text",
+											"default": "var(--icon-size-l)",
+											"tooltip": "Size of the main icon (__icon) in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-icon-color",
+											"title": "Icon Color",
+											"type": "text",
+											"default": "var(--icon-color)",
+											"tooltip": "Color of the main icon (__icon) in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "option-card-boxed-icons",
+											"title": "Use Boxed Icon Style",
+											"type": "toggle",
+											"default": "off",
+											"tooltip": "Use boxed styling for icons in cards. Enables padding, border, etc.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-icon-padding",
+											"title": "Icon Padding",
+											"type": "text",
+											"default": "var(--icon-padding)",
+											"tooltip": "Padding for the icon box in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/",
+											"displayWhen": [
+												"option-card-boxed-icons",
+												"on"
+											]
+										},
+										{
+											"id": "card-icon-border-width",
+											"title": "Icon Border Width",
+											"type": "text",
+											"default": "var(--icon-border-width)",
+											"tooltip": "Width of the border for the icon box in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/",
+											"displayWhen": [
+												"option-card-boxed-icons",
+												"on"
+											]
+										},
+										{
+											"id": "card-icon-border-style",
+											"title": "Icon Border Style",
+											"type": "text",
+											"default": "var(--icon-border-style)",
+											"tooltip": "Style of the border for the icon box in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/",
+											"displayWhen": [
+												"option-card-boxed-icons",
+												"on"
+											]
+										},
+										{
+											"id": "card-icon-radius",
+											"title": "Icon Radius",
+											"type": "text",
+											"default": "var(--icon-radius)",
+											"tooltip": "Radius of the main icon (__icon) in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/",
+											"displayWhen": [
+												"option-card-boxed-icons",
+												"on"
+											]
+										},
+										{
+											"id": "card-icon-background",
+											"title": "Icon Background",
+											"type": "text",
+											"default": "var(--icon-background)",
+											"tooltip": "Background for the icon box in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/",
+											"displayWhen": [
+												"option-card-boxed-icons",
+												"on"
+											]
+										},
+										{
+											"id": "card-icon-border-color",
+											"title": "Icon Border Color",
+											"type": "text",
+											"default": "var(--icon-border-color)",
+											"tooltip": "Border color for the icon box in icon cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/",
+											"displayWhen": [
+												"option-card-boxed-icons",
+												"on"
+											]
+										}
+									]
+								},
+								{
+									"id": "card-avatars",
+									"title": "Avatars",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-avatar-size",
+											"title": "Avatar Size",
+											"type": "text",
+											"default": "140px",
+											"tooltip": "Size of the main avatar (__avatar) in avatar cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-avatar-border-width",
+											"title": "Border Width",
+											"type": "text",
+											"default": "var(--border-width)",
+											"tooltip": "Thickness of the main avatar (__avatar) border in avatar cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-avatar-border-style",
+											"title": "Border Style",
+											"type": "text",
+											"default": "var(--border-style)",
+											"tooltip": "Style of the main avatar (__avatar) in avatar cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-avatar-border-color",
+											"title": "Avatar Border Color",
+											"type": "text",
+											"default": "",
+											"tooltip": "Avatar border color for light cards targeting (__avatar) elements.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-avatar-radius",
+											"title": "Radius",
+											"type": "text",
+											"default": "var(--radius)",
+											"tooltip": "Radius of the main avatar (__avatar) in avatar cards. Use 50vw for a circle.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-avatar-aspect-ratio",
+											"title": "Aspect Ratio",
+											"type": "text",
+											"default": "1",
+											"output": "quotes",
+											"skipMathValidation": true,
+											"tooltip": "Aspect ratio of the main avatar (__avatar) in avatar cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								},
+								{
+									"id": "card-media",
+									"title": "Media",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-media-radius",
+											"title": "Radius",
+											"type": "text",
+											"default": "var(--radius)",
+											"tooltip": "Radius of the main media (__media) in media cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-media-aspect-ratio",
+											"title": "Aspect Ratio",
+											"type": "text",
+											"default": "4/3",
+											"skipMathValidation": true,
+											"tooltip": "Aspect ratio of the main media (__media) in media cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										},
+										{
+											"id": "card-media-object-fit",
+											"title": "Object Fit",
+											"type": "text",
+											"default": "cover",
+											"tooltip": "Object fit of the main media (__media) in media cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								},
+								{
+									"id": "card-shadows",
+									"title": "Shadows",
+									"type": "accordion-container",
+									"tooltip": "",
+									"description": "",
+									"content": [
+										{
+											"id": "card-shadow",
+											"title": "Card Shadow",
+											"type": "textarea",
+											"default": "",
+											"placeholder": "--box-shadow-md",
+											"tooltip": "Box shadow for light cards.",
+											"documentation": "https://automaticcss.com/docs/card-framework/"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "card-options",
+					"title": "Card Options",
+					"icon": "sun",
+					"type": "tab",
+					"content": [
+						{
+							"id": "card-targeting-section",
+							"title": "Card Targeting",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "card-targeting-message",
+									"type": "message",
+									"text": "List the card selectors that you want to apply the card framework styling to below."
+								},
+								{
+									"id": "card-selectors",
+									"title": "Card Selectors",
+									"type": "textarea",
+									"default": "",
+									"output": "quotes",
+									"placeholder": ".some-card",
+									"tooltip": "Which selectors should ACSS apply the card framework to? Provide a comma-separated list.",
+									"documentation": "https://automaticcss.com/docs/card-framework/"
+								}
+							]
+						},
+						{
+							"id": "card-more-options-section",
+							"title": "More Options",
+							"type": "section-container",
+							"content": [
+								{
+									"id": "option-cards-use-grid",
+									"title": "Default Cards to Display Grid (Pro)",
+									"type": "toggle",
+									"default": "off",
+									"tooltip": "Automatically use display grid for cards.",
+									"documentation": "https://automaticcss.com/docs/card-framework/"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
