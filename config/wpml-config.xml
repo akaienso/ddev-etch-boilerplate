@@ -3,8 +3,12 @@
   WPML configuration file.
   Docs: https://wpml.org/documentation/support/wpml-config-xml/
 
-  Define which custom fields, post types, and taxonomies should be translatable.
-  This file is read by WPML on activation and after updates.
+  Languages: English (primary), Ukrainian
+  Planned future languages: Polish, German, French, Spanish, Russian
+
+  Define which custom fields, post types, and taxonomies should be translatable
+  as they are added to the site. This file is read by WPML on activation and
+  after updates.
 -->
 <wpml-config>
 
